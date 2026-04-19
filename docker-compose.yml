@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   triple_rag:
     build: .
@@ -21,12 +19,16 @@ services:
     # 볼륨 마운트 (Windows ↔ 컨테이너 파일 공유)
     volumes:
       - ./src:/workspace/src
+      - ./tests:/workspace/tests
+      - ./scripts:/workspace/scripts
       - ./data:/workspace/data
       - ./cache:/workspace/cache
       - ./results:/workspace/results
       - ./configs:/workspace/configs
       - ./notebooks:/workspace/notebooks
       - ./logs:/workspace/logs
+      - ./conftest.py:/workspace/conftest.py
+      - ./pytest.ini:/workspace/pytest.ini
     
     # 포트 (Jupyter, TensorBoard)
     ports:
