@@ -46,6 +46,34 @@ PROMPT_TEMPLATE = (
 )
 
 
+def merge_contexts(
+    v_ctxs: list[str],
+    g_ctxs: list[str],
+    o_ctxs: list[str],
+    weights: DWAWeights,
+    top_k: int = 3,
+) -> str:
+    """Allocate context slots in proportion to source weights.
+
+    Each source gets at least one slot if it returned anything; total
+    budget is ``3 * top_k`` (thesis Sec 3.4). Exposed at module level so
+    the offline cache builder can call it without a TripleHybridRAG instance.
+    """
+    budget = top_k * 3
+    n_v = max(1, round(budget * weights.alpha))
+    n_g = max(1, round(budget * weights.beta))
+    n_o = max(1, round(budget * weights.gamma))
+
+    parts: list[str] = []
+    if v_ctxs:
+        parts.append(f"[Vector(α={weights.alpha:.2f})]\n" + "\n".join(v_ctxs[:n_v]))
+    if g_ctxs:
+        parts.append(f"[Graph(β={weights.beta:.2f})]\n" + "\n".join(g_ctxs[:n_g]))
+    if o_ctxs:
+        parts.append(f"[Ontology(γ={weights.gamma:.2f})]\n" + "\n".join(o_ctxs[:n_o]))
+    return "\n\n".join(parts)
+
+
 class LLM(Protocol):
     """Minimal LLM interface — anything with a ``generate(prompt) -> str`` works."""
 
@@ -174,21 +202,5 @@ class TripleHybridRAG:
         o_ctxs: list[str],
         weights: DWAWeights,
     ) -> str:
-        """Allocate context slots in proportion to source weights.
-
-        Each source gets at least one slot if it returned anything; total
-        budget is ``3 * top_k`` (thesis Sec 3.4).
-        """
-        budget = self.top_k * 3
-        n_v = max(1, round(budget * weights.alpha))
-        n_g = max(1, round(budget * weights.beta))
-        n_o = max(1, round(budget * weights.gamma))
-
-        parts: list[str] = []
-        if v_ctxs:
-            parts.append(f"[Vector(α={weights.alpha:.2f})]\n" + "\n".join(v_ctxs[:n_v]))
-        if g_ctxs:
-            parts.append(f"[Graph(β={weights.beta:.2f})]\n" + "\n".join(g_ctxs[:n_g]))
-        if o_ctxs:
-            parts.append(f"[Ontology(γ={weights.gamma:.2f})]\n" + "\n".join(o_ctxs[:n_o]))
-        return "\n\n".join(parts)
+        """Instance-method wrapper around module-level :func:`merge_contexts`."""
+        return merge_contexts(v_ctxs, g_ctxs, o_ctxs, weights, self.top_k)
