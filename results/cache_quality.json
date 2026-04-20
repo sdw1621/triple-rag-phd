@@ -1,0 +1,95 @@
+{
+  "global": {
+    "total_entries": 330000,
+    "n_queries": 5000,
+    "avg_f1": 0.06790106689397384,
+    "avg_em": 0.0,
+    "avg_faith": 0.7753883314001258,
+    "avg_latency": 1.2369147146586217,
+    "avg_R": 0.17665218130239999,
+    "std_R_global": 2.026554714152173
+  },
+  "variance": {
+    "n_queries": 5000,
+    "f1_std_mean": 0.03491129455443558,
+    "f1_std_median": 0.0,
+    "R_std_mean": 0.07962444883708414,
+    "R_std_median": 0.04121918731103057,
+    "R_range_mean": 0.266845919885966,
+    "R_range_median": 0.2,
+    "R_range_p90": 0.4278388278388277,
+    "R_range_p99": 0.8354760631342318,
+    "flat_f1_queries": 2980,
+    "flat_f1_ratio": 0.596,
+    "flat_R_queries": 1368,
+    "flat_R_ratio": 0.2736
+  },
+  "best_weights": {
+    "top5_best_weights": [
+      {
+        "weight": "(α=0.0, β=0.0, γ=1.0)",
+        "count": 1834
+      },
+      {
+        "weight": "(α=0.0, β=0.1, γ=0.9)",
+        "count": 601
+      },
+      {
+        "weight": "(α=0.0, β=0.2, γ=0.8)",
+        "count": 277
+      },
+      {
+        "weight": "(α=0.3, β=0.0, γ=0.7)",
+        "count": 245
+      },
+      {
+        "weight": "(α=0.2, β=0.0, γ=0.8)",
+        "count": 175
+      }
+    ],
+    "mean_best_alpha": 0.1121,
+    "mean_best_beta": 0.15678,
+    "mean_best_gamma": 0.7311200000000001
+  },
+  "per_type": {
+    "simple": {
+      "n": 2000,
+      "avg_reward": 0.2485862764385825,
+      "R_range_mean": 0.1765827687540827,
+      "R_range_median": 0.057692307692307654,
+      "mean_best_weight": [
+        0.07840000000000001,
+        0.12315000000000001,
+        0.79845
+      ]
+    },
+    "conditional": {
+      "n": 1250,
+      "avg_reward": 0.1710495420872814,
+      "R_range_mean": 0.20136125240209846,
+      "R_range_median": 0.2,
+      "mean_best_weight": [
+        0.13976,
+        0.16832,
+        0.6919200000000001
+      ]
+    },
+    "multi_hop": {
+      "n": 1750,
+      "avg_reward": 0.09844367201470457,
+      "R_range_mean": 0.4167785693823096,
+      "R_range_median": 0.2,
+      "mean_best_weight": [
+        0.13085714285714287,
+        0.1869714285714286,
+        0.6821714285714287
+      ]
+    }
+  },
+  "correlation": {
+    "f1_faith_corr": 0.22246664584183143,
+    "f1_std": 0.1610589133822035,
+    "faith_std": 0.40487743184215763
+  },
+  "n_per_query_detail_rows": 5000
+}
