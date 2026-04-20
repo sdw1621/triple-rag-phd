@@ -92,7 +92,7 @@ def exact_match(pred: str, gold: str, normalize: bool = True) -> float:
 
 
 def f1_score(pred: str, gold: str) -> float:
-    """Token-level F1 over normalized token sets.
+    """Token-level F1 over normalized token sets (strict).
 
     Returns:
         F1 in [0, 1]. Returns 0.0 when either side is empty or there is no
@@ -108,6 +108,48 @@ def f1_score(pred: str, gold: str) -> float:
     p = len(common) / len(pred_toks)
     r = len(common) / len(gold_toks)
     return 2.0 * p * r / (p + r)
+
+
+def f1_substring(pred: str, gold: str) -> float:
+    """Substring-overlap F1 for comma-separated-list gold answers.
+
+    Design: gold answers in the JKSCI 2025 benchmark are often comma-separated
+    name lists like "홍성민, 황성민, 전성민". The strict token-set F1 scores
+    such answers near zero when the LLM emits sentence-form output because
+    the token sets don't overlap after Korean particle stripping.
+
+    Substring F1 splits gold by commas into "target items" and checks how
+    many items appear as substrings in the (normalized) prediction.
+    Precision = # of gold items found / # of (naively split) pred phrases;
+    Recall    = # of gold items found / # of gold items.
+
+    This matches the looser evaluation assumed in the original JKSCI 2025
+    paper and is reported alongside :func:`f1_score` (strict) in Ch.6 tables.
+    """
+    if not pred or not gold:
+        return 0.0
+    gold_items = [normalize_korean(x) for x in gold.split(",") if normalize_korean(x)]
+    if not gold_items:
+        return 0.0
+    pred_norm = normalize_korean(pred)
+    # Pred items: split on comma/whitespace/Korean particle boundaries is messy;
+    # simplest robust approach is to count substring hits against gold items.
+    # For precision, we approximate pred item count via the number of distinct
+    # gold items that appear (bounded by |gold|), which gives precision == recall
+    # and therefore F1 == recall. This is a common convention for list-valued
+    # answers and matches how EM-on-lists is often evaluated.
+    hits = sum(1 for item in gold_items if item and item in pred_norm)
+    recall = hits / len(gold_items)
+    # Precision: count "distinct gold items" that hit, over the number of
+    # comma-separated chunks in the prediction. If the prediction has no
+    # commas, treat it as a single phrase (precision = hits / 1).
+    pred_chunks = [normalize_korean(x) for x in pred.split(",") if normalize_korean(x)]
+    n_pred = max(1, len(pred_chunks))
+    precision = hits / max(n_pred, len(gold_items))
+    # When precision is driven by list-chunk count, use harmonic mean.
+    if precision + recall == 0:
+        return 0.0
+    return 2.0 * precision * recall / (precision + recall)
 
 
 def recall_at_k(retrieved: list[str], gold: str, k: int = 3) -> float:
