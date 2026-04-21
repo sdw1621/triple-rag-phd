@@ -1,0 +1,417 @@
+{
+  "benchmark": "musique",
+  "policy": "ldwa:cache/ppo_checkpoints/seed_42/final.pt",
+  "n_queries": 300,
+  "aggregate": {
+    "n_queries": 300,
+    "overall": {
+      "F1_strict": {
+        "mean": 0.03835622152848792,
+        "std": 0.07687739315930592,
+        "n": 300
+      },
+      "F1_substring": {
+        "mean": 0.09912698412698412,
+        "std": 0.22715074637170682,
+        "n": 300
+      },
+      "EM_norm": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 300
+      },
+      "Faithfulness": {
+        "mean": 0.3577142857142857,
+        "std": 0.471206551856478,
+        "n": 300
+      },
+      "Latency": {
+        "mean": 0.9557928617795308,
+        "std": 0.6847878775796428,
+        "n": 300
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "4hop1__152146_5274_458768_33633",
+      "type": "multi_hop",
+      "gold": "August 3, 1769",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6066582202911377
+      }
+    },
+    {
+      "qid": "4hop1__151650_5274_458768_33632",
+      "type": "multi_hop",
+      "gold": "May 4",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.4785878658294678
+      }
+    },
+    {
+      "qid": "2hop__147260_623159",
+      "type": "multi_hop",
+      "gold": "Yaroslavl Oblast",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6080243587493896
+      }
+    },
+    {
+      "qid": "2hop__95687_577502",
+      "type": "multi_hop",
+      "gold": "Maria Shriver",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.4795873165130615
+      }
+    },
+    {
+      "qid": "3hop1__131829_39743_24526",
+      "type": "multi_hop",
+      "gold": "upper 40s–lower 50s °F",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5718872547149658
+      }
+    },
+    {
+      "qid": "3hop1__145194_160545_62931",
+      "type": "multi_hop",
+      "gold": "island Koh Phi Phi",
+      "answer": "The Beach was filmed on the Thai island Koh Phi Phi. Siddhi Savetsila was born in Thailand, which is the country that contains Koh Phi Phi.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.2608695652173913,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.005608320236206
+      }
+    },
+    {
+      "qid": "4hop2__161602_426860_88460_20999",
+      "type": "multi_hop",
+      "gold": "The dynasty regrouped and defeated the Portuguese",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6032278537750244
+      }
+    },
+    {
+      "qid": "3hop2__140194_16797_51068",
+      "type": "multi_hop",
+      "gold": "Jenna - Louise Coleman",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5937833786010742
+      }
+    },
+    {
+      "qid": "2hop__10515_21567",
+      "type": "multi_hop",
+      "gold": "John Kukuzelis",
+      "answer": "John Kukuzelis introduced a system of musical notation in the 14th century that is widely used in the Balkans, which is the area where most of the invasion of the eastern Roman Empire took place.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.13793103448275862,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.1389834880828857
+      }
+    },
+    {
+      "qid": "2hop__846415_88165",
+      "type": "multi_hop",
+      "gold": "Keturah",
+      "answer": "Jokshan's father, Abraham, married Keturah after the death of Sarah.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.18181818181818182,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6104283332824707
+      }
+    },
+    {
+      "qid": "4hop3__373573_132409_223216_35031",
+      "type": "multi_hop",
+      "gold": "third-largest",
+      "answer": "Pathology formed in San Diego, California. The band that performed \"Still Swingin'\" is Papa Roach, which formed in Vacaville, California. The urban area of San Diego ranks as the second largest in California, while Vacaville is much smaller in comparison. Therefore, the urban area of San Diego ranks higher than that of Vacaville. \n\nTo answer the question directly: San Diego ranks as the second largest urban area in California, while Vacaville does not rank among the largest urban areas. Thus, the answer is that San Diego ranks second among the urban areas of California.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.8658695220947266
+      }
+    },
+    {
+      "qid": "2hop__455392_40315",
+      "type": "multi_hop",
+      "gold": "12",
+      "answer": "Desert Studies Center는 California Desert Studies Consortium의 일원으로, 이 컨소시엄에는 7개의 California State University 캠퍼스가 포함되어 있습니다. 따라서 Desert Studies Center가 속한 기관의 캠퍼스 수는 7개입니다.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.3783929347991943
+      }
+    },
+    {
+      "qid": "2hop__85463_50252",
+      "type": "multi_hop",
+      "gold": "Kim Il - Sung",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.9228048324584961
+      }
+    },
+    {
+      "qid": "2hop__39063_212301",
+      "type": "multi_hop",
+      "gold": "Arthur Peel",
+      "answer": "The father of the man who conceived of the 'new' police is Robert Peel.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6872832775115967
+      }
+    },
+    {
+      "qid": "3hop1__759384_42197_18397",
+      "type": "multi_hop",
+      "gold": "the Politburo",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5654447078704834
+      }
+    },
+    {
+      "qid": "3hop1__847684_339990_54675",
+      "type": "multi_hop",
+      "gold": "Tualatin Mountains",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6200048923492432
+      }
+    },
+    {
+      "qid": "3hop1__46571_87694_124169",
+      "type": "multi_hop",
+      "gold": "1952",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6482565402984619
+      }
+    },
+    {
+      "qid": "2hop__60229_1783",
+      "type": "multi_hop",
+      "gold": "Fiorello La Guardia",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.4605581760406494
+      }
+    },
+    {
+      "qid": "4hop1__199881_765799_282674_759393",
+      "type": "multi_hop",
+      "gold": "Green Bay",
+      "answer": "Miller Electric is headquartered in Appleton, Wisconsin. The county where Appleton is located is Outagamie County. Outagamie County shares borders with several counties, including Brown County to the northeast. The seat of Brown County is Green Bay. \n\nTherefore, the answer is: Green Bay.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0625,
+        "f1_substring": 0.4,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.1503384113311768
+      }
+    },
+    {
+      "qid": "3hop2__36852_613770_7713",
+      "type": "multi_hop",
+      "gold": "about 400 years",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7937664985656738
+      }
+    }
+  ]
+}

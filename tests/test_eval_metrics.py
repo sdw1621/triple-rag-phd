@@ -9,6 +9,7 @@ from src.eval.metrics import (
     evaluate_single,
     exact_match,
     f1_score,
+    f1_substring,
     faithfulness,
     normalize_korean,
     precision,
@@ -69,6 +70,42 @@ def test_f1_no_overlap_is_zero() -> None:
 def test_f1_empty_input_is_zero() -> None:
     assert f1_score("", "김철수") == 0.0
     assert f1_score("김철수", "") == 0.0
+
+
+# ---------- f1_substring ----------
+
+def test_f1_substring_list_gold_sentence_pred() -> None:
+    """JKSCI-style: gold is comma-separated names, pred is a sentence."""
+    gold = "홍성민, 황성민, 전성민"
+    pred = "정치외교 심리학개론 과목은 홍성민 교수와 황성민 교수, 전성민 교수가 담당합니다."
+    # All 3 gold names appear as substrings → high F1
+    f1 = f1_substring(pred, gold)
+    assert f1 > 0.6
+
+
+def test_f1_substring_partial_match() -> None:
+    gold = "홍성민, 황성민, 전성민"
+    pred = "홍성민 교수가 담당합니다"  # only 1/3 hits
+    f1 = f1_substring(pred, gold)
+    assert 0.0 < f1 < 1.0
+
+
+def test_f1_substring_no_match_is_zero() -> None:
+    assert f1_substring("이영희 교수", "박민수, 김철수") == 0.0
+
+
+def test_f1_substring_empty() -> None:
+    assert f1_substring("", "홍성민") == 0.0
+    assert f1_substring("홍성민", "") == 0.0
+
+
+def test_f1_substring_and_strict_disagree() -> None:
+    """Key property: f1_substring >> f1_strict on list-form gold answers."""
+    gold = "홍성민, 황성민, 전성민"
+    pred = "정치외교 과목은 홍성민 교수, 황성민 교수, 전성민 교수가 담당합니다."
+    f1_s = f1_score(pred, gold)
+    f1_sub = f1_substring(pred, gold)
+    assert f1_sub > f1_s  # substring is looser on list answers
 
 
 # ---------- recall@k ----------
