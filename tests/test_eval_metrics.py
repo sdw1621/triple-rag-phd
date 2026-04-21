@@ -38,6 +38,22 @@ def test_normalize_maps_sino_korean_numerals() -> None:
     assert normalize_korean("삼") == "3"
 
 
+def test_normalize_strips_punctuation_from_list_answers() -> None:
+    """Critical for list-form gold answers: '홍성민, 황성민' must tokenize
+    as {'홍성민', '황성민'}, not {'홍성민,', '황성민'}."""
+    assert "홍성민" in normalize_korean("홍성민, 황성민").split()
+    assert "황성민" in normalize_korean("홍성민, 황성민").split()
+    # No comma-attached tokens:
+    assert "홍성민," not in normalize_korean("홍성민, 황성민").split()
+
+
+def test_f1_on_list_answer_with_sentence_pred() -> None:
+    gold = "홍성민, 황성민, 전성민"
+    pred = "정치외교 심리학개론 과목은 홍성민 교수, 황성민 교수, 전성민 교수가 담당합니다."
+    # After fix: all 3 gold names match → F1 > 0.5
+    assert f1_score(pred, gold) > 0.5
+
+
 # ---------- exact_match ----------
 
 def test_em_normalized_strips_particle_difference() -> None:
