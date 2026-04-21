@@ -6,22 +6,55 @@ while preserving academic integrity; surface dual/triple F1 views in Ch.6.
 
 ---
 
-## Root-cause summary
+## Baseline (AFTER dff7dc1 — punctuation-strip bug fix by author on 4/21)
 
-- JKSCI 2025 Table 8 reports **F1 = 0.86 ± 0.01 on 5,000 QA × 3 runs**.
-- Independent re-run gave **F1_strict = 0.072**, **F1_substring = 0.448**.
+| Policy | F1_strict | F1_substring | Faithfulness |
+|---|---|---|---|
+| R-DWA (JKSCI baseline, reproduced) | **0.137** | 0.450 | 0.835 |
+| **L-DWA (this thesis, 3 seeds)** | **0.167** | **0.488** | **0.865** |
+| Oracle (per-query upper bound) | 0.168 | 0.483 | 0.888 |
+
+- L-DWA vs R-DWA: **F1_strict +21.9%**, F1_substring +8.4%, Faith +3.6%.
+- L-DWA reaches **99.4% of Oracle** on F1_strict.
+- 3-seed std < 0.002 (extremely reproducible).
+
+Source: `results/CURRENT_STATUS_KR.md` §2 and commit dff7dc1.
+
+---
+
+## Root-cause summary (two-layer)
+
+### Layer 1 — punctuation bug (fixed in dff7dc1 on 4/21)
+
+`normalize_korean` did not strip commas before particle stripping. List-form
+gold like `"홍성민, 황성민, 전성민"` tokenized to `{"홍성민,", "황성민,", "전성민"}`
+while sentence-form predictions produced `{"홍성민", "황성민", "전성민", …}`.
+Only the last (punctuation-free) gold token matched — F1 collapsed to ~1/3.
+Fix: `_PUNCT_RE` strips punctuation before particle regex. **F1_strict jumped
+0.072 → 0.137 (R-DWA), 0.087 → 0.167 (L-DWA).**
+
+### Layer 2 — format mismatch (remaining gap vs JKSCI 0.86)
+
+Even after the punctuation fix, F1_strict is 0.137 (R-DWA). JKSCI reports 0.86.
+Investigation:
+
 - JKSCI `evaluator.py`'s `f1_score` is **identical** to our `f1_score` (token-set
-  F1 with Korean particle stripping) — so the evaluator code is not the gap.
-- Gap source: **gold answers are comma-separated name lists** (e.g.,
-  `"홍성민, 황성민, 전성민"`), and the **sentence-style prompt** makes the LLM
-  reply in free-form prose, which destroys token-set overlap.
+  F1 with Korean particle stripping) after the layer-1 fix — so the evaluator
+  code is not the remaining gap.
 - Inspection of `hybrid-rag-comparsion/notebooks/Triple_Hybrid_RAG_Full.ipynb`
   Step 8 shows `sample_ds = random.sample(full_ds, 100)` is the active line;
   the 5000-sample line is commented out; `execution_count: null, outputs: []`
   — the full-run cell **was never executed in the committed notebook**.
+- Sentence-form prediction vs list-form gold still loses most tokens to "교수",
+  "과목", "담당합니다" noise; our Simple-only F1_substring = 0.837 ≈ JKSCI 0.86,
+  suggesting the reported 0.86 is either a Simple-subset or small-sample
+  measurement.
 
-Therefore 0.86 is consistent with a Simple-subset measurement (our
-Simple-only F1_substring = 0.837), not a 5,000-QA full-set measurement.
+Layer-2 mitigation (this PR): force the LLM to emit list-form output with
+`PROMPT_TEMPLATE_LIST`, and add `f1_char` as a form-agnostic corroborating
+view. Manual check shows pred "홍성민, 황성민, 전성민" against the same gold
+yields **F1_strict = 1.0**, **F1_char = 1.0**, **F1_substring = 1.0** — i.e.,
+format alignment fully closes the gap where prompt controls output form.
 
 ## Defense artifacts added in this PR
 
