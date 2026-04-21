@@ -45,6 +45,12 @@ _PARTICLE_PATTERNS: tuple[tuple[str, "re.Pattern[str]"], ...] = tuple(
 _WHITESPACE_RE = re.compile(r"\s+")
 _SENTENCE_SPLIT_RE = re.compile(r"[.!?。]")
 
+# Punctuation that must be stripped before token-set comparison so that list-form
+# gold answers ("홍성민, 황성민, 전성민") match sentence-form predictions.
+# Note: preserved in text through tokenization would inflate pred token count and
+# mismatch gold tokens because commas attach to preceding tokens.
+_PUNCT_RE = re.compile(r"[,.:;!?\"'\u201c\u201d\u2018\u2019()\[\]\{\}·・…―—ㆍ]")
+
 
 # ---------- Normalization ----------
 
@@ -55,8 +61,12 @@ def normalize_korean(text: str) -> str:
         1. Unicode NFC.
         2. Lowercase.
         3. Whitespace squeeze.
-        4. Korean particle stripping (after Hangul syllables, at word end).
-        5. Sino-Korean numeral mapping (일→1, 이→2, ..., 십→10).
+        4. Punctuation stripping (commas / periods / brackets / quotes etc.)
+           → ensures list-form gold ("A, B, C") tokenizes as {A, B, C}, not
+           {A,, B,, C}. This was identified as a critical evaluator bug in
+           thesis v2 → v4 (see `results/evaluator_fix_impact.md`).
+        5. Korean particle stripping (after Hangul syllables, at word end).
+        6. Sino-Korean numeral mapping (일→1, 이→2, ..., 십→10).
 
     Args:
         text: Raw string.
@@ -68,6 +78,8 @@ def normalize_korean(text: str) -> str:
         return ""
     text = unicodedata.normalize("NFC", text)
     text = text.lower()
+    text = _WHITESPACE_RE.sub(" ", text).strip()
+    text = _PUNCT_RE.sub(" ", text)  # strip punctuation BEFORE particle regex
     text = _WHITESPACE_RE.sub(" ", text).strip()
     for _, pattern in _PARTICLE_PATTERNS:
         text = pattern.sub("", text)
