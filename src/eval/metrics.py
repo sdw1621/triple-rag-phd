@@ -225,27 +225,56 @@ def precision(retrieved: list[str], gold: str) -> float:
 def faithfulness(answer: str, contexts: list[str]) -> float:
     """RAGAS-style faithfulness approximation (no LLM call).
 
-    For each sentence in ``answer``, check whether at least one non-trivial
-    token (length ≥ 2 after normalization) appears in the joined contexts.
-    Sentence support ratio is returned.
+    Two branches so the metric works for both prose- and list-form answers:
+
+    Sentence-form answer (contains '.' / '!' / '?' / '。')
+        Split by sentence terminators. For each sentence, pass if ANY token
+        of length ≥ 2 appears in the joined contexts.
+
+    List-form answer (comma-separated with no sentence terminator)
+        Each comma-separated item is treated as a distinct claim. An item
+        passes iff the item's normalized text (whitespace-stripped) is a
+        substring of the joined contexts, OR — for items with multiple
+        tokens — ALL tokens of length ≥ 2 appear in contexts.
+        This is stricter than the sentence branch's "any token" heuristic:
+        a list entry like "홍성민" must actually occur in the context, not
+        just share a filler token with it. Matches RAGAS' per-claim spirit.
 
     Notes:
-        This is a fast proxy used during PPO offline-cache build. The full
-        RAGAS LLM-judged faithfulness is computed separately for thesis
-        Table 6-2 final numbers.
+        Proxy metric used during PPO offline-cache build. Full RAGAS LLM
+        judged faithfulness is computed separately for thesis Table 6-2.
     """
     if not contexts or not answer:
         return 0.0
-    sentences = [s.strip() for s in _SENTENCE_SPLIT_RE.split(answer) if s.strip()]
-    if not sentences:
-        return 0.0
     ctx_combined = normalize_korean(" ".join(contexts))
+    has_sentence_marker = bool(_SENTENCE_SPLIT_RE.search(answer))
+    if has_sentence_marker:
+        sentences = [s.strip() for s in _SENTENCE_SPLIT_RE.split(answer) if s.strip()]
+        if not sentences:
+            return 0.0
+        supported = 0
+        for sent in sentences:
+            toks = [t for t in normalize_korean(sent).split() if len(t) > 1]
+            if any(t in ctx_combined for t in toks):
+                supported += 1
+        return supported / len(sentences)
+    # List-form branch — each comma-separated item is a claim.
+    items = [x.strip() for x in answer.split(",") if x.strip()]
+    if not items:
+        return 0.0
     supported = 0
-    for sent in sentences:
-        toks = [t for t in normalize_korean(sent).split() if len(t) > 1]
-        if any(t in ctx_combined for t in toks):
+    for item in items:
+        item_norm = normalize_korean(item).strip()
+        if not item_norm:
+            continue
+        # Whole-item substring OR all multi-char tokens present
+        if item_norm.replace(" ", "") in ctx_combined.replace(" ", ""):
             supported += 1
-    return supported / len(sentences)
+            continue
+        toks = [t for t in item_norm.split() if len(t) > 1]
+        if toks and all(t in ctx_combined for t in toks):
+            supported += 1
+    return supported / len(items)
 
 
 # ---------- Aggregate ----------
