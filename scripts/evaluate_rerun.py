@@ -60,6 +60,7 @@ from src.dwa.fixed import FixedWeightsDWA  # noqa: E402
 from src.dwa.rdwa import RuleBasedDWA  # noqa: E402
 from src.eval.metrics import (  # noqa: E402
     exact_match,
+    f1_char,
     f1_score,
     f1_substring,
     faithfulness,
@@ -67,7 +68,11 @@ from src.eval.metrics import (  # noqa: E402
 from src.intent.rule_based import QueryIntent, RuleBasedIntent  # noqa: E402
 from src.rag.graph_store import GraphStore  # noqa: E402,F401
 from src.rag.ontology_store import OntologyStore  # noqa: E402,F401
-from src.rag.triple_hybrid_rag import PROMPT_TEMPLATE, merge_contexts  # noqa: E402
+from src.rag.triple_hybrid_rag import (  # noqa: E402
+    PROMPT_TEMPLATE,
+    PROMPT_TEMPLATE_LIST,
+    merge_contexts,
+)
 from src.rag.university_loader import (  # noqa: E402
     build_documents,
     build_graph,
@@ -215,6 +220,7 @@ def evaluate_one(
     llm: _OpenAILLM,
     qid_oracle: dict | None,
     pipeline_bits: dict | None,
+    prompt_template: str,
 ) -> dict:
     qid = str(item["id"])
     query = item["query"]
@@ -241,7 +247,7 @@ def evaluate_one(
 
     start = time.time()
     context = merge_contexts(v_ctxs, g_ctxs, o_ctxs, snapped, TOP_K)
-    prompt = PROMPT_TEMPLATE.format(context=context, query=query)
+    prompt = prompt_template.format(context=context, query=query)
     answer = llm.generate(prompt)
     latency = time.time() - start
 
@@ -255,6 +261,7 @@ def evaluate_one(
         "metrics": {
             "f1_strict": f1_score(answer, gold),
             "f1_substring": f1_substring(answer, gold),
+            "f1_char": f1_char(answer, gold),
             "em_norm": exact_match(answer, gold, normalize=True),
             "em_raw": exact_match(answer, gold, normalize=False),
             "faithfulness": faithfulness(answer, v_ctxs),
@@ -273,6 +280,7 @@ def aggregate(results: list[dict]) -> dict:
 
     f1_s = [r["metrics"]["f1_strict"] for r in results]
     f1_sub = [r["metrics"]["f1_substring"] for r in results]
+    f1_c = [r["metrics"].get("f1_char", 0.0) for r in results]
     em_n = [r["metrics"]["em_norm"] for r in results]
     faith = [r["metrics"]["faithfulness"] for r in results]
     lat = [r["metrics"]["latency"] for r in results]
@@ -280,9 +288,12 @@ def aggregate(results: list[dict]) -> dict:
     by_type: dict[str, dict[str, list[float]]] = {}
     for r in results:
         t = r["type"]
-        b = by_type.setdefault(t, {"f1_s": [], "f1_sub": [], "em": [], "faith": []})
+        b = by_type.setdefault(
+            t, {"f1_s": [], "f1_sub": [], "f1_c": [], "em": [], "faith": []}
+        )
         b["f1_s"].append(r["metrics"]["f1_strict"])
         b["f1_sub"].append(r["metrics"]["f1_substring"])
+        b["f1_c"].append(r["metrics"].get("f1_char", 0.0))
         b["em"].append(r["metrics"]["em_norm"])
         b["faith"].append(r["metrics"]["faithfulness"])
 
@@ -293,6 +304,7 @@ def aggregate(results: list[dict]) -> dict:
         "overall": {
             "F1_strict": stat(f1_s),
             "F1_substring": stat(f1_sub),
+            "F1_char": stat(f1_c),
             "EM_norm": stat(em_n),
             "Faithfulness": stat(faith),
             "Latency": stat(lat),
@@ -301,6 +313,7 @@ def aggregate(results: list[dict]) -> dict:
             t: {
                 "F1_strict": stat(b["f1_s"]),
                 "F1_substring": stat(b["f1_sub"]),
+                "F1_char": stat(b["f1_c"]),
                 "EM_norm": stat(b["em"]),
                 "Faithfulness": stat(b["faith"]),
             }
@@ -329,7 +342,23 @@ def main(argv: Sequence[str] | None = None) -> int:
                         help="Save this many full (query, gold, answer) samples to output JSON.")
     parser.add_argument("--retrieval-cache", type=Path, default=None,
                         help="Pickle path for retrievals — first run creates, subsequent runs load.")
+    parser.add_argument(
+        "--prompt-style",
+        choices=("sentence", "list"),
+        default="sentence",
+        help=(
+            "sentence (default): original free-form prompt used during M5 cache "
+            "build and M6 PPO training. list: structured prompt that forces the "
+            "LLM to emit comma-separated items, matching list-typed gold answers. "
+            "'list' recovers strict-F1 reproducibility with JKSCI 2025."
+        ),
+    )
     args = parser.parse_args(argv)
+
+    prompt_template = (
+        PROMPT_TEMPLATE_LIST if args.prompt_style == "list" else PROMPT_TEMPLATE
+    )
+    logger.info("Prompt style: %s", args.prompt_style)
 
     set_seed(args.seed)
 
@@ -399,7 +428,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     t0 = time.time()
 
     def _work(item):
-        return evaluate_one(item, retrievals, policy, llm, qid_oracle, pipeline_bits)
+        return evaluate_one(
+            item, retrievals, policy, llm, qid_oracle, pipeline_bits, prompt_template
+        )
 
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futures = {pool.submit(_work, item): item for item in qa}
@@ -417,9 +448,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     agg = aggregate(results)
     o = agg["overall"]
     logger.info(
-        "Overall: F1s=%.4f±%.4f F1sub=%.4f±%.4f EM=%.4f Faith=%.4f±%.4f Lat=%.2fs",
+        "Overall: F1s=%.4f±%.4f F1sub=%.4f±%.4f F1char=%.4f±%.4f EM=%.4f Faith=%.4f±%.4f Lat=%.2fs",
         o["F1_strict"]["mean"], o["F1_strict"]["std"],
         o["F1_substring"]["mean"], o["F1_substring"]["std"],
+        o["F1_char"]["mean"], o["F1_char"]["std"],
         o["EM_norm"]["mean"],
         o["Faithfulness"]["mean"], o["Faithfulness"]["std"],
         o["Latency"]["mean"],
@@ -429,6 +461,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     samples = results[: args.save_samples]
     payload = {
         "policy": args.policy,
+        "prompt_style": args.prompt_style,
         "n_queries": len(results),
         "aggregate": agg,
         "samples": [

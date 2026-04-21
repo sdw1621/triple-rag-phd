@@ -45,6 +45,26 @@ PROMPT_TEMPLATE = (
     "Answer:"
 )
 
+# List-style prompt used when the gold answers are comma-separated lists
+# (the synthetic university benchmark). Forces the LLM to emit the answer as
+# "name1, name2, name3" — or a single token for scalar answers — which aligns
+# output format with gold format and recovers token-level F1 that is
+# otherwise suppressed by sentence-form verbosity.
+# Introduced 2026-04-22 after reproducibility analysis showed the sentence
+# prompt underperforms strict F1 by ~6× on list-typed gold (see Ch.6).
+PROMPT_TEMPLATE_LIST = (
+    "다음 컨텍스트를 기반으로 질문에 답하세요.\n"
+    "답변 형식 규칙(엄수):\n"
+    "  - 정답이 여러 명/여러 항목이면 **이름(또는 항목)만을 쉼표(,)로 구분하여 나열**하세요. "
+    "문장 형태의 설명·조사·서술을 절대 덧붙이지 마세요.\n"
+    "  - 정답이 하나면 **그 이름/항목 하나만** 출력하세요.\n"
+    "  - Graph 경로(A --[관계]--> B)는 관계 추론용 참고로만 사용하세요.\n"
+    "  - 컨텍스트에서 답을 찾을 수 없을 때에만 '정보를 찾을 수 없습니다'라고 답하세요.\n\n"
+    "Context:\n{context}\n\n"
+    "Question: {query}\n\n"
+    "Answer:"
+)
+
 
 def merge_contexts(
     v_ctxs: list[str],

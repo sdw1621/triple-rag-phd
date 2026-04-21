@@ -45,6 +45,12 @@ _PARTICLE_PATTERNS: tuple[tuple[str, "re.Pattern[str]"], ...] = tuple(
 _WHITESPACE_RE = re.compile(r"\s+")
 _SENTENCE_SPLIT_RE = re.compile(r"[.!?。]")
 
+# Punctuation that must be stripped before token-set comparison so that list-form
+# gold answers ("홍성민, 황성민, 전성민") match sentence-form predictions.
+# Note: preserved in text through tokenization would inflate pred token count and
+# mismatch gold tokens because commas attach to preceding tokens.
+_PUNCT_RE = re.compile(r"[,.:;!?\"'\u201c\u201d\u2018\u2019()\[\]\{\}·・…―—ㆍ]")
+
 
 # ---------- Normalization ----------
 
@@ -55,8 +61,12 @@ def normalize_korean(text: str) -> str:
         1. Unicode NFC.
         2. Lowercase.
         3. Whitespace squeeze.
-        4. Korean particle stripping (after Hangul syllables, at word end).
-        5. Sino-Korean numeral mapping (일→1, 이→2, ..., 십→10).
+        4. Punctuation stripping (commas / periods / brackets / quotes etc.)
+           → ensures list-form gold ("A, B, C") tokenizes as {A, B, C}, not
+           {A,, B,, C}. This was identified as a critical evaluator bug in
+           thesis v2 → v4 (see `results/evaluator_fix_impact.md`).
+        5. Korean particle stripping (after Hangul syllables, at word end).
+        6. Sino-Korean numeral mapping (일→1, 이→2, ..., 십→10).
 
     Args:
         text: Raw string.
@@ -68,6 +78,8 @@ def normalize_korean(text: str) -> str:
         return ""
     text = unicodedata.normalize("NFC", text)
     text = text.lower()
+    text = _WHITESPACE_RE.sub(" ", text).strip()
+    text = _PUNCT_RE.sub(" ", text)  # strip punctuation BEFORE particle regex
     text = _WHITESPACE_RE.sub(" ", text).strip()
     for _, pattern in _PARTICLE_PATTERNS:
         text = pattern.sub("", text)
@@ -152,6 +164,42 @@ def f1_substring(pred: str, gold: str) -> float:
     return 2.0 * precision * recall / (precision + recall)
 
 
+def f1_char(pred: str, gold: str, n: int = 3) -> float:
+    """Character n-gram F1 — robust to Korean particle drift and word-order changes.
+
+    Design: both strict token-set F1 and substring F1 are sensitive to surface
+    form (particle attachment, list vs sentence phrasing). A char-n-gram F1
+    sits between them: it ignores token boundaries entirely, so "홍성민입니다"
+    and "홍성민, 황성민" share most character 3-grams with the gold list
+    "홍성민, 황성민, 전성민". Used in Ch.6 as a third, form-agnostic view of
+    answer quality that corroborates the strict/substring comparison.
+
+    Args:
+        pred: Predicted answer string.
+        gold: Reference answer string.
+        n: N-gram size (default 3, works well for Korean mixed names).
+
+    Returns:
+        F1 in [0, 1] over character n-gram sets of the normalized inputs.
+    """
+    if not pred or not gold:
+        return 0.0
+    p_norm = normalize_korean(pred).replace(" ", "")
+    g_norm = normalize_korean(gold).replace(" ", "")
+    if len(p_norm) < n or len(g_norm) < n:
+        return 0.0
+    p_grams = {p_norm[i : i + n] for i in range(len(p_norm) - n + 1)}
+    g_grams = {g_norm[i : i + n] for i in range(len(g_norm) - n + 1)}
+    if not p_grams or not g_grams:
+        return 0.0
+    common = p_grams & g_grams
+    if not common:
+        return 0.0
+    prec = len(common) / len(p_grams)
+    rec = len(common) / len(g_grams)
+    return 2.0 * prec * rec / (prec + rec)
+
+
 def recall_at_k(retrieved: list[str], gold: str, k: int = 3) -> float:
     """Recall@k: 1.0 iff the gold answer appears (substring) in the top-k docs."""
     gold_norm = normalize_korean(gold)
@@ -177,27 +225,56 @@ def precision(retrieved: list[str], gold: str) -> float:
 def faithfulness(answer: str, contexts: list[str]) -> float:
     """RAGAS-style faithfulness approximation (no LLM call).
 
-    For each sentence in ``answer``, check whether at least one non-trivial
-    token (length ≥ 2 after normalization) appears in the joined contexts.
-    Sentence support ratio is returned.
+    Two branches so the metric works for both prose- and list-form answers:
+
+    Sentence-form answer (contains '.' / '!' / '?' / '。')
+        Split by sentence terminators. For each sentence, pass if ANY token
+        of length ≥ 2 appears in the joined contexts.
+
+    List-form answer (comma-separated with no sentence terminator)
+        Each comma-separated item is treated as a distinct claim. An item
+        passes iff the item's normalized text (whitespace-stripped) is a
+        substring of the joined contexts, OR — for items with multiple
+        tokens — ALL tokens of length ≥ 2 appear in contexts.
+        This is stricter than the sentence branch's "any token" heuristic:
+        a list entry like "홍성민" must actually occur in the context, not
+        just share a filler token with it. Matches RAGAS' per-claim spirit.
 
     Notes:
-        This is a fast proxy used during PPO offline-cache build. The full
-        RAGAS LLM-judged faithfulness is computed separately for thesis
-        Table 6-2 final numbers.
+        Proxy metric used during PPO offline-cache build. Full RAGAS LLM
+        judged faithfulness is computed separately for thesis Table 6-2.
     """
     if not contexts or not answer:
         return 0.0
-    sentences = [s.strip() for s in _SENTENCE_SPLIT_RE.split(answer) if s.strip()]
-    if not sentences:
-        return 0.0
     ctx_combined = normalize_korean(" ".join(contexts))
+    has_sentence_marker = bool(_SENTENCE_SPLIT_RE.search(answer))
+    if has_sentence_marker:
+        sentences = [s.strip() for s in _SENTENCE_SPLIT_RE.split(answer) if s.strip()]
+        if not sentences:
+            return 0.0
+        supported = 0
+        for sent in sentences:
+            toks = [t for t in normalize_korean(sent).split() if len(t) > 1]
+            if any(t in ctx_combined for t in toks):
+                supported += 1
+        return supported / len(sentences)
+    # List-form branch — each comma-separated item is a claim.
+    items = [x.strip() for x in answer.split(",") if x.strip()]
+    if not items:
+        return 0.0
     supported = 0
-    for sent in sentences:
-        toks = [t for t in normalize_korean(sent).split() if len(t) > 1]
-        if any(t in ctx_combined for t in toks):
+    for item in items:
+        item_norm = normalize_korean(item).strip()
+        if not item_norm:
+            continue
+        # Whole-item substring OR all multi-char tokens present
+        if item_norm.replace(" ", "") in ctx_combined.replace(" ", ""):
             supported += 1
-    return supported / len(sentences)
+            continue
+        toks = [t for t in item_norm.split() if len(t) > 1]
+        if toks and all(t in ctx_combined for t in toks):
+            supported += 1
+    return supported / len(items)
 
 
 # ---------- Aggregate ----------

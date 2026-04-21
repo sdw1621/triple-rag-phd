@@ -63,3 +63,5 @@ env/
 
 # Docker
 *.pid
+# Malgun Gothic is MS proprietary — kept local only, not tracked
+cache/malgun.ttf

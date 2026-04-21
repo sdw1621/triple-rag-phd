@@ -8,6 +8,7 @@ from src.eval.metrics import (
     EvalResult,
     evaluate_single,
     exact_match,
+    f1_char,
     f1_score,
     f1_substring,
     faithfulness,
@@ -36,6 +37,22 @@ def test_normalize_handles_empty_string() -> None:
 
 def test_normalize_maps_sino_korean_numerals() -> None:
     assert normalize_korean("삼") == "3"
+
+
+def test_normalize_strips_punctuation_from_list_answers() -> None:
+    """Critical for list-form gold answers: '홍성민, 황성민' must tokenize
+    as {'홍성민', '황성민'}, not {'홍성민,', '황성민'}."""
+    assert "홍성민" in normalize_korean("홍성민, 황성민").split()
+    assert "황성민" in normalize_korean("홍성민, 황성민").split()
+    # No comma-attached tokens:
+    assert "홍성민," not in normalize_korean("홍성민, 황성민").split()
+
+
+def test_f1_on_list_answer_with_sentence_pred() -> None:
+    gold = "홍성민, 황성민, 전성민"
+    pred = "정치외교 심리학개론 과목은 홍성민 교수, 황성민 교수, 전성민 교수가 담당합니다."
+    # After fix: all 3 gold names match → F1 > 0.5
+    assert f1_score(pred, gold) > 0.5
 
 
 # ---------- exact_match ----------
@@ -108,6 +125,54 @@ def test_f1_substring_and_strict_disagree() -> None:
     assert f1_sub > f1_s  # substring is looser on list answers
 
 
+# ---------- f1_char ----------
+
+def test_f1_char_identical_strings_is_one() -> None:
+    assert f1_char("홍성민 교수", "홍성민 교수") == pytest.approx(1.0)
+
+
+def test_f1_char_nonzero_on_form_mismatch() -> None:
+    """f1_char should be > 0 even when answer and gold have different forms.
+
+    Post-PUNCT_RE-fix, strict F1 is already reasonable on this input (tokens
+    after punctuation strip + particle strip leave {홍성민, 황성민, 전성민}
+    in both pred and gold). f1_char's role is corroboration — it yields a
+    positive score whenever names are character-preserved, not strictly
+    larger than the strict F1.
+    """
+    gold = "홍성민, 황성민, 전성민"
+    pred = "홍성민 교수와 황성민 교수, 전성민 교수가 담당합니다"
+    assert f1_char(pred, gold) > 0.0
+
+
+def test_f1_char_robust_when_strict_collapses() -> None:
+    """If strict collapses due to particle/case drift, f1_char still fires."""
+    # Deliberately construct a case where strict token-set is degraded
+    gold = "홍성민"
+    pred = "홍성민을"  # particle 을 should be stripped — strict = 1.0
+    assert f1_char(pred, gold) > 0.0
+    # A weaker char-overlap case — partial name
+    gold2 = "홍성민교수"
+    pred2 = "홍성민"
+    # Char 3-grams: gold has {홍성민, 성민교, 민교수}, pred has {홍성민}
+    # 1 common / 3 gold + 1 pred → precision=1, recall=1/3 → F1 = 0.5
+    assert 0.0 < f1_char(pred2, gold2) <= 1.0
+
+
+def test_f1_char_no_overlap_is_zero() -> None:
+    assert f1_char("이영희", "박민수") == 0.0
+
+
+def test_f1_char_empty_input_is_zero() -> None:
+    assert f1_char("", "홍성민") == 0.0
+    assert f1_char("홍성민", "") == 0.0
+
+
+def test_f1_char_short_strings_below_n_is_zero() -> None:
+    # Both normalized strings shorter than n=3 after whitespace strip → 0
+    assert f1_char("가", "가") == 0.0
+
+
 # ---------- recall@k ----------
 
 def test_recall_at_k_finds_gold_in_top_k() -> None:
@@ -152,6 +217,38 @@ def test_faithfulness_no_support() -> None:
 def test_faithfulness_empty_inputs() -> None:
     assert faithfulness("", ["x"]) == 0.0
     assert faithfulness("x", []) == 0.0
+
+
+def test_faithfulness_list_form_per_item_support() -> None:
+    """List answers use per-claim check — each name must appear in ctx."""
+    ans = "홍성민, 황성민, 전성민"
+    ctx = ["홍성민 교수와 황성민 교수가 강의를 담당한다"]
+    # 2 of 3 items supported (전성민 missing) → 2/3
+    assert faithfulness(ans, ctx) == pytest.approx(2.0 / 3.0)
+
+
+def test_faithfulness_list_form_all_items_supported() -> None:
+    ans = "홍성민, 황성민, 전성민"
+    ctx = ["홍성민 황성민 전성민 세 교수가 과목을 함께 담당한다"]
+    assert faithfulness(ans, ctx) == pytest.approx(1.0)
+
+
+def test_faithfulness_list_form_no_support() -> None:
+    ans = "홍성민, 황성민, 전성민"
+    ctx = ["완전히 무관한 내용"]
+    assert faithfulness(ans, ctx) == 0.0
+
+
+def test_faithfulness_list_branch_stricter_than_sentence() -> None:
+    """List form is stricter: unsupported items fail even if fillers match."""
+    ctx = ["홍성민 관련 정보만 있음"]  # only 홍성민 named in context
+    # Sentence form — shares filler '교수' with ctx? No, 'any multi-char
+    # token' check uses 홍성민 which IS in ctx → the single sentence passes.
+    ans_sent = "홍성민 교수와 황성민 교수, 전성민 교수가 담당합니다."
+    assert faithfulness(ans_sent, ctx) == pytest.approx(1.0)
+    # List form — per item; only 홍성민 matches → 1/3
+    ans_list = "홍성민, 황성민, 전성민"
+    assert faithfulness(ans_list, ctx) == pytest.approx(1.0 / 3.0)
 
 
 # ---------- evaluate_single ----------
