@@ -164,6 +164,42 @@ def f1_substring(pred: str, gold: str) -> float:
     return 2.0 * precision * recall / (precision + recall)
 
 
+def f1_char(pred: str, gold: str, n: int = 3) -> float:
+    """Character n-gram F1 — robust to Korean particle drift and word-order changes.
+
+    Design: both strict token-set F1 and substring F1 are sensitive to surface
+    form (particle attachment, list vs sentence phrasing). A char-n-gram F1
+    sits between them: it ignores token boundaries entirely, so "홍성민입니다"
+    and "홍성민, 황성민" share most character 3-grams with the gold list
+    "홍성민, 황성민, 전성민". Used in Ch.6 as a third, form-agnostic view of
+    answer quality that corroborates the strict/substring comparison.
+
+    Args:
+        pred: Predicted answer string.
+        gold: Reference answer string.
+        n: N-gram size (default 3, works well for Korean mixed names).
+
+    Returns:
+        F1 in [0, 1] over character n-gram sets of the normalized inputs.
+    """
+    if not pred or not gold:
+        return 0.0
+    p_norm = normalize_korean(pred).replace(" ", "")
+    g_norm = normalize_korean(gold).replace(" ", "")
+    if len(p_norm) < n or len(g_norm) < n:
+        return 0.0
+    p_grams = {p_norm[i : i + n] for i in range(len(p_norm) - n + 1)}
+    g_grams = {g_norm[i : i + n] for i in range(len(g_norm) - n + 1)}
+    if not p_grams or not g_grams:
+        return 0.0
+    common = p_grams & g_grams
+    if not common:
+        return 0.0
+    prec = len(common) / len(p_grams)
+    rec = len(common) / len(g_grams)
+    return 2.0 * prec * rec / (prec + rec)
+
+
 def recall_at_k(retrieved: list[str], gold: str, k: int = 3) -> float:
     """Recall@k: 1.0 iff the gold answer appears (substring) in the top-k docs."""
     gold_norm = normalize_korean(gold)

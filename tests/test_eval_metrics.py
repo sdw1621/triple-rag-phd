@@ -8,6 +8,7 @@ from src.eval.metrics import (
     EvalResult,
     evaluate_single,
     exact_match,
+    f1_char,
     f1_score,
     f1_substring,
     faithfulness,
@@ -122,6 +123,37 @@ def test_f1_substring_and_strict_disagree() -> None:
     f1_s = f1_score(pred, gold)
     f1_sub = f1_substring(pred, gold)
     assert f1_sub > f1_s  # substring is looser on list answers
+
+
+# ---------- f1_char ----------
+
+def test_f1_char_identical_strings_is_one() -> None:
+    assert f1_char("홍성민 교수", "홍성민 교수") == pytest.approx(1.0)
+
+
+def test_f1_char_bridges_strict_and_substring() -> None:
+    """f1_char should be > strict on form-mismatched list answers.
+
+    Sentence-form pred vs list-form gold — strict F1 is near zero,
+    but char 3-grams of the names are preserved in the sentence.
+    """
+    gold = "홍성민, 황성민, 전성민"
+    pred = "홍성민 교수와 황성민 교수, 전성민 교수가 담당합니다"
+    assert f1_char(pred, gold) > f1_score(pred, gold)
+
+
+def test_f1_char_no_overlap_is_zero() -> None:
+    assert f1_char("이영희", "박민수") == 0.0
+
+
+def test_f1_char_empty_input_is_zero() -> None:
+    assert f1_char("", "홍성민") == 0.0
+    assert f1_char("홍성민", "") == 0.0
+
+
+def test_f1_char_short_strings_below_n_is_zero() -> None:
+    # Both normalized strings shorter than n=3 after whitespace strip → 0
+    assert f1_char("가", "가") == 0.0
 
 
 # ---------- recall@k ----------
