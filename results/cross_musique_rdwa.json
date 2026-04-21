@@ -1,0 +1,417 @@
+{
+  "benchmark": "musique",
+  "policy": "rdwa",
+  "n_queries": 300,
+  "aggregate": {
+    "n_queries": 300,
+    "overall": {
+      "F1_strict": {
+        "mean": 0.045762685727338395,
+        "std": 0.08197965963142252,
+        "n": 300
+      },
+      "F1_substring": {
+        "mean": 0.12264814814814815,
+        "std": 0.24348310671713502,
+        "n": 300
+      },
+      "EM_norm": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 300
+      },
+      "Faithfulness": {
+        "mean": 0.4147777777777778,
+        "std": 0.4853923066531079,
+        "n": 300
+      },
+      "Latency": {
+        "mean": 0.8770385829607645,
+        "std": 0.4684080756019599,
+        "n": 300
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "4hop2__161602_426860_88460_20999",
+      "type": "multi_hop",
+      "gold": "The dynasty regrouped and defeated the Portuguese",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5808515548706055
+      }
+    },
+    {
+      "qid": "2hop__147260_623159",
+      "type": "multi_hop",
+      "gold": "Yaroslavl Oblast",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.644984245300293
+      }
+    },
+    {
+      "qid": "4hop1__151650_5274_458768_33632",
+      "type": "multi_hop",
+      "gold": "May 4",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.4719972610473633
+      }
+    },
+    {
+      "qid": "2hop__10515_21567",
+      "type": "multi_hop",
+      "gold": "John Kukuzelis",
+      "answer": "John Kukuzelis introduced a system of notation in the 14th century that was widely used in the Balkans, an area where most of the invasion of the Eastern Roman Empire took place.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.14285714285714288,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.0851361751556396
+      }
+    },
+    {
+      "qid": "3hop2__140194_16797_51068",
+      "type": "multi_hop",
+      "gold": "Jenna - Louise Coleman",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7116594314575195
+      }
+    },
+    {
+      "qid": "2hop__95687_577502",
+      "type": "multi_hop",
+      "gold": "Maria Shriver",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.8218872547149658
+      }
+    },
+    {
+      "qid": "3hop1__145194_160545_62931",
+      "type": "multi_hop",
+      "gold": "island Koh Phi Phi",
+      "answer": "The Beach was filmed on the Thai island Koh Phi Phi. Siddhi Savetsila was born in Thailand. Therefore, the location of the filming is in the same country as the birth city of Siddhi Savetsila.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.20689655172413793,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.0696101188659668
+      }
+    },
+    {
+      "qid": "2hop__85463_50252",
+      "type": "multi_hop",
+      "gold": "Kim Il - Sung",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5847830772399902
+      }
+    },
+    {
+      "qid": "2hop__846415_88165",
+      "type": "multi_hop",
+      "gold": "Keturah",
+      "answer": "Jokshan's father, Abraham, married Keturah after the death of Sarah.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.18181818181818182,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6748857498168945
+      }
+    },
+    {
+      "qid": "4hop3__373573_132409_223216_35031",
+      "type": "multi_hop",
+      "gold": "third-largest",
+      "answer": "Pathology formed in San Diego, California. San Diego is the second-largest city in California by population, following Los Angeles. The band Papa Roach, which released the song \"Still Swingin',\" is also from California, specifically from Vacaville. Vacaville is smaller than San Diego, ranking lower in size among urban areas in California. Therefore, the urban area of San Diego ranks second in size among the urban areas of California, while Vacaville ranks lower. \n\nThus, the answer is: San Diego ranks second among urban areas in California, while Vacaville ranks lower.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.0389318466186523
+      }
+    },
+    {
+      "qid": "3hop1__131829_39743_24526",
+      "type": "multi_hop",
+      "gold": "upper 40s–lower 50s °F",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.49098634719848633
+      }
+    },
+    {
+      "qid": "3hop1__46571_87694_124169",
+      "type": "multi_hop",
+      "gold": "1952",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.44490981101989746
+      }
+    },
+    {
+      "qid": "3hop1__759384_42197_18397",
+      "type": "multi_hop",
+      "gold": "the Politburo",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6459286212921143
+      }
+    },
+    {
+      "qid": "4hop1__152146_5274_458768_33633",
+      "type": "multi_hop",
+      "gold": "August 3, 1769",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 2.3972582817077637
+      }
+    },
+    {
+      "qid": "3hop2__132957_133292_40768",
+      "type": "multi_hop",
+      "gold": "1981",
+      "answer": "Nissan, along with Honda (the creator of the Hino Dutro) and Toyota (the maker of the Acura Legend), opened US assembly plants in the early 1980s.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.9495782852172852
+      }
+    },
+    {
+      "qid": "2hop__455392_40315",
+      "type": "multi_hop",
+      "gold": "12",
+      "answer": "Desert Studies Center is officially operated by the California Desert Studies Consortium, which consists of 7 California State University campuses: Dominguez Hills, Fullerton, Long Beach, Los Angeles, Northridge, San Bernardino, and Cal Poly Pomona. Therefore, there are 7 campuses in the institution that Desert Studies Center is a part of.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.649064540863037
+      }
+    },
+    {
+      "qid": "2hop__60229_1783",
+      "type": "multi_hop",
+      "gold": "Fiorello La Guardia",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5615191459655762
+      }
+    },
+    {
+      "qid": "4hop1__199881_765799_282674_759393",
+      "type": "multi_hop",
+      "gold": "Green Bay",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7133278846740723
+      }
+    },
+    {
+      "qid": "3hop2__36852_613770_7713",
+      "type": "multi_hop",
+      "gold": "about 400 years",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6344318389892578
+      }
+    },
+    {
+      "qid": "2hop__39063_212301",
+      "type": "multi_hop",
+      "gold": "Arthur Peel",
+      "answer": "The father of the man who conceived of the 'new' police is Robert Peel.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8625421524047852
+      }
+    }
+  ]
+}

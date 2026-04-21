@@ -1,0 +1,417 @@
+{
+  "benchmark": "pubmedqa",
+  "policy": "rdwa",
+  "n_queries": 250,
+  "aggregate": {
+    "n_queries": 250,
+    "overall": {
+      "F1_strict": {
+        "mean": 0.21347483513247184,
+        "std": 0.13768640101530852,
+        "n": 250
+      },
+      "F1_substring": {
+        "mean": 0.0039799422799422805,
+        "std": 0.024429219483098272,
+        "n": 250
+      },
+      "EM_norm": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 250
+      },
+      "Faithfulness": {
+        "mean": 0.7572125880655292,
+        "std": 0.4202706493660759,
+        "n": 250
+      },
+      "Latency": {
+        "mean": 2.242500547409058,
+        "std": 1.2379933451259113,
+        "n": 250
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "19406119",
+      "type": "yes",
+      "gold": "Results suggest that telmisartan may reduce type-I diabetes mellitus-induced hepatic injury by suppressing activated hepatic stellate cells through concomitant TGF-beta1 down-regulation.",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.9992325305938721
+      }
+    },
+    {
+      "qid": "17894828",
+      "type": "yes",
+      "gold": "The present survey showed a weak relationship between serum ACE and the frequency of SH, the clinical relevance of which is unclear. This limits the proposed role for serum ACE as an index of risk for SH.",
+      "answer": "Yes, a relationship exists between elevated serum angiotensin-converting enzyme (ACE) and an increased frequency of severe hypoglycaemia (SH) in individuals with Type 1 diabetes. The study re-examined this association in 300 individuals with Type 1 diabetes who were not taking renin-angiotensin system blocking drugs. The researchers measured serum ACE levels and the frequency of SH experienced by the participants, and they analyzed the data using non-parametric statistical tests and a negative binomial model to assess the relationship.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.24719101123595505,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.0190439224243164
+      }
+    },
+    {
+      "qid": "18005142",
+      "type": "yes",
+      "gold": "Early treatment and use of triptans may lead to shorter duration from migraine headache onset to its peak but did not alleviate headache severity at peak. This could result in decreased migraine burden by reducing total migraine headache duration.",
+      "answer": "Early migraine treatment does not shorten the time to headache peak or reduce its severity at peak. While early intervention was associated with a shorter time from onset to headache peak in multivariate analysis, it did not lead to reduced headache severity at peak. Additionally, the timing of medication was not associated with the duration between dosing and headache peak, although the use of triptans did shorten the time from dosing to headache peak.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.5569620253164557,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.8693506717681885
+      }
+    },
+    {
+      "qid": "10927144",
+      "type": "no",
+      "gold": "p53 alteration detected by IHC or SSCP analysis is not a clinically useful predictor of local response to pre-operative adjuvant therapy in advanced rectal carcinoma.",
+      "answer": "p53 alterations cannot be definitively used to predict tumour response to pre-operative chemo-radiotherapy in locally advanced rectal cancer. The study found that the average reduction in tumour size was 53% in the group with 'wild-type' p53 and 63% in the group with altered p53, but this difference was not statistically significant (P=0.18). Additionally, no significant differences in tumour size reduction or local failure were observed between the groups with p53 overexpression or p53 mutation compared to those with normal p53 status. Therefore, while there is some indication of a trend, the results do not support the use of p53 alterations as reliable predictors of tumour response.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.26530612244897955,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.5045454502105713
+      }
+    },
+    {
+      "qid": "17916877",
+      "type": "yes",
+      "gold": "Slowing the infusion rate of metoclopramide is an effective strategy for the improvement of headache and reducing the incidence of akathisia in patients with vascular type headache.",
+      "answer": "The study found that there were no significant differences in the mean headache scores between the two groups (BIG group with 2 min bolus and SIG group with 15 min infusion), indicating that the rate of intravenous administration did not affect the improvement of headache symptoms (p = 0.34). However, there was a notable difference in side effects: 29.3% of patients in the BIG group experienced akathisia compared to only 6.5% in the SIG group (p = 0.001). This suggests that while both methods were effective in relieving headache symptoms, the 15 min infusion (SIG group) resulted in fewer side effects compared to the 2 min bolus (BIG group). Therefore, the 15 min infusion may be preferable as it alleviates headaches while reducing the occurrence of side effects.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.2476190476190476,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.7620363235473633
+      }
+    },
+    {
+      "qid": "27896825",
+      "type": "yes",
+      "gold": "Ultrasound and histopathology identify a substantial population that may be candidates for lobectomy, avoiding the risks and potential medical and psychosocial morbidity associated with total thyroidectomy. We propose a clinical framework to stimulate discussion of lobectomy as an option for low-risk patients.",
+      "answer": "Yes, it may be time to reconsider lobectomy in low-risk pediatric thyroid cancer. The current guidelines recommend total thyroidectomy for nearly all children with well-differentiated thyroid cancer, but the study suggests that there is a subpopulation of children who may be adequately treated with lobectomy. Specifically, 39 (53.4%) of the patients met the American Thyroid Association (ATA) low-risk criteria, and 16 (21.9%) met the 'very-low-risk' criteria, with all 'very-low-risk' patients showing excellent response to initial therapy without persistence or recurrence after a mean follow-up of 36.4 months. This indicates that lobectomy could be a viable option for certain low-risk patients, potentially reducing the extent of surgery and associated complications.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.2564102564102564,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.144561290740967
+      }
+    },
+    {
+      "qid": "17342562",
+      "type": "no",
+      "gold": "The findings indicate that the clinical significance of symptomatic BDS is similar to that of CBD stones. Bile duct sludge seems to be an early stage of choledocholithiasis.",
+      "answer": "The clinical significance of bile duct sludge (BDS) is not well defined and appears to be similar to that of bile duct stones in terms of recurrence rates after endoscopic therapy. In the study, BDS occurred in 14% of patients and had a recurrence rate of 16% after endoscopic clearance, which is comparable to the 17% recurrence rate observed in patients with bile duct stones. Additionally, common bile duct dilation was less common in the sludge group, and other known risk factors for recurrent CBD stones did not show statistically significant differences between the two groups. Therefore, while BDS is a precursor to gallbladder stones, its clinical significance in relation to bile duct stones seems to be similar in terms of outcomes after treatment.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.3333333333333333,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.080264091491699
+      }
+    },
+    {
+      "qid": "16151770",
+      "type": "yes",
+      "gold": "Memory provocation increased the sensitivity of rCBF-SPECT for the detection of AD-related blood flow changes in the brain at the group level. Further studies are needed to evaluate MP-SPECT as a diagnostic tool at the individual level. If a higher sensitivity for AD at the individual level is verified in future studies, a single MP-SPECT study might be sufficient in the clinical setting.",
+      "answer": "Memory-provoked rCBF-SPECT (MP-SPECT) is evaluated as a diagnostic tool in Alzheimer's disease (AD) to enhance the diagnostic sensitivity of regional cerebral blood flow (rCBF) measurements. In the study, 18 individuals with mild AD and 18 healthy elderly controls underwent rCBF-SPECT imaging after being injected with (99m)Tc-hexamethylpropylene amine oxime (HMPAO) during a memory provocation task involving faces and names. The aim was to determine if this method could improve the ability to differentiate between AD patients and normal controls, as traditional rCBF measurements have shown low discriminatory capacity. The analysis of the rCBF-SPECT images was conducted using statistical parametric mapping (SPM2), with significant peaks identified at a false discovery rate corrected value of 0.05. This suggests that MP-SPECT may provide a more effective diagnostic approach for identifying Alzheimer's disease compared to standard rCBF measurements alone.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.27027027027027023,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.328852653503418
+      }
+    },
+    {
+      "qid": "20338971",
+      "type": "yes",
+      "gold": "High BUN levels and low salivary flow rates were found to be associated with halitosis. PD may play an important role in decreasing the level of halitosis in ESRD patients.",
+      "answer": "Yes, peritoneal dialysis (PD) affects halitosis in patients with end-stage renal disease (ESRD). The study found that after 3 months of PD therapy, the level of halitosis decreased significantly, with a mean halitosis level of 2.39 ± 0.60 compared to 3.90 ± 0.37 before therapy. Additionally, there were improvements in serum blood urea nitrogen (BUN) levels and salivary flow rates, which are correlated with halitosis levels. Specifically, the mean serum BUN level decreased from 91.24 ± 31.28 mg/dL to 46.05 ± 13.30 mg/dL, and the salivary flow rate increased from 0.26 ± 0.04 mL/minute to 0.34 ± 0.07 mL/minute. These changes indicate that PD therapy has a positive effect on reducing halitosis in ESRD patients.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.30357142857142855,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.729407548904419
+      }
+    },
+    {
+      "qid": "19615731",
+      "type": "no",
+      "gold": "Using 4 validated asthma control questionnaires, we failed to find an association between obesity and asthma control in an urban population with asthma. Weight loss may not be an appropriate strategy to improve asthma control in this population.",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7403919696807861
+      }
+    },
+    {
+      "qid": "16253970",
+      "type": "no",
+      "gold": "In COS-IUI for unexplained non-conception, induction of more than one follicle did not improve the ongoing PR, but increased the risk of multiple pregnancies. Multiple PR remained high in the first four cycles with multifollicular stimulation. Therefore, in order to reduce the number of multiple pregnancies, in all IUI cycles for unexplained non-conception monofollicular growth should be aimed at.",
+      "answer": "Controlled ovarian stimulation (COS) with intrauterine insemination (IUI) is a common treatment for couples with unexplained non-conception. While it is considered to improve pregnancy outcomes by inducing multifollicular growth, it also carries an increased risk of multiple pregnancies. In the study, it was found that among women with two or more follicles, there were instances of multiple pregnancies (12 out of 73 pregnancies). However, the ongoing pregnancy rate (PR) did not show a significant difference based on the number of follicles, and the ongoing PR was highest in the first treatment cycle but declined with subsequent cycles.\n\nIn summary, while COS-IUI can be an acceptable therapy for couples with unexplained non-conception, the risk of multiple pregnancies is a significant consideration. Therefore, the acceptability of this therapy may depend on the couple's preferences and the potential risks involved.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.3571428571428571,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.9015724658966064
+      }
+    },
+    {
+      "qid": "26784147",
+      "type": "no",
+      "gold": "There is a knowledge deficit regarding the SU treatment goal among gout patients receiving ULT, despite generally high levels of other gout-specific knowledge. SU goal information may be an important and underutilized concept among providers treating gout patients.",
+      "answer": "In the study conducted on gout patients, only 14% of the participants knew their target serum urate (SU) goal. The research highlighted that having a rheumatologist as the initial prescriber and knowing the answers to other gout-specific knowledge questions were associated with a greater likelihood of knowing the SU goal. Specifically, the odds ratio for having a rheumatologist was 3.0, indicating a significant association, while knowing the other gout-specific questions had an odds ratio of 2.1. Additionally, knowledge of the SU goal was linked to self-reported global health status, but it did not correlate with self-reported health-related quality of life or gout-specific health status.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.20952380952380953,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.8333333333333334,
+        "latency": 3.1837570667266846
+      }
+    },
+    {
+      "qid": "22302761",
+      "type": "yes",
+      "gold": "This study demonstrates that laser pretreatment significantly increases absorption of topical lidocaine so that it is detectable in the blood and that manipulating laser settings can affect drug absorption. Future work will look at translating this effect into clinical benefit.",
+      "answer": "Yes, fractional lasers can enhance transdermal absorption of topical lidocaine in an in vivo animal model, as demonstrated in the study involving pigs. The study aimed to show that laser treatment enhances drug absorption and that this effect can be manipulated by altering the laser settings.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.3835616438356164,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.2405951023101807
+      }
+    },
+    {
+      "qid": "20842006",
+      "type": "no",
+      "gold": "For this pathology, the number of needles, 5 or 11, seems not to be an important variable in determining the therapeutic effect when the time of stimulation is the same in the two groups.",
+      "answer": "The study indicates that the number of needles used in acupuncture treatment for cervical myofascial syndrome does not significantly affect the therapeutic outcome. Both groups, one treated with 5 needles and the other with 11 needles, experienced a good therapeutic effect without clinically relevant differences in pain intensity, as evaluated by the Mc Gill Pain Questionnaire and the Visual Analogue Scale (VAS). Therefore, it can be concluded that, in this context, the number of needles does not matter for the efficacy of acupuncture in treating neck pain.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.26086956521739124,
+        "f1_substring": 0.18181818181818182,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.9141597747802734
+      }
+    },
+    {
+      "qid": "24783217",
+      "type": "yes",
+      "gold": "Our data shows that the Ki-67 value predicts the response to neoadjuvant chemotherapy as a function of the molecular subtype, reflecting the daily routine concerning Ki-67 and its impressing potential and limitation as a predictive marker for neoadjuvant chemotherapy response.",
+      "answer": "Yes, Ki-67 can play a role in predicting breast cancer patients' responses to neoadjuvant chemotherapy. The study indicates that while the average Ki-67 values do not significantly differ among the groups of clinical responses (pCR, partial pathological response, stable disease/progress), there are significant differences in Ki-67 values among different subtypes of breast cancer (luminal, Her2 enriched, and basal-like). Additionally, within the luminal tumor group, Ki-67 values significantly differ between patients with and without pCR, suggesting that Ki-67 may be a useful marker for predicting responses in specific subtypes of breast cancer.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.20833333333333334,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.629552125930786
+      }
+    },
+    {
+      "qid": "18507507",
+      "type": "yes",
+      "gold": "Current evidence suggests that when used in targeted patient populations, specialty pharmaceuticals may represent a good health care value.",
+      "answer": "The promise of specialty pharmaceuticals includes increased life expectancy, improved quality of life, enhanced workplace productivity, decreased burden of disease, and reduced health care spending. However, these benefits come at a significant cost, which raises the question of whether they are worth the price. \n\nWhile specialty drugs can provide substantial advantages, their high costs necessitate careful management and evaluation of their value. Payers are increasingly demanding evidence of the value of these medications, which is complicated by a lack of robust pharmacoeconomic data. Therefore, while specialty pharmaceuticals have the potential to deliver significant health benefits, the justification of their costs depends on the ability to demonstrate their value through effective pharmacoeconomic models and data collection. \n\nIn summary, the worth of specialty pharmaceuticals is contingent upon their demonstrated value relative to their costs, which remains a challenge in the current healthcare landscape.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.15929203539823006,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.0573132038116455
+      }
+    },
+    {
+      "qid": "28196511",
+      "type": "no",
+      "gold": "While SSA would be the first region to experience the huge benefits of implementing the \"test and treat\" policy of the WHO, the region is not yet prepared to manage the consequential increased burden of ART-related toxic and metabolic complications. Urgent measures should be taken to fill the lacunae if SSA is not to become over-burdened by the consequences of the \"test and treat\" policy.",
+      "answer": "Sub-Saharan Africa (SSA) is currently not well-equipped to cope with the challenges posed by the new \"test and treat\" policy of the World Health Organization (WHO) regarding antiretroviral therapy (ART) related adverse effects. The implementation of this policy is expected to lead to an increased incidence of serious medication-related adverse effects, particularly due to mitochondrial toxicities associated with ART. \n\nThe region faces several significant challenges, including extreme poverty, weak health systems, inadequate and low-quality health services, and a lack of qualified health personnel. Additionally, there is a lack of adequate medical equipment and medicines, which are often inaccessible and unaffordable. The heavy workload on healthcare providers is compounded by a double burden of disease, making it even more difficult to manage the anticipated increase in ART-related complications.\n\nMoreover, there is a dearth of data on the incidence and predictive factors of these adverse effects in SSA, which hampers the ability to develop effective strategies to prevent or manage them. Without proper preparation and response plans, the region may struggle to handle the upcoming burden associated with the widespread implementation of the \"test and treat\" policy.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.2073170731707317,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 4.311983823776245
+      }
+    },
+    {
+      "qid": "23810330",
+      "type": "yes",
+      "gold": "In this study TME with IONM was associated with significant lower rates of urinary and anorectal dysfunction. Prospective randomized trials are mandatory to evaluate the definite role of IONM in rectal cancer surgery.",
+      "answer": "Yes, intraoperative neuromonitoring (IONM) is associated with better functional outcomes in patients undergoing open total mesorectal excision (TME). The study indicates that newly developed urinary dysfunction was reported in only 1 of 15 patients in the IONM group compared to 6 of 15 in the control group, which is statistically significant (p = 0.031). Additionally, impaired anorectal function was present in 1 of 15 patients with IONM versus 6 of 15 without IONM, also significant (p = 0.031). Furthermore, the IONM group showed a trend towards a lower rate of sexual dysfunction after surgery, suggesting improved overall functional outcomes with the use of IONM.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.2653061224489796,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.8916077613830566
+      }
+    },
+    {
+      "qid": "24098953",
+      "type": "yes",
+      "gold": "This hypothesis-generator study shows that IgM-eIVIG is an effective adjuvant therapy in VLBW infants with proven sepsis. Randomized controlled trials are warranted to confirm this pilot observation.",
+      "answer": "Yes, IgM-enriched immunoglobulins (IgM-eIVIG) are considered an effective adjuvant in septic very low birth weight (VLBW) infants, as evidenced by the significantly reduced short-term mortality in treated infants (22% vs 46%; p = 0.005) compared to those who received only the standard antibiotic regimen.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.20588235294117643,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.5718095302581787
+      }
+    },
+    {
+      "qid": "19640728",
+      "type": "yes",
+      "gold": "TEE allowed a diagnosis of site involvement that did correlate with the anatomic diagnosis obtained during the operation. This fact contributed to the management of patients and was of great help in guiding the surgical intervention. Echo-oriented single-valve replacement may be a safe strategy for patients with PVE and double prostheses.",
+      "answer": "The study investigated the safety of single-valve replacement in patients with prosthetic valve endocarditis (PVE) who had both mitral and aortic prostheses. Out of the 20 patients assessed, surgery was performed on 17 patients (85%), and in 13 of these cases, only the prosthetic valve that appeared infected was replaced. Among these 13 patients, four died within a week after the procedure, while nine patients survived the surgery, completed antimicrobial therapy, and were followed up for an average of 15.78 months without any observed relapses. \n\nBased on this data, while single-valve replacement can be performed, it carries risks, as evidenced by the deaths of some patients shortly after surgery. However, the majority of patients who underwent the procedure and were followed up were considered cured. Therefore, while single-valve replacement may be an option, it is associated with significant risks, and careful consideration is necessary regarding its safety in patients with double prostheses.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.2411347517730497,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.5837671756744385
+      }
+    }
+  ]
+}

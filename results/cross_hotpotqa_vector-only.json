@@ -1,0 +1,417 @@
+{
+  "benchmark": "hotpotqa",
+  "policy": "vector-only",
+  "n_queries": 300,
+  "aggregate": {
+    "n_queries": 300,
+    "overall": {
+      "F1_strict": {
+        "mean": 0.10104040476885454,
+        "std": 0.12238946946008918,
+        "n": 300
+      },
+      "F1_substring": {
+        "mean": 0.37777513227513226,
+        "std": 0.3554936436219876,
+        "n": 300
+      },
+      "EM_norm": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 300
+      },
+      "Faithfulness": {
+        "mean": 0.7770299145299145,
+        "std": 0.38546859009602497,
+        "n": 300
+      },
+      "Latency": {
+        "mean": 1.0187058599789938,
+        "std": 0.4190094529290101,
+        "n": 300
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "5a73b55855429978a71e9086",
+      "type": "bridge",
+      "gold": "Gatwick Airport",
+      "answer": "Gatwick Airport ranks as the 8th busiest airport in Europe and replaced Croydon Airport.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.2666666666666667,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7206602096557617
+      }
+    },
+    {
+      "qid": "5ab985eb554299131ca42360",
+      "type": "comparison",
+      "gold": "Greyia",
+      "answer": "Calibanus contains more species, as it is a genus of two species, while Greyia contains three species.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.125,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6961579322814941
+      }
+    },
+    {
+      "qid": "5a8753d95542994846c1cd63",
+      "type": "comparison",
+      "gold": "yes",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.8193495273590088
+      }
+    },
+    {
+      "qid": "5ab97d0a5542996be202051e",
+      "type": "bridge",
+      "gold": "John André",
+      "answer": "John André was hanged for assisting Benedict Arnold's attempted surrender of the fort at West Point to the British Army.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.1904761904761905,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.9881191253662109
+      }
+    },
+    {
+      "qid": "5ac3e0f7554299194317388b",
+      "type": "bridge",
+      "gold": "Kevin Spacey",
+      "answer": "American Beauty features Kevin Spacey, who stars as Lester Burnham. Both references to \"American Beauty\" in the context mention him.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.09090909090909091,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.0845205783843994
+      }
+    },
+    {
+      "qid": "5ae518655542993aec5ec139",
+      "type": "bridge",
+      "gold": "40 members",
+      "answer": "Ken Pruitt was a Republican member of the Florida Senate, which is the upper house of the Florida Legislature. The context does not specify the exact number of members in the Florida Senate. Therefore, the answer is: 정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.06060606060606061,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.3062243461608887
+      }
+    },
+    {
+      "qid": "5adef1b35542993a75d263af",
+      "type": "bridge",
+      "gold": "Salma Hayek Pinault",
+      "answer": "Ethel Houbiers is the French voice of Mexican actress Salma Hayek and American actress Penélope Cruz.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.2222222222222222,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8745028972625732
+      }
+    },
+    {
+      "qid": "5ae143ed55429920d5234360",
+      "type": "bridge",
+      "gold": "1755",
+      "answer": "The university where Sergei Aleksandrovich Tokarev was a professor, Moscow State University, was founded on January 25, 1755.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.4,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.9989666938781738
+      }
+    },
+    {
+      "qid": "5abc19705542993a06baf86e",
+      "type": "bridge",
+      "gold": "Dutch",
+      "answer": "Black Book starred actress Carice van Houten, who is of Dutch heritage. The novelization of the film was written by Laurens Abbink Spaink, who is also of Dutch heritage.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.08695652173913045,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.065678358078003
+      }
+    },
+    {
+      "qid": "5ae80919554299540e5a56f6",
+      "type": "bridge",
+      "gold": "The Changing Scottish Landscape",
+      "answer": "Isabella Kelly was born at Cairnburgh Castle, which is characterized as \"one of the most isolated fortifications in Britain\" by the 1991 publication \"The Changing Scottish Landscape.\"",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.19999999999999998,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.5,
+        "latency": 1.5667071342468262
+      }
+    },
+    {
+      "qid": "5ae361605542994393b9e69b",
+      "type": "bridge",
+      "gold": "\"Home of the Submarine Force\"",
+      "answer": "The facility where Robert Croft worked as a navy instructor was also known as the US Naval Submarine Base New London submarine school in Groton, Connecticut.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.14285714285714285,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8219237327575684
+      }
+    },
+    {
+      "qid": "5a7557d75542992d0ec05f68",
+      "type": "bridge",
+      "gold": "Laurie Metcalf",
+      "answer": "Laurie Metcalf, who is a star of \"Roseanne,\" appears in \"Scream 2.\"",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.14285714285714285,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.5,
+        "latency": 0.9185886383056641
+      }
+    },
+    {
+      "qid": "5ac3a76e554299741d48a2be",
+      "type": "bridge",
+      "gold": "U2",
+      "answer": "U2 released the song \"With or Without You\" first. It was released as the lead single from their album \"The Joshua Tree\" on 16 March 1987. Jai McDowall later released a promotional single of the same name from his debut album \"Believe\" on 9 December 2011.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.05128205128205127,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.6783709526062012
+      }
+    },
+    {
+      "qid": "5ab7f6d35542993667794070",
+      "type": "bridge",
+      "gold": "Cyclic Defrost",
+      "answer": "The name of the Australian specialist electronic music magazine that features avant-rock, experimental sound art, and experimental hip hop is \"Cyclic Defrost.\"",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.5,
+        "latency": 0.8132004737854004
+      }
+    },
+    {
+      "qid": "5ac3d9135542995c82c4ac4c",
+      "type": "bridge",
+      "gold": "729 at the 2010 census",
+      "answer": "The population of the town that Munsonville is in, which is Nelson, New Hampshire, was 729 at the 2010 census.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.3636363636363636,
+        "f1_substring": 0.4,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8437268733978271
+      }
+    },
+    {
+      "qid": "5a8d12ca5542994ba4e3dbe2",
+      "type": "bridge",
+      "gold": "Nairobi, Kenya",
+      "answer": "Fastjet Tanzania was originally founded as \"Fly540 Tanzania,\" which is based in Nairobi, Kenya.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.125,
+        "f1_substring": 0.8,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.9417212009429932
+      }
+    },
+    {
+      "qid": "5ae382ee5542992e3233c430",
+      "type": "bridge",
+      "gold": "Modern thinkers associated with classical realism are Carl von Clausewitz",
+      "answer": "Carl von Clausewitz is associated with Classical Realism in international relations.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6320016384124756
+      }
+    },
+    {
+      "qid": "5a7b1023554299042af8f6c2",
+      "type": "comparison",
+      "gold": "Ride a Wild Pony",
+      "answer": "Disney produced \"Ride a Wild Pony\" first, as it was released in 1975, while \"The Many Adventures of Winnie the Pooh\" was released later in 1977.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.14814814814814817,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.146101474761963
+      }
+    },
+    {
+      "qid": "5ae129115542990adbacf722",
+      "type": "bridge",
+      "gold": "Francis McPeake",
+      "answer": "\"A Pair of Brown Eyes\" is based on the song \"Wild Mountain Thyme,\" which was written by Francis McPeake.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.09523809523809525,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.9958107471466064
+      }
+    },
+    {
+      "qid": "5a86769c5542994775f60776",
+      "type": "bridge",
+      "gold": "Slaughterhouse-Five",
+      "answer": "Armageddon in Retrospect was written by Kurt Vonnegut, who is best known for the 1969 satire novel \"Slaughterhouse-Five.\"",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.5,
+        "latency": 0.9132635593414307
+      }
+    }
+  ]
+}

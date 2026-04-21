@@ -1,0 +1,417 @@
+{
+  "benchmark": "pubmedqa",
+  "policy": "ldwa:cache/ppo_checkpoints/seed_42/final.pt",
+  "n_queries": 250,
+  "aggregate": {
+    "n_queries": 250,
+    "overall": {
+      "F1_strict": {
+        "mean": 0.1484925962475535,
+        "std": 0.14694751342051574,
+        "n": 250
+      },
+      "F1_substring": {
+        "mean": 0.00496370997423629,
+        "std": 0.030476402286449,
+        "n": 250
+      },
+      "EM_norm": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 250
+      },
+      "Faithfulness": {
+        "mean": 0.5462857142857143,
+        "std": 0.4968682328508501,
+        "n": 250
+      },
+      "Latency": {
+        "mean": 1.538824935913086,
+        "std": 1.104672873928244,
+        "n": 250
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "19406119",
+      "type": "yes",
+      "gold": "Results suggest that telmisartan may reduce type-I diabetes mellitus-induced hepatic injury by suppressing activated hepatic stellate cells through concomitant TGF-beta1 down-regulation.",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5727589130401611
+      }
+    },
+    {
+      "qid": "17894828",
+      "type": "yes",
+      "gold": "The present survey showed a weak relationship between serum ACE and the frequency of SH, the clinical relevance of which is unclear. This limits the proposed role for serum ACE as an index of risk for SH.",
+      "answer": "Yes, a relationship exists between elevated serum angiotensin-converting enzyme (ACE) and an increased risk of severe hypoglycaemia (SH) in individuals with Type 1 diabetes, as indicated by the association described in the context. The study aimed to replicate this association in a different country with 300 individuals diagnosed with Type 1 diabetes.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.3142857142857143,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.6857414245605469
+      }
+    },
+    {
+      "qid": "18005142",
+      "type": "yes",
+      "gold": "Early treatment and use of triptans may lead to shorter duration from migraine headache onset to its peak but did not alleviate headache severity at peak. This could result in decreased migraine burden by reducing total migraine headache duration.",
+      "answer": "Early migraine treatment is associated with a shorter time from headache onset to peak, particularly when treatment is administered within 15 minutes of onset. However, early intervention does not reduce headache severity at peak. Therefore, while early treatment can shorten the time to headache peak, it does not affect the severity of the headache.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.3611111111111111,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.536198616027832
+      }
+    },
+    {
+      "qid": "16151770",
+      "type": "yes",
+      "gold": "Memory provocation increased the sensitivity of rCBF-SPECT for the detection of AD-related blood flow changes in the brain at the group level. Further studies are needed to evaluate MP-SPECT as a diagnostic tool at the individual level. If a higher sensitivity for AD at the individual level is verified in future studies, a single MP-SPECT study might be sufficient in the clinical setting.",
+      "answer": "Memory-provoked rCBF-SPECT (MP-SPECT) is being evaluated as a diagnostic tool in Alzheimer's disease (AD) to potentially increase the diagnostic sensitivity of regional cerebral blood flow (rCBF) measurements. While traditional rCBF assessments have a low discriminatory capacity between AD patients and normal controls, the use of an episodic memory task provocation during SPECT imaging may enhance the ability to differentiate between these groups. This approach aims to leverage the brain's response to memory tasks to provide more accurate diagnostic information regarding Alzheimer's disease.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.2831858407079646,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.7639682292938232
+      }
+    },
+    {
+      "qid": "10927144",
+      "type": "no",
+      "gold": "p53 alteration detected by IHC or SSCP analysis is not a clinically useful predictor of local response to pre-operative adjuvant therapy in advanced rectal carcinoma.",
+      "answer": "The context suggests that the study aimed to examine whether p53 tumour suppressor gene alterations can be used to predict tumour response to pre-operative chemo-radiation in locally advanced rectal cancer. However, the context does not provide a definitive conclusion or results regarding the predictive value of p53 alterations for tumour response. Therefore, based on the information provided, it cannot be determined if p53 alterations can be used to predict tumour response to pre-operative chemo-radiotherapy in locally advanced rectal cancer.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.2894736842105263,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.4272072315216064
+      }
+    },
+    {
+      "qid": "20338971",
+      "type": "yes",
+      "gold": "High BUN levels and low salivary flow rates were found to be associated with halitosis. PD may play an important role in decreasing the level of halitosis in ESRD patients.",
+      "answer": "The study aimed to investigate halitosis levels in end-stage renal disease (ESRD) patients before and after peritoneal dialysis (PD) therapy. While the specific results regarding the effect of PD on halitosis are not provided in the context, the study design suggests that it was intended to assess any changes in halitosis levels as a result of the therapy. Therefore, the answer to whether peritoneal dialysis affects halitosis in patients with end-stage renal disease would depend on the findings of the study, which are not detailed in the provided context.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.21176470588235297,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.2814910411834717
+      }
+    },
+    {
+      "qid": "17342562",
+      "type": "no",
+      "gold": "The findings indicate that the clinical significance of symptomatic BDS is similar to that of CBD stones. Bile duct sludge seems to be an early stage of choledocholithiasis.",
+      "answer": "The clinical significance of bile duct sludge (BDS) is not clearly defined and appears to be similar to that of bile duct stones in terms of recurrence rates after endoscopic therapy. In the study, BDS occurred in 14% of patients and had a recurrence rate of 16% after endoscopic clearance, which is comparable to the 17% recurrence rate observed in patients with bile duct stones. Additionally, common bile duct dilation was less common in the sludge group, and other known risk factors for recurrent CBD stones did not show statistically significant differences between the two groups. Therefore, while BDS is a precursor to gallbladder stones, its clinical significance in relation to bile duct stones seems to be similar in terms of outcomes after treatment.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.3333333333333333,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.446610689163208
+      }
+    },
+    {
+      "qid": "16253970",
+      "type": "no",
+      "gold": "In COS-IUI for unexplained non-conception, induction of more than one follicle did not improve the ongoing PR, but increased the risk of multiple pregnancies. Multiple PR remained high in the first four cycles with multifollicular stimulation. Therefore, in order to reduce the number of multiple pregnancies, in all IUI cycles for unexplained non-conception monofollicular growth should be aimed at.",
+      "answer": "Controlled ovarian stimulation (COS) with intrauterine insemination (IUI) is a common treatment for couples with unexplained non-conception. While it is considered to improve pregnancy outcomes by inducing multifollicular growth, it also carries an increased risk of multiple pregnancies. Therefore, while COS-IUI can be an acceptable therapy, the potential for multiple pregnancies must be carefully weighed against the benefits of improved ongoing pregnancy rates. The study mentioned evaluates the impact of the number of follicles on pregnancy outcomes, which suggests that while COS-IUI is a viable option, the risks associated with multiple pregnancies are a significant consideration.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.29310344827586204,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.280773639678955
+      }
+    },
+    {
+      "qid": "17916877",
+      "type": "yes",
+      "gold": "Slowing the infusion rate of metoclopramide is an effective strategy for the improvement of headache and reducing the incidence of akathisia in patients with vascular type headache.",
+      "answer": "The study aims to compare the therapeutic effects and side effects of two different intravenous administration methods of metoclopramide for treating vascular type headaches: a 2-minute bolus infusion and a 15-minute slow infusion. The primary focus is on whether the rate of administration affects the improvement of headache symptoms while also considering the side effects experienced by patients.\n\nWhile the context does not provide specific results or conclusions from the study, it implies that the researchers are investigating whether the slower infusion method (15 min) leads to better headache alleviation and fewer side effects compared to the faster bolus method (2 min). The use of repeated measures analysis of variance suggests that the study will statistically analyze the differences in headache scores and side effects at various time points (0, 5, 15, 30, and 60 minutes) to draw conclusions about the efficacy and safety of each administration method.\n\nIn summary, the study is designed to determine if the method of intravenous administration of metoclopramide affects headache improvement and side effects, but specific outcomes are not provided in the context.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.19696969696969696,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.192288398742676
+      }
+    },
+    {
+      "qid": "27896825",
+      "type": "yes",
+      "gold": "Ultrasound and histopathology identify a substantial population that may be candidates for lobectomy, avoiding the risks and potential medical and psychosocial morbidity associated with total thyroidectomy. We propose a clinical framework to stimulate discussion of lobectomy as an option for low-risk patients.",
+      "answer": "Yes, it may be time to reconsider lobectomy in low-risk pediatric thyroid cancer. Current guidelines recommend total thyroidectomy for nearly all children with well-differentiated thyroid cancer, but these guidelines are based on older data. The application of new risk-stratification criteria suggests that there is a subpopulation of children who may be adequately treated with lobectomy, particularly those meeting the American Thyroid Association's 'low-risk' criteria and the 'very-low-risk' histopathological criteria. This indicates that a more tailored approach to treatment could be beneficial for certain patients.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.2830188679245283,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.061530351638794
+      }
+    },
+    {
+      "qid": "24783217",
+      "type": "yes",
+      "gold": "Our data shows that the Ki-67 value predicts the response to neoadjuvant chemotherapy as a function of the molecular subtype, reflecting the daily routine concerning Ki-67 and its impressing potential and limitation as a predictive marker for neoadjuvant chemotherapy response.",
+      "answer": "Yes, Ki-67 can play a role in predicting breast cancer patients' responses to neoadjuvant chemotherapy. The current study analyzes the predictive value of Ki-67 in foreseeing how patients with invasive breast cancer respond to this type of therapy, indicating its increasing use as a proliferation marker in determining treatment methods.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.3055555555555556,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.4248204231262207
+      }
+    },
+    {
+      "qid": "19615731",
+      "type": "no",
+      "gold": "Using 4 validated asthma control questionnaires, we failed to find an association between obesity and asthma control in an urban population with asthma. Weight loss may not be an appropriate strategy to improve asthma control in this population.",
+      "answer": "Higher body mass index (BMI) is associated with worse asthma control in an ethnically diverse urban population.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.2978723404255319,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.9684188365936279
+      }
+    },
+    {
+      "qid": "26784147",
+      "type": "no",
+      "gold": "There is a knowledge deficit regarding the SU treatment goal among gout patients receiving ULT, despite generally high levels of other gout-specific knowledge. SU goal information may be an important and underutilized concept among providers treating gout patients.",
+      "answer": "The study aimed to assess gout patients' knowledge regarding their condition, particularly focusing on their understanding of the target serum urate (SU) goal and the importance of urate-lowering therapy (ULT) in achieving and maintaining this goal. The research involved 612 gout patients who were surveyed through questionnaires linked to their medical records. The findings suggest that the level of knowledge among gout patients about their SU goal and the role of ULT was evaluated descriptively, and further analyses were conducted to explore the relationship between this knowledge and health outcomes. However, specific results regarding whether gout patients know their target serum urate goal are not provided in the context.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.18867924528301885,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.140474557876587
+      }
+    },
+    {
+      "qid": "23810330",
+      "type": "yes",
+      "gold": "In this study TME with IONM was associated with significant lower rates of urinary and anorectal dysfunction. Prospective randomized trials are mandatory to evaluate the definite role of IONM in rectal cancer surgery.",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.4367029666900635
+      }
+    },
+    {
+      "qid": "28196511",
+      "type": "no",
+      "gold": "While SSA would be the first region to experience the huge benefits of implementing the \"test and treat\" policy of the WHO, the region is not yet prepared to manage the consequential increased burden of ART-related toxic and metabolic complications. Urgent measures should be taken to fill the lacunae if SSA is not to become over-burdened by the consequences of the \"test and treat\" policy.",
+      "answer": "Sub-Saharan Africa may face significant challenges in coping with the adverse effects related to antiretroviral therapy (ART) as a result of the new \"test and treat\" policy of the World Health Organization (WHO). The implementation of this policy is expected to lead to an increased incidence of ART-related adverse effects in the region. Factors such as limited healthcare infrastructure, insufficient access to medical resources, and a lack of trained healthcare professionals could hinder the region's ability to effectively manage these adverse effects. Therefore, while the \"test and treat\" policy aims to reduce HIV transmission, the readiness of sub-Saharan Africa to handle the associated challenges remains questionable.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.21238938053097345,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.278764247894287
+      }
+    },
+    {
+      "qid": "22302761",
+      "type": "yes",
+      "gold": "This study demonstrates that laser pretreatment significantly increases absorption of topical lidocaine so that it is detectable in the blood and that manipulating laser settings can affect drug absorption. Future work will look at translating this effect into clinical benefit.",
+      "answer": "Yes, fractional lasers can enhance transdermal absorption of topical lidocaine in an in vivo animal model, as indicated by the study's aim to demonstrate that laser treatment enhances drug absorption and that this effect can be manipulated by altering laser settings.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.3661971830985915,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.4450671672821045
+      }
+    },
+    {
+      "qid": "24098953",
+      "type": "yes",
+      "gold": "This hypothesis-generator study shows that IgM-eIVIG is an effective adjuvant therapy in VLBW infants with proven sepsis. Randomized controlled trials are warranted to confirm this pilot observation.",
+      "answer": "Yes, IgM-enriched immunoglobulins (IgM-eIVIG) are considered an effective adjuvant in septic very low birth weight (VLBW) infants, as evidenced by the significantly reduced short-term mortality in treated infants (22% vs 46%; p = 0.005) compared to those who received only the standard antibiotic regimen.",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.20588235294117643,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.681082010269165
+      }
+    },
+    {
+      "qid": "10490564",
+      "type": "yes",
+      "gold": "In patients with ischaemic heart disease and hypotension, symptomatic and silent ischaemia occurred in a temporally causal relation with hypotension, particularly for diastolic pressures, suggesting that patients with coronary disease may be susceptible to ischaemic events incurred as a result of low blood pressure caused by excessive hypotensive drug treatment.",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.4915473461151123
+      }
+    },
+    {
+      "qid": "19640728",
+      "type": "yes",
+      "gold": "TEE allowed a diagnosis of site involvement that did correlate with the anatomic diagnosis obtained during the operation. This fact contributed to the management of patients and was of great help in guiding the surgical intervention. Echo-oriented single-valve replacement may be a safe strategy for patients with PVE and double prostheses.",
+      "answer": "The study investigated the safety of single-valve replacement in patients with prosthetic valve endocarditis (PVE) who had both mitral and aortic prostheses. Out of the 20 patients assessed, surgery was performed on 17 patients (85%), and in 13 of these cases, only the prosthetic valve that appeared infected was replaced. While four patients died within a week after the procedure, nine patients survived the surgery, completed antimicrobial therapy, and were followed up for an average of 15.78 months without any observed relapses. \n\nBased on these findings, single-valve replacement can be considered safe in selected cases, as the majority of patients who underwent the procedure survived and were cured. However, the risk of mortality shortly after surgery should be taken into account.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.24000000000000002,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.910940170288086
+      }
+    },
+    {
+      "qid": "23791827",
+      "type": "yes",
+      "gold": "Based on this pilot data, MASCC score appears promising in determining suitability for outpatient management of NF in gynecologic oncology patients. Prospective study is ongoing to confirm safety and determine impact on cost.",
+      "answer": "The study evaluates the utility of risk stratification in managing neutropenic fever (NF) among gynecologic oncology patients. It suggests that risk stratification, specifically using the MASCC risk index score, can be beneficial in determining the appropriate management approach—whether inpatient or outpatient. By identifying patients at low risk (score ≥ 21), healthcare providers may consider outpatient management, potentially reducing hospitalization rates and associated complications. Conversely, higher-risk patients may require inpatient care to monitor and treat complications effectively. Thus, risk stratification appears to be a useful tool in guiding the management of NF in this patient population.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.28301886792452835,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 2.3262686729431152
+      }
+    }
+  ]
+}

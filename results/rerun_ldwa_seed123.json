@@ -1,0 +1,315 @@
+{
+  "policy": "ldwa:cache/ppo_checkpoints/seed_123/final.pt",
+  "n_queries": 5000,
+  "aggregate": {
+    "overall": {
+      "F1_strict": {
+        "mean": 0.08557757706870657,
+        "std": 0.17512872336477922,
+        "n": 5000
+      },
+      "F1_substring": {
+        "mean": 0.4729376627131039,
+        "std": 0.43741535225483397,
+        "n": 5000
+      },
+      "EM_norm": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 5000
+      },
+      "Faithfulness": {
+        "mean": 0.8705252380952381,
+        "std": 0.3178209356553094,
+        "n": 5000
+      },
+      "Latency": {
+        "mean": 1.2169273782730103,
+        "std": 0.8362756847117702,
+        "n": 5000
+      }
+    },
+    "by_type": {
+      "simple": {
+        "F1_strict": {
+          "mean": 0.17516693685633247,
+          "std": 0.24059525575567597,
+          "n": 2000
+        },
+        "F1_substring": {
+          "mean": 0.8641225713012477,
+          "std": 0.2894093805753077,
+          "n": 2000
+        },
+        "EM_norm": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 2000
+        },
+        "Faithfulness": {
+          "mean": 0.9391797619047618,
+          "std": 0.2349048182520711,
+          "n": 2000
+        }
+      },
+      "conditional": {
+        "F1_strict": {
+          "mean": 0.034612998535560914,
+          "std": 0.0732744775942936,
+          "n": 1250
+        },
+        "F1_substring": {
+          "mean": 0.14535958061546297,
+          "std": 0.18959102275949083,
+          "n": 1250
+        },
+        "EM_norm": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 1250
+        },
+        "Faithfulness": {
+          "mean": 0.9163333333333334,
+          "std": 0.2733839384049066,
+          "n": 1250
+        }
+      },
+      "multi_hop": {
+        "F1_strict": {
+          "mean": 0.019593007692238148,
+          "std": 0.047497850603558614,
+          "n": 1750
+        },
+        "F1_substring": {
+          "mean": 0.25985354011068296,
+          "std": 0.3582261351919902,
+          "n": 1750
+        },
+        "EM_norm": {
+          "mean": 0.0,
+          "std": 0.0,
+          "n": 1750
+        },
+        "Faithfulness": {
+          "mean": 0.7593428571428571,
+          "std": 0.3910310098994041,
+          "n": 1750
+        }
+      }
+    },
+    "top_weights": [
+      {
+        "weight": "(α=0.4, β=0.5, γ=0.1)",
+        "count": 2033
+      },
+      {
+        "weight": "(α=0.4, β=0.6, γ=0.0)",
+        "count": 1474
+      },
+      {
+        "weight": "(α=0.3, β=0.5, γ=0.2)",
+        "count": 814
+      },
+      {
+        "weight": "(α=0.2, β=0.7, γ=0.1)",
+        "count": 312
+      },
+      {
+        "weight": "(α=0.1, β=0.7, γ=0.2)",
+        "count": 294
+      }
+    ]
+  },
+  "samples": [
+    {
+      "qid": "7",
+      "type": "simple",
+      "gold": "언어학, 회계정보",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        4,
+        6,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.8550078868865967
+      }
+    },
+    {
+      "qid": "9",
+      "type": "simple",
+      "gold": "천문학과",
+      "answer": "오지우 교수의 소속 학과는 천문학과입니다.",
+      "weights": [
+        4,
+        6,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8737986087799072
+      }
+    },
+    {
+      "qid": "2",
+      "type": "simple",
+      "gold": "바이오의공학과",
+      "answer": "최재원 교수의 소속 학과는 바이오의공학과입니다.",
+      "weights": [
+        4,
+        6,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.0974175930023193
+      }
+    },
+    {
+      "qid": "6",
+      "type": "simple",
+      "gold": "12명",
+      "answer": "의학과에 소속된 교수는 12명입니다.",
+      "weights": [
+        4,
+        6,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.1894073486328125
+      }
+    },
+    {
+      "qid": "4",
+      "type": "conditional",
+      "gold": "유서준, 전서준, 김도윤, 이도윤, 박도윤, 정도윤, 최도윤, 조도윤, 한도윤",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        4,
+        5,
+        1
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 1.3164153099060059
+      }
+    },
+    {
+      "qid": "1",
+      "type": "simple",
+      "gold": "홍성민, 황성민, 전성민",
+      "answer": "정치외교 심리학개론 과목을 담당하는 교수는 홍성민, 황성민, 전성민입니다.",
+      "weights": [
+        4,
+        5,
+        1
+      ],
+      "metrics": {
+        "f1_strict": 0.36363636363636365,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.9613327980041504
+      }
+    },
+    {
+      "qid": "3",
+      "type": "conditional",
+      "gold": "총 367명 (김민준, 이민준, 박민준, 정민준, 최민준...)",
+      "answer": "전임 교수 중 55세 미만인 사람은 김민준(35세)과 이민준(48세)입니다.",
+      "weights": [
+        1,
+        7,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.20000000000000004,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.8113906383514404
+      }
+    },
+    {
+      "qid": "15",
+      "type": "conditional",
+      "gold": "안태양, 서태양, 유태양, 김정훈, 조정훈",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        4,
+        5,
+        1
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6650378704071045
+      }
+    },
+    {
+      "qid": "12",
+      "type": "simple",
+      "gold": "안정훈, 서정훈, 유정훈, 전정훈, 김재원, 이재원, 박재원, 정재원",
+      "answer": "보건학과 소속 교수 목록은 다음과 같습니다: 서정훈, 전정훈, 김재원, 박재원, 정재원, 안정훈.",
+      "weights": [
+        4,
+        6,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.4,
+        "f1_substring": 0.75,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.319467544555664
+      }
+    },
+    {
+      "qid": "14",
+      "type": "simple",
+      "gold": "홍윤서, 권윤서, 황윤서, 안윤서, 서윤서, 유윤서, 전윤서, 김채원, 이채원",
+      "answer": "중어중문학과 소속 교수 목록은 다음과 같습니다: 권윤서, 김채원, 홍윤서, 황윤서, 서윤서, 이채원.",
+      "weights": [
+        4,
+        6,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.4761904761904762,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.1071805953979492
+      }
+    }
+  ]
+}

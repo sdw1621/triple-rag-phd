@@ -1,0 +1,227 @@
+{
+  "benchmark": "hotpotqa",
+  "policy": "rdwa",
+  "n_queries": 10,
+  "aggregate": {
+    "n_queries": 10,
+    "overall": {
+      "F1_strict": {
+        "mean": 0.14601429815203132,
+        "std": 0.09240828629450029,
+        "n": 10
+      },
+      "F1_substring": {
+        "mean": 0.5066666666666667,
+        "std": 0.37022515671772854,
+        "n": 10
+      },
+      "EM_norm": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 10
+      },
+      "Faithfulness": {
+        "mean": 0.8166666666666667,
+        "std": 0.32015621187164245,
+        "n": 10
+      },
+      "Latency": {
+        "mean": 0.9008011102676392,
+        "std": 0.2522211325531321,
+        "n": 10
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "5ae143ed55429920d5234360",
+      "type": "bridge",
+      "gold": "1755",
+      "answer": "The university where Sergei Aleksandrovich Tokarev was a professor, Moscow State University, was founded on January 25, 1755.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.4,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7934606075286865
+      }
+    },
+    {
+      "qid": "5ab985eb554299131ca42360",
+      "type": "comparison",
+      "gold": "Greyia",
+      "answer": "Greyia contains more species than Calibanus. Greyia has three species, while Calibanus has two species.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.14285714285714288,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8421907424926758
+      }
+    },
+    {
+      "qid": "5ac3e0f7554299194317388b",
+      "type": "bridge",
+      "gold": "Kevin Spacey",
+      "answer": "American Beauty features Kevin Spacey as Lester Burnham, who is the common actor in the film.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.23529411764705882,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6822769641876221
+      }
+    },
+    {
+      "qid": "5ae518655542993aec5ec139",
+      "type": "bridge",
+      "gold": "40 members",
+      "answer": "Ken Pruitt was a Republican member of the Florida Senate, which is the upper house of the Florida Legislature. The specific number of members in the Florida Senate is not provided in the context, so I cannot give an exact answer regarding how many members it has. 정보를 찾을 수 없습니다.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.048780487804878044,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.6666666666666666,
+        "latency": 1.4121761322021484
+      }
+    },
+    {
+      "qid": "5abc19705542993a06baf86e",
+      "type": "bridge",
+      "gold": "Dutch",
+      "answer": "Black Book starred actress Carice van Houten, who is of Dutch heritage.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.15384615384615385,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7183692455291748
+      }
+    },
+    {
+      "qid": "5a8753d95542994846c1cd63",
+      "type": "comparison",
+      "gold": "yes",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7009947299957275
+      }
+    },
+    {
+      "qid": "5ab97d0a5542996be202051e",
+      "type": "bridge",
+      "gold": "John André",
+      "answer": "John André was hanged for assisting Benedict Arnold's attempted surrender of the fort at West Point to the British Army.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.1904761904761905,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.3195552825927734
+      }
+    },
+    {
+      "qid": "5adef1b35542993a75d263af",
+      "type": "bridge",
+      "gold": "Salma Hayek Pinault",
+      "answer": "Ethel Houbiers is the French voice of Mexican actress Salma Hayek and American actress Penélope Cruz.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.2222222222222222,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7573845386505127
+      }
+    },
+    {
+      "qid": "5a73b55855429978a71e9086",
+      "type": "bridge",
+      "gold": "Gatwick Airport",
+      "answer": "Gatwick Airport ranks as the 8th busiest airport in Europe and replaced Croydon Airport.",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.2666666666666667,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7448334693908691
+      }
+    },
+    {
+      "qid": "5ae80919554299540e5a56f6",
+      "type": "bridge",
+      "gold": "The Changing Scottish Landscape",
+      "answer": "Isabella Kelly was born at Cairnburgh Castle, which is characterized as one of the most isolated fortifications in Britain by the 1991 publication \"The Changing Scottish Landscape.\"",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.19999999999999998,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.5,
+        "latency": 1.0367693901062012
+      }
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "benchmark": "musique",
+  "policy": "vector-only",
+  "n_queries": 300,
+  "aggregate": {
+    "n_queries": 300,
+    "overall": {
+      "F1_strict": {
+        "mean": 0.05586076607319208,
+        "std": 0.08831323479360317,
+        "n": 300
+      },
+      "F1_substring": {
+        "mean": 0.14514574314574313,
+        "std": 0.25589366583730594,
+        "n": 300
+      },
+      "EM_norm": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 300
+      },
+      "Faithfulness": {
+        "mean": 0.48014880952380945,
+        "std": 0.48702436514937286,
+        "n": 300
+      },
+      "Latency": {
+        "mean": 0.9964403637250264,
+        "std": 0.5934055839201203,
+        "n": 300
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "3hop2__140194_16797_51068",
+      "type": "multi_hop",
+      "gold": "Jenna - Louise Coleman",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.4515719413757324
+      }
+    },
+    {
+      "qid": "2hop__95687_577502",
+      "type": "multi_hop",
+      "gold": "Maria Shriver",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6421957015991211
+      }
+    },
+    {
+      "qid": "4hop1__151650_5274_458768_33632",
+      "type": "multi_hop",
+      "gold": "May 4",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6193547248840332
+      }
+    },
+    {
+      "qid": "3hop1__131829_39743_24526",
+      "type": "multi_hop",
+      "gold": "upper 40s–lower 50s °F",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.4506809711456299
+      }
+    },
+    {
+      "qid": "4hop1__152146_5274_458768_33633",
+      "type": "multi_hop",
+      "gold": "August 3, 1769",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7855684757232666
+      }
+    },
+    {
+      "qid": "2hop__147260_623159",
+      "type": "multi_hop",
+      "gold": "Yaroslavl Oblast",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6261613368988037
+      }
+    },
+    {
+      "qid": "4hop2__161602_426860_88460_20999",
+      "type": "multi_hop",
+      "gold": "The dynasty regrouped and defeated the Portuguese",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 1.3926737308502197
+      }
+    },
+    {
+      "qid": "2hop__10515_21567",
+      "type": "multi_hop",
+      "gold": "John Kukuzelis",
+      "answer": "John Kukuzelis introduced a system of notation in the first half of the 14th century that was widely used in the Balkans, an area where most of the invasion of the Eastern Roman Empire took place.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.13333333333333333,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.4270961284637451
+      }
+    },
+    {
+      "qid": "2hop__846415_88165",
+      "type": "multi_hop",
+      "gold": "Keturah",
+      "answer": "Jokshan's father, Abraham, married Keturah after the death of Sarah.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.18181818181818182,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6050965785980225
+      }
+    },
+    {
+      "qid": "3hop1__145194_160545_62931",
+      "type": "multi_hop",
+      "gold": "island Koh Phi Phi",
+      "answer": "The Beach was filmed on the Thai island Koh Phi Phi. Siddhi Savetsila was born in Thailand, so the location of the film is in the same country as his birth city.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.20689655172413793,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.062309741973877
+      }
+    },
+    {
+      "qid": "2hop__455392_40315",
+      "type": "multi_hop",
+      "gold": "12",
+      "answer": "Desert Studies Center는 California Desert Studies Consortium의 일원으로, 이 컨소시엄에는 7개의 California State University 캠퍼스가 포함되어 있습니다. 따라서 Desert Studies Center가 속한 기관의 캠퍼스 수는 7개입니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.0588250160217285
+      }
+    },
+    {
+      "qid": "4hop3__373573_132409_223216_35031",
+      "type": "multi_hop",
+      "gold": "third-largest",
+      "answer": "Pathology formed in San Diego, California, which is one of the dominant areas in Southern California. The band Papa Roach, which released the song \"Still Swingin',\" is also from California, specifically from the San Francisco Bay Area. \n\nIn terms of urban area size, San Diego is the second-largest city in California, after Los Angeles. Therefore, the urban area of San Diego ranks second in size among the urban areas of the state where the band Papa Roach formed. \n\nSo, the answer is: San Diego ranks second in size among the urban areas of California.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 3.006103277206421
+      }
+    },
+    {
+      "qid": "2hop__85463_50252",
+      "type": "multi_hop",
+      "gold": "Kim Il - Sung",
+      "answer": "North Korea was led by Kim Il-sung during the war when UN troops approached the Yalu River.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.1,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.1974833011627197
+      }
+    },
+    {
+      "qid": "3hop1__46571_87694_124169",
+      "type": "multi_hop",
+      "gold": "1952",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5555140972137451
+      }
+    },
+    {
+      "qid": "3hop1__759384_42197_18397",
+      "type": "multi_hop",
+      "gold": "the Politburo",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.631199836730957
+      }
+    },
+    {
+      "qid": "2hop__60229_1783",
+      "type": "multi_hop",
+      "gold": "Fiorello La Guardia",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5576553344726562
+      }
+    },
+    {
+      "qid": "3hop2__132957_133292_40768",
+      "type": "multi_hop",
+      "gold": "1981",
+      "answer": "Nissan, along with Honda (the creator of the Acura Legend) and Toyota, opened US assembly plants in the early 1980s.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8270676136016846
+      }
+    },
+    {
+      "qid": "2hop__39063_212301",
+      "type": "multi_hop",
+      "gold": "Arthur Peel",
+      "answer": "The father of the man who conceived of the 'new' police is Robert Peel.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7463445663452148
+      }
+    },
+    {
+      "qid": "2hop__632870_22402",
+      "type": "multi_hop",
+      "gold": "nearly 25,000",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.668410062789917
+      }
+    },
+    {
+      "qid": "2hop__684287_78303",
+      "type": "multi_hop",
+      "gold": "Cordell Walker",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        10,
+        0,
+        0
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6241052150726318
+      }
+    }
+  ]
+}
