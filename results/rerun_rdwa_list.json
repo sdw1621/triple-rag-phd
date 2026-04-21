@@ -1,0 +1,1146 @@
+{
+  "policy": "rdwa",
+  "prompt_style": "list",
+  "n_queries": 5000,
+  "aggregate": {
+    "overall": {
+      "F1_strict": {
+        "mean": 0.5293067562461617,
+        "std": 0.4294279682433012,
+        "n": 5000
+      },
+      "F1_substring": {
+        "mean": 0.4820761957486957,
+        "std": 0.4424071218628821,
+        "n": 5000
+      },
+      "F1_char": {
+        "mean": 0.4685565979349366,
+        "std": 0.4379217627309842,
+        "n": 5000
+      },
+      "EM_norm": {
+        "mean": 0.3866,
+        "std": 0.48697067673526295,
+        "n": 5000
+      },
+      "Faithfulness": {
+        "mean": 0.5439180952380952,
+        "std": 0.48590661831980037,
+        "n": 5000
+      },
+      "Latency": {
+        "mean": 0.7110959956169128,
+        "std": 0.41338342864872146,
+        "n": 5000
+      }
+    },
+    "by_type": {
+      "simple": {
+        "F1_strict": {
+          "mean": 0.8740847249156073,
+          "std": 0.2908664886592597,
+          "n": 2000
+        },
+        "F1_substring": {
+          "mean": 0.8566780122655123,
+          "std": 0.31304170214332955,
+          "n": 2000
+        },
+        "F1_char": {
+          "mean": 0.7893778748367228,
+          "std": 0.37741254508906646,
+          "n": 2000
+        },
+        "EM_norm": {
+          "mean": 0.8105,
+          "std": 0.39190528192408947,
+          "n": 2000
+        },
+        "Faithfulness": {
+          "mean": 0.8171999999999999,
+          "std": 0.3738500798745698,
+          "n": 2000
+        }
+      },
+      "conditional": {
+        "F1_strict": {
+          "mean": 0.22261310324075648,
+          "std": 0.24658025689724766,
+          "n": 1250
+        },
+        "F1_substring": {
+          "mean": 0.14768396825396826,
+          "std": 0.17971892081971974,
+          "n": 1250
+        },
+        "F1_char": {
+          "mean": 0.1802270847849743,
+          "std": 0.21480139157394657,
+          "n": 1250
+        },
+        "EM_norm": {
+          "mean": 0.0008,
+          "std": 0.028272955275315665,
+          "n": 1250
+        },
+        "Faithfulness": {
+          "mean": 0.5518,
+          "std": 0.476071988020486,
+          "n": 1250
+        }
+      },
+      "multi_hop": {
+        "F1_strict": {
+          "mean": 0.3543416870563708,
+          "std": 0.39129141049138105,
+          "n": 1750
+        },
+        "F1_substring": {
+          "mean": 0.2928114250828537,
+          "std": 0.3848144020727466,
+          "n": 1750
+        },
+        "F1_char": {
+          "mean": 0.307853362297154,
+          "std": 0.386454728221282,
+          "n": 1750
+        },
+        "EM_norm": {
+          "mean": 0.1777142857142857,
+          "std": 0.3822720475882941,
+          "n": 1750
+        },
+        "Faithfulness": {
+          "mean": 0.22596598639455784,
+          "std": 0.40801639766959474,
+          "n": 1750
+        }
+      }
+    },
+    "top_weights": [
+      {
+        "weight": "(α=0.2, β=0.6, γ=0.2)",
+        "count": 2898
+      },
+      {
+        "weight": "(α=0.2, β=0.2, γ=0.6)",
+        "count": 945
+      },
+      {
+        "weight": "(α=0.6, β=0.2, γ=0.2)",
+        "count": 482
+      },
+      {
+        "weight": "(α=0.5, β=0.3, γ=0.2)",
+        "count": 354
+      },
+      {
+        "weight": "(α=0.1, β=0.3, γ=0.6)",
+        "count": 313
+      }
+    ]
+  },
+  "samples": [
+    {
+      "qid": "6",
+      "type": "simple",
+      "gold": "12명",
+      "answer": "12명",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.6322247982025146
+      }
+    },
+    {
+      "qid": "2",
+      "type": "simple",
+      "gold": "바이오의공학과",
+      "answer": "바이오의공학과",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.7053983211517334
+      }
+    },
+    {
+      "qid": "5",
+      "type": "conditional",
+      "gold": "회계정보, 로봇공학, 분산시스템, 디지털미디어, 암호학, 컴퓨터비전, 머신러닝, 회계정보, 언어학, 바이오공학, 자연어처리, 컴퓨터비전, 암호학, 경영과학",
+      "answer": "머신러닝, 회계정보",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.3076923076923077,
+        "f1_substring": 0.21428571428571427,
+        "f1_char": 0.20689655172413793,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7148661613464355
+      }
+    },
+    {
+      "qid": "8",
+      "type": "conditional",
+      "gold": "윤민준, 장민준, 황민준, 안민준",
+      "answer": "안서준, 윤민준",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.3333333333333333,
+        "f1_substring": 0.25,
+        "f1_char": 0.14285714285714288,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.5,
+        "latency": 0.7379622459411621
+      }
+    },
+    {
+      "qid": "3",
+      "type": "conditional",
+      "gold": "총 367명 (김민준, 이민준, 박민준, 정민준, 최민준...)",
+      "answer": "김민준, 이민준, 박민준",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.6,
+        "f1_substring": 0.4000000000000001,
+        "f1_char": 0.56,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7477004528045654
+      }
+    },
+    {
+      "qid": "1",
+      "type": "simple",
+      "gold": "홍성민, 황성민, 전성민",
+      "answer": "홍성민, 황성민, 전성민",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.7950489521026611
+      }
+    },
+    {
+      "qid": "10",
+      "type": "multi_hop",
+      "gold": "데이터사이언스학과, 무역학과",
+      "answer": "데이터사이언스학과",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 0.5,
+        "f1_char": 0.8,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.9289295673370361
+      }
+    },
+    {
+      "qid": "9",
+      "type": "simple",
+      "gold": "천문학과",
+      "answer": "천문학과",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.95255446434021
+      }
+    },
+    {
+      "qid": "7",
+      "type": "simple",
+      "gold": "언어학, 회계정보",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 1.0188701152801514
+      }
+    },
+    {
+      "qid": "4",
+      "type": "conditional",
+      "gold": "유서준, 전서준, 김도윤, 이도윤, 박도윤, 정도윤, 최도윤, 조도윤, 한도윤",
+      "answer": "서서준",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 1.0527255535125732
+      }
+    },
+    {
+      "qid": "14",
+      "type": "simple",
+      "gold": "홍윤서, 권윤서, 황윤서, 안윤서, 서윤서, 유윤서, 전윤서, 김채원, 이채원",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5768427848815918
+      }
+    },
+    {
+      "qid": "13",
+      "type": "simple",
+      "gold": "유하은, 전하은, 김하윤, 이하윤, 박하윤, 정하윤, 최하윤, 조하윤, 한하윤, 강하윤, 윤하윤",
+      "answer": "전하은, 김하윤, 박하윤, 조하윤, 강하윤",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.625,
+        "f1_substring": 0.45454545454545453,
+        "f1_char": 0.5853658536585366,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.684891939163208
+      }
+    },
+    {
+      "qid": "16",
+      "type": "conditional",
+      "gold": "총 109명 (김민준, 박민준, 정민준, 강민준, 황민준...)",
+      "answer": "김민준, 박민준, 정민준",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.6,
+        "f1_substring": 0.4000000000000001,
+        "f1_char": 0.56,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6490824222564697
+      }
+    },
+    {
+      "qid": "12",
+      "type": "simple",
+      "gold": "안정훈, 서정훈, 유정훈, 전정훈, 김재원, 이재원, 박재원, 정재원",
+      "answer": "서정훈, 전정훈, 김재원, 박재원, 정재원, 안정훈",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.8571428571428571,
+        "f1_substring": 0.75,
+        "f1_char": 0.7368421052631579,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.8333333333333334,
+        "latency": 0.8194429874420166
+      }
+    },
+    {
+      "qid": "18",
+      "type": "simple",
+      "gold": "없음",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6345345973968506
+      }
+    },
+    {
+      "qid": "17",
+      "type": "simple",
+      "gold": "미술학과",
+      "answer": "미술학과",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.6615664958953857
+      }
+    },
+    {
+      "qid": "15",
+      "type": "conditional",
+      "gold": "안태양, 서태양, 유태양, 김정훈, 조정훈",
+      "answer": "김민준, 박민준, 정민준",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.8721857070922852
+      }
+    },
+    {
+      "qid": "20",
+      "type": "multi_hop",
+      "gold": "간호학과, 화학과, 무역학과",
+      "answer": "정보를 찾을 수 없습니다",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5744426250457764
+      }
+    },
+    {
+      "qid": "11",
+      "type": "conditional",
+      "gold": "정보통신 클라우드AI, 생체공 열역학응용, 소프트웨어공 제어공학, 환경공 데이터베이스시스템, 중어중문 심리학개론, 법 복지정책론, 정보통신 인공지능개론, 회계 금융공학, 무역 무역실무, 보건 임상실습개론...",
+      "answer": "의 보건통계학, 의 원격의료, 의 약리학, 의 의료기기공학, 의 임상실습개론",
+      "weights": [
+        1,
+        3,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.08,
+        "f1_substring": 0.0,
+        "f1_char": 0.07407407407407407,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.2244389057159424
+      }
+    },
+    {
+      "qid": "21",
+      "type": "multi_hop",
+      "gold": "사이버보안 클라우드AI",
+      "answer": "사이버보안 클라우드AI",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 0.0,
+        "latency": 0.5833866596221924
+      }
+    },
+    {
+      "qid": "22",
+      "type": "multi_hop",
+      "gold": "박현우, 최현우, 조현우, 한현우, 강현우, 윤현우, 장현우, 임현우, 오현우, 신현우, 홍현우",
+      "answer": "장현우",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.16666666666666669,
+        "f1_substring": 0.09090909090909091,
+        "f1_char": 0.0625,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5244171619415283
+      }
+    },
+    {
+      "qid": "19",
+      "type": "simple",
+      "gold": "정치외교 영어작문, 정치외교 언어학개론, 정치외교 언론이론, 정치외교 동양사개론, 정치외교 젠더연구",
+      "answer": "정치외교 영어작문, 정치외교 언어학개론, 정치외교 언론이론, 정치외교 동양사개론, 정치외교 젠더연구",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 0.4,
+        "latency": 0.9576852321624756
+      }
+    },
+    {
+      "qid": "23",
+      "type": "multi_hop",
+      "gold": "컴퓨터공학과, 사이버보안학과, 토목공학과, 음악학과",
+      "answer": "정보를 찾을 수 없습니다",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5608265399932861
+      }
+    },
+    {
+      "qid": "24",
+      "type": "simple",
+      "gold": "의학과",
+      "answer": "의학과",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 0.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5477769374847412
+      }
+    },
+    {
+      "qid": "28",
+      "type": "simple",
+      "gold": "건축공학과",
+      "answer": "건축공학과",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5112664699554443
+      }
+    },
+    {
+      "qid": "26",
+      "type": "conditional",
+      "gold": "총 367명 (김민준, 이민준, 박민준, 정민준, 최민준...)",
+      "answer": "김민준, 이민준, 박민준",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.6,
+        "f1_substring": 0.4000000000000001,
+        "f1_char": 0.56,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7340142726898193
+      }
+    },
+    {
+      "qid": "25",
+      "type": "simple",
+      "gold": "신태양, 조윤서",
+      "answer": "신태양, 조윤서",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.744166374206543
+      }
+    },
+    {
+      "qid": "31",
+      "type": "simple",
+      "gold": "53세",
+      "answer": "53세",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.49916958808898926
+      }
+    },
+    {
+      "qid": "27",
+      "type": "conditional",
+      "gold": "총 367명 (김민준, 이민준, 박민준, 정민준, 최민준...)",
+      "answer": "김민준, 이민준, 박민준",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.6,
+        "f1_substring": 0.4000000000000001,
+        "f1_char": 0.56,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.8093955516815186
+      }
+    },
+    {
+      "qid": "29",
+      "type": "conditional",
+      "gold": "회계정보, 딥러닝, 양자컴퓨팅, 사이버보안, 금융공학, 머신러닝, 경영과학, 네트워크, 나노기술, 의료AI, 언어학, 정보검색",
+      "answer": "정보를 찾을 수 없습니다",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5930829048156738
+      }
+    },
+    {
+      "qid": "32",
+      "type": "simple",
+      "gold": "55세",
+      "answer": "55세",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.474578857421875
+      }
+    },
+    {
+      "qid": "33",
+      "type": "conditional",
+      "gold": "총 367명 (김민준, 이민준, 박민준, 정민준, 최민준...)",
+      "answer": "김민준, 이민준, 박민준",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.6,
+        "f1_substring": 0.4000000000000001,
+        "f1_char": 0.56,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.715144157409668
+      }
+    },
+    {
+      "qid": "34",
+      "type": "simple",
+      "gold": "윤동현, 장동현, 임동현, 오동현, 신동현, 홍동현, 권동현, 황동현, 안동현, 서동현",
+      "answer": "오동현, 황동현, 윤동현",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.4615384615384615,
+        "f1_substring": 0.3,
+        "f1_char": 0.2857142857142857,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.683800458908081
+      }
+    },
+    {
+      "qid": "30",
+      "type": "conditional",
+      "gold": "정보통신 클라우드AI, 소프트웨어공 제어공학, 환경공 데이터베이스시스템, 법 복지정책론, 정보통신 인공지능개론, 회계 금융공학, 무역 무역실무, 인공지능 그래프신경망, 사이버보안 AI윤리, 경영정보 금융공학...",
+      "answer": "의 보건통계학, 의 원격의료, 의 약리학, 의 의료기기공학, 의 임상실습개론",
+      "weights": [
+        1,
+        3,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.064997673034668
+      }
+    },
+    {
+      "qid": "39",
+      "type": "simple",
+      "gold": "로봇공학과",
+      "answer": "로봇공학과",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 0.0,
+        "latency": 0.5441162586212158
+      }
+    },
+    {
+      "qid": "38",
+      "type": "simple",
+      "gold": "정보검색, 바이오공학",
+      "answer": "정보검색, 바이오공학",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5736031532287598
+      }
+    },
+    {
+      "qid": "40",
+      "type": "simple",
+      "gold": "홍윤서, 권윤서, 황윤서, 안윤서, 서윤서, 유윤서, 전윤서, 김채원, 이채원",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5646612644195557
+      }
+    },
+    {
+      "qid": "37",
+      "type": "multi_hop",
+      "gold": "정치외교 법학개론",
+      "answer": "정치외교 법학개론",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.7034034729003906
+      }
+    },
+    {
+      "qid": "41",
+      "type": "multi_hop",
+      "gold": "간호 임상실습개론",
+      "answer": "간호 임상실습개론",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 0.0,
+        "latency": 0.5977294445037842
+      }
+    },
+    {
+      "qid": "35",
+      "type": "simple",
+      "gold": "금융공학, 분산시스템",
+      "answer": "금융공학, 분산시스템",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 1.018810510635376
+      }
+    },
+    {
+      "qid": "42",
+      "type": "simple",
+      "gold": "수학과",
+      "answer": "수학과",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 0.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5689272880554199
+      }
+    },
+    {
+      "qid": "44",
+      "type": "simple",
+      "gold": "일어일문학과",
+      "answer": "일어일문학과",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5657939910888672
+      }
+    },
+    {
+      "qid": "49",
+      "type": "simple",
+      "gold": "김정훈, 윤지우",
+      "answer": "김정훈, 윤지우",
+      "weights": [
+        5,
+        3,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5769879817962646
+      }
+    },
+    {
+      "qid": "46",
+      "type": "multi_hop",
+      "gold": "국어국문 형이상학",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7230372428894043
+      }
+    },
+    {
+      "qid": "43",
+      "type": "multi_hop",
+      "gold": "중어중문 헌법학, 중어중문 미디어리터러시, 중어중문 인식론, 중어중문 형이상학, 중어중문 영어작문, 중어중문 한국어문법론, 중어중문 심리학개론, 중어중문 공공정책론, 중어중문 복지정책론, 중어중문 언론이론, 중어중문 사회조사방법론, 중어중문 여론조사론",
+      "answer": "중어중문 비교정치론, 중어중문 정치학원론, 중어중문 인식론, 중어중문 문화인류학",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.2222222222222222,
+        "f1_substring": 0.08333333333333333,
+        "f1_char": 0.14583333333333334,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.985978364944458
+      }
+    },
+    {
+      "qid": "47",
+      "type": "multi_hop",
+      "gold": "장민혁, 임민혁, 오민혁, 신민혁, 홍민혁, 권민혁, 황민혁, 안민혁",
+      "answer": "장민혁",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.2222222222222222,
+        "f1_substring": 0.125,
+        "f1_char": 0.08695652173913045,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7291135787963867
+      }
+    },
+    {
+      "qid": "48",
+      "type": "simple",
+      "gold": "46세",
+      "answer": "46세",
+      "weights": [
+        6,
+        2,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.7097806930541992
+      }
+    },
+    {
+      "qid": "45",
+      "type": "conditional",
+      "gold": "총 273명 (김민준, 이민준, 박민준, 정민준, 최민준...)",
+      "answer": "안서준, 조지유, 김민준, 박민준",
+      "weights": [
+        2,
+        2,
+        6
+      ],
+      "metrics": {
+        "f1_strict": 0.36363636363636365,
+        "f1_substring": 0.20000000000000004,
+        "f1_char": 0.2857142857142857,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.5,
+        "latency": 0.8630452156066895
+      }
+    },
+    {
+      "qid": "51",
+      "type": "multi_hop",
+      "gold": "금융학과, 생명과학과, 화학공학과, 언론정보학과",
+      "answer": "정보를 찾을 수 없습니다",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5560615062713623
+      }
+    },
+    {
+      "qid": "50",
+      "type": "multi_hop",
+      "gold": "소프트웨어공 품질공학",
+      "answer": "소프트웨어공 품질공학",
+      "weights": [
+        2,
+        6,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "em_raw": 1.0,
+        "faithfulness": 0.0,
+        "latency": 0.7277700901031494
+      }
+    }
+  ]
+}
