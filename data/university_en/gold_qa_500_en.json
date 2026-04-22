@@ -1,0 +1,2823 @@
+[
+  {
+    "id": 1,
+    "query": "List professors in the Marketing Department younger than 55.",
+    "answer": "Thomas Anderson, Angela Perez",
+    "reference": "Marketing Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 2,
+    "query": "How old is Professor Joshua Davis?",
+    "answer": "56 years old",
+    "reference": "Profile of Professor Joshua Davis",
+    "type": "simple"
+  },
+  {
+    "id": 3,
+    "query": "Which departments participate in the Bio Mobility Project?",
+    "answer": "Machine Learning, Chemical Engineering, Finance",
+    "reference": "Project record: Bio Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 4,
+    "query": "Which department does Professor Linda Hernandez belong to?",
+    "answer": "Materials Engineering",
+    "reference": "Profile of Professor Linda Hernandez",
+    "type": "simple"
+  },
+  {
+    "id": 5,
+    "query": "Which Professors are older than 60?",
+    "answer": "Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, John Allen, Susan Torres",
+    "reference": "Faculty filter: age > 60, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 6,
+    "query": "Who co-teaches Robotics II with Professor Sandra Hernandez?",
+    "answer": "Angela White, Karen Hill",
+    "reference": "Course record: Robotics II",
+    "type": "multi_hop"
+  },
+  {
+    "id": 7,
+    "query": "Which department does Professor Michael Thompson belong to?",
+    "answer": "Accounting",
+    "reference": "Profile of Professor Michael Thompson",
+    "type": "simple"
+  },
+  {
+    "id": 8,
+    "query": "What courses does the Electrical Engineering Department offer?",
+    "answer": "Mechatronics Introduction, Mechatronics III, Robotics Seminar, Control Systems Introduction",
+    "reference": "Electrical Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 9,
+    "query": "Who teaches Organic Chemistry I?",
+    "answer": "Ashley Wilson, Charles Brown",
+    "reference": "Course record for Organic Chemistry I",
+    "type": "simple"
+  },
+  {
+    "id": 10,
+    "query": "Who co-teaches Speech Processing Seminar with Professor Steven Gonzalez?",
+    "answer": "Karen Hill, Kevin King",
+    "reference": "Course record: Speech Processing Seminar",
+    "type": "multi_hop"
+  },
+  {
+    "id": 11,
+    "query": "How old is Professor Charles Williams?",
+    "answer": "61 years old",
+    "reference": "Profile of Professor Charles Williams",
+    "type": "simple"
+  },
+  {
+    "id": 12,
+    "query": "Which departments participate in the Bio Learning Project?",
+    "answer": "Energy Engineering, Design",
+    "reference": "Project record: Bio Learning Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 13,
+    "query": "What is Professor Joshua King's research area?",
+    "answer": "Linguistics",
+    "reference": "Profile of Professor Joshua King",
+    "type": "simple"
+  },
+  {
+    "id": 14,
+    "query": "What courses does the Mathematics Department offer?",
+    "answer": "Organic Chemistry III, Thermodynamics I, Thermodynamics II",
+    "reference": "Mathematics Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 15,
+    "query": "Which department does Professor Paul Hill belong to?",
+    "answer": "Chemistry",
+    "reference": "Profile of Professor Paul Hill",
+    "type": "simple"
+  },
+  {
+    "id": 16,
+    "query": "Who teaches Linguistics II?",
+    "answer": "Jessica Allen, Sandra Lee",
+    "reference": "Course record for Linguistics II",
+    "type": "simple"
+  },
+  {
+    "id": 17,
+    "query": "List professors in the Psychology Department younger than 45.",
+    "answer": "Linda Smith",
+    "reference": "Psychology Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 18,
+    "query": "How old is Professor Lisa Smith?",
+    "answer": "67 years old",
+    "reference": "Profile of Professor Lisa Smith",
+    "type": "simple"
+  },
+  {
+    "id": 19,
+    "query": "Who teaches Information Retrieval Advanced?",
+    "answer": "Charles Allen, Sandra Wright",
+    "reference": "Course record for Information Retrieval Advanced",
+    "type": "simple"
+  },
+  {
+    "id": 20,
+    "query": "What is Professor Kevin Gonzalez's research area?",
+    "answer": "Control Systems",
+    "reference": "Profile of Professor Kevin Gonzalez",
+    "type": "simple"
+  },
+  {
+    "id": 21,
+    "query": "Who co-teaches Control Systems Introduction with Professor Donna Johnson?",
+    "answer": "Kenneth Torres",
+    "reference": "Course record: Control Systems Introduction",
+    "type": "multi_hop"
+  },
+  {
+    "id": 22,
+    "query": "What is Professor Karen Brown's research area?",
+    "answer": "Speech Processing",
+    "reference": "Profile of Professor Karen Brown",
+    "type": "simple"
+  },
+  {
+    "id": 23,
+    "query": "Which department does Professor Kevin Gonzalez belong to?",
+    "answer": "Philosophy",
+    "reference": "Profile of Professor Kevin Gonzalez",
+    "type": "simple"
+  },
+  {
+    "id": 24,
+    "query": "How old is Professor John Allen?",
+    "answer": "68 years old",
+    "reference": "Profile of Professor John Allen",
+    "type": "simple"
+  },
+  {
+    "id": 25,
+    "query": "Who co-teaches Robotics Seminar with Professor David Brown?",
+    "answer": "Ashley Jones",
+    "reference": "Course record: Robotics Seminar",
+    "type": "multi_hop"
+  },
+  {
+    "id": 26,
+    "query": "List professors in the Energy Engineering Department younger than 45.",
+    "answer": "Charles Scott, Patricia Scott",
+    "reference": "Energy Engineering Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 27,
+    "query": "Who teaches Mechatronics Advanced?",
+    "answer": "Mark Allen, Jessica Hill",
+    "reference": "Course record for Mechatronics Advanced",
+    "type": "simple"
+  },
+  {
+    "id": 28,
+    "query": "Which department does Professor Charles Hernandez belong to?",
+    "answer": "Astronomy",
+    "reference": "Profile of Professor Charles Hernandez",
+    "type": "simple"
+  },
+  {
+    "id": 29,
+    "query": "Which departments participate in the AI Health Project?",
+    "answer": "Korean Literature, Astronomy",
+    "reference": "Project record: AI Health Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 30,
+    "query": "How old is Professor Rachel Young?",
+    "answer": "60 years old",
+    "reference": "Profile of Professor Rachel Young",
+    "type": "simple"
+  },
+  {
+    "id": 31,
+    "query": "Which Associate Professors are older than 55?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson",
+    "reference": "Faculty filter: age > 55, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 32,
+    "query": "Who teaches Mechatronics I?",
+    "answer": "Linda Thomas, Karen Wright, Mary Jones",
+    "reference": "Course record for Mechatronics I",
+    "type": "simple"
+  },
+  {
+    "id": 33,
+    "query": "What courses does the Physics Department offer?",
+    "answer": "Thermodynamics Seminar, Bayesian Inference I, Genetics Introduction",
+    "reference": "Physics Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 34,
+    "query": "What courses does the Marketing Department offer?",
+    "answer": "Game Theory I, Corporate Finance Seminar, Corporate Finance Introduction, Econometrics III, Consumer Behavior Advanced",
+    "reference": "Marketing Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 35,
+    "query": "Which Associate Professors are older than 55?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson",
+    "reference": "Faculty filter: age > 55, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 36,
+    "query": "Which department does Professor Nancy King belong to?",
+    "answer": "Philosophy",
+    "reference": "Profile of Professor Nancy King",
+    "type": "simple"
+  },
+  {
+    "id": 37,
+    "query": "Which departments participate in the Next-Gen Health Project?",
+    "answer": "Aerospace Engineering, Physics, Economics",
+    "reference": "Project record: Next-Gen Health Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 38,
+    "query": "What is Professor Charles Allen's research area?",
+    "answer": "Speech Processing",
+    "reference": "Profile of Professor Charles Allen",
+    "type": "simple"
+  },
+  {
+    "id": 39,
+    "query": "List professors in the Data Science Department younger than 50.",
+    "answer": "Sarah Miller, Ashley Miller",
+    "reference": "Data Science Department faculty filter (age < 50)",
+    "type": "conditional"
+  },
+  {
+    "id": 40,
+    "query": "Which department does Professor Patricia Scott belong to?",
+    "answer": "Energy Engineering",
+    "reference": "Profile of Professor Patricia Scott",
+    "type": "simple"
+  },
+  {
+    "id": 41,
+    "query": "What courses does the History Department offer?",
+    "answer": "Ethics Seminar, Cognitive Psychology III, Medieval History II, Medieval History I, Ethics II",
+    "reference": "History Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 42,
+    "query": "Which department does Professor Jessica Hill belong to?",
+    "answer": "Aerospace Engineering",
+    "reference": "Profile of Professor Jessica Hill",
+    "type": "simple"
+  },
+  {
+    "id": 43,
+    "query": "What courses does the Robotics Engineering Department offer?",
+    "answer": "Manufacturing III, Robotics II, Manufacturing Seminar, Manufacturing III",
+    "reference": "Robotics Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 44,
+    "query": "List professors in the Life Science Department younger than 55.",
+    "answer": "James Thomas, Sandra Martinez",
+    "reference": "Life Science Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 45,
+    "query": "What courses does the Naval Engineering Department offer?",
+    "answer": "Mechatronics III, Manufacturing Advanced, Control Systems I",
+    "reference": "Naval Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 46,
+    "query": "Which departments participate in the Green Security Project?",
+    "answer": "Sociology, Aerospace Engineering, Machine Learning",
+    "reference": "Project record: Green Security Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 47,
+    "query": "How old is Professor Helen Green?",
+    "answer": "32 years old",
+    "reference": "Profile of Professor Helen Green",
+    "type": "simple"
+  },
+  {
+    "id": 48,
+    "query": "Which department does Professor Ashley Jones belong to?",
+    "answer": "Urban Engineering",
+    "reference": "Profile of Professor Ashley Jones",
+    "type": "simple"
+  },
+  {
+    "id": 49,
+    "query": "Who teaches Robotics Introduction?",
+    "answer": "Robert Hill, Jane Moore",
+    "reference": "Course record for Robotics Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 50,
+    "query": "Which department does Professor James Martin belong to?",
+    "answer": "Physics",
+    "reference": "Profile of Professor James Martin",
+    "type": "simple"
+  },
+  {
+    "id": 51,
+    "query": "Which Assistant Professors are older than 60?",
+    "answer": "Charles Williams, Sarah Brown, Emily Lewis",
+    "reference": "Faculty filter: age > 60, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 52,
+    "query": "Which department does Professor David Taylor belong to?",
+    "answer": "Chemistry",
+    "reference": "Profile of Professor David Taylor",
+    "type": "simple"
+  },
+  {
+    "id": 53,
+    "query": "What is Professor Nancy Jones's research area?",
+    "answer": "Machine Learning",
+    "reference": "Profile of Professor Nancy Jones",
+    "type": "simple"
+  },
+  {
+    "id": 54,
+    "query": "Which department does Professor Donna Jones belong to?",
+    "answer": "Biomedical Engineering",
+    "reference": "Profile of Professor Donna Jones",
+    "type": "simple"
+  },
+  {
+    "id": 55,
+    "query": "Who teaches Control Systems I?",
+    "answer": "Charles Scott, Patricia Scott",
+    "reference": "Course record for Control Systems I",
+    "type": "simple"
+  },
+  {
+    "id": 56,
+    "query": "Which department does Professor Sarah Miller belong to?",
+    "answer": "Data Science",
+    "reference": "Profile of Professor Sarah Miller",
+    "type": "simple"
+  },
+  {
+    "id": 57,
+    "query": "How old is Professor Karen Hill?",
+    "answer": "44 years old",
+    "reference": "Profile of Professor Karen Hill",
+    "type": "simple"
+  },
+  {
+    "id": 58,
+    "query": "Who teaches Computer Vision Seminar?",
+    "answer": "Karen Hill, Kevin King",
+    "reference": "Course record for Computer Vision Seminar",
+    "type": "simple"
+  },
+  {
+    "id": 59,
+    "query": "Which department does Professor Kevin King belong to?",
+    "answer": "Artificial Intelligence",
+    "reference": "Profile of Professor Kevin King",
+    "type": "simple"
+  },
+  {
+    "id": 60,
+    "query": "Which professors in the Sociology Department work on Social Theory?",
+    "answer": "Jessica Allen, Sandra Lee",
+    "reference": "Sociology Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 61,
+    "query": "Who co-teaches Manufacturing III with Professor Donna Johnson?",
+    "answer": "Kenneth Torres",
+    "reference": "Course record: Manufacturing III",
+    "type": "multi_hop"
+  },
+  {
+    "id": 62,
+    "query": "Which department does Professor Sandra Rodriguez belong to?",
+    "answer": "Korean Literature",
+    "reference": "Profile of Professor Sandra Rodriguez",
+    "type": "simple"
+  },
+  {
+    "id": 63,
+    "query": "Which department does Professor Joshua Davis belong to?",
+    "answer": "Trade",
+    "reference": "Profile of Professor Joshua Davis",
+    "type": "simple"
+  },
+  {
+    "id": 64,
+    "query": "List professors in the Astronomy Department younger than 45.",
+    "answer": "Helen Green",
+    "reference": "Astronomy Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 65,
+    "query": "Who teaches Supply Chain I?",
+    "answer": "Charles Williams, Joshua Davis",
+    "reference": "Course record for Supply Chain I",
+    "type": "simple"
+  },
+  {
+    "id": 66,
+    "query": "Who teaches Computer Vision III?",
+    "answer": "Kevin King, Karen Hill, Steven Gonzalez",
+    "reference": "Course record for Computer Vision III",
+    "type": "simple"
+  },
+  {
+    "id": 67,
+    "query": "Which departments participate in the Next-Gen Mobility Project?",
+    "answer": "Energy Engineering, Fine Arts",
+    "reference": "Project record: Next-Gen Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 68,
+    "query": "List professors in the History Department younger than 45.",
+    "answer": "Joshua King",
+    "reference": "History Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 69,
+    "query": "Which Associate Professors are older than 50?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, David Taylor, Lisa Smith",
+    "reference": "Faculty filter: age > 50, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 70,
+    "query": "Which Professors are older than 55?",
+    "answer": "Robert Garcia, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, John Allen, Charles Williams, Susan Torres",
+    "reference": "Faculty filter: age > 55, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 71,
+    "query": "Who teaches Supply Chain Introduction?",
+    "answer": "Susan Perez, Mary Hernandez",
+    "reference": "Course record for Supply Chain Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 72,
+    "query": "Who co-teaches Quantum Physics Seminar with Professor David Taylor?",
+    "answer": "Lisa Smith, Paul Hill",
+    "reference": "Course record: Quantum Physics Seminar",
+    "type": "multi_hop"
+  },
+  {
+    "id": 73,
+    "query": "Who teaches Supply Chain Seminar?",
+    "answer": "Michael Thompson, Robert Thompson",
+    "reference": "Course record for Supply Chain Seminar",
+    "type": "simple"
+  },
+  {
+    "id": 74,
+    "query": "How old is Professor Kenneth Gonzalez?",
+    "answer": "55 years old",
+    "reference": "Profile of Professor Kenneth Gonzalez",
+    "type": "simple"
+  },
+  {
+    "id": 75,
+    "query": "Who co-teaches Manufacturing Introduction with Professor Donna Jones?",
+    "answer": "Sarah Taylor",
+    "reference": "Course record: Manufacturing Introduction",
+    "type": "multi_hop"
+  },
+  {
+    "id": 76,
+    "query": "How old is Professor Linda Thomas?",
+    "answer": "40 years old",
+    "reference": "Profile of Professor Linda Thomas",
+    "type": "simple"
+  },
+  {
+    "id": 77,
+    "query": "Which Professors are older than 50?",
+    "answer": "Robert Garcia, Ruth Clark, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, Charles Wilson, John Allen",
+    "reference": "Faculty filter: age > 50, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 78,
+    "query": "Which department does Professor Angela Brown belong to?",
+    "answer": "Cybersecurity",
+    "reference": "Profile of Professor Angela Brown",
+    "type": "simple"
+  },
+  {
+    "id": 79,
+    "query": "What courses does the Finance Department offer?",
+    "answer": "Supply Chain Introduction, Consumer Behavior Advanced, Econometrics Introduction, Game Theory I",
+    "reference": "Finance Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 80,
+    "query": "Who teaches Robotics Introduction?",
+    "answer": "Jessica Hill",
+    "reference": "Course record for Robotics Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 81,
+    "query": "What is Professor Sandra Lee's research area?",
+    "answer": "Social Theory",
+    "reference": "Profile of Professor Sandra Lee",
+    "type": "simple"
+  },
+  {
+    "id": 82,
+    "query": "Which departments participate in the Smart Security Project?",
+    "answer": "Psychology, Mechanical Engineering",
+    "reference": "Project record: Smart Security Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 83,
+    "query": "How old is Professor Patricia Jackson?",
+    "answer": "45 years old",
+    "reference": "Profile of Professor Patricia Jackson",
+    "type": "simple"
+  },
+  {
+    "id": 84,
+    "query": "List professors in the Computer Engineering Department younger than 55.",
+    "answer": "Jane Moore, Robert Hill",
+    "reference": "Computer Engineering Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 85,
+    "query": "Who co-teaches Robotics III with Professor Linda Hernandez?",
+    "answer": "Joshua Wright",
+    "reference": "Course record: Robotics III",
+    "type": "multi_hop"
+  },
+  {
+    "id": 86,
+    "query": "How old is Professor Kevin Gonzalez?",
+    "answer": "36 years old",
+    "reference": "Profile of Professor Kevin Gonzalez",
+    "type": "simple"
+  },
+  {
+    "id": 87,
+    "query": "Who teaches Knowledge Graphs III?",
+    "answer": "Steven Gonzalez, Karen Hill, Kevin King",
+    "reference": "Course record for Knowledge Graphs III",
+    "type": "simple"
+  },
+  {
+    "id": 88,
+    "query": "What courses does the Machine Learning Department offer?",
+    "answer": "Administrative Policy Introduction, International Law III, International Law Advanced",
+    "reference": "Machine Learning Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 89,
+    "query": "Which department does Professor Jane Moore belong to?",
+    "answer": "Computer Engineering",
+    "reference": "Profile of Professor Jane Moore",
+    "type": "simple"
+  },
+  {
+    "id": 90,
+    "query": "Which Professors are older than 55?",
+    "answer": "Robert Garcia, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, John Allen, Charles Williams, Susan Torres",
+    "reference": "Faculty filter: age > 55, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 91,
+    "query": "What is Professor Robert Thompson's research area?",
+    "answer": "Econometrics",
+    "reference": "Profile of Professor Robert Thompson",
+    "type": "simple"
+  },
+  {
+    "id": 92,
+    "query": "How old is Professor Donna Johnson?",
+    "answer": "39 years old",
+    "reference": "Profile of Professor Donna Johnson",
+    "type": "simple"
+  },
+  {
+    "id": 93,
+    "query": "What courses does the Korean Literature Department offer?",
+    "answer": "Social Theory I, Linguistics Advanced, Linguistics Introduction, Social Theory III",
+    "reference": "Korean Literature Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 94,
+    "query": "What is Professor Paul Hill's research area?",
+    "answer": "Astronomy",
+    "reference": "Profile of Professor Paul Hill",
+    "type": "simple"
+  },
+  {
+    "id": 95,
+    "query": "Which Assistant Professors are older than 50?",
+    "answer": "Charles Williams, Karen Wright, Linda Hernandez, Angela White, Nancy Jones, Sarah Brown, Emily Lewis, Paul Hill, Charles Hernandez, Kenneth Williams",
+    "reference": "Faculty filter: age > 50, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 96,
+    "query": "Who teaches Linguistics Introduction?",
+    "answer": "Sandra Rodriguez",
+    "reference": "Course record for Linguistics Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 97,
+    "query": "Who teaches Genetics Advanced?",
+    "answer": "Lisa Smith, Paul Hill, David Taylor",
+    "reference": "Course record for Genetics Advanced",
+    "type": "simple"
+  },
+  {
+    "id": 98,
+    "query": "Who teaches Bayesian Inference II?",
+    "answer": "Helen Green, Charles Hernandez, Michael Smith",
+    "reference": "Course record for Bayesian Inference II",
+    "type": "simple"
+  },
+  {
+    "id": 99,
+    "query": "Which Professors are older than 50?",
+    "answer": "Robert Garcia, Ruth Clark, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, Charles Wilson, John Allen",
+    "reference": "Faculty filter: age > 50, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 100,
+    "query": "Which Associate Professors are older than 60?",
+    "answer": "Sandra Gonzalez, Mark Garcia, Mark Allen, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson, Thomas Gonzalez, Joshua Clark",
+    "reference": "Faculty filter: age > 60, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 101,
+    "query": "What is Professor Ashley Jones's research area?",
+    "answer": "Mechatronics",
+    "reference": "Profile of Professor Ashley Jones",
+    "type": "simple"
+  },
+  {
+    "id": 102,
+    "query": "What is Professor Charles Wilson's research area?",
+    "answer": "Organic Chemistry",
+    "reference": "Profile of Professor Charles Wilson",
+    "type": "simple"
+  },
+  {
+    "id": 103,
+    "query": "Which department does Professor Kevin Martin belong to?",
+    "answer": "English Literature",
+    "reference": "Profile of Professor Kevin Martin",
+    "type": "simple"
+  },
+  {
+    "id": 104,
+    "query": "How old is Professor Sarah Taylor?",
+    "answer": "68 years old",
+    "reference": "Profile of Professor Sarah Taylor",
+    "type": "simple"
+  },
+  {
+    "id": 105,
+    "query": "Who co-teaches Robotics Advanced with Professor Linda Hernandez?",
+    "answer": "Joshua Wright",
+    "reference": "Course record: Robotics Advanced",
+    "type": "multi_hop"
+  },
+  {
+    "id": 106,
+    "query": "How old is Professor Kevin Martin?",
+    "answer": "57 years old",
+    "reference": "Profile of Professor Kevin Martin",
+    "type": "simple"
+  },
+  {
+    "id": 107,
+    "query": "What courses does the Sociology Department offer?",
+    "answer": "Linguistics II, Linguistics Seminar, Cognitive Psychology I",
+    "reference": "Sociology Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 108,
+    "query": "Which department does Professor David Taylor belong to?",
+    "answer": "Machine Learning",
+    "reference": "Profile of Professor David Taylor",
+    "type": "simple"
+  },
+  {
+    "id": 109,
+    "query": "How old is Professor Emily Anderson?",
+    "answer": "38 years old",
+    "reference": "Profile of Professor Emily Anderson",
+    "type": "simple"
+  },
+  {
+    "id": 110,
+    "query": "Which department does Professor Robert Garcia belong to?",
+    "answer": "Electrical Engineering",
+    "reference": "Profile of Professor Robert Garcia",
+    "type": "simple"
+  },
+  {
+    "id": 111,
+    "query": "Which department does Professor Linda Smith belong to?",
+    "answer": "Psychology",
+    "reference": "Profile of Professor Linda Smith",
+    "type": "simple"
+  },
+  {
+    "id": 112,
+    "query": "Which department does Professor Ruth Moore belong to?",
+    "answer": "Electrical Engineering",
+    "reference": "Profile of Professor Ruth Moore",
+    "type": "simple"
+  },
+  {
+    "id": 113,
+    "query": "List professors in the Finance Department younger than 45.",
+    "answer": "Mary Hernandez",
+    "reference": "Finance Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 114,
+    "query": "Which departments participate in the Smart Mobility Project?",
+    "answer": "Astronomy, Marketing",
+    "reference": "Project record: Smart Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 115,
+    "query": "How old is Professor Ashley Wilson?",
+    "answer": "48 years old",
+    "reference": "Profile of Professor Ashley Wilson",
+    "type": "simple"
+  },
+  {
+    "id": 116,
+    "query": "Who teaches Mechatronics III?",
+    "answer": "Robert Hill",
+    "reference": "Course record for Mechatronics III",
+    "type": "simple"
+  },
+  {
+    "id": 117,
+    "query": "Which professors in the Information Communication Department work on Speech Processing?",
+    "answer": "Charles Allen, Karen Brown",
+    "reference": "Information Communication Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 118,
+    "query": "Which Associate Professors are older than 55?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson",
+    "reference": "Faculty filter: age > 55, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 119,
+    "query": "Which department does Professor Charles Williams belong to?",
+    "answer": "Mechanical Engineering",
+    "reference": "Profile of Professor Charles Williams",
+    "type": "simple"
+  },
+  {
+    "id": 120,
+    "query": "Who co-teaches Computer Vision II with Professor Sarah Miller?",
+    "answer": "Ashley Miller",
+    "reference": "Course record: Computer Vision II",
+    "type": "multi_hop"
+  },
+  {
+    "id": 121,
+    "query": "How old is Professor William Lewis?",
+    "answer": "63 years old",
+    "reference": "Profile of Professor William Lewis",
+    "type": "simple"
+  },
+  {
+    "id": 122,
+    "query": "Which professors in the Mathematics Department work on Organic Chemistry?",
+    "answer": "Emily Lewis, Charles Wilson",
+    "reference": "Mathematics Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 123,
+    "query": "Who teaches Organic Chemistry III?",
+    "answer": "Emily Lewis",
+    "reference": "Course record for Organic Chemistry III",
+    "type": "simple"
+  },
+  {
+    "id": 124,
+    "query": "Who co-teaches Cognitive Psychology II with Professor Kevin Gonzalez?",
+    "answer": "Nancy King",
+    "reference": "Course record: Cognitive Psychology II",
+    "type": "multi_hop"
+  },
+  {
+    "id": 125,
+    "query": "Who teaches Bayesian Inference I?",
+    "answer": "Kenneth Wilson",
+    "reference": "Course record for Bayesian Inference I",
+    "type": "simple"
+  },
+  {
+    "id": 126,
+    "query": "List professors in the Robotics Engineering Department younger than 55.",
+    "answer": "Sandra Hernandez, Karen Hill",
+    "reference": "Robotics Engineering Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 127,
+    "query": "Which Assistant Professors are older than 60?",
+    "answer": "Charles Williams, Sarah Brown, Emily Lewis",
+    "reference": "Faculty filter: age > 60, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 128,
+    "query": "Who co-teaches Consumer Behavior Seminar with Professor Jessica Thomas?",
+    "answer": "Joshua Clark, Michael Miller",
+    "reference": "Course record: Consumer Behavior Seminar",
+    "type": "multi_hop"
+  },
+  {
+    "id": 129,
+    "query": "Who teaches Manufacturing III?",
+    "answer": "Robert Hill",
+    "reference": "Course record for Manufacturing III",
+    "type": "simple"
+  },
+  {
+    "id": 130,
+    "query": "Which professors in the Korean Literature Department work on Ethics?",
+    "answer": "Matthew Davis, Steven Lee",
+    "reference": "Korean Literature Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 131,
+    "query": "Which department does Professor Rachel White belong to?",
+    "answer": "Chemical Engineering",
+    "reference": "Profile of Professor Rachel White",
+    "type": "simple"
+  },
+  {
+    "id": 132,
+    "query": "List professors in the English Literature Department younger than 50.",
+    "answer": "Patricia Jackson",
+    "reference": "English Literature Department faculty filter (age < 50)",
+    "type": "conditional"
+  },
+  {
+    "id": 133,
+    "query": "List professors in the Sociology Department younger than 45.",
+    "answer": "Jessica Allen",
+    "reference": "Sociology Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 134,
+    "query": "Which professors in the History Department work on Medieval History?",
+    "answer": "Rachel Young, Daniel Scott",
+    "reference": "History Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 135,
+    "query": "Who co-teaches Linguistics Advanced with Professor Matthew Davis?",
+    "answer": "Sandra Rodriguez",
+    "reference": "Course record: Linguistics Advanced",
+    "type": "multi_hop"
+  },
+  {
+    "id": 136,
+    "query": "Which Associate Professors are older than 50?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, David Taylor, Lisa Smith",
+    "reference": "Faculty filter: age > 50, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 137,
+    "query": "Which department does Professor Mark Garcia belong to?",
+    "answer": "Mechanical Engineering",
+    "reference": "Profile of Professor Mark Garcia",
+    "type": "simple"
+  },
+  {
+    "id": 138,
+    "query": "Who teaches Knowledge Graphs III?",
+    "answer": "Nancy Jones",
+    "reference": "Course record for Knowledge Graphs III",
+    "type": "simple"
+  },
+  {
+    "id": 139,
+    "query": "Which department does Professor Michael Miller belong to?",
+    "answer": "Economics",
+    "reference": "Profile of Professor Michael Miller",
+    "type": "simple"
+  },
+  {
+    "id": 140,
+    "query": "Who teaches Quantum Physics I?",
+    "answer": "Charles Brown",
+    "reference": "Course record for Quantum Physics I",
+    "type": "simple"
+  },
+  {
+    "id": 141,
+    "query": "Which department does Professor Thomas Anderson belong to?",
+    "answer": "Marketing",
+    "reference": "Profile of Professor Thomas Anderson",
+    "type": "simple"
+  },
+  {
+    "id": 142,
+    "query": "List professors in the Information Communication Department younger than 50.",
+    "answer": "Sandra Wright",
+    "reference": "Information Communication Department faculty filter (age < 50)",
+    "type": "conditional"
+  },
+  {
+    "id": 143,
+    "query": "List professors in the Mathematics Department younger than 55.",
+    "answer": "Charles Wilson",
+    "reference": "Mathematics Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 144,
+    "query": "Which Assistant Professors are older than 60?",
+    "answer": "Charles Williams, Sarah Brown, Emily Lewis",
+    "reference": "Faculty filter: age > 60, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 145,
+    "query": "Who co-teaches Game Theory Advanced with Professor Kenneth Gonzalez?",
+    "answer": "Joshua Davis, Charles Williams",
+    "reference": "Course record: Game Theory Advanced",
+    "type": "multi_hop"
+  },
+  {
+    "id": 146,
+    "query": "List professors in the Software Engineering Department younger than 55.",
+    "answer": "Jane Garcia",
+    "reference": "Software Engineering Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 147,
+    "query": "Who teaches International Law Advanced?",
+    "answer": "Sarah Brown, David Taylor, Sarah Scott",
+    "reference": "Course record for International Law Advanced",
+    "type": "simple"
+  },
+  {
+    "id": 148,
+    "query": "What courses does the Biomedical Engineering Department offer?",
+    "answer": "Manufacturing Seminar, Manufacturing Advanced, Robotics I, Manufacturing Introduction",
+    "reference": "Biomedical Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 149,
+    "query": "Who teaches Control Systems III?",
+    "answer": "Rachel White, Karen Moore, Emily Anderson",
+    "reference": "Course record for Control Systems III",
+    "type": "simple"
+  },
+  {
+    "id": 150,
+    "query": "How old is Professor Angela Brown?",
+    "answer": "42 years old",
+    "reference": "Profile of Professor Angela Brown",
+    "type": "simple"
+  },
+  {
+    "id": 151,
+    "query": "List professors in the Statistics Department younger than 55.",
+    "answer": "Ashley Wilson, Charles Brown",
+    "reference": "Statistics Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 152,
+    "query": "Which professors in the Astronomy Department work on Astronomy?",
+    "answer": "Michael Smith, Charles Hernandez",
+    "reference": "Astronomy Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 153,
+    "query": "What courses does the Statistics Department offer?",
+    "answer": "Organic Chemistry I, Quantum Physics I, Thermodynamics Seminar, Genetics III, Organic Chemistry II",
+    "reference": "Statistics Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 154,
+    "query": "List professors in the Industrial Engineering Department younger than 45.",
+    "answer": "Linda Thomas",
+    "reference": "Industrial Engineering Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 155,
+    "query": "Who co-teaches Robotics II with Professor Rachel White?",
+    "answer": "Karen Moore, Emily Anderson",
+    "reference": "Course record: Robotics II",
+    "type": "multi_hop"
+  },
+  {
+    "id": 156,
+    "query": "What courses does the Civil Engineering Department offer?",
+    "answer": "Robotics Seminar, Mechatronics II, Robotics Introduction, Manufacturing III",
+    "reference": "Civil Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 157,
+    "query": "Which department does Professor Sandra Hernandez belong to?",
+    "answer": "Robotics Engineering",
+    "reference": "Profile of Professor Sandra Hernandez",
+    "type": "simple"
+  },
+  {
+    "id": 158,
+    "query": "Who teaches Speech Processing Seminar?",
+    "answer": "Steven Gonzalez, Karen Hill, Kevin King",
+    "reference": "Course record for Speech Processing Seminar",
+    "type": "simple"
+  },
+  {
+    "id": 159,
+    "query": "Which professors in the Chemical Engineering Department work on Mechatronics?",
+    "answer": "Emily Anderson, Rachel White",
+    "reference": "Chemical Engineering Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 160,
+    "query": "Who co-teaches Robotics Seminar with Professor Robert Garcia?",
+    "answer": "Ruth Moore, Ashley Moore",
+    "reference": "Course record: Robotics Seminar",
+    "type": "multi_hop"
+  },
+  {
+    "id": 161,
+    "query": "Which departments participate in the Green Energy Project?",
+    "answer": "Chemical Engineering, Marketing, Electrical Engineering",
+    "reference": "Project record: Green Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 162,
+    "query": "What is Professor Sarah Scott's research area?",
+    "answer": "Constitutional Law",
+    "reference": "Profile of Professor Sarah Scott",
+    "type": "simple"
+  },
+  {
+    "id": 163,
+    "query": "What is Professor Jane Garcia's research area?",
+    "answer": "Robotics",
+    "reference": "Profile of Professor Jane Garcia",
+    "type": "simple"
+  },
+  {
+    "id": 164,
+    "query": "What is Professor Mark Garcia's research area?",
+    "answer": "Mechatronics",
+    "reference": "Profile of Professor Mark Garcia",
+    "type": "simple"
+  },
+  {
+    "id": 165,
+    "query": "Who teaches Control Systems I?",
+    "answer": "Kenneth Torres, Donna Johnson",
+    "reference": "Course record for Control Systems I",
+    "type": "simple"
+  },
+  {
+    "id": 166,
+    "query": "Which departments participate in the AI Security Project?",
+    "answer": "Nursing, Finance, Chemical Engineering",
+    "reference": "Project record: AI Security Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 167,
+    "query": "Which department does Professor Charles Wilson belong to?",
+    "answer": "Mathematics",
+    "reference": "Profile of Professor Charles Wilson",
+    "type": "simple"
+  },
+  {
+    "id": 168,
+    "query": "How old is Professor Robert Thompson?",
+    "answer": "67 years old",
+    "reference": "Profile of Professor Robert Thompson",
+    "type": "simple"
+  },
+  {
+    "id": 169,
+    "query": "What is Professor Lisa Smith's research area?",
+    "answer": "Astronomy",
+    "reference": "Profile of Professor Lisa Smith",
+    "type": "simple"
+  },
+  {
+    "id": 170,
+    "query": "What is Professor David Taylor's research area?",
+    "answer": "International Law",
+    "reference": "Profile of Professor David Taylor",
+    "type": "simple"
+  },
+  {
+    "id": 171,
+    "query": "Which departments participate in the Next-Gen Energy Project?",
+    "answer": "Chemical Engineering, Robotics Engineering",
+    "reference": "Project record: Next-Gen Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 172,
+    "query": "What is Professor Kenneth Wilson's research area?",
+    "answer": "Thermodynamics",
+    "reference": "Profile of Professor Kenneth Wilson",
+    "type": "simple"
+  },
+  {
+    "id": 173,
+    "query": "Which professors in the Physics Department work on Quantum Physics?",
+    "answer": "James Martin, John Allen",
+    "reference": "Physics Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 174,
+    "query": "Which departments participate in the Next-Gen Energy Project?",
+    "answer": "Chemistry, Information Security, Civil Engineering",
+    "reference": "Project record: Next-Gen Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 175,
+    "query": "Who teaches Consumer Behavior Introduction?",
+    "answer": "Joshua Clark, Jessica Thomas",
+    "reference": "Course record for Consumer Behavior Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 176,
+    "query": "Who teaches Robotics Advanced?",
+    "answer": "Linda Hernandez, Joshua Wright",
+    "reference": "Course record for Robotics Advanced",
+    "type": "simple"
+  },
+  {
+    "id": 177,
+    "query": "Which departments participate in the Smart Energy Project?",
+    "answer": "Life Science, Data Science",
+    "reference": "Project record: Smart Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 178,
+    "query": "List professors in the Materials Engineering Department younger than 50.",
+    "answer": "Joshua Wright",
+    "reference": "Materials Engineering Department faculty filter (age < 50)",
+    "type": "conditional"
+  },
+  {
+    "id": 179,
+    "query": "List professors in the Philosophy Department younger than 55.",
+    "answer": "Thomas Gonzalez, Nancy King",
+    "reference": "Philosophy Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 180,
+    "query": "Which professors in the Environmental Engineering Department work on Mechatronics?",
+    "answer": "Kenneth Torres, Donna Johnson",
+    "reference": "Environmental Engineering Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 181,
+    "query": "Which departments participate in the Smart Security Project?",
+    "answer": "Sociology, Business Administration, Environmental Engineering",
+    "reference": "Project record: Smart Security Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 182,
+    "query": "How old is Professor Paul Hill?",
+    "answer": "51 years old",
+    "reference": "Profile of Professor Paul Hill",
+    "type": "simple"
+  },
+  {
+    "id": 183,
+    "query": "Which department does Professor Karen Brown belong to?",
+    "answer": "Information Communication",
+    "reference": "Profile of Professor Karen Brown",
+    "type": "simple"
+  },
+  {
+    "id": 184,
+    "query": "What is Professor Donna Johnson's research area?",
+    "answer": "Mechatronics",
+    "reference": "Profile of Professor Donna Johnson",
+    "type": "simple"
+  },
+  {
+    "id": 185,
+    "query": "Who teaches Supply Chain I?",
+    "answer": "Kenneth Gonzalez",
+    "reference": "Course record for Supply Chain I",
+    "type": "simple"
+  },
+  {
+    "id": 186,
+    "query": "Which department does Professor Joshua Wright belong to?",
+    "answer": "Materials Engineering",
+    "reference": "Profile of Professor Joshua Wright",
+    "type": "simple"
+  },
+  {
+    "id": 187,
+    "query": "What courses does the Materials Engineering Department offer?",
+    "answer": "Robotics Advanced, Robotics Seminar, Mechatronics Advanced, Mechatronics Introduction, Robotics III",
+    "reference": "Materials Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 188,
+    "query": "List professors in the Information Security Department younger than 45.",
+    "answer": "James Walker, Sarah Hill",
+    "reference": "Information Security Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 189,
+    "query": "Who teaches Manufacturing Seminar?",
+    "answer": "Donna Jones, Sarah Taylor",
+    "reference": "Course record for Manufacturing Seminar",
+    "type": "simple"
+  },
+  {
+    "id": 190,
+    "query": "Which department does Professor Helen Green belong to?",
+    "answer": "Astronomy",
+    "reference": "Profile of Professor Helen Green",
+    "type": "simple"
+  },
+  {
+    "id": 191,
+    "query": "Which departments participate in the Smart Mobility Project?",
+    "answer": "History, Aerospace Engineering",
+    "reference": "Project record: Smart Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 192,
+    "query": "What courses does the Chemistry Department offer?",
+    "answer": "Quantum Physics Seminar, Quantum Physics Seminar, Genetics III, Quantum Physics Advanced, Genetics Advanced",
+    "reference": "Chemistry Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 193,
+    "query": "What is Professor Thomas Gonzalez's research area?",
+    "answer": "Linguistics",
+    "reference": "Profile of Professor Thomas Gonzalez",
+    "type": "simple"
+  },
+  {
+    "id": 194,
+    "query": "Which department does Professor Sandra Lee belong to?",
+    "answer": "Sociology",
+    "reference": "Profile of Professor Sandra Lee",
+    "type": "simple"
+  },
+  {
+    "id": 195,
+    "query": "Which departments participate in the AI Health Project?",
+    "answer": "Music, Robotics Engineering",
+    "reference": "Project record: AI Health Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 196,
+    "query": "List professors in the Chemical Engineering Department younger than 55.",
+    "answer": "Emily Anderson, Rachel White, Karen Moore",
+    "reference": "Chemical Engineering Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 197,
+    "query": "Who teaches Consumer Behavior Seminar?",
+    "answer": "Joshua Clark, Michael Miller, Jessica Thomas",
+    "reference": "Course record for Consumer Behavior Seminar",
+    "type": "simple"
+  },
+  {
+    "id": 198,
+    "query": "Which departments participate in the Next-Gen Energy Project?",
+    "answer": "Trade, Economics",
+    "reference": "Project record: Next-Gen Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 199,
+    "query": "What is Professor Steven Gonzalez's research area?",
+    "answer": "Speech Processing",
+    "reference": "Profile of Professor Steven Gonzalez",
+    "type": "simple"
+  },
+  {
+    "id": 200,
+    "query": "Which department does Professor Jane Garcia belong to?",
+    "answer": "Software Engineering",
+    "reference": "Profile of Professor Jane Garcia",
+    "type": "simple"
+  },
+  {
+    "id": 201,
+    "query": "How old is Professor Michael Miller?",
+    "answer": "59 years old",
+    "reference": "Profile of Professor Michael Miller",
+    "type": "simple"
+  },
+  {
+    "id": 202,
+    "query": "Which departments participate in the Quantum Research Project?",
+    "answer": "Data Science, Naval Engineering, Psychology",
+    "reference": "Project record: Quantum Research Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 203,
+    "query": "Which Associate Professors are older than 55?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson",
+    "reference": "Faculty filter: age > 55, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 204,
+    "query": "What courses does the Economics Department offer?",
+    "answer": "Econometrics III, Consumer Behavior III, Consumer Behavior Seminar, Game Theory Seminar, Consumer Behavior Introduction",
+    "reference": "Economics Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 205,
+    "query": "List professors in the Accounting Department younger than 45.",
+    "answer": "Linda Taylor",
+    "reference": "Accounting Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 206,
+    "query": "How old is Professor Mark Allen?",
+    "answer": "65 years old",
+    "reference": "Profile of Professor Mark Allen",
+    "type": "simple"
+  },
+  {
+    "id": 207,
+    "query": "Which Professors are older than 50?",
+    "answer": "Robert Garcia, Ruth Clark, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, Charles Wilson, John Allen",
+    "reference": "Faculty filter: age > 50, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 208,
+    "query": "How old is Professor James Thomas?",
+    "answer": "39 years old",
+    "reference": "Profile of Professor James Thomas",
+    "type": "simple"
+  },
+  {
+    "id": 209,
+    "query": "Who co-teaches Administrative Policy Introduction with Professor Sarah Brown?",
+    "answer": "David Taylor",
+    "reference": "Course record: Administrative Policy Introduction",
+    "type": "multi_hop"
+  },
+  {
+    "id": 210,
+    "query": "How old is Professor Michael Smith?",
+    "answer": "53 years old",
+    "reference": "Profile of Professor Michael Smith",
+    "type": "simple"
+  },
+  {
+    "id": 211,
+    "query": "Who teaches Manufacturing III?",
+    "answer": "William Allen, Matthew Brown",
+    "reference": "Course record for Manufacturing III",
+    "type": "simple"
+  },
+  {
+    "id": 212,
+    "query": "What courses does the Artificial Intelligence Department offer?",
+    "answer": "Computer Vision III, Knowledge Graphs III, Knowledge Graphs Advanced, Speech Processing Seminar, Computer Vision Seminar",
+    "reference": "Artificial Intelligence Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 213,
+    "query": "How old is Professor Thomas Gonzalez?",
+    "answer": "61 years old",
+    "reference": "Profile of Professor Thomas Gonzalez",
+    "type": "simple"
+  },
+  {
+    "id": 214,
+    "query": "How old is Professor Thomas Anderson?",
+    "answer": "33 years old",
+    "reference": "Profile of Professor Thomas Anderson",
+    "type": "simple"
+  },
+  {
+    "id": 215,
+    "query": "Which Assistant Professors are older than 50?",
+    "answer": "Charles Williams, Karen Wright, Linda Hernandez, Angela White, Nancy Jones, Sarah Brown, Emily Lewis, Paul Hill, Charles Hernandez, Kenneth Williams",
+    "reference": "Faculty filter: age > 50, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 216,
+    "query": "Who teaches Mechatronics III?",
+    "answer": "Donna Johnson, Kenneth Torres",
+    "reference": "Course record for Mechatronics III",
+    "type": "simple"
+  },
+  {
+    "id": 217,
+    "query": "Which department does Professor Rachel Young belong to?",
+    "answer": "History",
+    "reference": "Profile of Professor Rachel Young",
+    "type": "simple"
+  },
+  {
+    "id": 218,
+    "query": "Who teaches Cognitive Psychology I?",
+    "answer": "Kevin Martin, Patricia Jackson",
+    "reference": "Course record for Cognitive Psychology I",
+    "type": "simple"
+  },
+  {
+    "id": 219,
+    "query": "Which departments participate in the Smart Mobility Project?",
+    "answer": "Medicine, Information Communication, Psychology",
+    "reference": "Project record: Smart Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 220,
+    "query": "Who teaches Econometrics Introduction?",
+    "answer": "Mary Hernandez, Susan Perez",
+    "reference": "Course record for Econometrics Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 221,
+    "query": "Who teaches Manufacturing Advanced?",
+    "answer": "Angela Brown",
+    "reference": "Course record for Manufacturing Advanced",
+    "type": "simple"
+  },
+  {
+    "id": 222,
+    "query": "What courses does the Information Communication Department offer?",
+    "answer": "Reinforcement Learning Advanced, Reinforcement Learning III, Speech Processing Introduction, Information Retrieval Advanced",
+    "reference": "Information Communication Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 223,
+    "query": "How old is Professor Charles Hernandez?",
+    "answer": "60 years old",
+    "reference": "Profile of Professor Charles Hernandez",
+    "type": "simple"
+  },
+  {
+    "id": 224,
+    "query": "Which departments participate in the Green Mobility Project?",
+    "answer": "Cybersecurity, Computer Engineering",
+    "reference": "Project record: Green Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 225,
+    "query": "What courses does the Astronomy Department offer?",
+    "answer": "Quantum Physics I, Bayesian Inference Advanced, Bayesian Inference II",
+    "reference": "Astronomy Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 226,
+    "query": "Which department does Professor Jessica Allen belong to?",
+    "answer": "Sociology",
+    "reference": "Profile of Professor Jessica Allen",
+    "type": "simple"
+  },
+  {
+    "id": 227,
+    "query": "How old is Professor Patricia Scott?",
+    "answer": "44 years old",
+    "reference": "Profile of Professor Patricia Scott",
+    "type": "simple"
+  },
+  {
+    "id": 228,
+    "query": "Which department does Professor Linda Thomas belong to?",
+    "answer": "Industrial Engineering",
+    "reference": "Profile of Professor Linda Thomas",
+    "type": "simple"
+  },
+  {
+    "id": 229,
+    "query": "Which Associate Professors are older than 60?",
+    "answer": "Sandra Gonzalez, Mark Garcia, Mark Allen, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson, Thomas Gonzalez, Joshua Clark",
+    "reference": "Faculty filter: age > 60, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 230,
+    "query": "Which departments participate in the Bio Health Project?",
+    "answer": "Statistics, Economics, Data Science",
+    "reference": "Project record: Bio Health Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 231,
+    "query": "Which departments participate in the Next-Gen Mobility Project?",
+    "answer": "Software Engineering, Physics",
+    "reference": "Project record: Next-Gen Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 232,
+    "query": "Which Assistant Professors are older than 50?",
+    "answer": "Charles Williams, Karen Wright, Linda Hernandez, Angela White, Nancy Jones, Sarah Brown, Emily Lewis, Paul Hill, Charles Hernandez, Kenneth Williams",
+    "reference": "Faculty filter: age > 50, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 233,
+    "query": "List professors in the Cybersecurity Department younger than 45.",
+    "answer": "Angela Brown",
+    "reference": "Cybersecurity Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 234,
+    "query": "Which department does Professor Joshua King belong to?",
+    "answer": "History",
+    "reference": "Profile of Professor Joshua King",
+    "type": "simple"
+  },
+  {
+    "id": 235,
+    "query": "Which Professors are older than 50?",
+    "answer": "Robert Garcia, Ruth Clark, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, Charles Wilson, John Allen",
+    "reference": "Faculty filter: age > 50, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 236,
+    "query": "What is Professor Ashley Moore's research area?",
+    "answer": "Mechatronics",
+    "reference": "Profile of Professor Ashley Moore",
+    "type": "simple"
+  },
+  {
+    "id": 237,
+    "query": "Which department does Professor Mary Hernandez belong to?",
+    "answer": "Finance",
+    "reference": "Profile of Professor Mary Hernandez",
+    "type": "simple"
+  },
+  {
+    "id": 238,
+    "query": "Who teaches Mechatronics Seminar?",
+    "answer": "Sandra Gonzalez",
+    "reference": "Course record for Mechatronics Seminar",
+    "type": "simple"
+  },
+  {
+    "id": 239,
+    "query": "Who teaches Supply Chain III?",
+    "answer": "Linda Walker",
+    "reference": "Course record for Supply Chain III",
+    "type": "simple"
+  },
+  {
+    "id": 240,
+    "query": "Who co-teaches Information Retrieval Advanced with Professor Sandra Wright?",
+    "answer": "Charles Allen",
+    "reference": "Course record: Information Retrieval Advanced",
+    "type": "multi_hop"
+  },
+  {
+    "id": 241,
+    "query": "Who teaches Reinforcement Learning Advanced?",
+    "answer": "Karen Brown, Sandra Wright",
+    "reference": "Course record for Reinforcement Learning Advanced",
+    "type": "simple"
+  },
+  {
+    "id": 242,
+    "query": "List professors in the Machine Learning Department younger than 45.",
+    "answer": "Sarah Scott",
+    "reference": "Machine Learning Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 243,
+    "query": "Which departments participate in the AI Health Project?",
+    "answer": "Sociology, Accounting, Electrical Engineering",
+    "reference": "Project record: AI Health Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 244,
+    "query": "How old is Professor Ashley Moore?",
+    "answer": "41 years old",
+    "reference": "Profile of Professor Ashley Moore",
+    "type": "simple"
+  },
+  {
+    "id": 245,
+    "query": "What is Professor Ruth Moore's research area?",
+    "answer": "Manufacturing",
+    "reference": "Profile of Professor Ruth Moore",
+    "type": "simple"
+  },
+  {
+    "id": 246,
+    "query": "Which department does Professor Sarah Taylor belong to?",
+    "answer": "Biomedical Engineering",
+    "reference": "Profile of Professor Sarah Taylor",
+    "type": "simple"
+  },
+  {
+    "id": 247,
+    "query": "Who teaches Control Systems Advanced?",
+    "answer": "Mark Garcia, Charles Williams, Kevin Gonzalez",
+    "reference": "Course record for Control Systems Advanced",
+    "type": "simple"
+  },
+  {
+    "id": 248,
+    "query": "Who teaches Thermodynamics II?",
+    "answer": "Charles Wilson",
+    "reference": "Course record for Thermodynamics II",
+    "type": "simple"
+  },
+  {
+    "id": 249,
+    "query": "Which Professors are older than 55?",
+    "answer": "Robert Garcia, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, John Allen, Charles Williams, Susan Torres",
+    "reference": "Faculty filter: age > 55, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 250,
+    "query": "What courses does the Chemical Engineering Department offer?",
+    "answer": "Manufacturing Introduction, Robotics II, Robotics Advanced, Control Systems III",
+    "reference": "Chemical Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 251,
+    "query": "Which Assistant Professors are older than 50?",
+    "answer": "Charles Williams, Karen Wright, Linda Hernandez, Angela White, Nancy Jones, Sarah Brown, Emily Lewis, Paul Hill, Charles Hernandez, Kenneth Williams",
+    "reference": "Faculty filter: age > 50, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 252,
+    "query": "Which department does Professor Linda Taylor belong to?",
+    "answer": "Accounting",
+    "reference": "Profile of Professor Linda Taylor",
+    "type": "simple"
+  },
+  {
+    "id": 253,
+    "query": "What is Professor Charles Williams's research area?",
+    "answer": "Robotics",
+    "reference": "Profile of Professor Charles Williams",
+    "type": "simple"
+  },
+  {
+    "id": 254,
+    "query": "Who teaches Manufacturing III?",
+    "answer": "Jessica Hill, Mark Allen, Jessica Jackson",
+    "reference": "Course record for Manufacturing III",
+    "type": "simple"
+  },
+  {
+    "id": 255,
+    "query": "Who co-teaches Speech Processing Introduction with Professor Sandra Wright?",
+    "answer": "Charles Allen",
+    "reference": "Course record: Speech Processing Introduction",
+    "type": "multi_hop"
+  },
+  {
+    "id": 256,
+    "query": "Who teaches Robotics Seminar?",
+    "answer": "Angela Brown, William Lewis",
+    "reference": "Course record for Robotics Seminar",
+    "type": "simple"
+  },
+  {
+    "id": 257,
+    "query": "Which professors in the Statistics Department work on Genetics?",
+    "answer": "Ashley Wilson, Charles Brown",
+    "reference": "Statistics Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 258,
+    "query": "Which departments participate in the Green Mobility Project?",
+    "answer": "Law, Naval Engineering",
+    "reference": "Project record: Green Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 259,
+    "query": "Who co-teaches Linguistics II with Professor Sandra Lee?",
+    "answer": "Jessica Allen",
+    "reference": "Course record: Linguistics II",
+    "type": "multi_hop"
+  },
+  {
+    "id": 260,
+    "query": "Who teaches Medieval History III?",
+    "answer": "Linda Smith, Susan Torres",
+    "reference": "Course record for Medieval History III",
+    "type": "simple"
+  },
+  {
+    "id": 261,
+    "query": "Who teaches Control Systems Introduction?",
+    "answer": "David Brown, Ashley Jones",
+    "reference": "Course record for Control Systems Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 262,
+    "query": "Which Professors are older than 55?",
+    "answer": "Robert Garcia, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, John Allen, Charles Williams, Susan Torres",
+    "reference": "Faculty filter: age > 55, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 263,
+    "query": "Who teaches Reinforcement Learning III?",
+    "answer": "Charles Allen, Sandra Wright, Karen Brown",
+    "reference": "Course record for Reinforcement Learning III",
+    "type": "simple"
+  },
+  {
+    "id": 264,
+    "query": "List professors in the Mechanical Engineering Department younger than 50.",
+    "answer": "Kevin Gonzalez",
+    "reference": "Mechanical Engineering Department faculty filter (age < 50)",
+    "type": "conditional"
+  },
+  {
+    "id": 265,
+    "query": "Who co-teaches Genetics III with Professor Ashley Wilson?",
+    "answer": "Charles Brown",
+    "reference": "Course record: Genetics III",
+    "type": "multi_hop"
+  },
+  {
+    "id": 266,
+    "query": "Which department does Professor Karen Moore belong to?",
+    "answer": "Chemical Engineering",
+    "reference": "Profile of Professor Karen Moore",
+    "type": "simple"
+  },
+  {
+    "id": 267,
+    "query": "Which professors in the Industrial Engineering Department work on Mechatronics?",
+    "answer": "Mary Jones, Linda Thomas",
+    "reference": "Industrial Engineering Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 268,
+    "query": "List professors in the Environmental Engineering Department younger than 45.",
+    "answer": "Kenneth Torres, Donna Johnson",
+    "reference": "Environmental Engineering Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 269,
+    "query": "Which Assistant Professors are older than 55?",
+    "answer": "Charles Williams, Karen Wright, Linda Hernandez, Angela White, Nancy Jones, Sarah Brown, Emily Lewis, Charles Hernandez, Susan Perez, Joshua Davis",
+    "reference": "Faculty filter: age > 55, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 270,
+    "query": "Which department does Professor Thomas Gonzalez belong to?",
+    "answer": "Philosophy",
+    "reference": "Profile of Professor Thomas Gonzalez",
+    "type": "simple"
+  },
+  {
+    "id": 271,
+    "query": "Which Professors are older than 60?",
+    "answer": "Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, John Allen, Susan Torres",
+    "reference": "Faculty filter: age > 60, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 272,
+    "query": "Which departments participate in the Bio Mobility Project?",
+    "answer": "Information Security, Materials Engineering",
+    "reference": "Project record: Bio Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 273,
+    "query": "List professors in the Business Administration Department younger than 45.",
+    "answer": "Linda Walker",
+    "reference": "Business Administration Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 274,
+    "query": "Which department does Professor Patricia Jackson belong to?",
+    "answer": "English Literature",
+    "reference": "Profile of Professor Patricia Jackson",
+    "type": "simple"
+  },
+  {
+    "id": 275,
+    "query": "Which departments participate in the Smart Learning Project?",
+    "answer": "Korean Literature, Philosophy",
+    "reference": "Project record: Smart Learning Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 276,
+    "query": "Who co-teaches Supply Chain I with Professor Charles Williams?",
+    "answer": "Joshua Davis",
+    "reference": "Course record: Supply Chain I",
+    "type": "multi_hop"
+  },
+  {
+    "id": 277,
+    "query": "Who co-teaches Corporate Finance Seminar with Professor Michael Thompson?",
+    "answer": "Robert Thompson, Linda Taylor",
+    "reference": "Course record: Corporate Finance Seminar",
+    "type": "multi_hop"
+  },
+  {
+    "id": 278,
+    "query": "What courses does the Environmental Engineering Department offer?",
+    "answer": "Control Systems I, Manufacturing III, Manufacturing Advanced, Mechatronics III, Control Systems Introduction",
+    "reference": "Environmental Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 279,
+    "query": "Who teaches Robotics I?",
+    "answer": "Sarah Taylor, Donna Jones",
+    "reference": "Course record for Robotics I",
+    "type": "simple"
+  },
+  {
+    "id": 280,
+    "query": "Which departments participate in the Bio Health Project?",
+    "answer": "Sociology, Software Engineering, Pharmacy",
+    "reference": "Project record: Bio Health Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 281,
+    "query": "What is Professor Angela White's research area?",
+    "answer": "Manufacturing",
+    "reference": "Profile of Professor Angela White",
+    "type": "simple"
+  },
+  {
+    "id": 282,
+    "query": "How old is Professor Angela White?",
+    "answer": "60 years old",
+    "reference": "Profile of Professor Angela White",
+    "type": "simple"
+  },
+  {
+    "id": 283,
+    "query": "What is Professor Susan Perez's research area?",
+    "answer": "Consumer Behavior",
+    "reference": "Profile of Professor Susan Perez",
+    "type": "simple"
+  },
+  {
+    "id": 284,
+    "query": "Who teaches Linguistics Seminar?",
+    "answer": "Sandra Lee, Jessica Allen",
+    "reference": "Course record for Linguistics Seminar",
+    "type": "simple"
+  },
+  {
+    "id": 285,
+    "query": "Which department does Professor Kenneth Wilson belong to?",
+    "answer": "Physics",
+    "reference": "Profile of Professor Kenneth Wilson",
+    "type": "simple"
+  },
+  {
+    "id": 286,
+    "query": "List professors in the Korean Literature Department younger than 50.",
+    "answer": "Sandra Rodriguez",
+    "reference": "Korean Literature Department faculty filter (age < 50)",
+    "type": "conditional"
+  },
+  {
+    "id": 287,
+    "query": "Which departments participate in the Smart Energy Project?",
+    "answer": "Cybersecurity, Mechanical Engineering",
+    "reference": "Project record: Smart Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 288,
+    "query": "How old is Professor Sarah Miller?",
+    "answer": "35 years old",
+    "reference": "Profile of Professor Sarah Miller",
+    "type": "simple"
+  },
+  {
+    "id": 289,
+    "query": "Which department does Professor Susan Perez belong to?",
+    "answer": "Finance",
+    "reference": "Profile of Professor Susan Perez",
+    "type": "simple"
+  },
+  {
+    "id": 290,
+    "query": "What courses does the Philosophy Department offer?",
+    "answer": "Social Theory Introduction, Cognitive Psychology Introduction, Cognitive Psychology II, Cognitive Psychology Seminar, Cognitive Psychology II",
+    "reference": "Philosophy Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 291,
+    "query": "Which department does Professor Sarah Scott belong to?",
+    "answer": "Machine Learning",
+    "reference": "Profile of Professor Sarah Scott",
+    "type": "simple"
+  },
+  {
+    "id": 292,
+    "query": "What is Professor Jane Moore's research area?",
+    "answer": "Control Systems",
+    "reference": "Profile of Professor Jane Moore",
+    "type": "simple"
+  },
+  {
+    "id": 293,
+    "query": "Who teaches Speech Processing Introduction?",
+    "answer": "Charles Allen, Sandra Wright",
+    "reference": "Course record for Speech Processing Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 294,
+    "query": "What courses does the Mechanical Engineering Department offer?",
+    "answer": "Mechatronics III, Mechatronics I, Mechatronics Advanced, Control Systems Advanced, Manufacturing II",
+    "reference": "Mechanical Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 295,
+    "query": "Which departments participate in the Green Energy Project?",
+    "answer": "Medicine, Nursing, Materials Engineering",
+    "reference": "Project record: Green Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 296,
+    "query": "Which departments participate in the AI Mobility Project?",
+    "answer": "Information Security, Fine Arts, Cybersecurity",
+    "reference": "Project record: AI Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 297,
+    "query": "What is Professor Jessica Jackson's research area?",
+    "answer": "Manufacturing",
+    "reference": "Profile of Professor Jessica Jackson",
+    "type": "simple"
+  },
+  {
+    "id": 298,
+    "query": "Which departments participate in the Quantum Mobility Project?",
+    "answer": "Korean Literature, Chemical Engineering",
+    "reference": "Project record: Quantum Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 299,
+    "query": "Which Associate Professors are older than 50?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, David Taylor, Lisa Smith",
+    "reference": "Faculty filter: age > 50, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 300,
+    "query": "Which Associate Professors are older than 60?",
+    "answer": "Sandra Gonzalez, Mark Garcia, Mark Allen, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson, Thomas Gonzalez, Joshua Clark",
+    "reference": "Faculty filter: age > 60, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 301,
+    "query": "Who co-teaches Econometrics Introduction with Professor Susan Perez?",
+    "answer": "Mary Hernandez",
+    "reference": "Course record: Econometrics Introduction",
+    "type": "multi_hop"
+  },
+  {
+    "id": 302,
+    "query": "Who co-teaches Computer Vision III with Professor Kevin King?",
+    "answer": "Karen Hill, Steven Gonzalez",
+    "reference": "Course record: Computer Vision III",
+    "type": "multi_hop"
+  },
+  {
+    "id": 303,
+    "query": "What courses does the Data Science Department offer?",
+    "answer": "Computer Vision II, NLP III, Information Retrieval I",
+    "reference": "Data Science Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 304,
+    "query": "What courses does the English Literature Department offer?",
+    "answer": "Cognitive Psychology I, Linguistics III, Ethics III, Cognitive Psychology III",
+    "reference": "English Literature Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 305,
+    "query": "Who teaches Corporate Finance Introduction?",
+    "answer": "Thomas Gonzalez, Angela Perez",
+    "reference": "Course record for Corporate Finance Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 306,
+    "query": "How old is Professor Matthew Davis?",
+    "answer": "51 years old",
+    "reference": "Profile of Professor Matthew Davis",
+    "type": "simple"
+  },
+  {
+    "id": 307,
+    "query": "Which department does Professor Mark Allen belong to?",
+    "answer": "Aerospace Engineering",
+    "reference": "Profile of Professor Mark Allen",
+    "type": "simple"
+  },
+  {
+    "id": 308,
+    "query": "Which department does Professor Matthew Davis belong to?",
+    "answer": "Korean Literature",
+    "reference": "Profile of Professor Matthew Davis",
+    "type": "simple"
+  },
+  {
+    "id": 309,
+    "query": "Which Associate Professors are older than 55?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson",
+    "reference": "Faculty filter: age > 55, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 310,
+    "query": "Which Assistant Professors are older than 55?",
+    "answer": "Charles Williams, Karen Wright, Linda Hernandez, Angela White, Nancy Jones, Sarah Brown, Emily Lewis, Charles Hernandez, Susan Perez, Joshua Davis",
+    "reference": "Faculty filter: age > 55, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 311,
+    "query": "What is Professor Michael Thompson's research area?",
+    "answer": "Consumer Behavior",
+    "reference": "Profile of Professor Michael Thompson",
+    "type": "simple"
+  },
+  {
+    "id": 312,
+    "query": "Which departments participate in the Next-Gen Security Project?",
+    "answer": "Chemistry, Astronomy",
+    "reference": "Project record: Next-Gen Security Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 313,
+    "query": "Which professors in the Marketing Department work on Supply Chain?",
+    "answer": "Thomas Gonzalez, Angela Perez",
+    "reference": "Marketing Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 314,
+    "query": "Which department does Professor Lisa Smith belong to?",
+    "answer": "Chemistry",
+    "reference": "Profile of Professor Lisa Smith",
+    "type": "simple"
+  },
+  {
+    "id": 315,
+    "query": "Who co-teaches Manufacturing III with Professor Jessica Jackson?",
+    "answer": "Jessica Hill, Mark Allen",
+    "reference": "Course record: Manufacturing III",
+    "type": "multi_hop"
+  },
+  {
+    "id": 316,
+    "query": "Who teaches Mechatronics Introduction?",
+    "answer": "Ashley Jones, David Brown",
+    "reference": "Course record for Mechatronics Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 317,
+    "query": "What is Professor Emily Lewis's research area?",
+    "answer": "Organic Chemistry",
+    "reference": "Profile of Professor Emily Lewis",
+    "type": "simple"
+  },
+  {
+    "id": 318,
+    "query": "How old is Professor David Taylor?",
+    "answer": "57 years old",
+    "reference": "Profile of Professor David Taylor",
+    "type": "simple"
+  },
+  {
+    "id": 319,
+    "query": "Which department does Professor Nancy Anderson belong to?",
+    "answer": "Naval Engineering",
+    "reference": "Profile of Professor Nancy Anderson",
+    "type": "simple"
+  },
+  {
+    "id": 320,
+    "query": "Which department does Professor Ruth Clark belong to?",
+    "answer": "Materials Engineering",
+    "reference": "Profile of Professor Ruth Clark",
+    "type": "simple"
+  },
+  {
+    "id": 321,
+    "query": "Which Professors are older than 55?",
+    "answer": "Robert Garcia, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, John Allen, Charles Williams, Susan Torres",
+    "reference": "Faculty filter: age > 55, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 322,
+    "query": "What courses does the Trade Department offer?",
+    "answer": "Econometrics Advanced, Supply Chain I, Supply Chain I, Game Theory Advanced",
+    "reference": "Trade Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 323,
+    "query": "What is Professor Kenneth Williams's research area?",
+    "answer": "Econometrics",
+    "reference": "Profile of Professor Kenneth Williams",
+    "type": "simple"
+  },
+  {
+    "id": 324,
+    "query": "Which department does Professor Linda Walker belong to?",
+    "answer": "Business Administration",
+    "reference": "Profile of Professor Linda Walker",
+    "type": "simple"
+  },
+  {
+    "id": 325,
+    "query": "Who co-teaches Econometrics Introduction with Professor Michael Thompson?",
+    "answer": "Robert Thompson, Linda Taylor",
+    "reference": "Course record: Econometrics Introduction",
+    "type": "multi_hop"
+  },
+  {
+    "id": 326,
+    "query": "Which departments participate in the Smart Mobility Project?",
+    "answer": "Fine Arts, Nursing, Biomedical Engineering",
+    "reference": "Project record: Smart Mobility Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 327,
+    "query": "What courses does the Business Administration Department offer?",
+    "answer": "Supply Chain II, Econometrics II, Corporate Finance Introduction, Supply Chain III, Econometrics II",
+    "reference": "Business Administration Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 328,
+    "query": "What courses does the Accounting Department offer?",
+    "answer": "Corporate Finance Seminar, Game Theory II, Supply Chain Seminar, Econometrics Introduction, Corporate Finance II",
+    "reference": "Accounting Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 329,
+    "query": "Which departments participate in the Green Research Project?",
+    "answer": "Psychology, Environmental Engineering",
+    "reference": "Project record: Green Research Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 330,
+    "query": "Who co-teaches Manufacturing III with Professor Karen Hill?",
+    "answer": "Sandra Hernandez, Angela White",
+    "reference": "Course record: Manufacturing III",
+    "type": "multi_hop"
+  },
+  {
+    "id": 331,
+    "query": "Which Associate Professors are older than 50?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, David Taylor, Lisa Smith",
+    "reference": "Faculty filter: age > 50, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 332,
+    "query": "Who co-teaches Control Systems I with Professor Patricia Scott?",
+    "answer": "Charles Scott",
+    "reference": "Course record: Control Systems I",
+    "type": "multi_hop"
+  },
+  {
+    "id": 333,
+    "query": "Which departments participate in the Quantum Security Project?",
+    "answer": "Information Communication, Fine Arts, Pharmacy",
+    "reference": "Project record: Quantum Security Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 334,
+    "query": "Which department does Professor Sandra Martinez belong to?",
+    "answer": "Life Science",
+    "reference": "Profile of Professor Sandra Martinez",
+    "type": "simple"
+  },
+  {
+    "id": 335,
+    "query": "What is Professor Nancy King's research area?",
+    "answer": "Cognitive Psychology",
+    "reference": "Profile of Professor Nancy King",
+    "type": "simple"
+  },
+  {
+    "id": 336,
+    "query": "Which departments participate in the Quantum Research Project?",
+    "answer": "Economics, Marketing",
+    "reference": "Project record: Quantum Research Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 337,
+    "query": "Who teaches Mechatronics II?",
+    "answer": "William Allen, Matthew Brown",
+    "reference": "Course record for Mechatronics II",
+    "type": "simple"
+  },
+  {
+    "id": 338,
+    "query": "List professors in the Naval Engineering Department younger than 50.",
+    "answer": "Nancy Anderson, Ruth Green",
+    "reference": "Naval Engineering Department faculty filter (age < 50)",
+    "type": "conditional"
+  },
+  {
+    "id": 339,
+    "query": "How old is Professor Linda Walker?",
+    "answer": "40 years old",
+    "reference": "Profile of Professor Linda Walker",
+    "type": "simple"
+  },
+  {
+    "id": 340,
+    "query": "How old is Professor Joshua Wright?",
+    "answer": "37 years old",
+    "reference": "Profile of Professor Joshua Wright",
+    "type": "simple"
+  },
+  {
+    "id": 341,
+    "query": "Which Associate Professors are older than 60?",
+    "answer": "Sandra Gonzalez, Mark Garcia, Mark Allen, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson, Thomas Gonzalez, Joshua Clark",
+    "reference": "Faculty filter: age > 60, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 342,
+    "query": "Which Professors are older than 50?",
+    "answer": "Robert Garcia, Ruth Clark, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, Charles Wilson, John Allen",
+    "reference": "Faculty filter: age > 50, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 343,
+    "query": "Who teaches Cognitive Psychology III?",
+    "answer": "Kevin Martin",
+    "reference": "Course record for Cognitive Psychology III",
+    "type": "simple"
+  },
+  {
+    "id": 344,
+    "query": "What courses does the Information Security Department offer?",
+    "answer": "NLP Seminar, Information Retrieval I, Knowledge Graphs III",
+    "reference": "Information Security Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 345,
+    "query": "List professors in the Civil Engineering Department younger than 55.",
+    "answer": "Matthew Brown",
+    "reference": "Civil Engineering Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 346,
+    "query": "Which departments participate in the Quantum Energy Project?",
+    "answer": "Sociology, Music, Marketing",
+    "reference": "Project record: Quantum Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 347,
+    "query": "Which department does Professor Kenneth Williams belong to?",
+    "answer": "Business Administration",
+    "reference": "Profile of Professor Kenneth Williams",
+    "type": "simple"
+  },
+  {
+    "id": 348,
+    "query": "Which Assistant Professors are older than 55?",
+    "answer": "Charles Williams, Karen Wright, Linda Hernandez, Angela White, Nancy Jones, Sarah Brown, Emily Lewis, Charles Hernandez, Susan Perez, Joshua Davis",
+    "reference": "Faculty filter: age > 55, title = Assistant Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 349,
+    "query": "Which departments participate in the Bio Energy Project?",
+    "answer": "Data Science, Sociology, Psychology",
+    "reference": "Project record: Bio Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 350,
+    "query": "Who teaches Robotics Advanced?",
+    "answer": "Ashley Jones",
+    "reference": "Course record for Robotics Advanced",
+    "type": "simple"
+  },
+  {
+    "id": 351,
+    "query": "Which departments participate in the AI Health Project?",
+    "answer": "Chemistry, Public Administration, Music",
+    "reference": "Project record: AI Health Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 352,
+    "query": "Which department does Professor Ashley Miller belong to?",
+    "answer": "Data Science",
+    "reference": "Profile of Professor Ashley Miller",
+    "type": "simple"
+  },
+  {
+    "id": 353,
+    "query": "Who co-teaches Cognitive Psychology I with Professor Patricia Jackson?",
+    "answer": "Kevin Martin",
+    "reference": "Course record: Cognitive Psychology I",
+    "type": "multi_hop"
+  },
+  {
+    "id": 354,
+    "query": "Which professors in the Machine Learning Department work on International Law?",
+    "answer": "Sarah Brown, David Taylor",
+    "reference": "Machine Learning Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 355,
+    "query": "Who teaches Social Theory I?",
+    "answer": "Linda Smith, Susan Torres",
+    "reference": "Course record for Social Theory I",
+    "type": "simple"
+  },
+  {
+    "id": 356,
+    "query": "Who co-teaches Linguistics III with Professor Kevin Martin?",
+    "answer": "Patricia Jackson",
+    "reference": "Course record: Linguistics III",
+    "type": "multi_hop"
+  },
+  {
+    "id": 357,
+    "query": "Who co-teaches Cognitive Psychology Introduction with Professor Thomas Gonzalez?",
+    "answer": "Kevin Gonzalez",
+    "reference": "Course record: Cognitive Psychology Introduction",
+    "type": "multi_hop"
+  },
+  {
+    "id": 358,
+    "query": "Which Associate Professors are older than 55?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson",
+    "reference": "Faculty filter: age > 55, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 359,
+    "query": "Who co-teaches Control Systems III with Professor Karen Moore?",
+    "answer": "Rachel White, Emily Anderson",
+    "reference": "Course record: Control Systems III",
+    "type": "multi_hop"
+  },
+  {
+    "id": 360,
+    "query": "Which department does Professor Angela White belong to?",
+    "answer": "Robotics Engineering",
+    "reference": "Profile of Professor Angela White",
+    "type": "simple"
+  },
+  {
+    "id": 361,
+    "query": "What is Professor Thomas Gonzalez's research area?",
+    "answer": "Supply Chain",
+    "reference": "Profile of Professor Thomas Gonzalez",
+    "type": "simple"
+  },
+  {
+    "id": 362,
+    "query": "Which departments participate in the Green Energy Project?",
+    "answer": "Industrial Engineering, Public Administration, International Relations",
+    "reference": "Project record: Green Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 363,
+    "query": "How old is Professor Matthew Brown?",
+    "answer": "46 years old",
+    "reference": "Profile of Professor Matthew Brown",
+    "type": "simple"
+  },
+  {
+    "id": 364,
+    "query": "What is Professor Linda Thomas's research area?",
+    "answer": "Mechatronics",
+    "reference": "Profile of Professor Linda Thomas",
+    "type": "simple"
+  },
+  {
+    "id": 365,
+    "query": "What is Professor Susan Torres's research area?",
+    "answer": "Social Theory",
+    "reference": "Profile of Professor Susan Torres",
+    "type": "simple"
+  },
+  {
+    "id": 366,
+    "query": "How old is Professor Kenneth Wilson?",
+    "answer": "64 years old",
+    "reference": "Profile of Professor Kenneth Wilson",
+    "type": "simple"
+  },
+  {
+    "id": 367,
+    "query": "Who co-teaches Genetics III with Professor David Taylor?",
+    "answer": "Paul Hill, Lisa Smith",
+    "reference": "Course record: Genetics III",
+    "type": "multi_hop"
+  },
+  {
+    "id": 368,
+    "query": "What courses does the Energy Engineering Department offer?",
+    "answer": "Manufacturing I, Control Systems I, Robotics Introduction, Mechatronics II",
+    "reference": "Energy Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 369,
+    "query": "List professors in the Urban Engineering Department younger than 55.",
+    "answer": "David Brown",
+    "reference": "Urban Engineering Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 370,
+    "query": "Which Professors are older than 55?",
+    "answer": "Robert Garcia, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, John Allen, Charles Williams, Susan Torres",
+    "reference": "Faculty filter: age > 55, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 371,
+    "query": "How old is Professor Linda Smith?",
+    "answer": "38 years old",
+    "reference": "Profile of Professor Linda Smith",
+    "type": "simple"
+  },
+  {
+    "id": 372,
+    "query": "What is Professor Karen Wright's research area?",
+    "answer": "Manufacturing",
+    "reference": "Profile of Professor Karen Wright",
+    "type": "simple"
+  },
+  {
+    "id": 373,
+    "query": "Which departments participate in the Bio Learning Project?",
+    "answer": "Industrial Engineering, Energy Engineering",
+    "reference": "Project record: Bio Learning Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 374,
+    "query": "Who teaches Econometrics II?",
+    "answer": "Kenneth Williams, Linda Walker",
+    "reference": "Course record for Econometrics II",
+    "type": "simple"
+  },
+  {
+    "id": 375,
+    "query": "What is Professor John Allen's research area?",
+    "answer": "Quantum Physics",
+    "reference": "Profile of Professor John Allen",
+    "type": "simple"
+  },
+  {
+    "id": 376,
+    "query": "Which departments participate in the Smart Research Project?",
+    "answer": "Dentistry, Public Health",
+    "reference": "Project record: Smart Research Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 377,
+    "query": "Who teaches Control Systems I?",
+    "answer": "Nancy Anderson",
+    "reference": "Course record for Control Systems I",
+    "type": "simple"
+  },
+  {
+    "id": 378,
+    "query": "Which professors in the Robotics Engineering Department work on Manufacturing?",
+    "answer": "Sandra Hernandez, Angela White",
+    "reference": "Robotics Engineering Department research filter",
+    "type": "conditional"
+  },
+  {
+    "id": 379,
+    "query": "Who co-teaches Mechatronics I with Professor Mark Allen?",
+    "answer": "Jessica Hill, Jessica Jackson",
+    "reference": "Course record: Mechatronics I",
+    "type": "multi_hop"
+  },
+  {
+    "id": 380,
+    "query": "What is Professor Charles Brown's research area?",
+    "answer": "Genetics",
+    "reference": "Profile of Professor Charles Brown",
+    "type": "simple"
+  },
+  {
+    "id": 381,
+    "query": "How old is Professor James Martin?",
+    "answer": "61 years old",
+    "reference": "Profile of Professor James Martin",
+    "type": "simple"
+  },
+  {
+    "id": 382,
+    "query": "Which Professors are older than 50?",
+    "answer": "Robert Garcia, Ruth Clark, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, Charles Wilson, John Allen",
+    "reference": "Faculty filter: age > 50, title = Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 383,
+    "query": "Which Associate Professors are older than 55?",
+    "answer": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson",
+    "reference": "Faculty filter: age > 55, title = Associate Professor",
+    "type": "conditional"
+  },
+  {
+    "id": 384,
+    "query": "List professors in the Artificial Intelligence Department younger than 45.",
+    "answer": "Karen Hill, Steven Gonzalez",
+    "reference": "Artificial Intelligence Department faculty filter (age < 45)",
+    "type": "conditional"
+  },
+  {
+    "id": 385,
+    "query": "Which departments participate in the Quantum Security Project?",
+    "answer": "English Literature, Music",
+    "reference": "Project record: Quantum Security Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 386,
+    "query": "What is Professor Steven Lee's research area?",
+    "answer": "Ethics",
+    "reference": "Profile of Professor Steven Lee",
+    "type": "simple"
+  },
+  {
+    "id": 387,
+    "query": "Which departments participate in the Smart Health Project?",
+    "answer": "Chemistry, Machine Learning",
+    "reference": "Project record: Smart Health Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 388,
+    "query": "What is Professor Jessica Allen's research area?",
+    "answer": "Social Theory",
+    "reference": "Profile of Professor Jessica Allen",
+    "type": "simple"
+  },
+  {
+    "id": 389,
+    "query": "What is Professor Angela Brown's research area?",
+    "answer": "Robotics",
+    "reference": "Profile of Professor Angela Brown",
+    "type": "simple"
+  },
+  {
+    "id": 390,
+    "query": "List professors in the Economics Department younger than 50.",
+    "answer": "Jessica Thomas",
+    "reference": "Economics Department faculty filter (age < 50)",
+    "type": "conditional"
+  },
+  {
+    "id": 391,
+    "query": "What is Professor David Taylor's research area?",
+    "answer": "Thermodynamics",
+    "reference": "Profile of Professor David Taylor",
+    "type": "simple"
+  },
+  {
+    "id": 392,
+    "query": "Which departments participate in the Bio Energy Project?",
+    "answer": "International Relations, Marketing, Law",
+    "reference": "Project record: Bio Energy Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 393,
+    "query": "Which department does Professor Karen Hill belong to?",
+    "answer": "Robotics Engineering",
+    "reference": "Profile of Professor Karen Hill",
+    "type": "simple"
+  },
+  {
+    "id": 394,
+    "query": "How old is Professor Kenneth Torres?",
+    "answer": "32 years old",
+    "reference": "Profile of Professor Kenneth Torres",
+    "type": "simple"
+  },
+  {
+    "id": 395,
+    "query": "Who teaches International Law III?",
+    "answer": "David Taylor, Sarah Brown, Sarah Scott",
+    "reference": "Course record for International Law III",
+    "type": "simple"
+  },
+  {
+    "id": 396,
+    "query": "Which department does Professor Ruth Green belong to?",
+    "answer": "Naval Engineering",
+    "reference": "Profile of Professor Ruth Green",
+    "type": "simple"
+  },
+  {
+    "id": 397,
+    "query": "Which departments participate in the Green Learning Project?",
+    "answer": "Materials Engineering, Environmental Engineering, Machine Learning",
+    "reference": "Project record: Green Learning Project",
+    "type": "multi_hop"
+  },
+  {
+    "id": 398,
+    "query": "Who teaches Administrative Policy Introduction?",
+    "answer": "Sarah Brown, David Taylor",
+    "reference": "Course record for Administrative Policy Introduction",
+    "type": "simple"
+  },
+  {
+    "id": 399,
+    "query": "List professors in the Aerospace Engineering Department younger than 55.",
+    "answer": "Jessica Hill",
+    "reference": "Aerospace Engineering Department faculty filter (age < 55)",
+    "type": "conditional"
+  },
+  {
+    "id": 400,
+    "query": "Who co-teaches Supply Chain Seminar with Professor Michael Thompson?",
+    "answer": "Robert Thompson",
+    "reference": "Course record: Supply Chain Seminar",
+    "type": "multi_hop"
+  },
+  {
+    "id": 401,
+    "query": "What courses does the Urban Engineering Department offer?",
+    "answer": "Control Systems Introduction, Manufacturing III, Robotics Seminar, Mechatronics Introduction, Robotics Advanced",
+    "reference": "Urban Engineering Department catalog",
+    "type": "multi_hop"
+  },
+  {
+    "id": 402,
+    "query": "List professors in the Electrical Engineering Department younger than 50.",
+    "answer": "Ruth Moore, Ashley Moore",
+    "reference": "Electrical Engineering Department faculty filter (age < 50)",
+    "type": "conditional"
+  },
+  {
+    "id": 403,
+    "query": "Which Professors are older than 55?",
+    "answer": "Robert Garcia, Jessica Jackson, Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, David Taylor, John Allen, Charles Williams, Susan Torres",
+    "reference": "Faculty filter: age > 55, title = Professor",
+    "type": "conditional"
+  }
+]
