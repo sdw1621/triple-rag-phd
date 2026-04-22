@@ -30,3 +30,7 @@ jupyter
 ipykernel
 pytest==8.2.2
 pytest-cov==5.0.0
+
+# Thesis results dashboard (streamlit_app/dashboard.py) — see streamlit_app/README.md
+streamlit==1.56.0
+plotly==6.7.0
