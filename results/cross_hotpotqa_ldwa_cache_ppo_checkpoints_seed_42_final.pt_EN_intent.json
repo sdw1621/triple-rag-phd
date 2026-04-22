@@ -1,0 +1,417 @@
+{
+  "benchmark": "hotpotqa",
+  "policy": "ldwa:cache/ppo_checkpoints/seed_42/final.pt",
+  "n_queries": 300,
+  "aggregate": {
+    "n_queries": 300,
+    "overall": {
+      "F1_strict": {
+        "mean": 0.10967905870266315,
+        "std": 0.13166973839826518,
+        "n": 300
+      },
+      "F1_substring": {
+        "mean": 0.27941290191290186,
+        "std": 0.3618190678906536,
+        "n": 300
+      },
+      "EM_norm": {
+        "mean": 0.0,
+        "std": 0.0,
+        "n": 300
+      },
+      "Faithfulness": {
+        "mean": 0.6217692307692307,
+        "std": 0.4661415513220698,
+        "n": 300
+      },
+      "Latency": {
+        "mean": 0.9161472574869791,
+        "std": 0.42371758202193643,
+        "n": 300
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "5a73b55855429978a71e9086",
+      "type": "bridge",
+      "gold": "Gatwick Airport",
+      "answer": "London Gatwick Airport ranks as the 8th busiest airport in Europe and replaced Croydon Airport.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.2666666666666667,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6378095149993896
+      }
+    },
+    {
+      "qid": "5ab985eb554299131ca42360",
+      "type": "comparison",
+      "gold": "Greyia",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5988051891326904
+      }
+    },
+    {
+      "qid": "5adef1b35542993a75d263af",
+      "type": "bridge",
+      "gold": "Salma Hayek Pinault",
+      "answer": "Ethel Houbiers is the French voice of Salma Hayek, who is a Mexican and American film actress.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.21052631578947367,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7724859714508057
+      }
+    },
+    {
+      "qid": "5ae518655542993aec5ec139",
+      "type": "bridge",
+      "gold": "40 members",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5634829998016357
+      }
+    },
+    {
+      "qid": "5ac3e0f7554299194317388b",
+      "type": "bridge",
+      "gold": "Kevin Spacey",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.7060503959655762
+      }
+    },
+    {
+      "qid": "5a8753d95542994846c1cd63",
+      "type": "comparison",
+      "gold": "yes",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6287727355957031
+      }
+    },
+    {
+      "qid": "5ab97d0a5542996be202051e",
+      "type": "bridge",
+      "gold": "John André",
+      "answer": "John André was hanged for assisting Benedict Arnold's attempted surrender of the fort at West Point to the British Army.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.18181818181818182,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.0135774612426758
+      }
+    },
+    {
+      "qid": "5ae143ed55429920d5234360",
+      "type": "bridge",
+      "gold": "1755",
+      "answer": "The university where Sergei Aleksandrovich Tokarev was a professor, Moscow State University, was founded on January 25, 1755.",
+      "weights": [
+        4,
+        4,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.11764705882352941,
+        "f1_substring": 0.4,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8214471340179443
+      }
+    },
+    {
+      "qid": "5abc19705542993a06baf86e",
+      "type": "bridge",
+      "gold": "Dutch",
+      "answer": "Black Book starred actress Carice van Houten, who is of Dutch heritage. The novelization and film are set in the Netherlands and focus on a Jewish woman's experiences during World War II, but the specific heritage of the writer Laurens Abbink Spaink is not mentioned in the provided context.",
+      "weights": [
+        4,
+        4,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.047619047619047616,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.3241961002349854
+      }
+    },
+    {
+      "qid": "5ae80919554299540e5a56f6",
+      "type": "bridge",
+      "gold": "The Changing Scottish Landscape",
+      "answer": "Isabella Kelly was born at Cairnburgh Castle, which is characterized as \"one of the most isolated fortifications in Britain\" by the 1991 publication \"The Changing Scottish Landscape.\"",
+      "weights": [
+        4,
+        4,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.2758620689655173,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.5,
+        "latency": 1.1770093441009521
+      }
+    },
+    {
+      "qid": "5ae361605542994393b9e69b",
+      "type": "bridge",
+      "gold": "\"Home of the Submarine Force\"",
+      "answer": "The facility where Robert Croft worked as a navy instructor was also known as the US Naval Submarine Base New London submarine school in Groton, Connecticut.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.14285714285714285,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.9063718318939209
+      }
+    },
+    {
+      "qid": "5ac3a76e554299741d48a2be",
+      "type": "bridge",
+      "gold": "U2",
+      "answer": "U2 released the song \"With or Without You\" first.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.19999999999999998,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.722196102142334
+      }
+    },
+    {
+      "qid": "5a7557d75542992d0ec05f68",
+      "type": "bridge",
+      "gold": "Laurie Metcalf",
+      "answer": "Laurie Metcalf, who is a star of \"Roseanne,\" appears in Scream 2.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.2857142857142857,
+        "f1_substring": 0.5,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8284130096435547
+      }
+    },
+    {
+      "qid": "5a8d12ca5542994ba4e3dbe2",
+      "type": "bridge",
+      "gold": "Nairobi, Kenya",
+      "answer": "Fastjet Tanzania was originally founded as \"Fly540 Tanzania,\" which is based in Nairobi, Kenya.",
+      "weights": [
+        4,
+        4,
+        2
+      ],
+      "metrics": {
+        "f1_strict": 0.2666666666666667,
+        "f1_substring": 0.8,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.714224100112915
+      }
+    },
+    {
+      "qid": "5ac3d9135542995c82c4ac4c",
+      "type": "bridge",
+      "gold": "729 at the 2010 census",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.546180009841919
+      }
+    },
+    {
+      "qid": "5ac19f405542991316484b5b",
+      "type": "comparison",
+      "gold": "dogs",
+      "answer": "Pandikona and Berger Blanc Suisse are both breeds of dogs.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.18181818181818182,
+        "f1_substring": 1.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6732692718505859
+      }
+    },
+    {
+      "qid": "5a86769c5542994775f60776",
+      "type": "bridge",
+      "gold": "Slaughterhouse-Five",
+      "answer": "Armageddon in Retrospect was written by Kurt Vonnegut, who is best known for his 1969 satire novel \"Slaughterhouse-Five.\"",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.10526315789473684,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 0.5,
+        "latency": 0.8406538963317871
+      }
+    },
+    {
+      "qid": "5ae129115542990adbacf722",
+      "type": "bridge",
+      "gold": "Francis McPeake",
+      "answer": "\"A Pair of Brown Eyes\" is based on the song \"Wild Mountain Thyme,\" which was collected and written by Francis McPeake.",
+      "weights": [
+        1,
+        6,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.17391304347826084,
+        "f1_substring": 0.6666666666666666,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8361155986785889
+      }
+    },
+    {
+      "qid": "5ab31864554299233954ff06",
+      "type": "bridge",
+      "gold": "strings",
+      "answer": "Apratim Majumdar plays the Sarod, which is a string instrument.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8822994232177734
+      }
+    },
+    {
+      "qid": "5ae382ee5542992e3233c430",
+      "type": "bridge",
+      "gold": "Modern thinkers associated with classical realism are Carl von Clausewitz",
+      "answer": "The Prussian General Carl von Clausewitz is associated with Classical Realism in international relations.",
+      "weights": [
+        2,
+        5,
+        3
+      ],
+      "metrics": {
+        "f1_strict": 0.5833333333333334,
+        "f1_substring": 0.0,
+        "em_norm": 0.0,
+        "em_raw": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8323335647583008
+      }
+    }
+  ]
+}
