@@ -1,0 +1,3774 @@
+{
+  "documents": [
+    "Professor Jane Moore is affiliated with the Computer Engineering Department. They are 47 years old and hold the title of Professor. Their research area is Control Systems.",
+    "Professor Robert Hill is affiliated with the Computer Engineering Department. They are 37 years old and hold the title of Assistant Professor. Their research area is Manufacturing.",
+    "Professor Jane Garcia is affiliated with the Software Engineering Department. They are 45 years old and hold the title of Professor. Their research area is Robotics.",
+    "Professor Sandra Gonzalez is affiliated with the Software Engineering Department. They are 66 years old and hold the title of Associate Professor. Their research area is Control Systems.",
+    "Professor Ruth Moore is affiliated with the Electrical Engineering Department. They are 32 years old and hold the title of Professor. Their research area is Manufacturing.",
+    "Professor Ashley Moore is affiliated with the Electrical Engineering Department. They are 41 years old and hold the title of Professor. Their research area is Mechatronics.",
+    "Professor Robert Garcia is affiliated with the Electrical Engineering Department. They are 56 years old and hold the title of Professor. Their research area is Mechatronics.",
+    "Professor Charles Williams is affiliated with the Mechanical Engineering Department. They are 61 years old and hold the title of Assistant Professor. Their research area is Robotics.",
+    "Professor Mark Garcia is affiliated with the Mechanical Engineering Department. They are 67 years old and hold the title of Associate Professor. Their research area is Mechatronics.",
+    "Professor Kevin Gonzalez is affiliated with the Mechanical Engineering Department. They are 36 years old and hold the title of Professor. Their research area is Control Systems.",
+    "Professor Emily Anderson is affiliated with the Chemical Engineering Department. They are 38 years old and hold the title of Associate Professor. Their research area is Mechatronics.",
+    "Professor Rachel White is affiliated with the Chemical Engineering Department. They are 42 years old and hold the title of Associate Professor. Their research area is Mechatronics.",
+    "Professor Karen Moore is affiliated with the Chemical Engineering Department. They are 36 years old and hold the title of Assistant Professor. Their research area is Control Systems.",
+    "Professor William Allen is affiliated with the Civil Engineering Department. They are 56 years old and hold the title of Associate Professor. Their research area is Control Systems.",
+    "Professor Matthew Brown is affiliated with the Civil Engineering Department. They are 46 years old and hold the title of Professor. Their research area is Mechatronics.",
+    "Professor Mary Jones is affiliated with the Industrial Engineering Department. They are 45 years old and hold the title of Assistant Professor. Their research area is Mechatronics.",
+    "Professor Karen Wright is affiliated with the Industrial Engineering Department. They are 57 years old and hold the title of Assistant Professor. Their research area is Manufacturing.",
+    "Professor Linda Thomas is affiliated with the Industrial Engineering Department. They are 40 years old and hold the title of Professor. Their research area is Mechatronics.",
+    "Professor Ruth Clark is affiliated with the Materials Engineering Department. They are 55 years old and hold the title of Professor. Their research area is Control Systems.",
+    "Professor Joshua Wright is affiliated with the Materials Engineering Department. They are 37 years old and hold the title of Professor. Their research area is Robotics.",
+    "Professor Linda Hernandez is affiliated with the Materials Engineering Department. They are 59 years old and hold the title of Assistant Professor. Their research area is Robotics.",
+    "Professor Mark Allen is affiliated with the Aerospace Engineering Department. They are 65 years old and hold the title of Associate Professor. Their research area is Robotics.",
+    "Professor Jessica Hill is affiliated with the Aerospace Engineering Department. They are 49 years old and hold the title of Assistant Professor. Their research area is Mechatronics.",
+    "Professor Jessica Jackson is affiliated with the Aerospace Engineering Department. They are 59 years old and hold the title of Professor. Their research area is Manufacturing.",
+    "Professor Charles Scott is affiliated with the Energy Engineering Department. They are 43 years old and hold the title of Assistant Professor. Their research area is Robotics.",
+    "Professor Patricia Scott is affiliated with the Energy Engineering Department. They are 44 years old and hold the title of Professor. Their research area is Mechatronics.",
+    "Professor Kenneth Torres is affiliated with the Environmental Engineering Department. They are 32 years old and hold the title of Assistant Professor. Their research area is Mechatronics.",
+    "Professor Donna Johnson is affiliated with the Environmental Engineering Department. They are 39 years old and hold the title of Associate Professor. Their research area is Mechatronics.",
+    "Professor Sarah Taylor is affiliated with the Biomedical Engineering Department. They are 68 years old and hold the title of Professor. Their research area is Robotics.",
+    "Professor Donna Jones is affiliated with the Biomedical Engineering Department. They are 66 years old and hold the title of Professor. Their research area is Control Systems.",
+    "Professor Sandra Hernandez is affiliated with the Robotics Engineering Department. They are 48 years old and hold the title of Assistant Professor. Their research area is Manufacturing.",
+    "Professor Karen Hill is affiliated with the Robotics Engineering Department. They are 44 years old and hold the title of Assistant Professor. Their research area is Mechatronics.",
+    "Professor Angela White is affiliated with the Robotics Engineering Department. They are 60 years old and hold the title of Assistant Professor. Their research area is Manufacturing.",
+    "Professor Nancy Anderson is affiliated with the Naval Engineering Department. They are 36 years old and hold the title of Associate Professor. Their research area is Robotics.",
+    "Professor Ruth Green is affiliated with the Naval Engineering Department. They are 46 years old and hold the title of Assistant Professor. Their research area is Control Systems.",
+    "Professor David Brown is affiliated with the Urban Engineering Department. They are 46 years old and hold the title of Professor. Their research area is Robotics.",
+    "Professor Ashley Jones is affiliated with the Urban Engineering Department. They are 64 years old and hold the title of Professor. Their research area is Mechatronics.",
+    "Professor Karen Hill is affiliated with the Artificial Intelligence Department. They are 40 years old and hold the title of Assistant Professor. Their research area is Knowledge Graphs.",
+    "Professor Kevin King is affiliated with the Artificial Intelligence Department. They are 47 years old and hold the title of Associate Professor. Their research area is Information Retrieval.",
+    "Professor Steven Gonzalez is affiliated with the Artificial Intelligence Department. They are 38 years old and hold the title of Professor. Their research area is Speech Processing.",
+    "Professor Anthony Walker is affiliated with the Data Science Department. They are 58 years old and hold the title of Associate Professor. Their research area is Information Retrieval.",
+    "Professor Sarah Miller is affiliated with the Data Science Department. They are 35 years old and hold the title of Associate Professor. Their research area is Speech Processing.",
+    "Professor Ashley Miller is affiliated with the Data Science Department. They are 47 years old and hold the title of Professor. Their research area is NLP.",
+    "Professor James Walker is affiliated with the Information Security Department. They are 43 years old and hold the title of Associate Professor. Their research area is Reinforcement Learning.",
+    "Professor Nancy Jones is affiliated with the Information Security Department. They are 60 years old and hold the title of Assistant Professor. Their research area is Machine Learning.",
+    "Professor Sarah Hill is affiliated with the Information Security Department. They are 32 years old and hold the title of Professor. Their research area is Information Retrieval.",
+    "Professor William Lewis is affiliated with the Cybersecurity Department. They are 63 years old and hold the title of Associate Professor. Their research area is Control Systems.",
+    "Professor Angela Brown is affiliated with the Cybersecurity Department. They are 42 years old and hold the title of Associate Professor. Their research area is Robotics.",
+    "Professor Charles Allen is affiliated with the Information Communication Department. They are 50 years old and hold the title of Associate Professor. Their research area is Speech Processing.",
+    "Professor Sandra Wright is affiliated with the Information Communication Department. They are 41 years old and hold the title of Professor. Their research area is Computer Vision.",
+    "Professor Karen Brown is affiliated with the Information Communication Department. They are 66 years old and hold the title of Professor. Their research area is Speech Processing.",
+    "Professor Sarah Brown is affiliated with the Machine Learning Department. They are 62 years old and hold the title of Assistant Professor. Their research area is International Law.",
+    "Professor Sarah Scott is affiliated with the Machine Learning Department. They are 37 years old and hold the title of Professor. Their research area is Constitutional Law.",
+    "Professor David Taylor is affiliated with the Machine Learning Department. They are 57 years old and hold the title of Professor. Their research area is International Law.",
+    "Professor Emily Lewis is affiliated with the Mathematics Department. They are 68 years old and hold the title of Assistant Professor. Their research area is Organic Chemistry.",
+    "Professor Charles Wilson is affiliated with the Mathematics Department. They are 52 years old and hold the title of Professor. Their research area is Organic Chemistry.",
+    "Professor James Martin is affiliated with the Physics Department. They are 61 years old and hold the title of Associate Professor. Their research area is Quantum Physics.",
+    "Professor John Allen is affiliated with the Physics Department. They are 68 years old and hold the title of Professor. Their research area is Quantum Physics.",
+    "Professor Kenneth Wilson is affiliated with the Physics Department. They are 64 years old and hold the title of Associate Professor. Their research area is Thermodynamics.",
+    "Professor David Taylor is affiliated with the Chemistry Department. They are 55 years old and hold the title of Associate Professor. Their research area is Thermodynamics.",
+    "Professor Paul Hill is affiliated with the Chemistry Department. They are 51 years old and hold the title of Assistant Professor. Their research area is Astronomy.",
+    "Professor Lisa Smith is affiliated with the Chemistry Department. They are 67 years old and hold the title of Associate Professor. Their research area is Astronomy.",
+    "Professor James Thomas is affiliated with the Life Science Department. They are 39 years old and hold the title of Professor. Their research area is Astronomy.",
+    "Professor Sandra Martinez is affiliated with the Life Science Department. They are 49 years old and hold the title of Associate Professor. Their research area is Bayesian Inference.",
+    "Professor Ashley Wilson is affiliated with the Statistics Department. They are 48 years old and hold the title of Assistant Professor. Their research area is Genetics.",
+    "Professor Charles Brown is affiliated with the Statistics Department. They are 37 years old and hold the title of Assistant Professor. Their research area is Genetics.",
+    "Professor Michael Smith is affiliated with the Astronomy Department. They are 53 years old and hold the title of Professor. Their research area is Astronomy.",
+    "Professor Charles Hernandez is affiliated with the Astronomy Department. They are 60 years old and hold the title of Assistant Professor. Their research area is Astronomy.",
+    "Professor Helen Green is affiliated with the Astronomy Department. They are 32 years old and hold the title of Professor. Their research area is Quantum Physics.",
+    "Professor Kenneth Williams is affiliated with the Business Administration Department. They are 55 years old and hold the title of Assistant Professor. Their research area is Econometrics.",
+    "Professor Linda Walker is affiliated with the Business Administration Department. They are 40 years old and hold the title of Professor. Their research area is Supply Chain.",
+    "Professor Michael Thompson is affiliated with the Accounting Department. They are 45 years old and hold the title of Assistant Professor. Their research area is Consumer Behavior.",
+    "Professor Robert Thompson is affiliated with the Accounting Department. They are 67 years old and hold the title of Associate Professor. Their research area is Econometrics.",
+    "Professor Linda Taylor is affiliated with the Accounting Department. They are 42 years old and hold the title of Professor. Their research area is Game Theory.",
+    "Professor Susan Perez is affiliated with the Finance Department. They are 58 years old and hold the title of Assistant Professor. Their research area is Consumer Behavior.",
+    "Professor Mary Hernandez is affiliated with the Finance Department. They are 38 years old and hold the title of Associate Professor. Their research area is Corporate Finance.",
+    "Professor Thomas Gonzalez is affiliated with the Marketing Department. They are 61 years old and hold the title of Associate Professor. Their research area is Supply Chain.",
+    "Professor Thomas Anderson is affiliated with the Marketing Department. They are 33 years old and hold the title of Assistant Professor. Their research area is Consumer Behavior.",
+    "Professor Angela Perez is affiliated with the Marketing Department. They are 49 years old and hold the title of Professor. Their research area is Supply Chain.",
+    "Professor Joshua Clark is affiliated with the Economics Department. They are 66 years old and hold the title of Associate Professor. Their research area is Corporate Finance.",
+    "Professor Jessica Thomas is affiliated with the Economics Department. They are 43 years old and hold the title of Assistant Professor. Their research area is Supply Chain.",
+    "Professor Michael Miller is affiliated with the Economics Department. They are 59 years old and hold the title of Associate Professor. Their research area is Supply Chain.",
+    "Professor Joshua Davis is affiliated with the Trade Department. They are 56 years old and hold the title of Assistant Professor. Their research area is Consumer Behavior.",
+    "Professor Charles Williams is affiliated with the Trade Department. They are 59 years old and hold the title of Professor. Their research area is Econometrics.",
+    "Professor Kenneth Gonzalez is affiliated with the Trade Department. They are 55 years old and hold the title of Associate Professor. Their research area is Corporate Finance.",
+    "Professor Matthew Davis is affiliated with the Korean Literature Department. They are 51 years old and hold the title of Assistant Professor. Their research area is Ethics.",
+    "Professor Steven Lee is affiliated with the Korean Literature Department. They are 57 years old and hold the title of Assistant Professor. Their research area is Ethics.",
+    "Professor Sandra Rodriguez is affiliated with the Korean Literature Department. They are 44 years old and hold the title of Associate Professor. Their research area is Cognitive Psychology.",
+    "Professor Kevin Martin is affiliated with the English Literature Department. They are 57 years old and hold the title of Assistant Professor. Their research area is Linguistics.",
+    "Professor Patricia Jackson is affiliated with the English Literature Department. They are 45 years old and hold the title of Associate Professor. Their research area is Social Theory.",
+    "Professor Rachel Young is affiliated with the History Department. They are 60 years old and hold the title of Assistant Professor. Their research area is Medieval History.",
+    "Professor Joshua King is affiliated with the History Department. They are 42 years old and hold the title of Assistant Professor. Their research area is Linguistics.",
+    "Professor Daniel Scott is affiliated with the History Department. They are 53 years old and hold the title of Professor. Their research area is Medieval History.",
+    "Professor Thomas Gonzalez is affiliated with the Philosophy Department. They are 41 years old and hold the title of Professor. Their research area is Linguistics.",
+    "Professor Nancy King is affiliated with the Philosophy Department. They are 36 years old and hold the title of Associate Professor. Their research area is Cognitive Psychology.",
+    "Professor Kevin Gonzalez is affiliated with the Philosophy Department. They are 56 years old and hold the title of Associate Professor. Their research area is Cognitive Psychology.",
+    "Professor Linda Smith is affiliated with the Psychology Department. They are 38 years old and hold the title of Associate Professor. Their research area is Medieval History.",
+    "Professor Susan Torres is affiliated with the Psychology Department. They are 61 years old and hold the title of Professor. Their research area is Social Theory.",
+    "Professor Jessica Allen is affiliated with the Sociology Department. They are 40 years old and hold the title of Associate Professor. Their research area is Social Theory.",
+    "Professor Sandra Lee is affiliated with the Sociology Department. They are 60 years old and hold the title of Assistant Professor. Their research area is Social Theory.",
+    "The Manufacturing III course is offered by the Computer Engineering Department as a Undergraduate course. It is taught by Robert Hill, Jane Moore.",
+    "The Robotics Introduction course is offered by the Computer Engineering Department as a Graduate course. It is taught by Robert Hill, Jane Moore.",
+    "The Mechatronics III course is offered by the Computer Engineering Department as a Undergraduate course. It is taught by Robert Hill.",
+    "The Manufacturing III course is offered by the Computer Engineering Department as a Graduate course. It is taught by Robert Hill.",
+    "The Mechatronics Advanced course is offered by the Computer Engineering Department as a Undergraduate course. It is taught by Robert Hill, Jane Moore.",
+    "The Control Systems Advanced course is offered by the Software Engineering Department as a Undergraduate course. It is taught by Sandra Gonzalez, Jane Garcia.",
+    "The Manufacturing I course is offered by the Software Engineering Department as a Undergraduate course. It is taught by Sandra Gonzalez, Jane Garcia.",
+    "The Mechatronics Seminar course is offered by the Software Engineering Department as a Undergraduate course. It is taught by Sandra Gonzalez.",
+    "The Mechatronics Introduction course is offered by the Electrical Engineering Department as a Graduate course. It is taught by Robert Garcia, Ashley Moore.",
+    "The Mechatronics III course is offered by the Electrical Engineering Department as a Undergraduate course. It is taught by Ashley Moore, Robert Garcia, Ruth Moore.",
+    "The Robotics Seminar course is offered by the Electrical Engineering Department as a Undergraduate course. It is taught by Ruth Moore, Ashley Moore, Robert Garcia.",
+    "The Control Systems Introduction course is offered by the Electrical Engineering Department as a Graduate course. It is taught by Robert Garcia.",
+    "The Mechatronics III course is offered by the Mechanical Engineering Department as a Undergraduate course. It is taught by Charles Williams.",
+    "The Mechatronics I course is offered by the Mechanical Engineering Department as a Undergraduate course. It is taught by Mark Garcia.",
+    "The Mechatronics Advanced course is offered by the Mechanical Engineering Department as a Graduate course. It is taught by Charles Williams.",
+    "The Control Systems Advanced course is offered by the Mechanical Engineering Department as a Graduate course. It is taught by Mark Garcia, Charles Williams, Kevin Gonzalez.",
+    "The Manufacturing II course is offered by the Mechanical Engineering Department as a Undergraduate course. It is taught by Mark Garcia, Kevin Gonzalez.",
+    "The Manufacturing Introduction course is offered by the Chemical Engineering Department as a Graduate course. It is taught by Emily Anderson.",
+    "The Robotics II course is offered by the Chemical Engineering Department as a Graduate course. It is taught by Karen Moore, Emily Anderson, Rachel White.",
+    "The Robotics Advanced course is offered by the Chemical Engineering Department as a Graduate course. It is taught by Emily Anderson.",
+    "The Control Systems III course is offered by the Chemical Engineering Department as a Graduate course. It is taught by Rachel White, Karen Moore, Emily Anderson.",
+    "The Robotics Seminar course is offered by the Civil Engineering Department as a Undergraduate course. It is taught by William Allen, Matthew Brown.",
+    "The Mechatronics II course is offered by the Civil Engineering Department as a Undergraduate course. It is taught by William Allen, Matthew Brown.",
+    "The Robotics Introduction course is offered by the Civil Engineering Department as a Graduate course. It is taught by William Allen.",
+    "The Manufacturing III course is offered by the Civil Engineering Department as a Graduate course. It is taught by William Allen, Matthew Brown.",
+    "The Manufacturing II course is offered by the Industrial Engineering Department as a Graduate course. It is taught by Linda Thomas.",
+    "The Control Systems Seminar course is offered by the Industrial Engineering Department as a Undergraduate course. It is taught by Mary Jones, Linda Thomas.",
+    "The Mechatronics I course is offered by the Industrial Engineering Department as a Undergraduate course. It is taught by Mary Jones.",
+    "The Mechatronics I course is offered by the Industrial Engineering Department as a Graduate course. It is taught by Linda Thomas, Karen Wright, Mary Jones.",
+    "The Mechatronics Introduction course is offered by the Industrial Engineering Department as a Undergraduate course. It is taught by Karen Wright, Linda Thomas, Mary Jones.",
+    "The Robotics Advanced course is offered by the Materials Engineering Department as a Graduate course. It is taught by Linda Hernandez, Joshua Wright.",
+    "The Robotics Seminar course is offered by the Materials Engineering Department as a Undergraduate course. It is taught by Ruth Clark.",
+    "The Mechatronics Advanced course is offered by the Materials Engineering Department as a Graduate course. It is taught by Ruth Clark, Linda Hernandez, Joshua Wright.",
+    "The Mechatronics Introduction course is offered by the Materials Engineering Department as a Graduate course. It is taught by Linda Hernandez.",
+    "The Robotics III course is offered by the Materials Engineering Department as a Graduate course. It is taught by Joshua Wright, Linda Hernandez.",
+    "The Robotics Introduction course is offered by the Aerospace Engineering Department as a Graduate course. It is taught by Jessica Hill.",
+    "The Mechatronics I course is offered by the Aerospace Engineering Department as a Graduate course. It is taught by Jessica Hill, Mark Allen, Jessica Jackson.",
+    "The Mechatronics Advanced course is offered by the Aerospace Engineering Department as a Undergraduate course. It is taught by Mark Allen, Jessica Hill.",
+    "The Manufacturing Advanced course is offered by the Aerospace Engineering Department as a Graduate course. It is taught by Mark Allen, Jessica Jackson.",
+    "The Manufacturing III course is offered by the Aerospace Engineering Department as a Undergraduate course. It is taught by Jessica Hill, Mark Allen, Jessica Jackson.",
+    "The Manufacturing I course is offered by the Energy Engineering Department as a Undergraduate course. It is taught by Patricia Scott, Charles Scott.",
+    "The Control Systems I course is offered by the Energy Engineering Department as a Undergraduate course. It is taught by Charles Scott, Patricia Scott.",
+    "The Robotics Introduction course is offered by the Energy Engineering Department as a Graduate course. It is taught by Charles Scott, Patricia Scott.",
+    "The Mechatronics II course is offered by the Energy Engineering Department as a Graduate course. It is taught by Patricia Scott, Charles Scott.",
+    "The Control Systems I course is offered by the Environmental Engineering Department as a Graduate course. It is taught by Kenneth Torres, Donna Johnson.",
+    "The Manufacturing III course is offered by the Environmental Engineering Department as a Graduate course. It is taught by Donna Johnson, Kenneth Torres.",
+    "The Manufacturing Advanced course is offered by the Environmental Engineering Department as a Graduate course. It is taught by Donna Johnson.",
+    "The Mechatronics III course is offered by the Environmental Engineering Department as a Undergraduate course. It is taught by Donna Johnson, Kenneth Torres.",
+    "The Control Systems Introduction course is offered by the Environmental Engineering Department as a Undergraduate course. It is taught by Donna Johnson, Kenneth Torres.",
+    "The Manufacturing Seminar course is offered by the Biomedical Engineering Department as a Undergraduate course. It is taught by Donna Jones, Sarah Taylor.",
+    "The Manufacturing Advanced course is offered by the Biomedical Engineering Department as a Graduate course. It is taught by Sarah Taylor.",
+    "The Robotics I course is offered by the Biomedical Engineering Department as a Undergraduate course. It is taught by Sarah Taylor, Donna Jones.",
+    "The Manufacturing Introduction course is offered by the Biomedical Engineering Department as a Graduate course. It is taught by Sarah Taylor, Donna Jones.",
+    "The Manufacturing III course is offered by the Robotics Engineering Department as a Graduate course. It is taught by Sandra Hernandez, Karen Hill, Angela White.",
+    "The Robotics II course is offered by the Robotics Engineering Department as a Undergraduate course. It is taught by Sandra Hernandez, Angela White, Karen Hill.",
+    "The Manufacturing Seminar course is offered by the Robotics Engineering Department as a Undergraduate course. It is taught by Angela White.",
+    "The Manufacturing III course is offered by the Robotics Engineering Department as a Undergraduate course. It is taught by Angela White.",
+    "The Mechatronics III course is offered by the Naval Engineering Department as a Graduate course. It is taught by Ruth Green.",
+    "The Manufacturing Advanced course is offered by the Naval Engineering Department as a Graduate course. It is taught by Nancy Anderson.",
+    "The Control Systems I course is offered by the Naval Engineering Department as a Graduate course. It is taught by Nancy Anderson.",
+    "The Control Systems Introduction course is offered by the Urban Engineering Department as a Graduate course. It is taught by David Brown, Ashley Jones.",
+    "The Manufacturing III course is offered by the Urban Engineering Department as a Undergraduate course. It is taught by David Brown, Ashley Jones.",
+    "The Robotics Seminar course is offered by the Urban Engineering Department as a Graduate course. It is taught by Ashley Jones, David Brown.",
+    "The Mechatronics Introduction course is offered by the Urban Engineering Department as a Graduate course. It is taught by Ashley Jones, David Brown.",
+    "The Robotics Advanced course is offered by the Urban Engineering Department as a Graduate course. It is taught by Ashley Jones.",
+    "The Computer Vision III course is offered by the Artificial Intelligence Department as a Undergraduate course. It is taught by Kevin King, Karen Hill, Steven Gonzalez.",
+    "The Knowledge Graphs III course is offered by the Artificial Intelligence Department as a Undergraduate course. It is taught by Steven Gonzalez, Karen Hill, Kevin King.",
+    "The Knowledge Graphs Advanced course is offered by the Artificial Intelligence Department as a Graduate course. It is taught by Karen Hill, Steven Gonzalez.",
+    "The Speech Processing Seminar course is offered by the Artificial Intelligence Department as a Undergraduate course. It is taught by Steven Gonzalez, Karen Hill, Kevin King.",
+    "The Computer Vision Seminar course is offered by the Artificial Intelligence Department as a Undergraduate course. It is taught by Karen Hill, Kevin King.",
+    "The Computer Vision II course is offered by the Data Science Department as a Undergraduate course. It is taught by Ashley Miller, Sarah Miller.",
+    "The NLP III course is offered by the Data Science Department as a Graduate course. It is taught by Sarah Miller, Ashley Miller, Anthony Walker.",
+    "The Information Retrieval I course is offered by the Data Science Department as a Graduate course. It is taught by Ashley Miller, Sarah Miller.",
+    "The NLP Seminar course is offered by the Information Security Department as a Graduate course. It is taught by Sarah Hill.",
+    "The Information Retrieval I course is offered by the Information Security Department as a Graduate course. It is taught by Nancy Jones, James Walker, Sarah Hill.",
+    "The Knowledge Graphs III course is offered by the Information Security Department as a Graduate course. It is taught by Nancy Jones.",
+    "The Manufacturing Seminar course is offered by the Cybersecurity Department as a Undergraduate course. It is taught by Angela Brown, William Lewis.",
+    "The Manufacturing Advanced course is offered by the Cybersecurity Department as a Undergraduate course. It is taught by Angela Brown.",
+    "The Robotics Seminar course is offered by the Cybersecurity Department as a Graduate course. It is taught by Angela Brown, William Lewis.",
+    "The Robotics I course is offered by the Cybersecurity Department as a Graduate course. It is taught by William Lewis.",
+    "The Manufacturing II course is offered by the Cybersecurity Department as a Undergraduate course. It is taught by William Lewis.",
+    "The Reinforcement Learning Advanced course is offered by the Information Communication Department as a Undergraduate course. It is taught by Karen Brown, Sandra Wright.",
+    "The Reinforcement Learning III course is offered by the Information Communication Department as a Undergraduate course. It is taught by Charles Allen, Sandra Wright, Karen Brown.",
+    "The Speech Processing Introduction course is offered by the Information Communication Department as a Undergraduate course. It is taught by Charles Allen, Sandra Wright.",
+    "The Information Retrieval Advanced course is offered by the Information Communication Department as a Graduate course. It is taught by Charles Allen, Sandra Wright.",
+    "The Administrative Policy Introduction course is offered by the Machine Learning Department as a Undergraduate course. It is taught by Sarah Brown, David Taylor.",
+    "The International Law III course is offered by the Machine Learning Department as a Undergraduate course. It is taught by David Taylor, Sarah Brown, Sarah Scott.",
+    "The International Law Advanced course is offered by the Machine Learning Department as a Undergraduate course. It is taught by Sarah Brown, David Taylor, Sarah Scott.",
+    "The Organic Chemistry III course is offered by the Mathematics Department as a Undergraduate course. It is taught by Emily Lewis.",
+    "The Thermodynamics I course is offered by the Mathematics Department as a Undergraduate course. It is taught by Charles Wilson, Emily Lewis.",
+    "The Thermodynamics II course is offered by the Mathematics Department as a Graduate course. It is taught by Charles Wilson.",
+    "The Thermodynamics Seminar course is offered by the Physics Department as a Graduate course. It is taught by James Martin, Kenneth Wilson.",
+    "The Bayesian Inference I course is offered by the Physics Department as a Graduate course. It is taught by Kenneth Wilson.",
+    "The Genetics Introduction course is offered by the Physics Department as a Undergraduate course. It is taught by Kenneth Wilson, James Martin.",
+    "The Quantum Physics Seminar course is offered by the Chemistry Department as a Undergraduate course. It is taught by Lisa Smith, Paul Hill, David Taylor.",
+    "The Quantum Physics Seminar course is offered by the Chemistry Department as a Undergraduate course. It is taught by Paul Hill, Lisa Smith.",
+    "The Genetics III course is offered by the Chemistry Department as a Undergraduate course. It is taught by Paul Hill, David Taylor, Lisa Smith.",
+    "The Quantum Physics Advanced course is offered by the Chemistry Department as a Graduate course. It is taught by Paul Hill.",
+    "The Genetics Advanced course is offered by the Chemistry Department as a Graduate course. It is taught by Lisa Smith, Paul Hill, David Taylor.",
+    "The Astronomy Introduction course is offered by the Life Science Department as a Graduate course. It is taught by James Thomas.",
+    "The Thermodynamics Introduction course is offered by the Life Science Department as a Graduate course. It is taught by Sandra Martinez, James Thomas.",
+    "The Astronomy Introduction course is offered by the Life Science Department as a Graduate course. It is taught by Sandra Martinez.",
+    "The Organic Chemistry I course is offered by the Statistics Department as a Undergraduate course. It is taught by Ashley Wilson, Charles Brown.",
+    "The Quantum Physics I course is offered by the Statistics Department as a Graduate course. It is taught by Charles Brown.",
+    "The Thermodynamics Seminar course is offered by the Statistics Department as a Undergraduate course. It is taught by Ashley Wilson, Charles Brown.",
+    "The Genetics III course is offered by the Statistics Department as a Graduate course. It is taught by Charles Brown, Ashley Wilson.",
+    "The Organic Chemistry II course is offered by the Statistics Department as a Graduate course. It is taught by Ashley Wilson.",
+    "The Quantum Physics I course is offered by the Astronomy Department as a Graduate course. It is taught by Helen Green, Charles Hernandez.",
+    "The Bayesian Inference Advanced course is offered by the Astronomy Department as a Undergraduate course. It is taught by Charles Hernandez.",
+    "The Bayesian Inference II course is offered by the Astronomy Department as a Graduate course. It is taught by Helen Green, Charles Hernandez, Michael Smith.",
+    "The Supply Chain II course is offered by the Business Administration Department as a Undergraduate course. It is taught by Linda Walker, Kenneth Williams.",
+    "The Econometrics II course is offered by the Business Administration Department as a Undergraduate course. It is taught by Linda Walker, Kenneth Williams.",
+    "The Corporate Finance Introduction course is offered by the Business Administration Department as a Graduate course. It is taught by Kenneth Williams, Linda Walker.",
+    "The Supply Chain III course is offered by the Business Administration Department as a Graduate course. It is taught by Linda Walker.",
+    "The Econometrics II course is offered by the Business Administration Department as a Undergraduate course. It is taught by Kenneth Williams, Linda Walker.",
+    "The Corporate Finance Seminar course is offered by the Accounting Department as a Graduate course. It is taught by Michael Thompson, Robert Thompson, Linda Taylor.",
+    "The Game Theory II course is offered by the Accounting Department as a Undergraduate course. It is taught by Robert Thompson, Linda Taylor, Michael Thompson.",
+    "The Supply Chain Seminar course is offered by the Accounting Department as a Graduate course. It is taught by Michael Thompson, Robert Thompson.",
+    "The Econometrics Introduction course is offered by the Accounting Department as a Undergraduate course. It is taught by Robert Thompson, Michael Thompson, Linda Taylor.",
+    "The Corporate Finance II course is offered by the Accounting Department as a Undergraduate course. It is taught by Robert Thompson.",
+    "The Supply Chain Introduction course is offered by the Finance Department as a Graduate course. It is taught by Susan Perez, Mary Hernandez.",
+    "The Consumer Behavior Advanced course is offered by the Finance Department as a Undergraduate course. It is taught by Mary Hernandez.",
+    "The Econometrics Introduction course is offered by the Finance Department as a Undergraduate course. It is taught by Mary Hernandez, Susan Perez.",
+    "The Game Theory I course is offered by the Finance Department as a Graduate course. It is taught by Mary Hernandez.",
+    "The Game Theory I course is offered by the Marketing Department as a Graduate course. It is taught by Thomas Anderson, Angela Perez, Thomas Gonzalez.",
+    "The Corporate Finance Seminar course is offered by the Marketing Department as a Graduate course. It is taught by Thomas Gonzalez, Thomas Anderson.",
+    "The Corporate Finance Introduction course is offered by the Marketing Department as a Graduate course. It is taught by Thomas Gonzalez, Angela Perez.",
+    "The Econometrics III course is offered by the Marketing Department as a Graduate course. It is taught by Thomas Anderson.",
+    "The Consumer Behavior Advanced course is offered by the Marketing Department as a Undergraduate course. It is taught by Thomas Gonzalez, Angela Perez.",
+    "The Econometrics III course is offered by the Economics Department as a Undergraduate course. It is taught by Jessica Thomas.",
+    "The Consumer Behavior III course is offered by the Economics Department as a Undergraduate course. It is taught by Joshua Clark.",
+    "The Consumer Behavior Seminar course is offered by the Economics Department as a Graduate course. It is taught by Joshua Clark, Michael Miller, Jessica Thomas.",
+    "The Game Theory Seminar course is offered by the Economics Department as a Graduate course. It is taught by Michael Miller, Jessica Thomas, Joshua Clark.",
+    "The Consumer Behavior Introduction course is offered by the Economics Department as a Graduate course. It is taught by Joshua Clark, Jessica Thomas.",
+    "The Econometrics Advanced course is offered by the Trade Department as a Undergraduate course. It is taught by Charles Williams.",
+    "The Supply Chain I course is offered by the Trade Department as a Graduate course. It is taught by Charles Williams, Joshua Davis.",
+    "The Supply Chain I course is offered by the Trade Department as a Graduate course. It is taught by Kenneth Gonzalez.",
+    "The Game Theory Advanced course is offered by the Trade Department as a Undergraduate course. It is taught by Kenneth Gonzalez, Joshua Davis, Charles Williams.",
+    "The Social Theory I course is offered by the Korean Literature Department as a Graduate course. It is taught by Sandra Rodriguez, Matthew Davis.",
+    "The Linguistics Advanced course is offered by the Korean Literature Department as a Undergraduate course. It is taught by Sandra Rodriguez, Matthew Davis.",
+    "The Linguistics Introduction course is offered by the Korean Literature Department as a Graduate course. It is taught by Sandra Rodriguez.",
+    "The Social Theory III course is offered by the Korean Literature Department as a Graduate course. It is taught by Sandra Rodriguez, Matthew Davis, Steven Lee.",
+    "The Cognitive Psychology I course is offered by the English Literature Department as a Graduate course. It is taught by Kevin Martin, Patricia Jackson.",
+    "The Linguistics III course is offered by the English Literature Department as a Undergraduate course. It is taught by Patricia Jackson, Kevin Martin.",
+    "The Ethics III course is offered by the English Literature Department as a Graduate course. It is taught by Kevin Martin.",
+    "The Cognitive Psychology III course is offered by the English Literature Department as a Graduate course. It is taught by Kevin Martin.",
+    "The Ethics Seminar course is offered by the History Department as a Undergraduate course. It is taught by Daniel Scott.",
+    "The Cognitive Psychology III course is offered by the History Department as a Undergraduate course. It is taught by Joshua King, Rachel Young, Daniel Scott.",
+    "The Medieval History II course is offered by the History Department as a Undergraduate course. It is taught by Joshua King, Rachel Young.",
+    "The Medieval History I course is offered by the History Department as a Undergraduate course. It is taught by Joshua King.",
+    "The Ethics II course is offered by the History Department as a Undergraduate course. It is taught by Rachel Young, Joshua King, Daniel Scott.",
+    "The Social Theory Introduction course is offered by the Philosophy Department as a Undergraduate course. It is taught by Kevin Gonzalez.",
+    "The Cognitive Psychology Introduction course is offered by the Philosophy Department as a Graduate course. It is taught by Kevin Gonzalez, Thomas Gonzalez.",
+    "The Cognitive Psychology II course is offered by the Philosophy Department as a Graduate course. It is taught by Kevin Gonzalez.",
+    "The Cognitive Psychology Seminar course is offered by the Philosophy Department as a Graduate course. It is taught by Nancy King.",
+    "The Cognitive Psychology II course is offered by the Philosophy Department as a Undergraduate course. It is taught by Nancy King, Kevin Gonzalez.",
+    "The Medieval History III course is offered by the Psychology Department as a Undergraduate course. It is taught by Linda Smith, Susan Torres.",
+    "The Social Theory I course is offered by the Psychology Department as a Undergraduate course. It is taught by Susan Torres.",
+    "The Ethics I course is offered by the Psychology Department as a Undergraduate course. It is taught by Linda Smith, Susan Torres.",
+    "The Cognitive Psychology I course is offered by the Psychology Department as a Graduate course. It is taught by Linda Smith, Susan Torres.",
+    "The Social Theory I course is offered by the Psychology Department as a Graduate course. It is taught by Linda Smith, Susan Torres.",
+    "The Linguistics II course is offered by the Sociology Department as a Undergraduate course. It is taught by Jessica Allen, Sandra Lee.",
+    "The Linguistics Seminar course is offered by the Sociology Department as a Graduate course. It is taught by Sandra Lee, Jessica Allen.",
+    "The Cognitive Psychology I course is offered by the Sociology Department as a Graduate course. It is taught by Jessica Allen, Sandra Lee.",
+    "The AI Learning Project is led by the Naval Engineering Department, with collaboration from no additional departments. The lead professor is prof_0034.",
+    "The Green Security Project is led by the Artificial Intelligence Department, with collaboration from Materials Engineering. The lead professor is prof_0037.",
+    "The AI Security Project is led by the Nursing Department, with collaboration from Finance, Chemical Engineering. The lead professor is prof_0000.",
+    "The Bio Health Project is led by the Sociology Department, with collaboration from Software Engineering, Pharmacy. The lead professor is prof_0098.",
+    "The Green Mobility Project is led by the Cybersecurity Department, with collaboration from Computer Engineering. The lead professor is prof_0047.",
+    "The Bio Energy Project is led by the Astronomy Department, with collaboration from no additional departments. The lead professor is prof_0068.",
+    "The Quantum Mobility Project is led by the Korean Literature Department, with collaboration from Chemical Engineering. The lead professor is prof_0087.",
+    "The AI Research Project is led by the Trade Department, with collaboration from Software Engineering, Life Science. The lead professor is prof_0083.",
+    "The Smart Energy Project is led by the Life Science Department, with collaboration from Data Science. The lead professor is prof_0062.",
+    "The Bio Research Project is led by the Physics Department, with collaboration from no additional departments. The lead professor is prof_0058.",
+    "The Green Energy Project is led by the Industrial Engineering Department, with collaboration from Public Administration, International Relations. The lead professor is prof_0016.",
+    "The Bio Security Project is led by the Physics Department, with collaboration from Mathematics, Public Health. The lead professor is prof_0056.",
+    "The Green Health Project is led by the Music Department, with collaboration from Nursing. The lead professor is prof_0000.",
+    "The Green Energy Project is led by the Chemical Engineering Department, with collaboration from Marketing, Electrical Engineering. The lead professor is prof_0011.",
+    "The Smart Mobility Project is led by the Robotics Engineering Department, with collaboration from no additional departments. The lead professor is prof_0031.",
+    "The Bio Health Project is led by the Statistics Department, with collaboration from Economics, Data Science. The lead professor is prof_0064.",
+    "The Smart Energy Project is led by the Cybersecurity Department, with collaboration from Mechanical Engineering. The lead professor is prof_0047.",
+    "The Next-Gen Security Project is led by the Chemistry Department, with collaboration from Astronomy. The lead professor is prof_0061.",
+    "The Bio Security Project is led by the Mathematics Department, with collaboration from no additional departments. The lead professor is prof_0055.",
+    "The Next-Gen Energy Project is led by the Chemistry Department, with collaboration from Information Security, Civil Engineering. The lead professor is prof_0061.",
+    "The Smart Energy Project is led by the Business Administration Department, with collaboration from Biomedical Engineering, History. The lead professor is prof_0070.",
+    "The Smart Security Project is led by the Civil Engineering Department, with collaboration from Dentistry. The lead professor is prof_0014.",
+    "The Smart Security Project is led by the Sociology Department, with collaboration from Business Administration, Environmental Engineering. The lead professor is prof_0099.",
+    "The Smart Research Project is led by the Electrical Engineering Department, with collaboration from Chemistry, Nursing. The lead professor is prof_0005.",
+    "The Bio Security Project is led by the Mechanical Engineering Department, with collaboration from no additional departments. The lead professor is prof_0009.",
+    "The AI Health Project is led by the Chemistry Department, with collaboration from Public Administration, Music. The lead professor is prof_0059.",
+    "The AI Health Project is led by the Sociology Department, with collaboration from Accounting, Electrical Engineering. The lead professor is prof_0098.",
+    "The Quantum Energy Project is led by the International Relations Department, with collaboration from Chemistry, Life Science. The lead professor is prof_0000.",
+    "The Smart Learning Project is led by the Sociology Department, with collaboration from no additional departments. The lead professor is prof_0099.",
+    "The Green Mobility Project is led by the Accounting Department, with collaboration from no additional departments. The lead professor is prof_0073.",
+    "The Smart Health Project is led by the Chemistry Department, with collaboration from Machine Learning. The lead professor is prof_0061.",
+    "The Green Security Project is led by the Materials Engineering Department, with collaboration from no additional departments. The lead professor is prof_0020.",
+    "The Smart Learning Project is led by the Korean Literature Department, with collaboration from Philosophy. The lead professor is prof_0085.",
+    "The Quantum Learning Project is led by the Fine Arts Department, with collaboration from Naval Engineering. The lead professor is prof_0000.",
+    "The AI Health Project is led by the Music Department, with collaboration from Robotics Engineering. The lead professor is prof_0000.",
+    "The Next-Gen Energy Project is led by the Chemical Engineering Department, with collaboration from Robotics Engineering. The lead professor is prof_0012.",
+    "The Smart Research Project is led by the Dentistry Department, with collaboration from Public Health. The lead professor is prof_0000.",
+    "The Green Research Project is led by the Chemical Engineering Department, with collaboration from History, Information Communication. The lead professor is prof_0011.",
+    "The Smart Mobility Project is led by the Fine Arts Department, with collaboration from Nursing, Biomedical Engineering. The lead professor is prof_0000.",
+    "The Green Health Project is led by the Urban Engineering Department, with collaboration from no additional departments. The lead professor is prof_0035.",
+    "The Quantum Mobility Project is led by the Economics Department, with collaboration from no additional departments. The lead professor is prof_0080.",
+    "The Quantum Energy Project is led by the Chemistry Department, with collaboration from Philosophy. The lead professor is prof_0059.",
+    "The Bio Security Project is led by the Chemical Engineering Department, with collaboration from Astronomy. The lead professor is prof_0012.",
+    "The AI Health Project is led by the Korean Literature Department, with collaboration from Astronomy. The lead professor is prof_0087.",
+    "The Bio Mobility Project is led by the Machine Learning Department, with collaboration from Chemical Engineering, Finance. The lead professor is prof_0052.",
+    "The Bio Mobility Project is led by the Physics Department, with collaboration from no additional departments. The lead professor is prof_0058.",
+    "The Quantum Energy Project is led by the Biomedical Engineering Department, with collaboration from no additional departments. The lead professor is prof_0029.",
+    "The Green Learning Project is led by the Materials Engineering Department, with collaboration from Environmental Engineering, Machine Learning. The lead professor is prof_0018.",
+    "The Smart Mobility Project is led by the Fine Arts Department, with collaboration from no additional departments. The lead professor is prof_0000.",
+    "The Green Research Project is led by the Cybersecurity Department, with collaboration from no additional departments. The lead professor is prof_0047.",
+    "The Smart Mobility Project is led by the History Department, with collaboration from Aerospace Engineering. The lead professor is prof_0092.",
+    "The Quantum Mobility Project is led by the English Literature Department, with collaboration from no additional departments. The lead professor is prof_0088.",
+    "The Quantum Energy Project is led by the Energy Engineering Department, with collaboration from no additional departments. The lead professor is prof_0025.",
+    "The Bio Mobility Project is led by the Software Engineering Department, with collaboration from no additional departments. The lead professor is prof_0002.",
+    "The Quantum Research Project is led by the Data Science Department, with collaboration from Naval Engineering, Psychology. The lead professor is prof_0041.",
+    "The Bio Learning Project is led by the Software Engineering Department, with collaboration from Pharmacy. The lead professor is prof_0003.",
+    "The Next-Gen Learning Project is led by the Marketing Department, with collaboration from no additional departments. The lead professor is prof_0078.",
+    "The Green Security Project is led by the Finance Department, with collaboration from no additional departments. The lead professor is prof_0074.",
+    "The Smart Mobility Project is led by the Astronomy Department, with collaboration from Marketing. The lead professor is prof_0066.",
+    "The Bio Learning Project is led by the Energy Engineering Department, with collaboration from Design. The lead professor is prof_0025.",
+    "The Quantum Mobility Project is led by the Statistics Department, with collaboration from no additional departments. The lead professor is prof_0065.",
+    "The AI Learning Project is led by the Industrial Engineering Department, with collaboration from Data Science. The lead professor is prof_0016.",
+    "The AI Energy Project is led by the Accounting Department, with collaboration from no additional departments. The lead professor is prof_0071.",
+    "The Green Health Project is led by the Cybersecurity Department, with collaboration from Nursing. The lead professor is prof_0047.",
+    "The Green Security Project is led by the Machine Learning Department, with collaboration from Law, Mathematics. The lead professor is prof_0051.",
+    "The Next-Gen Energy Project is led by the Trade Department, with collaboration from Economics. The lead professor is prof_0083.",
+    "The Green Health Project is led by the Civil Engineering Department, with collaboration from Korean Literature. The lead professor is prof_0014.",
+    "The Smart Security Project is led by the Psychology Department, with collaboration from Mechanical Engineering. The lead professor is prof_0096.",
+    "The Quantum Energy Project is led by the Sociology Department, with collaboration from Music, Marketing. The lead professor is prof_0099.",
+    "The Bio Learning Project is led by the Industrial Engineering Department, with collaboration from Energy Engineering. The lead professor is prof_0016.",
+    "The AI Security Project is led by the Public Administration Department, with collaboration from Chemistry. The lead professor is prof_0000.",
+    "The Quantum Learning Project is led by the Mechanical Engineering Department, with collaboration from Philosophy, Naval Engineering. The lead professor is prof_0008.",
+    "The Quantum Learning Project is led by the Chemical Engineering Department, with collaboration from Korean Literature. The lead professor is prof_0011.",
+    "The Green Energy Project is led by the Medicine Department, with collaboration from Nursing, Materials Engineering. The lead professor is prof_0000.",
+    "The Green Health Project is led by the Statistics Department, with collaboration from Mathematics. The lead professor is prof_0065.",
+    "The AI Energy Project is led by the Sociology Department, with collaboration from Statistics, Trade. The lead professor is prof_0098.",
+    "The Next-Gen Health Project is led by the Aerospace Engineering Department, with collaboration from Physics, Economics. The lead professor is prof_0023.",
+    "The Green Security Project is led by the Sociology Department, with collaboration from Aerospace Engineering, Machine Learning. The lead professor is prof_0099.",
+    "The Smart Mobility Project is led by the Medicine Department, with collaboration from Information Communication, Psychology. The lead professor is prof_0000.",
+    "The Smart Security Project is led by the Trade Department, with collaboration from Economics, Design. The lead professor is prof_0084.",
+    "The Next-Gen Mobility Project is led by the Software Engineering Department, with collaboration from Physics. The lead professor is prof_0002.",
+    "The Quantum Security Project is led by the Information Communication Department, with collaboration from Fine Arts, Pharmacy. The lead professor is prof_0048.",
+    "The Bio Energy Project is led by the Data Science Department, with collaboration from Sociology, Psychology. The lead professor is prof_0040.",
+    "The Green Research Project is led by the Psychology Department, with collaboration from Environmental Engineering. The lead professor is prof_0097.",
+    "The Bio Energy Project is led by the Artificial Intelligence Department, with collaboration from no additional departments. The lead professor is prof_0039.",
+    "The Smart Security Project is led by the Robotics Engineering Department, with collaboration from no additional departments. The lead professor is prof_0031.",
+    "The Next-Gen Mobility Project is led by the Energy Engineering Department, with collaboration from Fine Arts. The lead professor is prof_0024.",
+    "The Bio Energy Project is led by the International Relations Department, with collaboration from Marketing, Law. The lead professor is prof_0000.",
+    "The Quantum Health Project is led by the Fine Arts Department, with collaboration from no additional departments. The lead professor is prof_0000.",
+    "The Quantum Security Project is led by the History Department, with collaboration from Dentistry. The lead professor is prof_0091.",
+    "The Quantum Learning Project is led by the Machine Learning Department, with collaboration from no additional departments. The lead professor is prof_0052.",
+    "The Quantum Security Project is led by the English Literature Department, with collaboration from Music. The lead professor is prof_0089.",
+    "The Quantum Learning Project is led by the Robotics Engineering Department, with collaboration from no additional departments. The lead professor is prof_0031.",
+    "The Bio Research Project is led by the Urban Engineering Department, with collaboration from Information Communication. The lead professor is prof_0035.",
+    "The Quantum Research Project is led by the Economics Department, with collaboration from Marketing. The lead professor is prof_0080.",
+    "The Bio Mobility Project is led by the Information Security Department, with collaboration from Materials Engineering. The lead professor is prof_0045.",
+    "The Smart Energy Project is led by the Life Science Department, with collaboration from Physics. The lead professor is prof_0062.",
+    "The Bio Learning Project is led by the Cybersecurity Department, with collaboration from Civil Engineering, Chemistry. The lead professor is prof_0047.",
+    "The Green Mobility Project is led by the Law Department, with collaboration from Naval Engineering. The lead professor is prof_0000.",
+    "The AI Mobility Project is led by the Information Security Department, with collaboration from Fine Arts, Cybersecurity. The lead professor is prof_0043.",
+    "The Computer Engineering Department is part of the Engineering division. It has 2 professors affiliated.",
+    "The Software Engineering Department is part of the Engineering division. It has 2 professors affiliated.",
+    "The Electrical Engineering Department is part of the Engineering division. It has 3 professors affiliated.",
+    "The Mechanical Engineering Department is part of the Engineering division. It has 3 professors affiliated.",
+    "The Chemical Engineering Department is part of the Engineering division. It has 3 professors affiliated.",
+    "The Civil Engineering Department is part of the Engineering division. It has 2 professors affiliated.",
+    "The Industrial Engineering Department is part of the Engineering division. It has 3 professors affiliated.",
+    "The Materials Engineering Department is part of the Engineering division. It has 3 professors affiliated.",
+    "The Aerospace Engineering Department is part of the Engineering division. It has 3 professors affiliated.",
+    "The Energy Engineering Department is part of the Engineering division. It has 2 professors affiliated.",
+    "The Environmental Engineering Department is part of the Engineering division. It has 2 professors affiliated.",
+    "The Biomedical Engineering Department is part of the Engineering division. It has 2 professors affiliated.",
+    "The Robotics Engineering Department is part of the Engineering division. It has 3 professors affiliated.",
+    "The Naval Engineering Department is part of the Engineering division. It has 2 professors affiliated.",
+    "The Urban Engineering Department is part of the Engineering division. It has 2 professors affiliated.",
+    "The Artificial Intelligence Department is part of the AI division. It has 3 professors affiliated.",
+    "The Data Science Department is part of the AI division. It has 3 professors affiliated.",
+    "The Information Security Department is part of the AI division. It has 3 professors affiliated.",
+    "The Cybersecurity Department is part of the Engineering division. It has 2 professors affiliated.",
+    "The Information Communication Department is part of the AI division. It has 3 professors affiliated.",
+    "The Machine Learning Department is part of the Law division. It has 3 professors affiliated.",
+    "The Mathematics Department is part of the Science division. It has 2 professors affiliated.",
+    "The Physics Department is part of the Science division. It has 3 professors affiliated.",
+    "The Chemistry Department is part of the Science division. It has 3 professors affiliated.",
+    "The Life Science Department is part of the Science division. It has 2 professors affiliated.",
+    "The Statistics Department is part of the Science division. It has 2 professors affiliated.",
+    "The Astronomy Department is part of the Science division. It has 3 professors affiliated.",
+    "The Business Administration Department is part of the Business division. It has 2 professors affiliated.",
+    "The Accounting Department is part of the Business division. It has 3 professors affiliated.",
+    "The Finance Department is part of the Business division. It has 2 professors affiliated.",
+    "The Marketing Department is part of the Business division. It has 3 professors affiliated.",
+    "The Economics Department is part of the Business division. It has 3 professors affiliated.",
+    "The Trade Department is part of the Business division. It has 3 professors affiliated.",
+    "The Korean Literature Department is part of the Humanities division. It has 3 professors affiliated.",
+    "The English Literature Department is part of the Humanities division. It has 2 professors affiliated.",
+    "The History Department is part of the Humanities division. It has 3 professors affiliated.",
+    "The Philosophy Department is part of the Humanities division. It has 3 professors affiliated.",
+    "The Psychology Department is part of the Humanities division. It has 2 professors affiliated.",
+    "The Sociology Department is part of the Humanities division. It has 2 professors affiliated.",
+    "The Medicine Department is part of the Medical division. It has 0 professors affiliated.",
+    "The Nursing Department is part of the Medical division. It has 0 professors affiliated.",
+    "The Pharmacy Department is part of the Medical division. It has 0 professors affiliated.",
+    "The Public Health Department is part of the Medical division. It has 0 professors affiliated.",
+    "The Dentistry Department is part of the Law division. It has 0 professors affiliated.",
+    "The Music Department is part of the Arts division. It has 0 professors affiliated.",
+    "The Fine Arts Department is part of the Arts division. It has 0 professors affiliated.",
+    "The Design Department is part of the Arts division. It has 0 professors affiliated.",
+    "The Law Department is part of the Law division. It has 0 professors affiliated.",
+    "The Public Administration Department is part of the Law division. It has 0 professors affiliated.",
+    "The International Relations Department is part of the Law division. It has 0 professors affiliated."
+  ],
+  "departments": [
+    "Computer Engineering",
+    "Software Engineering",
+    "Electrical Engineering",
+    "Mechanical Engineering",
+    "Chemical Engineering",
+    "Civil Engineering",
+    "Industrial Engineering",
+    "Materials Engineering",
+    "Aerospace Engineering",
+    "Energy Engineering",
+    "Environmental Engineering",
+    "Biomedical Engineering",
+    "Robotics Engineering",
+    "Naval Engineering",
+    "Urban Engineering",
+    "Artificial Intelligence",
+    "Data Science",
+    "Information Security",
+    "Cybersecurity",
+    "Information Communication",
+    "Machine Learning",
+    "Mathematics",
+    "Physics",
+    "Chemistry",
+    "Life Science",
+    "Statistics",
+    "Astronomy",
+    "Business Administration",
+    "Accounting",
+    "Finance",
+    "Marketing",
+    "Economics",
+    "Trade",
+    "Korean Literature",
+    "English Literature",
+    "History",
+    "Philosophy",
+    "Psychology",
+    "Sociology",
+    "Medicine",
+    "Nursing",
+    "Pharmacy",
+    "Public Health",
+    "Dentistry",
+    "Music",
+    "Fine Arts",
+    "Design",
+    "Law",
+    "Public Administration",
+    "International Relations"
+  ],
+  "professors": [
+    {
+      "id": "prof_0000",
+      "name": "Jane Moore",
+      "dept": "Computer Engineering",
+      "age": 47,
+      "title": "Professor",
+      "research": "Control Systems"
+    },
+    {
+      "id": "prof_0001",
+      "name": "Robert Hill",
+      "dept": "Computer Engineering",
+      "age": 37,
+      "title": "Assistant Professor",
+      "research": "Manufacturing"
+    },
+    {
+      "id": "prof_0002",
+      "name": "Jane Garcia",
+      "dept": "Software Engineering",
+      "age": 45,
+      "title": "Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0003",
+      "name": "Sandra Gonzalez",
+      "dept": "Software Engineering",
+      "age": 66,
+      "title": "Associate Professor",
+      "research": "Control Systems"
+    },
+    {
+      "id": "prof_0004",
+      "name": "Ruth Moore",
+      "dept": "Electrical Engineering",
+      "age": 32,
+      "title": "Professor",
+      "research": "Manufacturing"
+    },
+    {
+      "id": "prof_0005",
+      "name": "Ashley Moore",
+      "dept": "Electrical Engineering",
+      "age": 41,
+      "title": "Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0006",
+      "name": "Robert Garcia",
+      "dept": "Electrical Engineering",
+      "age": 56,
+      "title": "Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0007",
+      "name": "Charles Williams",
+      "dept": "Mechanical Engineering",
+      "age": 61,
+      "title": "Assistant Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0008",
+      "name": "Mark Garcia",
+      "dept": "Mechanical Engineering",
+      "age": 67,
+      "title": "Associate Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0009",
+      "name": "Kevin Gonzalez",
+      "dept": "Mechanical Engineering",
+      "age": 36,
+      "title": "Professor",
+      "research": "Control Systems"
+    },
+    {
+      "id": "prof_0010",
+      "name": "Emily Anderson",
+      "dept": "Chemical Engineering",
+      "age": 38,
+      "title": "Associate Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0011",
+      "name": "Rachel White",
+      "dept": "Chemical Engineering",
+      "age": 42,
+      "title": "Associate Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0012",
+      "name": "Karen Moore",
+      "dept": "Chemical Engineering",
+      "age": 36,
+      "title": "Assistant Professor",
+      "research": "Control Systems"
+    },
+    {
+      "id": "prof_0013",
+      "name": "William Allen",
+      "dept": "Civil Engineering",
+      "age": 56,
+      "title": "Associate Professor",
+      "research": "Control Systems"
+    },
+    {
+      "id": "prof_0014",
+      "name": "Matthew Brown",
+      "dept": "Civil Engineering",
+      "age": 46,
+      "title": "Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0015",
+      "name": "Mary Jones",
+      "dept": "Industrial Engineering",
+      "age": 45,
+      "title": "Assistant Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0016",
+      "name": "Karen Wright",
+      "dept": "Industrial Engineering",
+      "age": 57,
+      "title": "Assistant Professor",
+      "research": "Manufacturing"
+    },
+    {
+      "id": "prof_0017",
+      "name": "Linda Thomas",
+      "dept": "Industrial Engineering",
+      "age": 40,
+      "title": "Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0018",
+      "name": "Ruth Clark",
+      "dept": "Materials Engineering",
+      "age": 55,
+      "title": "Professor",
+      "research": "Control Systems"
+    },
+    {
+      "id": "prof_0019",
+      "name": "Joshua Wright",
+      "dept": "Materials Engineering",
+      "age": 37,
+      "title": "Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0020",
+      "name": "Linda Hernandez",
+      "dept": "Materials Engineering",
+      "age": 59,
+      "title": "Assistant Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0021",
+      "name": "Mark Allen",
+      "dept": "Aerospace Engineering",
+      "age": 65,
+      "title": "Associate Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0022",
+      "name": "Jessica Hill",
+      "dept": "Aerospace Engineering",
+      "age": 49,
+      "title": "Assistant Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0023",
+      "name": "Jessica Jackson",
+      "dept": "Aerospace Engineering",
+      "age": 59,
+      "title": "Professor",
+      "research": "Manufacturing"
+    },
+    {
+      "id": "prof_0024",
+      "name": "Charles Scott",
+      "dept": "Energy Engineering",
+      "age": 43,
+      "title": "Assistant Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0025",
+      "name": "Patricia Scott",
+      "dept": "Energy Engineering",
+      "age": 44,
+      "title": "Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0026",
+      "name": "Kenneth Torres",
+      "dept": "Environmental Engineering",
+      "age": 32,
+      "title": "Assistant Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0027",
+      "name": "Donna Johnson",
+      "dept": "Environmental Engineering",
+      "age": 39,
+      "title": "Associate Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0028",
+      "name": "Sarah Taylor",
+      "dept": "Biomedical Engineering",
+      "age": 68,
+      "title": "Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0029",
+      "name": "Donna Jones",
+      "dept": "Biomedical Engineering",
+      "age": 66,
+      "title": "Professor",
+      "research": "Control Systems"
+    },
+    {
+      "id": "prof_0030",
+      "name": "Sandra Hernandez",
+      "dept": "Robotics Engineering",
+      "age": 48,
+      "title": "Assistant Professor",
+      "research": "Manufacturing"
+    },
+    {
+      "id": "prof_0031",
+      "name": "Karen Hill",
+      "dept": "Robotics Engineering",
+      "age": 44,
+      "title": "Assistant Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0032",
+      "name": "Angela White",
+      "dept": "Robotics Engineering",
+      "age": 60,
+      "title": "Assistant Professor",
+      "research": "Manufacturing"
+    },
+    {
+      "id": "prof_0033",
+      "name": "Nancy Anderson",
+      "dept": "Naval Engineering",
+      "age": 36,
+      "title": "Associate Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0034",
+      "name": "Ruth Green",
+      "dept": "Naval Engineering",
+      "age": 46,
+      "title": "Assistant Professor",
+      "research": "Control Systems"
+    },
+    {
+      "id": "prof_0035",
+      "name": "David Brown",
+      "dept": "Urban Engineering",
+      "age": 46,
+      "title": "Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0036",
+      "name": "Ashley Jones",
+      "dept": "Urban Engineering",
+      "age": 64,
+      "title": "Professor",
+      "research": "Mechatronics"
+    },
+    {
+      "id": "prof_0037",
+      "name": "Karen Hill",
+      "dept": "Artificial Intelligence",
+      "age": 40,
+      "title": "Assistant Professor",
+      "research": "Knowledge Graphs"
+    },
+    {
+      "id": "prof_0038",
+      "name": "Kevin King",
+      "dept": "Artificial Intelligence",
+      "age": 47,
+      "title": "Associate Professor",
+      "research": "Information Retrieval"
+    },
+    {
+      "id": "prof_0039",
+      "name": "Steven Gonzalez",
+      "dept": "Artificial Intelligence",
+      "age": 38,
+      "title": "Professor",
+      "research": "Speech Processing"
+    },
+    {
+      "id": "prof_0040",
+      "name": "Anthony Walker",
+      "dept": "Data Science",
+      "age": 58,
+      "title": "Associate Professor",
+      "research": "Information Retrieval"
+    },
+    {
+      "id": "prof_0041",
+      "name": "Sarah Miller",
+      "dept": "Data Science",
+      "age": 35,
+      "title": "Associate Professor",
+      "research": "Speech Processing"
+    },
+    {
+      "id": "prof_0042",
+      "name": "Ashley Miller",
+      "dept": "Data Science",
+      "age": 47,
+      "title": "Professor",
+      "research": "NLP"
+    },
+    {
+      "id": "prof_0043",
+      "name": "James Walker",
+      "dept": "Information Security",
+      "age": 43,
+      "title": "Associate Professor",
+      "research": "Reinforcement Learning"
+    },
+    {
+      "id": "prof_0044",
+      "name": "Nancy Jones",
+      "dept": "Information Security",
+      "age": 60,
+      "title": "Assistant Professor",
+      "research": "Machine Learning"
+    },
+    {
+      "id": "prof_0045",
+      "name": "Sarah Hill",
+      "dept": "Information Security",
+      "age": 32,
+      "title": "Professor",
+      "research": "Information Retrieval"
+    },
+    {
+      "id": "prof_0046",
+      "name": "William Lewis",
+      "dept": "Cybersecurity",
+      "age": 63,
+      "title": "Associate Professor",
+      "research": "Control Systems"
+    },
+    {
+      "id": "prof_0047",
+      "name": "Angela Brown",
+      "dept": "Cybersecurity",
+      "age": 42,
+      "title": "Associate Professor",
+      "research": "Robotics"
+    },
+    {
+      "id": "prof_0048",
+      "name": "Charles Allen",
+      "dept": "Information Communication",
+      "age": 50,
+      "title": "Associate Professor",
+      "research": "Speech Processing"
+    },
+    {
+      "id": "prof_0049",
+      "name": "Sandra Wright",
+      "dept": "Information Communication",
+      "age": 41,
+      "title": "Professor",
+      "research": "Computer Vision"
+    },
+    {
+      "id": "prof_0050",
+      "name": "Karen Brown",
+      "dept": "Information Communication",
+      "age": 66,
+      "title": "Professor",
+      "research": "Speech Processing"
+    },
+    {
+      "id": "prof_0051",
+      "name": "Sarah Brown",
+      "dept": "Machine Learning",
+      "age": 62,
+      "title": "Assistant Professor",
+      "research": "International Law"
+    },
+    {
+      "id": "prof_0052",
+      "name": "Sarah Scott",
+      "dept": "Machine Learning",
+      "age": 37,
+      "title": "Professor",
+      "research": "Constitutional Law"
+    },
+    {
+      "id": "prof_0053",
+      "name": "David Taylor",
+      "dept": "Machine Learning",
+      "age": 57,
+      "title": "Professor",
+      "research": "International Law"
+    },
+    {
+      "id": "prof_0054",
+      "name": "Emily Lewis",
+      "dept": "Mathematics",
+      "age": 68,
+      "title": "Assistant Professor",
+      "research": "Organic Chemistry"
+    },
+    {
+      "id": "prof_0055",
+      "name": "Charles Wilson",
+      "dept": "Mathematics",
+      "age": 52,
+      "title": "Professor",
+      "research": "Organic Chemistry"
+    },
+    {
+      "id": "prof_0056",
+      "name": "James Martin",
+      "dept": "Physics",
+      "age": 61,
+      "title": "Associate Professor",
+      "research": "Quantum Physics"
+    },
+    {
+      "id": "prof_0057",
+      "name": "John Allen",
+      "dept": "Physics",
+      "age": 68,
+      "title": "Professor",
+      "research": "Quantum Physics"
+    },
+    {
+      "id": "prof_0058",
+      "name": "Kenneth Wilson",
+      "dept": "Physics",
+      "age": 64,
+      "title": "Associate Professor",
+      "research": "Thermodynamics"
+    },
+    {
+      "id": "prof_0059",
+      "name": "David Taylor",
+      "dept": "Chemistry",
+      "age": 55,
+      "title": "Associate Professor",
+      "research": "Thermodynamics"
+    },
+    {
+      "id": "prof_0060",
+      "name": "Paul Hill",
+      "dept": "Chemistry",
+      "age": 51,
+      "title": "Assistant Professor",
+      "research": "Astronomy"
+    },
+    {
+      "id": "prof_0061",
+      "name": "Lisa Smith",
+      "dept": "Chemistry",
+      "age": 67,
+      "title": "Associate Professor",
+      "research": "Astronomy"
+    },
+    {
+      "id": "prof_0062",
+      "name": "James Thomas",
+      "dept": "Life Science",
+      "age": 39,
+      "title": "Professor",
+      "research": "Astronomy"
+    },
+    {
+      "id": "prof_0063",
+      "name": "Sandra Martinez",
+      "dept": "Life Science",
+      "age": 49,
+      "title": "Associate Professor",
+      "research": "Bayesian Inference"
+    },
+    {
+      "id": "prof_0064",
+      "name": "Ashley Wilson",
+      "dept": "Statistics",
+      "age": 48,
+      "title": "Assistant Professor",
+      "research": "Genetics"
+    },
+    {
+      "id": "prof_0065",
+      "name": "Charles Brown",
+      "dept": "Statistics",
+      "age": 37,
+      "title": "Assistant Professor",
+      "research": "Genetics"
+    },
+    {
+      "id": "prof_0066",
+      "name": "Michael Smith",
+      "dept": "Astronomy",
+      "age": 53,
+      "title": "Professor",
+      "research": "Astronomy"
+    },
+    {
+      "id": "prof_0067",
+      "name": "Charles Hernandez",
+      "dept": "Astronomy",
+      "age": 60,
+      "title": "Assistant Professor",
+      "research": "Astronomy"
+    },
+    {
+      "id": "prof_0068",
+      "name": "Helen Green",
+      "dept": "Astronomy",
+      "age": 32,
+      "title": "Professor",
+      "research": "Quantum Physics"
+    },
+    {
+      "id": "prof_0069",
+      "name": "Kenneth Williams",
+      "dept": "Business Administration",
+      "age": 55,
+      "title": "Assistant Professor",
+      "research": "Econometrics"
+    },
+    {
+      "id": "prof_0070",
+      "name": "Linda Walker",
+      "dept": "Business Administration",
+      "age": 40,
+      "title": "Professor",
+      "research": "Supply Chain"
+    },
+    {
+      "id": "prof_0071",
+      "name": "Michael Thompson",
+      "dept": "Accounting",
+      "age": 45,
+      "title": "Assistant Professor",
+      "research": "Consumer Behavior"
+    },
+    {
+      "id": "prof_0072",
+      "name": "Robert Thompson",
+      "dept": "Accounting",
+      "age": 67,
+      "title": "Associate Professor",
+      "research": "Econometrics"
+    },
+    {
+      "id": "prof_0073",
+      "name": "Linda Taylor",
+      "dept": "Accounting",
+      "age": 42,
+      "title": "Professor",
+      "research": "Game Theory"
+    },
+    {
+      "id": "prof_0074",
+      "name": "Susan Perez",
+      "dept": "Finance",
+      "age": 58,
+      "title": "Assistant Professor",
+      "research": "Consumer Behavior"
+    },
+    {
+      "id": "prof_0075",
+      "name": "Mary Hernandez",
+      "dept": "Finance",
+      "age": 38,
+      "title": "Associate Professor",
+      "research": "Corporate Finance"
+    },
+    {
+      "id": "prof_0076",
+      "name": "Thomas Gonzalez",
+      "dept": "Marketing",
+      "age": 61,
+      "title": "Associate Professor",
+      "research": "Supply Chain"
+    },
+    {
+      "id": "prof_0077",
+      "name": "Thomas Anderson",
+      "dept": "Marketing",
+      "age": 33,
+      "title": "Assistant Professor",
+      "research": "Consumer Behavior"
+    },
+    {
+      "id": "prof_0078",
+      "name": "Angela Perez",
+      "dept": "Marketing",
+      "age": 49,
+      "title": "Professor",
+      "research": "Supply Chain"
+    },
+    {
+      "id": "prof_0079",
+      "name": "Joshua Clark",
+      "dept": "Economics",
+      "age": 66,
+      "title": "Associate Professor",
+      "research": "Corporate Finance"
+    },
+    {
+      "id": "prof_0080",
+      "name": "Jessica Thomas",
+      "dept": "Economics",
+      "age": 43,
+      "title": "Assistant Professor",
+      "research": "Supply Chain"
+    },
+    {
+      "id": "prof_0081",
+      "name": "Michael Miller",
+      "dept": "Economics",
+      "age": 59,
+      "title": "Associate Professor",
+      "research": "Supply Chain"
+    },
+    {
+      "id": "prof_0082",
+      "name": "Joshua Davis",
+      "dept": "Trade",
+      "age": 56,
+      "title": "Assistant Professor",
+      "research": "Consumer Behavior"
+    },
+    {
+      "id": "prof_0083",
+      "name": "Charles Williams",
+      "dept": "Trade",
+      "age": 59,
+      "title": "Professor",
+      "research": "Econometrics"
+    },
+    {
+      "id": "prof_0084",
+      "name": "Kenneth Gonzalez",
+      "dept": "Trade",
+      "age": 55,
+      "title": "Associate Professor",
+      "research": "Corporate Finance"
+    },
+    {
+      "id": "prof_0085",
+      "name": "Matthew Davis",
+      "dept": "Korean Literature",
+      "age": 51,
+      "title": "Assistant Professor",
+      "research": "Ethics"
+    },
+    {
+      "id": "prof_0086",
+      "name": "Steven Lee",
+      "dept": "Korean Literature",
+      "age": 57,
+      "title": "Assistant Professor",
+      "research": "Ethics"
+    },
+    {
+      "id": "prof_0087",
+      "name": "Sandra Rodriguez",
+      "dept": "Korean Literature",
+      "age": 44,
+      "title": "Associate Professor",
+      "research": "Cognitive Psychology"
+    },
+    {
+      "id": "prof_0088",
+      "name": "Kevin Martin",
+      "dept": "English Literature",
+      "age": 57,
+      "title": "Assistant Professor",
+      "research": "Linguistics"
+    },
+    {
+      "id": "prof_0089",
+      "name": "Patricia Jackson",
+      "dept": "English Literature",
+      "age": 45,
+      "title": "Associate Professor",
+      "research": "Social Theory"
+    },
+    {
+      "id": "prof_0090",
+      "name": "Rachel Young",
+      "dept": "History",
+      "age": 60,
+      "title": "Assistant Professor",
+      "research": "Medieval History"
+    },
+    {
+      "id": "prof_0091",
+      "name": "Joshua King",
+      "dept": "History",
+      "age": 42,
+      "title": "Assistant Professor",
+      "research": "Linguistics"
+    },
+    {
+      "id": "prof_0092",
+      "name": "Daniel Scott",
+      "dept": "History",
+      "age": 53,
+      "title": "Professor",
+      "research": "Medieval History"
+    },
+    {
+      "id": "prof_0093",
+      "name": "Thomas Gonzalez",
+      "dept": "Philosophy",
+      "age": 41,
+      "title": "Professor",
+      "research": "Linguistics"
+    },
+    {
+      "id": "prof_0094",
+      "name": "Nancy King",
+      "dept": "Philosophy",
+      "age": 36,
+      "title": "Associate Professor",
+      "research": "Cognitive Psychology"
+    },
+    {
+      "id": "prof_0095",
+      "name": "Kevin Gonzalez",
+      "dept": "Philosophy",
+      "age": 56,
+      "title": "Associate Professor",
+      "research": "Cognitive Psychology"
+    },
+    {
+      "id": "prof_0096",
+      "name": "Linda Smith",
+      "dept": "Psychology",
+      "age": 38,
+      "title": "Associate Professor",
+      "research": "Medieval History"
+    },
+    {
+      "id": "prof_0097",
+      "name": "Susan Torres",
+      "dept": "Psychology",
+      "age": 61,
+      "title": "Professor",
+      "research": "Social Theory"
+    },
+    {
+      "id": "prof_0098",
+      "name": "Jessica Allen",
+      "dept": "Sociology",
+      "age": 40,
+      "title": "Associate Professor",
+      "research": "Social Theory"
+    },
+    {
+      "id": "prof_0099",
+      "name": "Sandra Lee",
+      "dept": "Sociology",
+      "age": 60,
+      "title": "Assistant Professor",
+      "research": "Social Theory"
+    }
+  ],
+  "courses": [
+    {
+      "id": "course_0000",
+      "title": "Manufacturing III",
+      "dept": "Computer Engineering",
+      "teachers": [
+        "prof_0001",
+        "prof_0000"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0001",
+      "title": "Robotics Introduction",
+      "dept": "Computer Engineering",
+      "teachers": [
+        "prof_0001",
+        "prof_0000"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0002",
+      "title": "Mechatronics III",
+      "dept": "Computer Engineering",
+      "teachers": [
+        "prof_0001"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0003",
+      "title": "Manufacturing III",
+      "dept": "Computer Engineering",
+      "teachers": [
+        "prof_0001"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0004",
+      "title": "Mechatronics Advanced",
+      "dept": "Computer Engineering",
+      "teachers": [
+        "prof_0001",
+        "prof_0000"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0005",
+      "title": "Control Systems Advanced",
+      "dept": "Software Engineering",
+      "teachers": [
+        "prof_0003",
+        "prof_0002"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0006",
+      "title": "Manufacturing I",
+      "dept": "Software Engineering",
+      "teachers": [
+        "prof_0003",
+        "prof_0002"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0007",
+      "title": "Mechatronics Seminar",
+      "dept": "Software Engineering",
+      "teachers": [
+        "prof_0003"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0008",
+      "title": "Mechatronics Introduction",
+      "dept": "Electrical Engineering",
+      "teachers": [
+        "prof_0006",
+        "prof_0005"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0009",
+      "title": "Mechatronics III",
+      "dept": "Electrical Engineering",
+      "teachers": [
+        "prof_0005",
+        "prof_0006",
+        "prof_0004"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0010",
+      "title": "Robotics Seminar",
+      "dept": "Electrical Engineering",
+      "teachers": [
+        "prof_0004",
+        "prof_0005",
+        "prof_0006"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0011",
+      "title": "Control Systems Introduction",
+      "dept": "Electrical Engineering",
+      "teachers": [
+        "prof_0006"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0012",
+      "title": "Mechatronics III",
+      "dept": "Mechanical Engineering",
+      "teachers": [
+        "prof_0007"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0013",
+      "title": "Mechatronics I",
+      "dept": "Mechanical Engineering",
+      "teachers": [
+        "prof_0008"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0014",
+      "title": "Mechatronics Advanced",
+      "dept": "Mechanical Engineering",
+      "teachers": [
+        "prof_0007"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0015",
+      "title": "Control Systems Advanced",
+      "dept": "Mechanical Engineering",
+      "teachers": [
+        "prof_0008",
+        "prof_0007",
+        "prof_0009"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0016",
+      "title": "Manufacturing II",
+      "dept": "Mechanical Engineering",
+      "teachers": [
+        "prof_0008",
+        "prof_0009"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0017",
+      "title": "Manufacturing Introduction",
+      "dept": "Chemical Engineering",
+      "teachers": [
+        "prof_0010"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0018",
+      "title": "Robotics II",
+      "dept": "Chemical Engineering",
+      "teachers": [
+        "prof_0012",
+        "prof_0010",
+        "prof_0011"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0019",
+      "title": "Robotics Advanced",
+      "dept": "Chemical Engineering",
+      "teachers": [
+        "prof_0010"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0020",
+      "title": "Control Systems III",
+      "dept": "Chemical Engineering",
+      "teachers": [
+        "prof_0011",
+        "prof_0012",
+        "prof_0010"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0021",
+      "title": "Robotics Seminar",
+      "dept": "Civil Engineering",
+      "teachers": [
+        "prof_0013",
+        "prof_0014"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0022",
+      "title": "Mechatronics II",
+      "dept": "Civil Engineering",
+      "teachers": [
+        "prof_0013",
+        "prof_0014"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0023",
+      "title": "Robotics Introduction",
+      "dept": "Civil Engineering",
+      "teachers": [
+        "prof_0013"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0024",
+      "title": "Manufacturing III",
+      "dept": "Civil Engineering",
+      "teachers": [
+        "prof_0013",
+        "prof_0014"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0025",
+      "title": "Manufacturing II",
+      "dept": "Industrial Engineering",
+      "teachers": [
+        "prof_0017"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0026",
+      "title": "Control Systems Seminar",
+      "dept": "Industrial Engineering",
+      "teachers": [
+        "prof_0015",
+        "prof_0017"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0027",
+      "title": "Mechatronics I",
+      "dept": "Industrial Engineering",
+      "teachers": [
+        "prof_0015"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0028",
+      "title": "Mechatronics I",
+      "dept": "Industrial Engineering",
+      "teachers": [
+        "prof_0017",
+        "prof_0016",
+        "prof_0015"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0029",
+      "title": "Mechatronics Introduction",
+      "dept": "Industrial Engineering",
+      "teachers": [
+        "prof_0016",
+        "prof_0017",
+        "prof_0015"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0030",
+      "title": "Robotics Advanced",
+      "dept": "Materials Engineering",
+      "teachers": [
+        "prof_0020",
+        "prof_0019"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0031",
+      "title": "Robotics Seminar",
+      "dept": "Materials Engineering",
+      "teachers": [
+        "prof_0018"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0032",
+      "title": "Mechatronics Advanced",
+      "dept": "Materials Engineering",
+      "teachers": [
+        "prof_0018",
+        "prof_0020",
+        "prof_0019"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0033",
+      "title": "Mechatronics Introduction",
+      "dept": "Materials Engineering",
+      "teachers": [
+        "prof_0020"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0034",
+      "title": "Robotics III",
+      "dept": "Materials Engineering",
+      "teachers": [
+        "prof_0019",
+        "prof_0020"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0035",
+      "title": "Robotics Introduction",
+      "dept": "Aerospace Engineering",
+      "teachers": [
+        "prof_0022"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0036",
+      "title": "Mechatronics I",
+      "dept": "Aerospace Engineering",
+      "teachers": [
+        "prof_0022",
+        "prof_0021",
+        "prof_0023"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0037",
+      "title": "Mechatronics Advanced",
+      "dept": "Aerospace Engineering",
+      "teachers": [
+        "prof_0021",
+        "prof_0022"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0038",
+      "title": "Manufacturing Advanced",
+      "dept": "Aerospace Engineering",
+      "teachers": [
+        "prof_0021",
+        "prof_0023"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0039",
+      "title": "Manufacturing III",
+      "dept": "Aerospace Engineering",
+      "teachers": [
+        "prof_0022",
+        "prof_0021",
+        "prof_0023"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0040",
+      "title": "Manufacturing I",
+      "dept": "Energy Engineering",
+      "teachers": [
+        "prof_0025",
+        "prof_0024"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0041",
+      "title": "Control Systems I",
+      "dept": "Energy Engineering",
+      "teachers": [
+        "prof_0024",
+        "prof_0025"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0042",
+      "title": "Robotics Introduction",
+      "dept": "Energy Engineering",
+      "teachers": [
+        "prof_0024",
+        "prof_0025"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0043",
+      "title": "Mechatronics II",
+      "dept": "Energy Engineering",
+      "teachers": [
+        "prof_0025",
+        "prof_0024"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0044",
+      "title": "Control Systems I",
+      "dept": "Environmental Engineering",
+      "teachers": [
+        "prof_0026",
+        "prof_0027"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0045",
+      "title": "Manufacturing III",
+      "dept": "Environmental Engineering",
+      "teachers": [
+        "prof_0027",
+        "prof_0026"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0046",
+      "title": "Manufacturing Advanced",
+      "dept": "Environmental Engineering",
+      "teachers": [
+        "prof_0027"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0047",
+      "title": "Mechatronics III",
+      "dept": "Environmental Engineering",
+      "teachers": [
+        "prof_0027",
+        "prof_0026"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0048",
+      "title": "Control Systems Introduction",
+      "dept": "Environmental Engineering",
+      "teachers": [
+        "prof_0027",
+        "prof_0026"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0049",
+      "title": "Manufacturing Seminar",
+      "dept": "Biomedical Engineering",
+      "teachers": [
+        "prof_0029",
+        "prof_0028"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0050",
+      "title": "Manufacturing Advanced",
+      "dept": "Biomedical Engineering",
+      "teachers": [
+        "prof_0028"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0051",
+      "title": "Robotics I",
+      "dept": "Biomedical Engineering",
+      "teachers": [
+        "prof_0028",
+        "prof_0029"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0052",
+      "title": "Manufacturing Introduction",
+      "dept": "Biomedical Engineering",
+      "teachers": [
+        "prof_0028",
+        "prof_0029"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0053",
+      "title": "Manufacturing III",
+      "dept": "Robotics Engineering",
+      "teachers": [
+        "prof_0030",
+        "prof_0031",
+        "prof_0032"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0054",
+      "title": "Robotics II",
+      "dept": "Robotics Engineering",
+      "teachers": [
+        "prof_0030",
+        "prof_0032",
+        "prof_0031"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0055",
+      "title": "Manufacturing Seminar",
+      "dept": "Robotics Engineering",
+      "teachers": [
+        "prof_0032"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0056",
+      "title": "Manufacturing III",
+      "dept": "Robotics Engineering",
+      "teachers": [
+        "prof_0032"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0057",
+      "title": "Mechatronics III",
+      "dept": "Naval Engineering",
+      "teachers": [
+        "prof_0034"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0058",
+      "title": "Manufacturing Advanced",
+      "dept": "Naval Engineering",
+      "teachers": [
+        "prof_0033"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0059",
+      "title": "Control Systems I",
+      "dept": "Naval Engineering",
+      "teachers": [
+        "prof_0033"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0060",
+      "title": "Control Systems Introduction",
+      "dept": "Urban Engineering",
+      "teachers": [
+        "prof_0035",
+        "prof_0036"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0061",
+      "title": "Manufacturing III",
+      "dept": "Urban Engineering",
+      "teachers": [
+        "prof_0035",
+        "prof_0036"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0062",
+      "title": "Robotics Seminar",
+      "dept": "Urban Engineering",
+      "teachers": [
+        "prof_0036",
+        "prof_0035"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0063",
+      "title": "Mechatronics Introduction",
+      "dept": "Urban Engineering",
+      "teachers": [
+        "prof_0036",
+        "prof_0035"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0064",
+      "title": "Robotics Advanced",
+      "dept": "Urban Engineering",
+      "teachers": [
+        "prof_0036"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0065",
+      "title": "Computer Vision III",
+      "dept": "Artificial Intelligence",
+      "teachers": [
+        "prof_0038",
+        "prof_0037",
+        "prof_0039"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0066",
+      "title": "Knowledge Graphs III",
+      "dept": "Artificial Intelligence",
+      "teachers": [
+        "prof_0039",
+        "prof_0037",
+        "prof_0038"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0067",
+      "title": "Knowledge Graphs Advanced",
+      "dept": "Artificial Intelligence",
+      "teachers": [
+        "prof_0037",
+        "prof_0039"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0068",
+      "title": "Speech Processing Seminar",
+      "dept": "Artificial Intelligence",
+      "teachers": [
+        "prof_0039",
+        "prof_0037",
+        "prof_0038"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0069",
+      "title": "Computer Vision Seminar",
+      "dept": "Artificial Intelligence",
+      "teachers": [
+        "prof_0037",
+        "prof_0038"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0070",
+      "title": "Computer Vision II",
+      "dept": "Data Science",
+      "teachers": [
+        "prof_0042",
+        "prof_0041"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0071",
+      "title": "NLP III",
+      "dept": "Data Science",
+      "teachers": [
+        "prof_0041",
+        "prof_0042",
+        "prof_0040"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0072",
+      "title": "Information Retrieval I",
+      "dept": "Data Science",
+      "teachers": [
+        "prof_0042",
+        "prof_0041"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0073",
+      "title": "NLP Seminar",
+      "dept": "Information Security",
+      "teachers": [
+        "prof_0045"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0074",
+      "title": "Information Retrieval I",
+      "dept": "Information Security",
+      "teachers": [
+        "prof_0044",
+        "prof_0043",
+        "prof_0045"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0075",
+      "title": "Knowledge Graphs III",
+      "dept": "Information Security",
+      "teachers": [
+        "prof_0044"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0076",
+      "title": "Manufacturing Seminar",
+      "dept": "Cybersecurity",
+      "teachers": [
+        "prof_0047",
+        "prof_0046"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0077",
+      "title": "Manufacturing Advanced",
+      "dept": "Cybersecurity",
+      "teachers": [
+        "prof_0047"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0078",
+      "title": "Robotics Seminar",
+      "dept": "Cybersecurity",
+      "teachers": [
+        "prof_0047",
+        "prof_0046"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0079",
+      "title": "Robotics I",
+      "dept": "Cybersecurity",
+      "teachers": [
+        "prof_0046"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0080",
+      "title": "Manufacturing II",
+      "dept": "Cybersecurity",
+      "teachers": [
+        "prof_0046"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0081",
+      "title": "Reinforcement Learning Advanced",
+      "dept": "Information Communication",
+      "teachers": [
+        "prof_0050",
+        "prof_0049"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0082",
+      "title": "Reinforcement Learning III",
+      "dept": "Information Communication",
+      "teachers": [
+        "prof_0048",
+        "prof_0049",
+        "prof_0050"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0083",
+      "title": "Speech Processing Introduction",
+      "dept": "Information Communication",
+      "teachers": [
+        "prof_0048",
+        "prof_0049"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0084",
+      "title": "Information Retrieval Advanced",
+      "dept": "Information Communication",
+      "teachers": [
+        "prof_0048",
+        "prof_0049"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0085",
+      "title": "Administrative Policy Introduction",
+      "dept": "Machine Learning",
+      "teachers": [
+        "prof_0051",
+        "prof_0053"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0086",
+      "title": "International Law III",
+      "dept": "Machine Learning",
+      "teachers": [
+        "prof_0053",
+        "prof_0051",
+        "prof_0052"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0087",
+      "title": "International Law Advanced",
+      "dept": "Machine Learning",
+      "teachers": [
+        "prof_0051",
+        "prof_0053",
+        "prof_0052"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0088",
+      "title": "Organic Chemistry III",
+      "dept": "Mathematics",
+      "teachers": [
+        "prof_0054"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0089",
+      "title": "Thermodynamics I",
+      "dept": "Mathematics",
+      "teachers": [
+        "prof_0055",
+        "prof_0054"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0090",
+      "title": "Thermodynamics II",
+      "dept": "Mathematics",
+      "teachers": [
+        "prof_0055"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0091",
+      "title": "Thermodynamics Seminar",
+      "dept": "Physics",
+      "teachers": [
+        "prof_0056",
+        "prof_0058"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0092",
+      "title": "Bayesian Inference I",
+      "dept": "Physics",
+      "teachers": [
+        "prof_0058"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0093",
+      "title": "Genetics Introduction",
+      "dept": "Physics",
+      "teachers": [
+        "prof_0058",
+        "prof_0056"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0094",
+      "title": "Quantum Physics Seminar",
+      "dept": "Chemistry",
+      "teachers": [
+        "prof_0061",
+        "prof_0060",
+        "prof_0059"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0095",
+      "title": "Quantum Physics Seminar",
+      "dept": "Chemistry",
+      "teachers": [
+        "prof_0060",
+        "prof_0061"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0096",
+      "title": "Genetics III",
+      "dept": "Chemistry",
+      "teachers": [
+        "prof_0060",
+        "prof_0059",
+        "prof_0061"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0097",
+      "title": "Quantum Physics Advanced",
+      "dept": "Chemistry",
+      "teachers": [
+        "prof_0060"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0098",
+      "title": "Genetics Advanced",
+      "dept": "Chemistry",
+      "teachers": [
+        "prof_0061",
+        "prof_0060",
+        "prof_0059"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0099",
+      "title": "Astronomy Introduction",
+      "dept": "Life Science",
+      "teachers": [
+        "prof_0062"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0100",
+      "title": "Thermodynamics Introduction",
+      "dept": "Life Science",
+      "teachers": [
+        "prof_0063",
+        "prof_0062"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0101",
+      "title": "Astronomy Introduction",
+      "dept": "Life Science",
+      "teachers": [
+        "prof_0063"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0102",
+      "title": "Organic Chemistry I",
+      "dept": "Statistics",
+      "teachers": [
+        "prof_0064",
+        "prof_0065"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0103",
+      "title": "Quantum Physics I",
+      "dept": "Statistics",
+      "teachers": [
+        "prof_0065"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0104",
+      "title": "Thermodynamics Seminar",
+      "dept": "Statistics",
+      "teachers": [
+        "prof_0064",
+        "prof_0065"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0105",
+      "title": "Genetics III",
+      "dept": "Statistics",
+      "teachers": [
+        "prof_0065",
+        "prof_0064"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0106",
+      "title": "Organic Chemistry II",
+      "dept": "Statistics",
+      "teachers": [
+        "prof_0064"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0107",
+      "title": "Quantum Physics I",
+      "dept": "Astronomy",
+      "teachers": [
+        "prof_0068",
+        "prof_0067"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0108",
+      "title": "Bayesian Inference Advanced",
+      "dept": "Astronomy",
+      "teachers": [
+        "prof_0067"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0109",
+      "title": "Bayesian Inference II",
+      "dept": "Astronomy",
+      "teachers": [
+        "prof_0068",
+        "prof_0067",
+        "prof_0066"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0110",
+      "title": "Supply Chain II",
+      "dept": "Business Administration",
+      "teachers": [
+        "prof_0070",
+        "prof_0069"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0111",
+      "title": "Econometrics II",
+      "dept": "Business Administration",
+      "teachers": [
+        "prof_0070",
+        "prof_0069"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0112",
+      "title": "Corporate Finance Introduction",
+      "dept": "Business Administration",
+      "teachers": [
+        "prof_0069",
+        "prof_0070"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0113",
+      "title": "Supply Chain III",
+      "dept": "Business Administration",
+      "teachers": [
+        "prof_0070"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0114",
+      "title": "Econometrics II",
+      "dept": "Business Administration",
+      "teachers": [
+        "prof_0069",
+        "prof_0070"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0115",
+      "title": "Corporate Finance Seminar",
+      "dept": "Accounting",
+      "teachers": [
+        "prof_0071",
+        "prof_0072",
+        "prof_0073"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0116",
+      "title": "Game Theory II",
+      "dept": "Accounting",
+      "teachers": [
+        "prof_0072",
+        "prof_0073",
+        "prof_0071"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0117",
+      "title": "Supply Chain Seminar",
+      "dept": "Accounting",
+      "teachers": [
+        "prof_0071",
+        "prof_0072"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0118",
+      "title": "Econometrics Introduction",
+      "dept": "Accounting",
+      "teachers": [
+        "prof_0072",
+        "prof_0071",
+        "prof_0073"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0119",
+      "title": "Corporate Finance II",
+      "dept": "Accounting",
+      "teachers": [
+        "prof_0072"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0120",
+      "title": "Supply Chain Introduction",
+      "dept": "Finance",
+      "teachers": [
+        "prof_0074",
+        "prof_0075"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0121",
+      "title": "Consumer Behavior Advanced",
+      "dept": "Finance",
+      "teachers": [
+        "prof_0075"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0122",
+      "title": "Econometrics Introduction",
+      "dept": "Finance",
+      "teachers": [
+        "prof_0075",
+        "prof_0074"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0123",
+      "title": "Game Theory I",
+      "dept": "Finance",
+      "teachers": [
+        "prof_0075"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0124",
+      "title": "Game Theory I",
+      "dept": "Marketing",
+      "teachers": [
+        "prof_0077",
+        "prof_0078",
+        "prof_0076"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0125",
+      "title": "Corporate Finance Seminar",
+      "dept": "Marketing",
+      "teachers": [
+        "prof_0076",
+        "prof_0077"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0126",
+      "title": "Corporate Finance Introduction",
+      "dept": "Marketing",
+      "teachers": [
+        "prof_0076",
+        "prof_0078"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0127",
+      "title": "Econometrics III",
+      "dept": "Marketing",
+      "teachers": [
+        "prof_0077"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0128",
+      "title": "Consumer Behavior Advanced",
+      "dept": "Marketing",
+      "teachers": [
+        "prof_0076",
+        "prof_0078"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0129",
+      "title": "Econometrics III",
+      "dept": "Economics",
+      "teachers": [
+        "prof_0080"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0130",
+      "title": "Consumer Behavior III",
+      "dept": "Economics",
+      "teachers": [
+        "prof_0079"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0131",
+      "title": "Consumer Behavior Seminar",
+      "dept": "Economics",
+      "teachers": [
+        "prof_0079",
+        "prof_0081",
+        "prof_0080"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0132",
+      "title": "Game Theory Seminar",
+      "dept": "Economics",
+      "teachers": [
+        "prof_0081",
+        "prof_0080",
+        "prof_0079"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0133",
+      "title": "Consumer Behavior Introduction",
+      "dept": "Economics",
+      "teachers": [
+        "prof_0079",
+        "prof_0080"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0134",
+      "title": "Econometrics Advanced",
+      "dept": "Trade",
+      "teachers": [
+        "prof_0083"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0135",
+      "title": "Supply Chain I",
+      "dept": "Trade",
+      "teachers": [
+        "prof_0083",
+        "prof_0082"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0136",
+      "title": "Supply Chain I",
+      "dept": "Trade",
+      "teachers": [
+        "prof_0084"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0137",
+      "title": "Game Theory Advanced",
+      "dept": "Trade",
+      "teachers": [
+        "prof_0084",
+        "prof_0082",
+        "prof_0083"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0138",
+      "title": "Social Theory I",
+      "dept": "Korean Literature",
+      "teachers": [
+        "prof_0087",
+        "prof_0085"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0139",
+      "title": "Linguistics Advanced",
+      "dept": "Korean Literature",
+      "teachers": [
+        "prof_0087",
+        "prof_0085"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0140",
+      "title": "Linguistics Introduction",
+      "dept": "Korean Literature",
+      "teachers": [
+        "prof_0087"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0141",
+      "title": "Social Theory III",
+      "dept": "Korean Literature",
+      "teachers": [
+        "prof_0087",
+        "prof_0085",
+        "prof_0086"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0142",
+      "title": "Cognitive Psychology I",
+      "dept": "English Literature",
+      "teachers": [
+        "prof_0088",
+        "prof_0089"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0143",
+      "title": "Linguistics III",
+      "dept": "English Literature",
+      "teachers": [
+        "prof_0089",
+        "prof_0088"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0144",
+      "title": "Ethics III",
+      "dept": "English Literature",
+      "teachers": [
+        "prof_0088"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0145",
+      "title": "Cognitive Psychology III",
+      "dept": "English Literature",
+      "teachers": [
+        "prof_0088"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0146",
+      "title": "Ethics Seminar",
+      "dept": "History",
+      "teachers": [
+        "prof_0092"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0147",
+      "title": "Cognitive Psychology III",
+      "dept": "History",
+      "teachers": [
+        "prof_0091",
+        "prof_0090",
+        "prof_0092"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0148",
+      "title": "Medieval History II",
+      "dept": "History",
+      "teachers": [
+        "prof_0091",
+        "prof_0090"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0149",
+      "title": "Medieval History I",
+      "dept": "History",
+      "teachers": [
+        "prof_0091"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0150",
+      "title": "Ethics II",
+      "dept": "History",
+      "teachers": [
+        "prof_0090",
+        "prof_0091",
+        "prof_0092"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0151",
+      "title": "Social Theory Introduction",
+      "dept": "Philosophy",
+      "teachers": [
+        "prof_0095"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0152",
+      "title": "Cognitive Psychology Introduction",
+      "dept": "Philosophy",
+      "teachers": [
+        "prof_0095",
+        "prof_0093"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0153",
+      "title": "Cognitive Psychology II",
+      "dept": "Philosophy",
+      "teachers": [
+        "prof_0095"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0154",
+      "title": "Cognitive Psychology Seminar",
+      "dept": "Philosophy",
+      "teachers": [
+        "prof_0094"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0155",
+      "title": "Cognitive Psychology II",
+      "dept": "Philosophy",
+      "teachers": [
+        "prof_0094",
+        "prof_0095"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0156",
+      "title": "Medieval History III",
+      "dept": "Psychology",
+      "teachers": [
+        "prof_0096",
+        "prof_0097"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0157",
+      "title": "Social Theory I",
+      "dept": "Psychology",
+      "teachers": [
+        "prof_0097"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0158",
+      "title": "Ethics I",
+      "dept": "Psychology",
+      "teachers": [
+        "prof_0096",
+        "prof_0097"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0159",
+      "title": "Cognitive Psychology I",
+      "dept": "Psychology",
+      "teachers": [
+        "prof_0096",
+        "prof_0097"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0160",
+      "title": "Social Theory I",
+      "dept": "Psychology",
+      "teachers": [
+        "prof_0096",
+        "prof_0097"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0161",
+      "title": "Linguistics II",
+      "dept": "Sociology",
+      "teachers": [
+        "prof_0098",
+        "prof_0099"
+      ],
+      "level": "Undergraduate"
+    },
+    {
+      "id": "course_0162",
+      "title": "Linguistics Seminar",
+      "dept": "Sociology",
+      "teachers": [
+        "prof_0099",
+        "prof_0098"
+      ],
+      "level": "Graduate"
+    },
+    {
+      "id": "course_0163",
+      "title": "Cognitive Psychology I",
+      "dept": "Sociology",
+      "teachers": [
+        "prof_0098",
+        "prof_0099"
+      ],
+      "level": "Graduate"
+    }
+  ],
+  "projects": [
+    {
+      "id": "project_0000",
+      "title": "AI Learning Project",
+      "lead_dept": "Naval Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0034"
+    },
+    {
+      "id": "project_0001",
+      "title": "Green Security Project",
+      "lead_dept": "Artificial Intelligence",
+      "collab_depts": [
+        "Materials Engineering"
+      ],
+      "lead_prof": "prof_0037"
+    },
+    {
+      "id": "project_0002",
+      "title": "AI Security Project",
+      "lead_dept": "Nursing",
+      "collab_depts": [
+        "Finance",
+        "Chemical Engineering"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0003",
+      "title": "Bio Health Project",
+      "lead_dept": "Sociology",
+      "collab_depts": [
+        "Software Engineering",
+        "Pharmacy"
+      ],
+      "lead_prof": "prof_0098"
+    },
+    {
+      "id": "project_0004",
+      "title": "Green Mobility Project",
+      "lead_dept": "Cybersecurity",
+      "collab_depts": [
+        "Computer Engineering"
+      ],
+      "lead_prof": "prof_0047"
+    },
+    {
+      "id": "project_0005",
+      "title": "Bio Energy Project",
+      "lead_dept": "Astronomy",
+      "collab_depts": [],
+      "lead_prof": "prof_0068"
+    },
+    {
+      "id": "project_0006",
+      "title": "Quantum Mobility Project",
+      "lead_dept": "Korean Literature",
+      "collab_depts": [
+        "Chemical Engineering"
+      ],
+      "lead_prof": "prof_0087"
+    },
+    {
+      "id": "project_0007",
+      "title": "AI Research Project",
+      "lead_dept": "Trade",
+      "collab_depts": [
+        "Software Engineering",
+        "Life Science"
+      ],
+      "lead_prof": "prof_0083"
+    },
+    {
+      "id": "project_0008",
+      "title": "Smart Energy Project",
+      "lead_dept": "Life Science",
+      "collab_depts": [
+        "Data Science"
+      ],
+      "lead_prof": "prof_0062"
+    },
+    {
+      "id": "project_0009",
+      "title": "Bio Research Project",
+      "lead_dept": "Physics",
+      "collab_depts": [],
+      "lead_prof": "prof_0058"
+    },
+    {
+      "id": "project_0010",
+      "title": "Green Energy Project",
+      "lead_dept": "Industrial Engineering",
+      "collab_depts": [
+        "Public Administration",
+        "International Relations"
+      ],
+      "lead_prof": "prof_0016"
+    },
+    {
+      "id": "project_0011",
+      "title": "Bio Security Project",
+      "lead_dept": "Physics",
+      "collab_depts": [
+        "Mathematics",
+        "Public Health"
+      ],
+      "lead_prof": "prof_0056"
+    },
+    {
+      "id": "project_0012",
+      "title": "Green Health Project",
+      "lead_dept": "Music",
+      "collab_depts": [
+        "Nursing"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0013",
+      "title": "Green Energy Project",
+      "lead_dept": "Chemical Engineering",
+      "collab_depts": [
+        "Marketing",
+        "Electrical Engineering"
+      ],
+      "lead_prof": "prof_0011"
+    },
+    {
+      "id": "project_0014",
+      "title": "Smart Mobility Project",
+      "lead_dept": "Robotics Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0031"
+    },
+    {
+      "id": "project_0015",
+      "title": "Bio Health Project",
+      "lead_dept": "Statistics",
+      "collab_depts": [
+        "Economics",
+        "Data Science"
+      ],
+      "lead_prof": "prof_0064"
+    },
+    {
+      "id": "project_0016",
+      "title": "Smart Energy Project",
+      "lead_dept": "Cybersecurity",
+      "collab_depts": [
+        "Mechanical Engineering"
+      ],
+      "lead_prof": "prof_0047"
+    },
+    {
+      "id": "project_0017",
+      "title": "Next-Gen Security Project",
+      "lead_dept": "Chemistry",
+      "collab_depts": [
+        "Astronomy"
+      ],
+      "lead_prof": "prof_0061"
+    },
+    {
+      "id": "project_0018",
+      "title": "Bio Security Project",
+      "lead_dept": "Mathematics",
+      "collab_depts": [],
+      "lead_prof": "prof_0055"
+    },
+    {
+      "id": "project_0019",
+      "title": "Next-Gen Energy Project",
+      "lead_dept": "Chemistry",
+      "collab_depts": [
+        "Information Security",
+        "Civil Engineering"
+      ],
+      "lead_prof": "prof_0061"
+    },
+    {
+      "id": "project_0020",
+      "title": "Smart Energy Project",
+      "lead_dept": "Business Administration",
+      "collab_depts": [
+        "Biomedical Engineering",
+        "History"
+      ],
+      "lead_prof": "prof_0070"
+    },
+    {
+      "id": "project_0021",
+      "title": "Smart Security Project",
+      "lead_dept": "Civil Engineering",
+      "collab_depts": [
+        "Dentistry"
+      ],
+      "lead_prof": "prof_0014"
+    },
+    {
+      "id": "project_0022",
+      "title": "Smart Security Project",
+      "lead_dept": "Sociology",
+      "collab_depts": [
+        "Business Administration",
+        "Environmental Engineering"
+      ],
+      "lead_prof": "prof_0099"
+    },
+    {
+      "id": "project_0023",
+      "title": "Smart Research Project",
+      "lead_dept": "Electrical Engineering",
+      "collab_depts": [
+        "Chemistry",
+        "Nursing"
+      ],
+      "lead_prof": "prof_0005"
+    },
+    {
+      "id": "project_0024",
+      "title": "Bio Security Project",
+      "lead_dept": "Mechanical Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0009"
+    },
+    {
+      "id": "project_0025",
+      "title": "AI Health Project",
+      "lead_dept": "Chemistry",
+      "collab_depts": [
+        "Public Administration",
+        "Music"
+      ],
+      "lead_prof": "prof_0059"
+    },
+    {
+      "id": "project_0026",
+      "title": "AI Health Project",
+      "lead_dept": "Sociology",
+      "collab_depts": [
+        "Accounting",
+        "Electrical Engineering"
+      ],
+      "lead_prof": "prof_0098"
+    },
+    {
+      "id": "project_0027",
+      "title": "Quantum Energy Project",
+      "lead_dept": "International Relations",
+      "collab_depts": [
+        "Chemistry",
+        "Life Science"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0028",
+      "title": "Smart Learning Project",
+      "lead_dept": "Sociology",
+      "collab_depts": [],
+      "lead_prof": "prof_0099"
+    },
+    {
+      "id": "project_0029",
+      "title": "Green Mobility Project",
+      "lead_dept": "Accounting",
+      "collab_depts": [],
+      "lead_prof": "prof_0073"
+    },
+    {
+      "id": "project_0030",
+      "title": "Smart Health Project",
+      "lead_dept": "Chemistry",
+      "collab_depts": [
+        "Machine Learning"
+      ],
+      "lead_prof": "prof_0061"
+    },
+    {
+      "id": "project_0031",
+      "title": "Green Security Project",
+      "lead_dept": "Materials Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0020"
+    },
+    {
+      "id": "project_0032",
+      "title": "Smart Learning Project",
+      "lead_dept": "Korean Literature",
+      "collab_depts": [
+        "Philosophy"
+      ],
+      "lead_prof": "prof_0085"
+    },
+    {
+      "id": "project_0033",
+      "title": "Quantum Learning Project",
+      "lead_dept": "Fine Arts",
+      "collab_depts": [
+        "Naval Engineering"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0034",
+      "title": "AI Health Project",
+      "lead_dept": "Music",
+      "collab_depts": [
+        "Robotics Engineering"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0035",
+      "title": "Next-Gen Energy Project",
+      "lead_dept": "Chemical Engineering",
+      "collab_depts": [
+        "Robotics Engineering"
+      ],
+      "lead_prof": "prof_0012"
+    },
+    {
+      "id": "project_0036",
+      "title": "Smart Research Project",
+      "lead_dept": "Dentistry",
+      "collab_depts": [
+        "Public Health"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0037",
+      "title": "Green Research Project",
+      "lead_dept": "Chemical Engineering",
+      "collab_depts": [
+        "History",
+        "Information Communication"
+      ],
+      "lead_prof": "prof_0011"
+    },
+    {
+      "id": "project_0038",
+      "title": "Smart Mobility Project",
+      "lead_dept": "Fine Arts",
+      "collab_depts": [
+        "Nursing",
+        "Biomedical Engineering"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0039",
+      "title": "Green Health Project",
+      "lead_dept": "Urban Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0035"
+    },
+    {
+      "id": "project_0040",
+      "title": "Quantum Mobility Project",
+      "lead_dept": "Economics",
+      "collab_depts": [],
+      "lead_prof": "prof_0080"
+    },
+    {
+      "id": "project_0041",
+      "title": "Quantum Energy Project",
+      "lead_dept": "Chemistry",
+      "collab_depts": [
+        "Philosophy"
+      ],
+      "lead_prof": "prof_0059"
+    },
+    {
+      "id": "project_0042",
+      "title": "Bio Security Project",
+      "lead_dept": "Chemical Engineering",
+      "collab_depts": [
+        "Astronomy"
+      ],
+      "lead_prof": "prof_0012"
+    },
+    {
+      "id": "project_0043",
+      "title": "AI Health Project",
+      "lead_dept": "Korean Literature",
+      "collab_depts": [
+        "Astronomy"
+      ],
+      "lead_prof": "prof_0087"
+    },
+    {
+      "id": "project_0044",
+      "title": "Bio Mobility Project",
+      "lead_dept": "Machine Learning",
+      "collab_depts": [
+        "Chemical Engineering",
+        "Finance"
+      ],
+      "lead_prof": "prof_0052"
+    },
+    {
+      "id": "project_0045",
+      "title": "Bio Mobility Project",
+      "lead_dept": "Physics",
+      "collab_depts": [],
+      "lead_prof": "prof_0058"
+    },
+    {
+      "id": "project_0046",
+      "title": "Quantum Energy Project",
+      "lead_dept": "Biomedical Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0029"
+    },
+    {
+      "id": "project_0047",
+      "title": "Green Learning Project",
+      "lead_dept": "Materials Engineering",
+      "collab_depts": [
+        "Environmental Engineering",
+        "Machine Learning"
+      ],
+      "lead_prof": "prof_0018"
+    },
+    {
+      "id": "project_0048",
+      "title": "Smart Mobility Project",
+      "lead_dept": "Fine Arts",
+      "collab_depts": [],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0049",
+      "title": "Green Research Project",
+      "lead_dept": "Cybersecurity",
+      "collab_depts": [],
+      "lead_prof": "prof_0047"
+    },
+    {
+      "id": "project_0050",
+      "title": "Smart Mobility Project",
+      "lead_dept": "History",
+      "collab_depts": [
+        "Aerospace Engineering"
+      ],
+      "lead_prof": "prof_0092"
+    },
+    {
+      "id": "project_0051",
+      "title": "Quantum Mobility Project",
+      "lead_dept": "English Literature",
+      "collab_depts": [],
+      "lead_prof": "prof_0088"
+    },
+    {
+      "id": "project_0052",
+      "title": "Quantum Energy Project",
+      "lead_dept": "Energy Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0025"
+    },
+    {
+      "id": "project_0053",
+      "title": "Bio Mobility Project",
+      "lead_dept": "Software Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0002"
+    },
+    {
+      "id": "project_0054",
+      "title": "Quantum Research Project",
+      "lead_dept": "Data Science",
+      "collab_depts": [
+        "Naval Engineering",
+        "Psychology"
+      ],
+      "lead_prof": "prof_0041"
+    },
+    {
+      "id": "project_0055",
+      "title": "Bio Learning Project",
+      "lead_dept": "Software Engineering",
+      "collab_depts": [
+        "Pharmacy"
+      ],
+      "lead_prof": "prof_0003"
+    },
+    {
+      "id": "project_0056",
+      "title": "Next-Gen Learning Project",
+      "lead_dept": "Marketing",
+      "collab_depts": [],
+      "lead_prof": "prof_0078"
+    },
+    {
+      "id": "project_0057",
+      "title": "Green Security Project",
+      "lead_dept": "Finance",
+      "collab_depts": [],
+      "lead_prof": "prof_0074"
+    },
+    {
+      "id": "project_0058",
+      "title": "Smart Mobility Project",
+      "lead_dept": "Astronomy",
+      "collab_depts": [
+        "Marketing"
+      ],
+      "lead_prof": "prof_0066"
+    },
+    {
+      "id": "project_0059",
+      "title": "Bio Learning Project",
+      "lead_dept": "Energy Engineering",
+      "collab_depts": [
+        "Design"
+      ],
+      "lead_prof": "prof_0025"
+    },
+    {
+      "id": "project_0060",
+      "title": "Quantum Mobility Project",
+      "lead_dept": "Statistics",
+      "collab_depts": [],
+      "lead_prof": "prof_0065"
+    },
+    {
+      "id": "project_0061",
+      "title": "AI Learning Project",
+      "lead_dept": "Industrial Engineering",
+      "collab_depts": [
+        "Data Science"
+      ],
+      "lead_prof": "prof_0016"
+    },
+    {
+      "id": "project_0062",
+      "title": "AI Energy Project",
+      "lead_dept": "Accounting",
+      "collab_depts": [],
+      "lead_prof": "prof_0071"
+    },
+    {
+      "id": "project_0063",
+      "title": "Green Health Project",
+      "lead_dept": "Cybersecurity",
+      "collab_depts": [
+        "Nursing"
+      ],
+      "lead_prof": "prof_0047"
+    },
+    {
+      "id": "project_0064",
+      "title": "Green Security Project",
+      "lead_dept": "Machine Learning",
+      "collab_depts": [
+        "Law",
+        "Mathematics"
+      ],
+      "lead_prof": "prof_0051"
+    },
+    {
+      "id": "project_0065",
+      "title": "Next-Gen Energy Project",
+      "lead_dept": "Trade",
+      "collab_depts": [
+        "Economics"
+      ],
+      "lead_prof": "prof_0083"
+    },
+    {
+      "id": "project_0066",
+      "title": "Green Health Project",
+      "lead_dept": "Civil Engineering",
+      "collab_depts": [
+        "Korean Literature"
+      ],
+      "lead_prof": "prof_0014"
+    },
+    {
+      "id": "project_0067",
+      "title": "Smart Security Project",
+      "lead_dept": "Psychology",
+      "collab_depts": [
+        "Mechanical Engineering"
+      ],
+      "lead_prof": "prof_0096"
+    },
+    {
+      "id": "project_0068",
+      "title": "Quantum Energy Project",
+      "lead_dept": "Sociology",
+      "collab_depts": [
+        "Music",
+        "Marketing"
+      ],
+      "lead_prof": "prof_0099"
+    },
+    {
+      "id": "project_0069",
+      "title": "Bio Learning Project",
+      "lead_dept": "Industrial Engineering",
+      "collab_depts": [
+        "Energy Engineering"
+      ],
+      "lead_prof": "prof_0016"
+    },
+    {
+      "id": "project_0070",
+      "title": "AI Security Project",
+      "lead_dept": "Public Administration",
+      "collab_depts": [
+        "Chemistry"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0071",
+      "title": "Quantum Learning Project",
+      "lead_dept": "Mechanical Engineering",
+      "collab_depts": [
+        "Philosophy",
+        "Naval Engineering"
+      ],
+      "lead_prof": "prof_0008"
+    },
+    {
+      "id": "project_0072",
+      "title": "Quantum Learning Project",
+      "lead_dept": "Chemical Engineering",
+      "collab_depts": [
+        "Korean Literature"
+      ],
+      "lead_prof": "prof_0011"
+    },
+    {
+      "id": "project_0073",
+      "title": "Green Energy Project",
+      "lead_dept": "Medicine",
+      "collab_depts": [
+        "Nursing",
+        "Materials Engineering"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0074",
+      "title": "Green Health Project",
+      "lead_dept": "Statistics",
+      "collab_depts": [
+        "Mathematics"
+      ],
+      "lead_prof": "prof_0065"
+    },
+    {
+      "id": "project_0075",
+      "title": "AI Energy Project",
+      "lead_dept": "Sociology",
+      "collab_depts": [
+        "Statistics",
+        "Trade"
+      ],
+      "lead_prof": "prof_0098"
+    },
+    {
+      "id": "project_0076",
+      "title": "Next-Gen Health Project",
+      "lead_dept": "Aerospace Engineering",
+      "collab_depts": [
+        "Physics",
+        "Economics"
+      ],
+      "lead_prof": "prof_0023"
+    },
+    {
+      "id": "project_0077",
+      "title": "Green Security Project",
+      "lead_dept": "Sociology",
+      "collab_depts": [
+        "Aerospace Engineering",
+        "Machine Learning"
+      ],
+      "lead_prof": "prof_0099"
+    },
+    {
+      "id": "project_0078",
+      "title": "Smart Mobility Project",
+      "lead_dept": "Medicine",
+      "collab_depts": [
+        "Information Communication",
+        "Psychology"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0079",
+      "title": "Smart Security Project",
+      "lead_dept": "Trade",
+      "collab_depts": [
+        "Economics",
+        "Design"
+      ],
+      "lead_prof": "prof_0084"
+    },
+    {
+      "id": "project_0080",
+      "title": "Next-Gen Mobility Project",
+      "lead_dept": "Software Engineering",
+      "collab_depts": [
+        "Physics"
+      ],
+      "lead_prof": "prof_0002"
+    },
+    {
+      "id": "project_0081",
+      "title": "Quantum Security Project",
+      "lead_dept": "Information Communication",
+      "collab_depts": [
+        "Fine Arts",
+        "Pharmacy"
+      ],
+      "lead_prof": "prof_0048"
+    },
+    {
+      "id": "project_0082",
+      "title": "Bio Energy Project",
+      "lead_dept": "Data Science",
+      "collab_depts": [
+        "Sociology",
+        "Psychology"
+      ],
+      "lead_prof": "prof_0040"
+    },
+    {
+      "id": "project_0083",
+      "title": "Green Research Project",
+      "lead_dept": "Psychology",
+      "collab_depts": [
+        "Environmental Engineering"
+      ],
+      "lead_prof": "prof_0097"
+    },
+    {
+      "id": "project_0084",
+      "title": "Bio Energy Project",
+      "lead_dept": "Artificial Intelligence",
+      "collab_depts": [],
+      "lead_prof": "prof_0039"
+    },
+    {
+      "id": "project_0085",
+      "title": "Smart Security Project",
+      "lead_dept": "Robotics Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0031"
+    },
+    {
+      "id": "project_0086",
+      "title": "Next-Gen Mobility Project",
+      "lead_dept": "Energy Engineering",
+      "collab_depts": [
+        "Fine Arts"
+      ],
+      "lead_prof": "prof_0024"
+    },
+    {
+      "id": "project_0087",
+      "title": "Bio Energy Project",
+      "lead_dept": "International Relations",
+      "collab_depts": [
+        "Marketing",
+        "Law"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0088",
+      "title": "Quantum Health Project",
+      "lead_dept": "Fine Arts",
+      "collab_depts": [],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0089",
+      "title": "Quantum Security Project",
+      "lead_dept": "History",
+      "collab_depts": [
+        "Dentistry"
+      ],
+      "lead_prof": "prof_0091"
+    },
+    {
+      "id": "project_0090",
+      "title": "Quantum Learning Project",
+      "lead_dept": "Machine Learning",
+      "collab_depts": [],
+      "lead_prof": "prof_0052"
+    },
+    {
+      "id": "project_0091",
+      "title": "Quantum Security Project",
+      "lead_dept": "English Literature",
+      "collab_depts": [
+        "Music"
+      ],
+      "lead_prof": "prof_0089"
+    },
+    {
+      "id": "project_0092",
+      "title": "Quantum Learning Project",
+      "lead_dept": "Robotics Engineering",
+      "collab_depts": [],
+      "lead_prof": "prof_0031"
+    },
+    {
+      "id": "project_0093",
+      "title": "Bio Research Project",
+      "lead_dept": "Urban Engineering",
+      "collab_depts": [
+        "Information Communication"
+      ],
+      "lead_prof": "prof_0035"
+    },
+    {
+      "id": "project_0094",
+      "title": "Quantum Research Project",
+      "lead_dept": "Economics",
+      "collab_depts": [
+        "Marketing"
+      ],
+      "lead_prof": "prof_0080"
+    },
+    {
+      "id": "project_0095",
+      "title": "Bio Mobility Project",
+      "lead_dept": "Information Security",
+      "collab_depts": [
+        "Materials Engineering"
+      ],
+      "lead_prof": "prof_0045"
+    },
+    {
+      "id": "project_0096",
+      "title": "Smart Energy Project",
+      "lead_dept": "Life Science",
+      "collab_depts": [
+        "Physics"
+      ],
+      "lead_prof": "prof_0062"
+    },
+    {
+      "id": "project_0097",
+      "title": "Bio Learning Project",
+      "lead_dept": "Cybersecurity",
+      "collab_depts": [
+        "Civil Engineering",
+        "Chemistry"
+      ],
+      "lead_prof": "prof_0047"
+    },
+    {
+      "id": "project_0098",
+      "title": "Green Mobility Project",
+      "lead_dept": "Law",
+      "collab_depts": [
+        "Naval Engineering"
+      ],
+      "lead_prof": "prof_0000"
+    },
+    {
+      "id": "project_0099",
+      "title": "AI Mobility Project",
+      "lead_dept": "Information Security",
+      "collab_depts": [
+        "Fine Arts",
+        "Cybersecurity"
+      ],
+      "lead_prof": "prof_0043"
+    }
+  ]
+}

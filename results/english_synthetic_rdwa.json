@@ -1,0 +1,544 @@
+{
+  "benchmark": "english_synthetic_university",
+  "policy": "rdwa (list prompt, Vector-only — Graph/Ontology empty for EN)",
+  "n_queries": 403,
+  "aggregate": {
+    "overall": {
+      "F1_strict": {
+        "mean": 0.6626486801607222,
+        "std": 0.30054346892150047,
+        "n": 403
+      },
+      "F1_substring": {
+        "mean": 0.6091462301139722,
+        "std": 0.396227831373149,
+        "n": 403
+      },
+      "F1_char": {
+        "mean": 0.590640515136574,
+        "std": 0.3552009197677038,
+        "n": 403
+      },
+      "EM_norm": {
+        "mean": 0.2878411910669975,
+        "std": 0.4527567114821488,
+        "n": 403
+      },
+      "Faithfulness": {
+        "mean": 0.9578163771712159,
+        "std": 0.20100787246728175,
+        "n": 403
+      },
+      "Latency": {
+        "mean": 0.6401845095471176,
+        "std": 0.2954482813402796,
+        "n": 403
+      }
+    },
+    "by_type": {
+      "multi_hop": {
+        "F1_strict": {
+          "mean": 0.7072546863181537,
+          "std": 0.27916301729479215,
+          "n": 114
+        },
+        "F1_substring": {
+          "mean": 0.6441241993873572,
+          "std": 0.31607386117631997,
+          "n": 114
+        },
+        "F1_char": {
+          "mean": 0.6861992458787559,
+          "std": 0.2856190531818372,
+          "n": 114
+        },
+        "EM_norm": {
+          "mean": 0.3333333333333333,
+          "std": 0.47140452079103173,
+          "n": 114
+        },
+        "Faithfulness": {
+          "mean": 0.9824561403508771,
+          "std": 0.13128622409733126,
+          "n": 114
+        }
+      },
+      "conditional": {
+        "F1_strict": {
+          "mean": 0.47118999455417165,
+          "std": 0.3220831441310382,
+          "n": 89
+        },
+        "F1_substring": {
+          "mean": 0.36629213483146067,
+          "std": 0.3271522181390036,
+          "n": 89
+        },
+        "F1_char": {
+          "mean": 0.4362275011773063,
+          "std": 0.31039100076413245,
+          "n": 89
+        },
+        "EM_norm": {
+          "mean": 0.11235955056179775,
+          "std": 0.31580829938326277,
+          "n": 89
+        },
+        "Faithfulness": {
+          "mean": 0.8314606741573034,
+          "std": 0.37434452244848726,
+          "n": 89
+        }
+      },
+      "simple": {
+        "F1_strict": {
+          "mean": 0.7224223717459012,
+          "std": 0.26533765795582875,
+          "n": 200
+        },
+        "F1_substring": {
+          "mean": 0.6972788600288601,
+          "std": 0.42079175198987573,
+          "n": 200
+        },
+        "F1_char": {
+          "mean": 0.6048858298254044,
+          "std": 0.3857948770698095,
+          "n": 200
+        },
+        "EM_norm": {
+          "mean": 0.34,
+          "std": 0.4737087712930804,
+          "n": 200
+        },
+        "Faithfulness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 200
+        }
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "6",
+      "type": "multi_hop",
+      "gold": "Angela White, Karen Hill",
+      "answer": "Angela White, Karen Hill",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.571446418762207
+      }
+    },
+    {
+      "qid": "1",
+      "type": "conditional",
+      "gold": "Thomas Anderson, Angela Perez",
+      "answer": "Thomas Anderson",
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 0.5,
+        "f1_char": 0.6857142857142856,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.49570512771606445
+      }
+    },
+    {
+      "qid": "10",
+      "type": "multi_hop",
+      "gold": "Karen Hill, Kevin King",
+      "answer": "Karen Hill, Kevin King",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5899972915649414
+      }
+    },
+    {
+      "qid": "4",
+      "type": "simple",
+      "gold": "Materials Engineering",
+      "answer": "Materials Engineering Department",
+      "metrics": {
+        "f1_strict": 0.8,
+        "f1_substring": 1.0,
+        "f1_char": 0.7727272727272727,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5042929649353027
+      }
+    },
+    {
+      "qid": "5",
+      "type": "conditional",
+      "gold": "Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, John Allen, Susan Torres",
+      "answer": "Donna Jones, John Allen, Charles Hernandez",
+      "metrics": {
+        "f1_strict": 0.4705882352941177,
+        "f1_substring": 0.3333333333333333,
+        "f1_char": 0.3333333333333333,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6279194355010986
+      }
+    },
+    {
+      "qid": "8",
+      "type": "multi_hop",
+      "gold": "Mechatronics Introduction, Mechatronics III, Robotics Seminar, Control Systems Introduction",
+      "answer": "Control Systems Introduction, Mechatronics Introduction",
+      "metrics": {
+        "f1_strict": 0.7272727272727273,
+        "f1_substring": 0.5,
+        "f1_char": 0.7906976744186047,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.580507755279541
+      }
+    },
+    {
+      "qid": "7",
+      "type": "simple",
+      "gold": "Accounting",
+      "answer": "Accounting Department",
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 1.0,
+        "f1_char": 0.6153846153846153,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5819976329803467
+      }
+    },
+    {
+      "qid": "3",
+      "type": "multi_hop",
+      "gold": "Machine Learning, Chemical Engineering, Finance",
+      "answer": "Software Engineering, Physics, Information Security, Materials Engineering",
+      "metrics": {
+        "f1_strict": 0.1818181818181818,
+        "f1_substring": 0.0,
+        "f1_char": 0.20224719101123595,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6363375186920166
+      }
+    },
+    {
+      "qid": "2",
+      "type": "simple",
+      "gold": "56 years old",
+      "answer": "56",
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6808757781982422
+      }
+    },
+    {
+      "qid": "9",
+      "type": "simple",
+      "gold": "Ashley Wilson, Charles Brown",
+      "answer": "Ashley Wilson, Charles Brown",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.6236577033996582
+      }
+    },
+    {
+      "qid": "17",
+      "type": "conditional",
+      "gold": "Linda Smith",
+      "answer": "정보를 찾을 수 없습니다.",
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.5343091487884521
+      }
+    },
+    {
+      "qid": "14",
+      "type": "multi_hop",
+      "gold": "Organic Chemistry III, Thermodynamics I, Thermodynamics II",
+      "answer": "Thermodynamics I, Thermodynamics II",
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 0.6666666666666666,
+        "f1_char": 0.6399999999999999,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5489890575408936
+      }
+    },
+    {
+      "qid": "18",
+      "type": "simple",
+      "gold": "67 years old",
+      "answer": "67",
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5323078632354736
+      }
+    },
+    {
+      "qid": "16",
+      "type": "simple",
+      "gold": "Jessica Allen, Sandra Lee",
+      "answer": "Jessica Allen, Sandra Lee",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5928001403808594
+      }
+    },
+    {
+      "qid": "13",
+      "type": "simple",
+      "gold": "Linguistics",
+      "answer": "Linguistics",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.7014718055725098
+      }
+    },
+    {
+      "qid": "11",
+      "type": "simple",
+      "gold": "61 years old",
+      "answer": "61",
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.9777331352233887
+      }
+    },
+    {
+      "qid": "19",
+      "type": "simple",
+      "gold": "Charles Allen, Sandra Wright",
+      "answer": "Charles Allen, Sandra Wright",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.6854305267333984
+      }
+    },
+    {
+      "qid": "15",
+      "type": "simple",
+      "gold": "Chemistry",
+      "answer": "Chemistry Department",
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 1.0,
+        "f1_char": 0.5833333333333334,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5234508514404297
+      }
+    },
+    {
+      "qid": "20",
+      "type": "simple",
+      "gold": "Control Systems",
+      "answer": "Control Systems",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5464794635772705
+      }
+    },
+    {
+      "qid": "12",
+      "type": "multi_hop",
+      "gold": "Energy Engineering, Design",
+      "answer": "Software Engineering, Pharmacy, Cybersecurity, Civil Engineering, Chemistry, Energy Engineering, Design",
+      "metrics": {
+        "f1_strict": 0.5454545454545454,
+        "f1_substring": 0.4444444444444445,
+        "f1_char": 0.4772727272727273,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.161289930343628
+      }
+    },
+    {
+      "qid": "21",
+      "type": "multi_hop",
+      "gold": "Kenneth Torres",
+      "answer": "Kenneth Torres",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.519514799118042
+      }
+    },
+    {
+      "qid": "24",
+      "type": "simple",
+      "gold": "68 years old",
+      "answer": "68",
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.470334529876709
+      }
+    },
+    {
+      "qid": "22",
+      "type": "simple",
+      "gold": "Speech Processing",
+      "answer": "Speech Processing",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.47740912437438965
+      }
+    },
+    {
+      "qid": "25",
+      "type": "multi_hop",
+      "gold": "Ashley Jones",
+      "answer": "Ashley Jones",
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5181832313537598
+      }
+    },
+    {
+      "qid": "28",
+      "type": "simple",
+      "gold": "Astronomy",
+      "answer": "Astronomy Department",
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 1.0,
+        "f1_char": 0.5833333333333334,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5933041572570801
+      }
+    },
+    {
+      "qid": "23",
+      "type": "simple",
+      "gold": "Philosophy",
+      "answer": "Mechanical Engineering Department, Philosophy Department",
+      "metrics": {
+        "f1_strict": 0.4,
+        "f1_substring": 0.6666666666666666,
+        "f1_char": 0.326530612244898,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7751054763793945
+      }
+    },
+    {
+      "qid": "26",
+      "type": "conditional",
+      "gold": "Charles Scott, Patricia Scott",
+      "answer": "Charles Scott",
+      "metrics": {
+        "f1_strict": 0.8,
+        "f1_substring": 0.5,
+        "f1_char": 0.6666666666666666,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6410768032073975
+      }
+    },
+    {
+      "qid": "30",
+      "type": "simple",
+      "gold": "60 years old",
+      "answer": "60",
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.49005722999572754
+      }
+    },
+    {
+      "qid": "27",
+      "type": "simple",
+      "gold": "Mark Allen, Jessica Hill",
+      "answer": "Charles Williams, Mark Allen, Jessica Hill, Ruth Clark, Linda Hernandez, Joshua Wright",
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.5,
+        "f1_char": 0.42857142857142855,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8705835342407227
+      }
+    },
+    {
+      "qid": "31",
+      "type": "conditional",
+      "gold": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson",
+      "answer": "Mark Allen, Robert Thompson",
+      "metrics": {
+        "f1_strict": 0.38095238095238093,
+        "f1_substring": 0.20000000000000004,
+        "f1_char": 0.3114754098360656,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5670702457427979
+      }
+    }
+  ]
+}
