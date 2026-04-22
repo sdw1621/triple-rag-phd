@@ -27,13 +27,15 @@ services:
       - ./configs:/workspace/configs
       - ./notebooks:/workspace/notebooks
       - ./logs:/workspace/logs
+      - ./streamlit_app:/workspace/streamlit_app
       - ./conftest.py:/workspace/conftest.py
       - ./pytest.ini:/workspace/pytest.ini
-    
-    # 포트 (Jupyter, TensorBoard)
+
+    # 포트 (Jupyter, TensorBoard, Streamlit dashboard)
     ports:
       - "8888:8888"
       - "6006:6006"
+      - "8501:8501"
     
     # 환경변수
     env_file:
