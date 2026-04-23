@@ -80,7 +80,7 @@ R ≈ 0.5 · F1 + 0.2 · Faithfulness − penalty
 
 ## 2절 Actor-Critic 네트워크
 
-### 2.1 구조 (Figure 5-3)
+### 2.1 구조 (Figure 5-1)
 
 ```
 s (18) → Linear(18→64) → Tanh → Linear(64→64) → Tanh → features (64)
@@ -88,6 +88,8 @@ s (18) → Linear(18→64) → Tanh → Linear(64→64) → Tanh → features (6
                          Actor head:  Linear(64→3) → Softplus + ε → Dirichlet concentrations c
                          Critic head: Linear(64→1)                  → 상태 가치 V(s)
 ```
+
+![그림 5-1. Actor-Critic 네트워크 구조 (5,636 파라미터 경량 정책망)](docs/figures/fig5_1_actor_critic.png)
 
 ### 2.2 파라미터 수
 
@@ -187,6 +189,8 @@ PPO 학습은 3 seed × 10,000 episode:
 ### 3.5 학습 곡선 관찰
 
 모든 seed에서 episode ~2,000 까지 급격히 R 상승 후 R ≈ 0.21에서 미세 진동하며 plateau를 유지한다. Policy entropy H 는 ep 1 의 −0.8 에서 ep 10,000 의 −2.7까지 점진 감소하여 초기 탐색 → 점진적 결정성 확보 패턴을 보인다.
+
+![그림 5-2. PPO 학습 곡선 — 3 seeds (42, 123, 999) 의 평균 보상 및 정책 엔트로피 수렴](docs/figures/fig5_2_ppo_convergence.png)
 
 ## 4절 오프라인 보상 캐시
 
