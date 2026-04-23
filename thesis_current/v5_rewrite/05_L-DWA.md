@@ -192,6 +192,84 @@ PPO 학습은 3 seed × 10,000 episode:
 
 ![그림 5-2. PPO 학습 곡선 — 3 seeds (42, 123, 999) 의 평균 보상 및 정책 엔트로피 수렴](docs/figures/fig5_2_ppo_convergence.png)
 
+### 3.6 학습 의사코드 (Algorithm 5-1)
+
+본 연구의 PPO 학습 루프 완전 의사코드. 실구현은 `src/ppo/trainer.py::PPOTrainer.train`.
+
+```
+Algorithm 5-1: L-DWA PPO Training (Offline-cache-based)
+─────────────────────────────────────────────────────────────
+INPUT:
+    D       : 5,000 질의 집합
+    C       : 오프라인 보상 캐시 {(q_id, α, β, γ) → R}
+    π_θ     : Actor 네트워크 (18 → 64 → 64 → 3 Dirichlet concentrations)
+    V_φ     : Critic 네트워크 (shared backbone + Linear 64→1)
+    η, ε, λ_GAE, c_V, c_H  : lr=3e-4, clip=0.2, λ=0.95, c_V=0.5, c_H=0.01
+    N_ep = 10,000, K_rollout = 32, K_epochs = 4, B_mb = 8
+
+INITIALIZE:
+    θ, φ  ← orthogonal_init(gain=1.0)
+    buffer ← empty list
+
+FOR episode = 1 .. N_ep:
+    # Stage 1. Rollout collection (32 samples)
+    buffer.clear()
+    FOR k = 1 .. K_rollout:
+        q      ← sample_query(D)
+        s      ← extract_state(q)               # 18-dim
+        c      ← Softplus(π_θ(s)) + 1e-6         # Dirichlet concentration
+        (α,β,γ) ← sample_Dirichlet(c)            # ∈ Δ³
+        (α',β',γ') ← snap_to_grid((α,β,γ), Δ=0.1)  # 10-grid
+        R      ← cache_lookup(C, q.id, (α',β',γ'))   # O(1)
+        logp   ← log Dirichlet_pdf(c, (α,β,γ))
+        V      ← V_φ(s)
+        buffer.append((s, (α,β,γ), R, logp, V))
+
+    # Stage 2. Advantage computation (GAE, 1-step MDP)
+    FOR each (s, a, R, logp, V) in buffer:
+        A ← R − V               # 1-step advantage
+        Â ← standardize(A)       # batch normalize
+        return ← R
+
+    # Stage 3. PPO update (K_epochs × minibatch)
+    FOR k = 1 .. K_epochs:
+        shuffle(buffer)
+        FOR each minibatch of size B_mb:
+            r_t    ← exp(log Dirichlet_pdf(π_θ(s), a) − logp)  # new/old ratio
+            L^CLIP ← mean(min(r_t · Â, clip(r_t, 1−ε, 1+ε) · Â))
+            L^V    ← 0.5 · mean((V_φ(s) − return)²)
+            L^H    ← −mean(Dirichlet_entropy(π_θ(s)))
+            L      ← −L^CLIP + c_V · L^V + c_H · L^H
+            θ, φ   ← θ, φ − η · ∇L                              # Adam step
+
+    IF episode % 100 == 0:
+        log(mean_reward, entropy, approx_KL, cache_hits)
+
+OUTPUT: θ*, φ*  (trained actor-critic)
+─────────────────────────────────────────────────────────────
+```
+
+### 3.7 추론 의사코드 (Algorithm 5-2)
+
+테스트 시 L-DWA 는 학습된 Actor 로부터 **결정론적 Dirichlet 평균** 을 반환한다 (샘플링 없음, 재현성 보장).
+
+```
+Algorithm 5-2: L-DWA Inference (deterministic)
+─────────────────────────────────────────────────────────────
+INPUT:
+    q      : test query
+    π_θ*   : trained Actor
+
+s      ← extract_state(q)                   # 동일 18-dim
+c      ← Softplus(π_θ*(s)) + 1e-6
+(α,β,γ) ← c / sum(c)                         # Dirichlet mean (μ_i = c_i / Σc_j)
+
+OUTPUT: (α, β, γ) ∈ Δ³
+─────────────────────────────────────────────────────────────
+```
+
+**왜 mean 인가?** 추론 단계에서의 샘플링은 (i) 재현성 저해, (ii) 결정 분산 증가, (iii) Oracle 비교 시 공정성 저해를 초래한다. 본 논문은 **Dirichlet mean 의 deterministic 추론** 을 표준으로 채택 (Ch.6 §3.2 전수 평가 기준).
+
 ## 4절 오프라인 보상 캐시
 
 ### 4.1 비용 장벽
