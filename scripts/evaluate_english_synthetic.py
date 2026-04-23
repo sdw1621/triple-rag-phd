@@ -40,7 +40,6 @@ from src.eval.metrics import (  # noqa: E402
     f1_substring,
     faithfulness,
 )
-from src.dwa.base import DWAWeights  # noqa: E402
 from src.intent.rule_based import RuleBasedIntent  # noqa: E402
 from src.rag.triple_hybrid_rag import PROMPT_TEMPLATE_LIST  # noqa: E402
 from src.rag.vector_store import VectorStore  # noqa: E402
@@ -67,40 +66,12 @@ class _OpenAILLM:
         return r.content if hasattr(r, "content") else str(r)
 
 
-def _weights_from_policy(policy_obj, q: str, intent, v_scores) -> DWAWeights:
-    """R-DWA: rule-based.  L-DWA: act_mean on 18-dim state (English)."""
-    if policy_obj is None:
-        # R-DWA default
-        from src.dwa.rdwa import RuleBasedDWA
-        return RuleBasedDWA().compute(q, intent)
-    # L-DWA path (Actor-Critic loaded)
-    ac, _torch = policy_obj
-    from src.ppo.mdp import State, extract_query_meta, extract_source_stats
-    state = State(
-        density=intent.density,
-        intent_logits=(0.0, 0.0, 0.0),
-        source_stats=extract_source_stats(v_scores, [], []),
-        query_meta=extract_query_meta(q, intent),
-    )
-    with _torch.no_grad():
-        action, _ = ac.act_mean(state.to_tensor().unsqueeze(0))
-    w = action[0].tolist()
-    return DWAWeights(float(w[0]), float(w[1]), float(w[2]))
-
-
-def eval_one(
-    item: dict, vector: VectorStore, llm: _OpenAILLM, analyzer, policy_obj=None
-) -> dict:
-    from src.rag.triple_hybrid_rag import merge_contexts
+def eval_one(item: dict, vector: VectorStore, llm: _OpenAILLM) -> dict:
     q = item["query"]
     gold = item["answer"]
-    intent = analyzer.analyze(q)
     hits = vector.search(q, top_k=3)
     contexts = [d for d, _ in hits]
-    v_scores = [s for _, s in hits]
-    weights = _weights_from_policy(policy_obj, q, intent, v_scores)
-    # Graph / Ontology empty for EN
-    context_str = merge_contexts(contexts, [], [], weights, 3)
+    context_str = "\n".join(contexts) if contexts else ""
     start = time.time()
     prompt = PROMPT_TEMPLATE_LIST.format(context=context_str, query=q)
     answer = llm.generate(prompt)
@@ -110,7 +81,6 @@ def eval_one(
         "type": item.get("type", "unknown"),
         "gold": gold,
         "answer": answer,
-        "weights": (weights.alpha, weights.beta, weights.gamma),
         "metrics": {
             "f1_strict": f1_score(answer, gold),
             "f1_substring": f1_substring(answer, gold),
@@ -170,8 +140,6 @@ def aggregate(results: list[dict]) -> dict:
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--output", required=True, type=Path)
-    p.add_argument("--policy", default="rdwa",
-                   help="'rdwa' or 'ldwa:<ckpt path>'")
     p.add_argument("--limit", type=int, default=None)
     p.add_argument("--workers", type=int, default=10)
     p.add_argument("--seed", type=int, default=42)
@@ -189,35 +157,18 @@ def main() -> int:
     if args.limit:
         qa = qa[: args.limit]
 
-    logger.info("Corpus: %d docs | QA: %d queries | policy: %s",
-                len(corpus["documents"]), len(qa), args.policy)
+    logger.info("Corpus: %d docs | QA: %d queries", len(corpus["documents"]), len(qa))
 
     vector = VectorStore()
     vector.add_documents(corpus["documents"])
     logger.info("VectorStore ready (%d docs indexed)", len(corpus["documents"]))
-
-    analyzer = RuleBasedIntent()
-
-    # Resolve policy object
-    policy_obj = None
-    if args.policy.startswith("ldwa:"):
-        import torch
-        from src.ppo.actor_critic import ActorCritic
-        ckpt_path = Path(args.policy.split(":", 1)[1])
-        logger.info("Loading L-DWA checkpoint: %s", ckpt_path)
-        ckpt = torch.load(str(ckpt_path), map_location="cpu")
-        ac = ActorCritic()
-        ac.load_state_dict(ckpt["actor_critic"])
-        ac.eval()
-        policy_obj = (ac, torch)
 
     llm = _OpenAILLM()
 
     results: list[dict] = []
     t0 = time.time()
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures = [pool.submit(eval_one, item, vector, llm, analyzer, policy_obj)
-                   for item in qa]
+        futures = [pool.submit(eval_one, item, vector, llm) for item in qa]
         for i, fut in enumerate(as_completed(futures)):
             try:
                 results.append(fut.result())
@@ -237,8 +188,7 @@ def main() -> int:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "benchmark": "english_synthetic_university",
-        "policy": args.policy,
-        "prompt_style": "list (Graph/Ontology empty for EN)",
+        "policy": "rdwa (list prompt, Vector-only — Graph/Ontology empty for EN)",
         "n_queries": len(results),
         "aggregate": agg,
         "samples": results[:30],
