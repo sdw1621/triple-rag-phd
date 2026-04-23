@@ -211,9 +211,14 @@ def tab_overview(agg: pd.DataFrame) -> None:
         st.plotly_chart(fig, use_container_width=True)
 
     st.info(
-        "**Headline**: L-DWA 3-seed mean F1_strict = 0.562 ± 0.007. "
-        "Simple-only F1_strict = 0.906 ≈ JKSCI 0.86. "
-        "Conditional +36.7% over R-DWA — strongest per-type claim."
+        "**Headline (corrected baseline 위)**: L-DWA 3-seed 평균 F1_strict = **0.562 ± 0.007**, "
+        "66-점 이산 격자 argmax Oracle (0.554) 을 네 개 F1 축에서 모두 소폭 초과. "
+        "Simple-only F1_strict 0.906 은 JKSCI 0.86 재현에 가까우며, "
+        "Conditional 은 R-DWA 대비 +36.7% 로 본 논문의 가장 뚜렷한 per-type 개선."
+    )
+    st.caption(
+        "세부 수치는 thesis v19 Ch.Ⅵ §3.2 / 3.3 / §4. "
+        "Stage-wise 재현성 복구 궤적은 탭 📐 Stage-wise Baseline 참조."
     )
 
 
@@ -400,6 +405,130 @@ def tab_simulator(samples_df: pd.DataFrame) -> None:
         st.plotly_chart(fig, use_container_width=True)
 
 
+# ---------- static snapshot data (corrected baseline stage + cross-domain) ----------
+
+STAGEWISE_ROWS = [
+    # (stage, fix, F1_strict, EM, Faith, note)
+    ("S0", "JKSCI 원 주장 (재현 불가)", 0.860, 0.780, 0.890,
+     "CORRIGENDUM §2 참조. 현 코드·데이터로는 재현 불가."),
+    ("S1", "`normalize_korean` 구두점 제거 (dff7dc1)", 0.137, 0.000, 0.835,
+     "토큰 분리 버그 수정으로 F1 약 90% 상승."),
+    ("S2", "`PROMPT_TEMPLATE_LIST` gold 형식 정렬", 0.529, 0.387, 0.610,
+     "프롬프트 → 콤마 리스트 출력. F1 추가 286%."),
+    ("S3", "`faithfulness()` 2-branch 도입", 0.529, 0.387, 0.544,
+     "리스트형 응답 per-item 검증. Faith 엄격화."),
+]
+
+CROSS_DOMAIN_ROWS = [
+    # (benchmark, policy, F1_strict, F1_substring, Faithfulness, note)
+    ("HotpotQA Hard 300 (영어 multi-hop)", "Vector-only", 0.101, 0.378, 0.777, ""),
+    ("HotpotQA Hard 300 (영어 multi-hop)", "R-DWA", 0.096, 0.357, 0.720, ""),
+    ("HotpotQA Hard 300 (영어 multi-hop)", "L-DWA (univ-trained)", 0.074, 0.249, 0.600,
+     "naive transfer 실패 (−30%)"),
+    ("HotpotQA Hard 300 (영어 multi-hop)", "R-DWA + EN intent", 0.132, None, None,
+     "§7.5 영어 intent 추가 +38%"),
+    ("HotpotQA Hard 300 (영어 multi-hop)", "L-DWA + EN intent", 0.110, None, None,
+     "§7.5 영어 intent 추가 +49%"),
+    ("MuSiQue Dev 300 (4-hop 영어)", "Vector-only", 0.056, 0.145, 0.480, ""),
+    ("MuSiQue Dev 300 (4-hop 영어)", "R-DWA", 0.046, 0.123, 0.415, ""),
+    ("MuSiQue Dev 300 (4-hop 영어)", "L-DWA (univ-trained)", 0.038, 0.099, 0.358,
+     "naive transfer 실패"),
+    ("PubMedQA Pharma 300 (biomedical)", "Vector-only", 0.231, 0.006, 0.812, ""),
+    ("PubMedQA Pharma 300 (biomedical)", "R-DWA", 0.214, 0.004, 0.757, ""),
+    ("PubMedQA Pharma 300 (biomedical)", "L-DWA (univ-trained)", 0.149, 0.005, 0.546, ""),
+    ("English synthetic univ (403 QA)", "R-DWA", 0.663, 0.609, 0.958,
+     "§7.6 영어 합성 — 한국어 0.529 보다 높음"),
+    ("English synthetic univ (403 QA)", "L-DWA (EN retrain)", 0.661, 0.607, 0.955,
+     "§7.7 state 미구분 → R-DWA 수준 수렴"),
+    ("English synthetic univ (403 QA)", "L-DWA (EN) → HotpotQA", 0.149, None, None,
+     "영어 코퍼스 기반 평균 가중치가 약간 유리"),
+]
+
+
+def tab_stagewise() -> None:
+    st.header("📐 Stage-wise Corrected Baseline")
+    st.caption(
+        "JKSCI 2025 논문의 재현성 장애 3 건을 단계별로 해소한 궤적. "
+        "본 논문 §Ⅵ.3.1 의 stage-wise 표와 일치."
+    )
+
+    df = pd.DataFrame(
+        STAGEWISE_ROWS,
+        columns=["Stage", "수정 내용", "F1_strict", "EM", "Faithfulness", "비고"],
+    )
+
+    st.dataframe(df, use_container_width=True, hide_index=True)
+
+    st.subheader("F1_strict 궤적 (R-DWA 기준)")
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=df["Stage"],
+        y=df["F1_strict"],
+        mode="lines+markers+text",
+        line=dict(color="#4F86C6", width=3),
+        marker=dict(size=14, color="#4F86C6"),
+        text=[f"{v:.3f}" for v in df["F1_strict"]],
+        textposition="top center",
+        name="F1_strict",
+    ))
+    fig.update_layout(
+        height=380,
+        yaxis=dict(title="F1_strict", range=[0.0, 0.95]),
+        xaxis=dict(title="Stage"),
+        margin=dict(l=0, r=0, t=10, b=10),
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+    st.info(
+        "S0 은 선행 논문 게재 수치로 현 저장소에서는 재현되지 않는다. "
+        "S1 (+90%) · S2 (+286%) 은 평가 인프라 정비의 기여이며, "
+        "PPO 학습 기여는 이 위에서 +6.2% (L-DWA 0.562 vs R-DWA 0.529) 로 별도 계산된다. "
+        "[CORRIGENDUM](https://github.com/sdw1621/hybrid-rag-comparsion/blob/main/CORRIGENDUM.md)."
+    )
+
+
+def tab_cross_domain() -> None:
+    st.header("🌐 Cross-domain 실험")
+    st.caption(
+        "§Ⅵ.7 교차 도메인 결과 — naive transfer 실패 원인 분해 (언어·어휘·아키텍처) 와 "
+        "후속 실험 (영어 intent 추가 · 영어 합성 벤치마크 · 영어 PPO 재학습)."
+    )
+
+    df = pd.DataFrame(
+        CROSS_DOMAIN_ROWS,
+        columns=["Benchmark", "Policy", "F1_strict", "F1_substring", "Faithfulness", "비고"],
+    )
+
+    benches = ["(전체)"] + sorted(df["Benchmark"].unique())
+    picked = st.selectbox("벤치마크 선택", benches, index=0)
+
+    view = df if picked == "(전체)" else df[df["Benchmark"] == picked]
+    st.dataframe(view, use_container_width=True, hide_index=True)
+
+    st.subheader("F1_strict 비교")
+    plot_df = df.dropna(subset=["F1_strict"]).copy()
+    fig = px.bar(
+        plot_df,
+        x="Policy",
+        y="F1_strict",
+        color="Benchmark",
+        barmode="group",
+        text=plot_df["F1_strict"].round(3),
+    )
+    fig.update_traces(textposition="outside")
+    fig.update_layout(
+        height=460, xaxis_tickangle=-25,
+        margin=dict(l=0, r=0, t=10, b=10),
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+    st.info(
+        "**해석.** (i) 언어 장벽은 영어 intent 패턴 추가만으로 L-DWA +49%, R-DWA +38% 회복 (§7.5). "
+        "(ii) 도메인 어휘는 영어 합성 벤치마크에서 R-DWA 0.663 으로 한국어 0.529 보다 오히려 높음 (§7.6). "
+        "(iii) Graph·Ontology 부재는 재학습으로도 우회 불가 — Triple-Hybrid 의 본질적 경계 (§7.4)."
+    )
+
+
 def tab_training() -> None:
     st.header("📈 PPO 학습 곡선 (3 seeds)")
     st.caption("cache/ppo_checkpoints/seed_{42,123,999}/history.json 기반")
@@ -457,7 +586,8 @@ def main() -> None:
     st.title("🎓 Triple-Hybrid RAG — L-DWA Explorer")
     st.caption(
         "박사학위 논문 \"PPO 기반 L-DWA 를 통한 Triple-Hybrid RAG 성능 최적화\" · "
-        "Shin Dong-wook, Hoseo University · 2026 · read-only dashboard (no LLM calls)"
+        "Shin Dong-wook, Hoseo University · 2026 · read-only dashboard (no LLM calls) · "
+        "thesis v19"
     )
 
     agg = load_aggregates()
@@ -468,6 +598,8 @@ def main() -> None:
         "🔍 쿼리 비교",
         "🎛️ 가중치 시뮬레이터",
         "📈 PPO 학습",
+        "📐 Stage-wise Baseline",
+        "🌐 Cross-domain",
     ])
 
     with tabs[0]:
@@ -478,6 +610,17 @@ def main() -> None:
         tab_simulator(samples)
     with tabs[3]:
         tab_training()
+    with tabs[4]:
+        tab_stagewise()
+    with tabs[5]:
+        tab_cross_domain()
+
+    st.divider()
+    st.caption(
+        "본 저장소: https://github.com/sdw1621/triple-rag-phd · "
+        "CORRIGENDUM (선행 저장소): "
+        "https://github.com/sdw1621/hybrid-rag-comparsion/blob/main/CORRIGENDUM.md"
+    )
 
 
 if __name__ == "__main__":
