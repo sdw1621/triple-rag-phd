@@ -1,0 +1,695 @@
+{
+  "benchmark": "english_synthetic_university",
+  "policy": "ldwa:cache/ppo_checkpoints/en_seed_42/final.pt",
+  "prompt_style": "list (Graph/Ontology empty for EN)",
+  "n_queries": 403,
+  "aggregate": {
+    "overall": {
+      "F1_strict": {
+        "mean": 0.6605260715865008,
+        "std": 0.2974994048036608,
+        "n": 403
+      },
+      "F1_substring": {
+        "mean": 0.6073816864139445,
+        "std": 0.39434506268732705,
+        "n": 403
+      },
+      "F1_char": {
+        "mean": 0.587858151247698,
+        "std": 0.35310465762145893,
+        "n": 403
+      },
+      "EM_norm": {
+        "mean": 0.28287841191067,
+        "std": 0.45039784189710236,
+        "n": 403
+      },
+      "Faithfulness": {
+        "mean": 0.9553349875930521,
+        "std": 0.20656729913913066,
+        "n": 403
+      },
+      "Latency": {
+        "mean": 0.7212492094442211,
+        "std": 0.5138907217279484,
+        "n": 403
+      }
+    },
+    "by_type": {
+      "multi_hop": {
+        "F1_strict": {
+          "mean": 0.6974384791335256,
+          "std": 0.28108116760418217,
+          "n": 114
+        },
+        "F1_substring": {
+          "mean": 0.6349624060150377,
+          "std": 0.3158254835450569,
+          "n": 114
+        },
+        "F1_char": {
+          "mean": 0.6787606009756857,
+          "std": 0.2850829880553284,
+          "n": 114
+        },
+        "EM_norm": {
+          "mean": 0.32456140350877194,
+          "std": 0.46821074193271994,
+          "n": 114
+        },
+        "Faithfulness": {
+          "mean": 0.9824561403508771,
+          "std": 0.13128622409733126,
+          "n": 114
+        }
+      },
+      "simple": {
+        "F1_strict": {
+          "mean": 0.7252557050792344,
+          "std": 0.2560752631565612,
+          "n": 200
+        },
+        "F1_substring": {
+          "mean": 0.6989455266955267,
+          "std": 0.4173524917172688,
+          "n": 200
+        },
+        "F1_char": {
+          "mean": 0.6048695254775783,
+          "std": 0.3833279862552968,
+          "n": 200
+        },
+        "EM_norm": {
+          "mean": 0.335,
+          "std": 0.4719904660054057,
+          "n": 200
+        },
+        "Faithfulness": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 200
+        }
+      },
+      "conditional": {
+        "F1_strict": {
+          "mean": 0.46778515968866263,
+          "std": 0.3223271012352824,
+          "n": 89
+        },
+        "F1_substring": {
+          "mean": 0.36629213483146067,
+          "std": 0.3271522181390036,
+          "n": 89
+        },
+        "F1_char": {
+          "mean": 0.4331934982705447,
+          "std": 0.30840701194014963,
+          "n": 89
+        },
+        "EM_norm": {
+          "mean": 0.11235955056179775,
+          "std": 0.31580829938326277,
+          "n": 89
+        },
+        "Faithfulness": {
+          "mean": 0.8202247191011236,
+          "std": 0.3840001683288778,
+          "n": 89
+        }
+      }
+    }
+  },
+  "samples": [
+    {
+      "qid": "8",
+      "type": "multi_hop",
+      "gold": "Mechatronics Introduction, Mechatronics III, Robotics Seminar, Control Systems Introduction",
+      "answer": "Control Systems Introduction, Mechatronics Introduction",
+      "weights": [
+        0.6615087389945984,
+        0.2650676667690277,
+        0.07342352718114853
+      ],
+      "metrics": {
+        "f1_strict": 0.7272727272727273,
+        "f1_substring": 0.5,
+        "f1_char": 0.7906976744186047,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8653273582458496
+      }
+    },
+    {
+      "qid": "10",
+      "type": "multi_hop",
+      "gold": "Karen Hill, Kevin King",
+      "answer": "Karen Hill, Kevin King",
+      "weights": [
+        0.6651345491409302,
+        0.26294657588005066,
+        0.07191888988018036
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.8151676654815674
+      }
+    },
+    {
+      "qid": "7",
+      "type": "simple",
+      "gold": "Accounting",
+      "answer": "Accounting Department",
+      "weights": [
+        0.6650777459144592,
+        0.2628054618835449,
+        0.07211675494909286
+      ],
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 1.0,
+        "f1_char": 0.6153846153846153,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5370855331420898
+      }
+    },
+    {
+      "qid": "6",
+      "type": "multi_hop",
+      "gold": "Angela White, Karen Hill",
+      "answer": "Angela White, Karen Hill",
+      "weights": [
+        0.6717711091041565,
+        0.2582351565361023,
+        0.06999371945858002
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 1.1851222515106201
+      }
+    },
+    {
+      "qid": "1",
+      "type": "conditional",
+      "gold": "Thomas Anderson, Angela Perez",
+      "answer": "Thomas Anderson",
+      "weights": [
+        0.6688908338546753,
+        0.2605138421058655,
+        0.07059536874294281
+      ],
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 0.5,
+        "f1_char": 0.6857142857142856,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6922206878662109
+      }
+    },
+    {
+      "qid": "9",
+      "type": "simple",
+      "gold": "Ashley Wilson, Charles Brown",
+      "answer": "Ashley Wilson, Charles Brown",
+      "weights": [
+        0.6612401604652405,
+        0.26253384351730347,
+        0.07622600346803665
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.923224687576294
+      }
+    },
+    {
+      "qid": "2",
+      "type": "simple",
+      "gold": "56 years old",
+      "answer": "56",
+      "weights": [
+        0.6663519144058228,
+        0.26054874062538147,
+        0.07309934496879578
+      ],
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.5427782535552979
+      }
+    },
+    {
+      "qid": "3",
+      "type": "multi_hop",
+      "gold": "Machine Learning, Chemical Engineering, Finance",
+      "answer": "Software Engineering, Physics, Information Security, Materials Engineering",
+      "weights": [
+        0.658923864364624,
+        0.2647467851638794,
+        0.0763293132185936
+      ],
+      "metrics": {
+        "f1_strict": 0.1818181818181818,
+        "f1_substring": 0.0,
+        "f1_char": 0.20224719101123595,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.9403438568115234
+      }
+    },
+    {
+      "qid": "11",
+      "type": "simple",
+      "gold": "61 years old",
+      "answer": "61",
+      "weights": [
+        0.6650905013084412,
+        0.26084092259407043,
+        0.07406853884458542
+      ],
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7593910694122314
+      }
+    },
+    {
+      "qid": "4",
+      "type": "simple",
+      "gold": "Materials Engineering",
+      "answer": "Materials Engineering Department",
+      "weights": [
+        0.6714260578155518,
+        0.25890931487083435,
+        0.06966457515954971
+      ],
+      "metrics": {
+        "f1_strict": 0.8,
+        "f1_substring": 1.0,
+        "f1_char": 0.7727272727272727,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.779111623764038
+      }
+    },
+    {
+      "qid": "12",
+      "type": "multi_hop",
+      "gold": "Energy Engineering, Design",
+      "answer": "Software Engineering, Pharmacy, Cybersecurity, Civil Engineering, Chemistry, Energy Engineering, Design",
+      "weights": [
+        0.6591094136238098,
+        0.2651957869529724,
+        0.07569476962089539
+      ],
+      "metrics": {
+        "f1_strict": 0.5454545454545454,
+        "f1_substring": 0.4444444444444445,
+        "f1_char": 0.4772727272727273,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8430817127227783
+      }
+    },
+    {
+      "qid": "13",
+      "type": "simple",
+      "gold": "Linguistics",
+      "answer": "Linguistics",
+      "weights": [
+        0.6648420095443726,
+        0.2627059817314148,
+        0.07245203107595444
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.535818338394165
+      }
+    },
+    {
+      "qid": "5",
+      "type": "conditional",
+      "gold": "Sarah Taylor, Donna Jones, Ashley Jones, Karen Brown, John Allen, Susan Torres",
+      "answer": "Donna Jones, John Allen, Charles Hernandez",
+      "weights": [
+        0.6719841957092285,
+        0.2574951648712158,
+        0.07052065432071686
+      ],
+      "metrics": {
+        "f1_strict": 0.4705882352941177,
+        "f1_substring": 0.3333333333333333,
+        "f1_char": 0.3333333333333333,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 1.0269243717193604
+      }
+    },
+    {
+      "qid": "14",
+      "type": "multi_hop",
+      "gold": "Organic Chemistry III, Thermodynamics I, Thermodynamics II",
+      "answer": "Thermodynamics I, Thermodynamics II",
+      "weights": [
+        0.6628190875053406,
+        0.26359695196151733,
+        0.0735839381814003
+      ],
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 0.6666666666666666,
+        "f1_char": 0.6399999999999999,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.7591655254364014
+      }
+    },
+    {
+      "qid": "18",
+      "type": "simple",
+      "gold": "67 years old",
+      "answer": "67",
+      "weights": [
+        0.6645244359970093,
+        0.2613316476345062,
+        0.07414388656616211
+      ],
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.48120617866516113
+      }
+    },
+    {
+      "qid": "16",
+      "type": "simple",
+      "gold": "Jessica Allen, Sandra Lee",
+      "answer": "Jessica Allen, Sandra Lee",
+      "weights": [
+        0.6606208086013794,
+        0.2622489333152771,
+        0.07713029533624649
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5974228382110596
+      }
+    },
+    {
+      "qid": "15",
+      "type": "simple",
+      "gold": "Chemistry",
+      "answer": "Chemistry Department",
+      "weights": [
+        0.6651688814163208,
+        0.26231709122657776,
+        0.07251403480768204
+      ],
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 1.0,
+        "f1_char": 0.5833333333333334,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5576589107513428
+      }
+    },
+    {
+      "qid": "19",
+      "type": "simple",
+      "gold": "Charles Allen, Sandra Wright",
+      "answer": "Charles Allen, Sandra Wright",
+      "weights": [
+        0.6648270487785339,
+        0.26142045855522156,
+        0.0737525150179863
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.570277214050293
+      }
+    },
+    {
+      "qid": "20",
+      "type": "simple",
+      "gold": "Control Systems",
+      "answer": "Control Systems",
+      "weights": [
+        0.6648950576782227,
+        0.2614867389202118,
+        0.07361820340156555
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5295805931091309
+      }
+    },
+    {
+      "qid": "17",
+      "type": "conditional",
+      "gold": "Linda Smith",
+      "answer": "정보를 찾을 수 없습니다.",
+      "weights": [
+        0.6697112321853638,
+        0.26016896963119507,
+        0.07011982798576355
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 0.0,
+        "latency": 0.6336824893951416
+      }
+    },
+    {
+      "qid": "21",
+      "type": "multi_hop",
+      "gold": "Kenneth Torres",
+      "answer": "Kenneth Torres",
+      "weights": [
+        0.6653908491134644,
+        0.26284459233283997,
+        0.07176456600427628
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.5799305438995361
+      }
+    },
+    {
+      "qid": "22",
+      "type": "simple",
+      "gold": "Speech Processing",
+      "answer": "Speech Processing",
+      "weights": [
+        0.6646849513053894,
+        0.2625828981399536,
+        0.07273216545581818
+      ],
+      "metrics": {
+        "f1_strict": 1.0,
+        "f1_substring": 1.0,
+        "f1_char": 1.0,
+        "em_norm": 1.0,
+        "faithfulness": 1.0,
+        "latency": 0.6753602027893066
+      }
+    },
+    {
+      "qid": "23",
+      "type": "simple",
+      "gold": "Philosophy",
+      "answer": "Mechanical Engineering Department, Philosophy Department",
+      "weights": [
+        0.6646961569786072,
+        0.26178357005119324,
+        0.073520228266716
+      ],
+      "metrics": {
+        "f1_strict": 0.4,
+        "f1_substring": 0.6666666666666666,
+        "f1_char": 0.326530612244898,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6291050910949707
+      }
+    },
+    {
+      "qid": "24",
+      "type": "simple",
+      "gold": "68 years old",
+      "answer": "68",
+      "weights": [
+        0.6655039191246033,
+        0.2602125108242035,
+        0.07428358495235443
+      ],
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6212167739868164
+      }
+    },
+    {
+      "qid": "26",
+      "type": "conditional",
+      "gold": "Charles Scott, Patricia Scott",
+      "answer": "Charles Scott",
+      "weights": [
+        0.6675340533256531,
+        0.26187047362327576,
+        0.07059546560049057
+      ],
+      "metrics": {
+        "f1_strict": 0.8,
+        "f1_substring": 0.5,
+        "f1_char": 0.6666666666666666,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5787451267242432
+      }
+    },
+    {
+      "qid": "30",
+      "type": "simple",
+      "gold": "60 years old",
+      "answer": "60",
+      "weights": [
+        0.6652357578277588,
+        0.2616529166698456,
+        0.07311134040355682
+      ],
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.0,
+        "f1_char": 0.0,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.5419542789459229
+      }
+    },
+    {
+      "qid": "28",
+      "type": "simple",
+      "gold": "Astronomy",
+      "answer": "Astronomy Department",
+      "weights": [
+        0.6716865301132202,
+        0.2588942348957062,
+        0.06941920518875122
+      ],
+      "metrics": {
+        "f1_strict": 0.6666666666666666,
+        "f1_substring": 1.0,
+        "f1_char": 0.5833333333333334,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.6707038879394531
+      }
+    },
+    {
+      "qid": "29",
+      "type": "multi_hop",
+      "gold": "Korean Literature, Astronomy",
+      "answer": "Sociology, Accounting, Electrical Engineering, Chemistry, Public Administration, Music, Robotics Engineering",
+      "weights": [
+        0.6642240285873413,
+        0.25579020380973816,
+        0.07998574525117874
+      ],
+      "metrics": {
+        "f1_strict": 0.0,
+        "f1_substring": 0.0,
+        "f1_char": 0.04,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.8954250812530518
+      }
+    },
+    {
+      "qid": "31",
+      "type": "conditional",
+      "gold": "Sandra Gonzalez, Mark Garcia, William Allen, Mark Allen, Anthony Walker, William Lewis, James Martin, Kenneth Wilson, Lisa Smith, Robert Thompson",
+      "answer": "Mark Allen, Robert Thompson",
+      "weights": [
+        0.6708061695098877,
+        0.2587960362434387,
+        0.0703977644443512
+      ],
+      "metrics": {
+        "f1_strict": 0.38095238095238093,
+        "f1_substring": 0.20000000000000004,
+        "f1_char": 0.3114754098360656,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.58489990234375
+      }
+    },
+    {
+      "qid": "27",
+      "type": "simple",
+      "gold": "Mark Allen, Jessica Hill",
+      "answer": "Charles Williams, Mark Allen, Jessica Hill, Ruth Clark, Linda Hernandez, Joshua Wright",
+      "weights": [
+        0.6610443592071533,
+        0.2617090940475464,
+        0.07724648714065552
+      ],
+      "metrics": {
+        "f1_strict": 0.5,
+        "f1_substring": 0.5,
+        "f1_char": 0.42857142857142855,
+        "em_norm": 0.0,
+        "faithfulness": 1.0,
+        "latency": 0.845465898513794
+      }
+    }
+  ]
+}
