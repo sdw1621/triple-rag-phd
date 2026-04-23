@@ -98,6 +98,7 @@ NUMBERED_RE = re.compile(r"^(\s*)(\d+)\.\s+(.*)$")
 CODE_FENCE_RE = re.compile(r"^```")
 BLOCKQUOTE_RE = re.compile(r"^>\s+(.*)$")
 HR_RE = re.compile(r"^-{3,}\s*$")
+IMAGE_RE = re.compile(r"^!\[([^\]]*)\]\(([^)]+)\)\s*$")
 
 
 def _strip_md_inline(text: str) -> str:
@@ -177,6 +178,35 @@ def _add_blockquote(doc: Document, text: str) -> None:
     _set_font(run, size=Pt(10))
 
 
+def _add_image(doc: Document, src: str, caption: str, base_dir: Path) -> None:
+    """Embed image from `src` (absolute or relative to md file's dir)."""
+    img_path = Path(src)
+    if not img_path.is_absolute():
+        # Try relative to md dir, then repo root
+        candidates = [
+            base_dir / src,
+            Path(__file__).resolve().parent.parent / src,
+        ]
+        img_path = next((p for p in candidates if p.exists()), candidates[0])
+    if not img_path.exists():
+        logger.warning("image not found: %s (skipped)", img_path)
+        return
+    try:
+        # Fit to page width minus small margin (≈14cm of 14.8cm text area)
+        p = doc.add_paragraph()
+        p.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+        run = p.add_run()
+        run.add_picture(str(img_path), width=Cm(14.0))
+        if caption:
+            cap = doc.add_paragraph()
+            cap.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+            _set_paragraph_spacing(cap, line=1.15, space_after=6)
+            cap_run = cap.add_run(caption)
+            _set_font(cap_run, size=Pt(9.5), bold=True)
+    except Exception as e:  # noqa: BLE001
+        logger.warning("failed to embed %s: %s", img_path, e)
+
+
 def convert_markdown_to_docx(md_path: Path, out_path: Path, chapter_title: str | None = None) -> None:
     doc = Document()
     _configure_page(doc)
@@ -222,6 +252,14 @@ def convert_markdown_to_docx(md_path: Path, out_path: Path, chapter_title: str |
         # blockquote
         if BLOCKQUOTE_RE.match(line):
             _add_blockquote(doc, BLOCKQUOTE_RE.match(line).group(1))
+            i += 1
+            continue
+
+        # image — "![alt](path)" on its own line
+        img_m = IMAGE_RE.match(line)
+        if img_m:
+            alt, path_str = img_m.group(1), img_m.group(2)
+            _add_image(doc, path_str, alt, md_path.parent)
             i += 1
             continue
 
