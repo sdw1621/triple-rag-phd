@@ -18,6 +18,10 @@ data/mesh/
 *.faiss
 *.sqlite
 
+# Dashboard needs the gold QA to show question text in the explorer.
+# 1.4 MB text file — kept in the repo for Streamlit Cloud.
+!data/university/gold_qa_5000.json
+
 # Outputs (regenerated)
 cache/
 results/
