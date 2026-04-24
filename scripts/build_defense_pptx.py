@@ -44,7 +44,12 @@ TEXT_MUTED = RGBColor(0x6B, 0x72, 0x80)
 BG_SOFT = RGBColor(0xF5, 0xF7, 0xFA)
 WHITE = RGBColor(0xFF, 0xFF, 0xFF)
 
-KO_FONT = "맑은 고딕"
+# Font choice — use a name that exists on both Windows (맑은 고딕) and
+# Linux containers with fonts-noto-cjk installed. python-pptx writes the
+# font name into XML; PowerPoint/LibreOffice substitutes at render time.
+# "Noto Sans CJK KR" works in LibreOffice-on-Linux PDF export; Windows
+# PowerPoint falls back to "Malgun Gothic" automatically.
+KO_FONT = "Noto Sans CJK KR"
 EN_FONT = "Arial"
 
 SLIDE_W = Inches(13.333)  # 16:9
