@@ -27,6 +27,22 @@ checkpoints/
 wandb/
 mlruns/
 
+# Dashboard artifacts — kept in the repo so Streamlit Cloud can serve
+# the 5,000-QA aggregate, 330K reward cache, and PPO training curves
+# without needing local regeneration.
+!cache/university.sqlite
+!cache/ppo_checkpoints/
+cache/ppo_checkpoints/*
+!cache/ppo_checkpoints/seed_42/
+!cache/ppo_checkpoints/seed_42/history.json
+!cache/ppo_checkpoints/seed_123/
+!cache/ppo_checkpoints/seed_123/history.json
+!cache/ppo_checkpoints/seed_999/
+!cache/ppo_checkpoints/seed_999/history.json
+!results/
+results/*
+!results/rerun_*_list.json
+
 # Python
 __pycache__/
 *.py[cod]

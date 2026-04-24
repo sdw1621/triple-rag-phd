@@ -1,10 +1,12 @@
 # Thesis Results Explorer (Streamlit)
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+
 Read-only dashboard for the PhD thesis *"PPO-based L-DWA for Triple-Hybrid RAG"*.
 Loads pre-computed artifacts from `results/` and `cache/` — **never calls the LLM**
 or incurs API cost. Safe for live defense demo.
 
-## 4 tabs
+## 6 tabs
 
 | Tab | What it shows |
 |---|---|
@@ -12,6 +14,25 @@ or incurs API cost. Safe for live defense demo.
 | 🔍 **쿼리 비교** | Filterable/sortable 50-sample side-by-side table; deep-dive per qid with each policy's weights, answer, and metrics |
 | 🎛️ **가중치 시뮬레이터** | Pick a query, slide α/β/γ on Δ³ → instant reward lookup from 330K cache. Oracle (argmax) highlighted. Plotly simplex heatmap of all 66 grid points. |
 | 📈 **PPO 학습** | 3-seed overlays of mean_reward / entropy / policy_loss / value_loss from `history.json`; user-adjustable moving-average window |
+| 📐 **Stage-wise Baseline** | JKSCI CORRIGENDUM 3-stage fix (S0→S1→S2→S3) F1<sub>strict</sub> trajectory |
+| 🌐 **Cross-domain** | HotpotQA / MuSiQue / PubMedQA + English-intent + English-synthetic benchmarks, policy × benchmark bar chart |
+
+## Deploy to Streamlit Community Cloud (free)
+
+1. Fork or clone this repo on GitHub (already public: `sdw1621/triple-rag-phd`).
+2. Sign in at [share.streamlit.io](https://share.streamlit.io/) with GitHub.
+3. Click **New app** and fill in:
+   - Repository: `sdw1621/triple-rag-phd`
+   - Branch: `main`
+   - **Main file path: `streamlit_app/dashboard.py`** ← *important*
+   - Python version: 3.10 (set in Advanced settings)
+4. Streamlit Cloud will auto-detect `streamlit_app/requirements.txt` (lean:
+   streamlit + plotly + pandas + numpy — no torch/transformers) and deploy
+   in ~2 minutes.
+5. The deployed URL looks like `https://triple-rag-phd.streamlit.app/`.
+
+All four data dependencies below are committed directly to the repo so the
+deployed app runs end-to-end without any regeneration step.
 
 ## Run (inside docker container)
 
