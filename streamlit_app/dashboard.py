@@ -1244,39 +1244,68 @@ def tab_explorer(samples_df: pd.DataFrame) -> None:
     st.header("🔍 쿼리 비교 — 동일 질의에 대한 정책별 답")
 
     st.markdown(
-        "이 탭은 **같은 질의에 다섯 정책이 각각 무엇을 답했는지** 를 나란히 놓고 "
-        "보여줍니다. gold 정답, 정책별 답변, 해당 답의 F1 · EM · Faithfulness 점수, "
-        "그리고 그 정책이 선택한 α·β·γ 가중치가 모두 표시됩니다. 표를 정렬하거나 "
-        "유형으로 걸러서 흥미로운 질의를 고른 뒤, 아래 **🔬 Deep dive** 영역에서 "
-        "그 질의의 답을 펼쳐 볼 수 있습니다."
+        "이 탭은 **같은 질의에 다섯 정책이 각각 무엇을 답했는지** 를 나란히 놓고 보여줍니다. "
+        "먼저 아래 **관심 영역** 에서 빠른 필터를 고른 다음, 표에서 흥미로운 질의를 클릭하고 "
+        "🔬 **자세히 보기** 에서 답변·가중치·점수를 비교하세요."
     )
     st.caption(
-        "※ 각 정책별로 50 개씩 저장된 샘플을 사용합니다. 전체 5,000 QA 에 대한 점수는 "
-        "📊 결과 요약 탭을 참고하세요."
+        "※ 각 정책별로 50 개씩 저장된 샘플을 사용합니다. 전체 5,000 QA 평균은 "
+        "📊 결과 요약 탭을 참고하세요. 표의 각 열 이름의 의미는 📊 결과 요약 탭의 열 해설 참조."
     )
 
     if samples_df.empty:
-        st.warning("No sample data loaded.")
+        st.warning(
+            "⚠️ 쿼리 샘플 파일 (`results/rerun_*_list.json`) 을 불러오지 못했습니다. "
+            "저장소 최신 상태로 앱을 재배포하면 해결됩니다."
+        )
         return
 
-    col_filter1, col_filter2, col_filter3 = st.columns(3)
+    # ------------------------------------------------------------------
+    # 관심 영역 프리셋 — 사용자가 "무엇을 보고 싶은지" 빠르게 고르도록
+    # ------------------------------------------------------------------
+    st.markdown("##### 🔎 관심 영역 빠르게 고르기")
+    preset = st.radio(
+        "어떤 질의를 먼저 볼까요?",
+        options=[
+            "🎯 L-DWA 가 R-DWA 를 가장 많이 이긴 질의",
+            "🔬 Oracle 도 어려워한 질의 (남은 개선 여지)",
+            "💯 모든 정책이 정답 (단순 질의의 전형)",
+            "🐛 모든 정책이 실패 (retrieval 한계)",
+            "📂 전체 보기 (직접 필터링)",
+        ],
+        horizontal=False,
+        key="explorer_preset",
+        help="프리셋 하나를 고르면 아래 표가 그에 맞게 정렬·필터링됩니다.",
+    )
+
+    col_filter1, col_filter2 = st.columns(2)
     with col_filter1:
         type_filter = st.multiselect(
-            "Query type",
+            "유형으로 걸러내기",
             sorted(samples_df["type"].unique()),
             default=sorted(samples_df["type"].unique()),
+            help="simple / multi_hop / conditional 중 관심 있는 유형만 선택.",
         )
     with col_filter2:
         metric_filter = st.selectbox(
-            "Sort by",
-            ["qid", "f1_strict", "f1_substring", "faithfulness", "latency"],
+            "어떤 기준으로 정렬?",
+            options=["qid", "f1_strict", "f1_substring", "faithfulness", "latency"],
             index=0,
+            format_func=lambda x: {
+                "qid": "질의 번호 (qid)",
+                "f1_strict": "F1_strict (엄격 정확도)",
+                "f1_substring": "F1_substring (부분 일치)",
+                "faithfulness": "Faithfulness (환각 없음)",
+                "latency": "Latency (응답 속도)",
+            }.get(x, x),
         )
-    with col_filter3:
-        order = st.radio("Order", ["asc", "desc"], horizontal=True)
+    order_desc = st.checkbox(
+        "내림차순 정렬 (높은 값부터)", value=True, key="explorer_order_desc"
+    )
 
     filtered = samples_df[samples_df["type"].isin(type_filter)].copy()
-    # Pivot to one row per qid with columns per policy
+
+    # Pivot to one row per qid with columns per policy (F1_strict values)
     pivot_metric = filtered.pivot_table(
         index=["qid", "type", "gold"],
         columns="policy",
@@ -1284,39 +1313,99 @@ def tab_explorer(samples_df: pd.DataFrame) -> None:
         aggfunc="first",
     ).reset_index()
 
-    sort_col = metric_filter if metric_filter in filtered.columns else "qid"
-    if sort_col in pivot_metric.columns:
-        pivot_metric = pivot_metric.sort_values(
-            sort_col, ascending=(order == "asc")
-        )
-    else:
-        # sort by first policy's f1_strict
-        pol_cols = [c for c in pivot_metric.columns if c in POLICY_FILES]
-        if pol_cols:
-            pivot_metric = pivot_metric.sort_values(
-                pol_cols[0], ascending=(order == "asc")
-            )
+    # Apply preset filtering / sorting
+    pol_cols = [c for c in pivot_metric.columns if c in POLICY_FILES]
 
-    st.dataframe(pivot_metric.round(3).head(30), use_container_width=True)
+    def _get_seed42(row):
+        return row.get("L-DWA (seed 42)", np.nan)
+
+    def _get_rdwa(row):
+        return row.get("R-DWA", np.nan)
+
+    def _get_oracle(row):
+        return row.get("Oracle", np.nan)
+
+    if preset == "🎯 L-DWA 가 R-DWA 를 가장 많이 이긴 질의":
+        if "L-DWA (seed 42)" in pivot_metric.columns and "R-DWA" in pivot_metric.columns:
+            pivot_metric["diff_ldwa_rdwa"] = pivot_metric["L-DWA (seed 42)"] - pivot_metric["R-DWA"]
+            pivot_metric = pivot_metric.sort_values("diff_ldwa_rdwa", ascending=False)
+    elif preset == "🔬 Oracle 도 어려워한 질의 (남은 개선 여지)":
+        if "Oracle" in pivot_metric.columns:
+            pivot_metric = pivot_metric.sort_values("Oracle", ascending=True)
+    elif preset == "💯 모든 정책이 정답 (단순 질의의 전형)":
+        if pol_cols:
+            pivot_metric["min_f1"] = pivot_metric[pol_cols].min(axis=1)
+            pivot_metric = pivot_metric[pivot_metric["min_f1"] >= 0.9]
+            pivot_metric = pivot_metric.sort_values("min_f1", ascending=False)
+    elif preset == "🐛 모든 정책이 실패 (retrieval 한계)":
+        if pol_cols:
+            pivot_metric["max_f1"] = pivot_metric[pol_cols].max(axis=1)
+            pivot_metric = pivot_metric[pivot_metric["max_f1"] <= 0.1]
+    else:
+        # 📂 전체 보기 — user's own sort
+        sort_col = metric_filter if metric_filter in filtered.columns else "qid"
+        if sort_col in pivot_metric.columns:
+            pivot_metric = pivot_metric.sort_values(sort_col, ascending=not order_desc)
+        elif pol_cols:
+            pivot_metric = pivot_metric.sort_values(pol_cols[0], ascending=not order_desc)
+
+    # Friendly column rename for display
+    display_df = pivot_metric.rename(columns={
+        "qid": "번호",
+        "type": "유형",
+        "gold": "정답",
+    }).drop(columns=[c for c in ["diff_ldwa_rdwa", "min_f1", "max_f1"] if c in pivot_metric.columns])
+
+    st.markdown("##### 📋 매칭된 질의 상위 30개")
+    st.caption(
+        "숫자는 각 정책의 **F1_strict** (0~1, 높을수록 좋음). 행을 보고 흥미로운 질의의 **번호** 를 기억한 뒤 "
+        "아래 🔬 **자세히 보기** 에서 해당 번호를 선택하세요."
+    )
+    st.dataframe(display_df.round(3).head(30), use_container_width=True, hide_index=True)
 
     st.divider()
+
+    # ------------------------------------------------------------------
     # Deep dive
-    available_qids = sorted(filtered["qid"].unique(), key=lambda x: int(x))
-    picked = st.selectbox("🔬 Deep dive — 쿼리 선택", available_qids)
+    # ------------------------------------------------------------------
+    available_qids = (
+        pivot_metric["qid"].tolist() if not pivot_metric.empty
+        else sorted(filtered["qid"].unique(), key=lambda x: int(x))
+    )
+
+    if not available_qids:
+        st.info("현재 필터로 매칭된 질의가 없습니다. 프리셋이나 유형 필터를 바꿔 보세요.")
+        return
+
+    st.markdown("##### 🔬 자세히 보기 — 질의 하나를 골라 정책별 답을 비교")
+    picked = st.selectbox(
+        "질의 번호 (qid) 선택",
+        available_qids,
+        help="위 표의 '번호' 열에서 본 번호를 여기에서 고르면, 그 질의에 대해 다섯 정책이 "
+             "어떤 가중치를 썼고 어떤 답을 냈는지 아래에 펼쳐집니다.",
+    )
 
     if picked:
         sub = filtered[filtered["qid"] == picked].set_index("policy")
         if sub.empty:
-            st.warning("No data for this qid.")
+            st.warning("이 번호에 해당하는 샘플이 없습니다.")
             return
 
-        st.markdown(f"**Gold**: `{sub.iloc[0]['gold']}`")
-        st.markdown(f"**Type**: {sub.iloc[0]['type']}")
+        st.markdown(f"**질의 정답 (gold)**: `{sub.iloc[0]['gold']}`")
+        st.markdown(f"**유형**: {sub.iloc[0]['type']}")
+
+        st.caption(
+            "각 정책 카드의 F1 / EM / Faith 는 0~1 사이 점수 (높을수록 좋음). "
+            "Weights (α, β, γ) 는 그 정책이 이 질의에 대해 선택한 가중치. 합이 1."
+        )
 
         for policy in sub.index:
             row = sub.loc[policy]
+            f1v = row["f1_strict"]
+            # color-hint expander title
+            score_icon = "🟢" if f1v >= 0.9 else ("🟡" if f1v >= 0.3 else "🔴")
             with st.expander(
-                f"**{policy}** — F1={row['f1_strict']:.3f}, "
+                f"{score_icon} **{policy}** — F1={row['f1_strict']:.3f}, "
                 f"EM={row['em_norm']:.1f}, Faith={row['faithfulness']:.3f}",
                 expanded=True,
             ):
@@ -1386,37 +1475,105 @@ def tab_simulator(samples_df: pd.DataFrame) -> None:
         st.markdown(f"**Query (gold)**: `{sample_row.iloc[0]['gold']}` "
                     f"({sample_row.iloc[0]['type']})")
 
+    # ---- preset quick-pick buttons ----
+    st.markdown("##### 🎯 프리셋으로 빠르게 가중치 고르기")
+    st.caption(
+        "버튼을 누르면 아래 슬라이더가 해당 조합으로 바뀝니다. 직접 조정하고 싶으면 슬라이더를 움직이시면 됩니다."
+    )
+
+    # Initialize session state for sliders
+    if "sim_alpha" not in st.session_state:
+        st.session_state["sim_alpha"] = 0.3
+    if "sim_beta" not in st.session_state:
+        st.session_state["sim_beta"] = 0.3
+
+    # Oracle for this qid
+    oracle_best = df.iloc[0]
+    o_a, o_b, o_g = float(oracle_best["alpha"]), float(oracle_best["beta"]), float(oracle_best["gamma"])
+
+    p_cols = st.columns(5)
+    if p_cols[0].button("Vector 중심\n(α=0.6, β=0.2, γ=0.2)", key="p_vec"):
+        st.session_state["sim_alpha"] = 0.6
+        st.session_state["sim_beta"] = 0.2
+    if p_cols[1].button("Graph 중심\n(α=0.2, β=0.6, γ=0.2)", key="p_gra"):
+        st.session_state["sim_alpha"] = 0.2
+        st.session_state["sim_beta"] = 0.6
+    if p_cols[2].button("Ontology 중심\n(α=0.2, β=0.2, γ=0.6)", key="p_ont"):
+        st.session_state["sim_alpha"] = 0.2
+        st.session_state["sim_beta"] = 0.2
+    if p_cols[3].button("균등\n(α=β=γ=0.33)", key="p_uni"):
+        st.session_state["sim_alpha"] = 0.3
+        st.session_state["sim_beta"] = 0.3
+    if p_cols[4].button(
+        f"Oracle 최적\n(α={o_a:.1f}, β={o_b:.1f}, γ={o_g:.1f})",
+        key="p_ora",
+        help="이 질의에서 66개 조합 중 가장 높은 보상을 주는 가중치",
+    ):
+        st.session_state["sim_alpha"] = o_a
+        st.session_state["sim_beta"] = o_b
+
+    st.divider()
+
     colL, colR = st.columns([2, 3])
     with colL:
-        st.markdown("### 수동 가중치 선택 (Δ³)")
-        alpha = st.slider("α (Vector)", 0.0, 1.0, 0.33, step=0.1)
-        beta = st.slider("β (Graph)", 0.0, 1.0 - alpha, 0.33, step=0.1)
+        st.markdown("##### 🎚️ 슬라이더로 직접 조정")
+        alpha = st.slider(
+            "α (Vector) — 문장 임베딩 유사도 검색의 비중",
+            0.0, 1.0, value=st.session_state["sim_alpha"], step=0.1, key="slider_a",
+            help="높을수록 의미 기반 유사도 검색 결과가 더 많이 섞입니다.",
+        )
+        beta = st.slider(
+            "β (Graph) — 지식 그래프 경로 탐색의 비중",
+            0.0, 1.0 - alpha, value=min(st.session_state["sim_beta"], 1.0 - alpha), step=0.1, key="slider_b",
+            help="높을수록 엔티티-관계 그래프에서 찾은 결과가 더 많이 섞입니다.",
+        )
         gamma = round(1.0 - alpha - beta, 2)
-        st.markdown(f"**γ (Ontology)** = `{gamma:.2f}` (auto)")
+        st.markdown(f"**γ (Ontology, 자동 계산)** = `{gamma:.2f}` — 제약 추론의 비중")
 
         ai, bi, gi = round(alpha * 10), round(beta * 10), round(gamma * 10)
         matched = df[
             (df["a"] == ai) & (df["b"] == bi) & (df["g"] == gi)
         ]
+
+        st.markdown("##### 📐 이 가중치를 썼을 때의 점수")
         if not matched.empty:
             r = matched.iloc[0]
-            st.metric("F1 (cached)", f"{r['f1']:.3f}")
-            st.metric("EM (cached)", f"{r['em']:.3f}")
-            st.metric("Faith (cached)", f"{r['faith']:.3f}")
-            st.metric("Reward", f"{r['reward']:.3f}")
+            mc1, mc2 = st.columns(2)
+            with mc1:
+                st.metric("F1 (이 가중치)", f"{r['f1']:.3f}",
+                          help="0~1, 높을수록 좋음")
+                st.metric("Faithfulness", f"{r['faith']:.3f}",
+                          help="0~1, 높을수록 환각 없음")
+            with mc2:
+                st.metric("EM", f"{r['em']:.3f}",
+                          help="완전 일치. 1 또는 0")
+                st.metric("Reward (총 보상)", f"{r['reward']:.3f}",
+                          help="0.5·F1 + 0.3·EM + 0.2·Faith − latency penalty. PPO 가 최대화하는 값")
+
+            # Rank within 66 grid
+            rank = (df["reward"].rank(ascending=False, method="min").loc[matched.index[0]])
+            total = len(df)
+            st.caption(
+                f"💡 이 조합은 66개 격자 중 **{int(rank)}위** "
+                f"(Oracle 최적 대비 {r['reward'] - oracle_best['reward']:+.3f})."
+            )
         else:
-            st.warning("해당 가중치가 cache 그리드에 없음.")
+            st.warning("해당 가중치가 격자에 없습니다. 슬라이더를 0.1 단위로 맞춰 주세요.")
 
         st.divider()
-        st.markdown("### Oracle (argmax reward)")
-        best = df.iloc[0]
+        st.markdown("##### 👁️ 참고 — Oracle 최적 가중치")
         st.markdown(
-            f"**α = {best['alpha']:.1f}, β = {best['beta']:.1f}, γ = {best['gamma']:.1f}**"
+            f"이 질의에 대해 66개 조합 중 보상이 가장 높은 조합은  \n"
+            f"**α = {o_a:.1f}, β = {o_b:.1f}, γ = {o_g:.1f}** 이고,  \n"
+            f"이때 Reward = **{oracle_best['reward']:.3f}** 입니다."
         )
-        st.metric("Oracle reward", f"{best['reward']:.3f}")
 
     with colR:
-        st.markdown("### 66-grid reward heatmap (Δ³ 이산화)")
+        st.markdown("##### 🔺 66-그리드 전체의 보상 지도")
+        st.caption(
+            "Δ³ 삼각형 위의 각 점은 α·β·γ 한 조합. 색이 진할수록 (밝은 노랑) 보상이 높음. "
+            "점에 마우스를 올리면 해당 가중치와 보상이 표시됩니다."
+        )
         fig = go.Figure()
         fig.add_trace(go.Scatter(
             x=df["beta"] + 0.5 * df["gamma"],
