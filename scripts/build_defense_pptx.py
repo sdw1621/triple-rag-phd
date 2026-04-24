@@ -32,7 +32,30 @@ from pptx.oxml.ns import qn
 from lxml import etree
 
 ROOT = Path(__file__).resolve().parent.parent
-FIGS = ROOT / "docs" / "figures"
+
+
+def _resolve_figs_dir(override: str | None = None) -> Path:
+    """Find docs/figures. Search CLI override → repo default → CWD → neighbors."""
+    candidates: list[Path] = []
+    if override:
+        candidates.append(Path(override).expanduser().resolve())
+    candidates += [
+        ROOT / "docs" / "figures",
+        Path.cwd() / "docs" / "figures",
+        Path(__file__).resolve().parent / "docs" / "figures",
+        Path("/workspace/docs/figures"),
+        Path("/tmp/docs/figures"),
+    ]
+    for c in candidates:
+        if c.exists() and any(c.glob("*.png")):
+            return c
+    # Return the best guess even if missing — caller will warn per-picture.
+    return candidates[0]
+
+
+# NOTE: FIGS is rebound inside main() after CLI parsing so that
+# `--figures-dir` can override. Slide builders reference this global.
+FIGS = _resolve_figs_dir()
 
 # Hoseo 대학 블루 + 강조 색상
 HOSEO_BLUE = RGBColor(0x1E, 0x3A, 0x8A)
@@ -195,6 +218,37 @@ def _add_section_header(slide, section_kr: str, section_en: str) -> None:
 
 def _blank_slide(prs: Presentation):
     return prs.slides.add_slide(prs.slide_layouts[6])  # blank
+
+
+_MISSING_FIGS: list[str] = []
+
+
+def _add_picture_safe(slide, fig_name: str, left, top, **kwargs) -> bool:
+    """Add a figure from FIGS dir; warn (and track) if missing.
+
+    Returns True if the picture was inserted, False otherwise. Callers can
+    fall back to a placeholder box when the file is not found.
+    """
+    fpath = FIGS / fig_name
+    if not fpath.exists():
+        _MISSING_FIGS.append(str(fpath))
+        print(f"  [WARN] figure missing: {fpath}")
+        # Draw a placeholder card so the slide isn't blank
+        width = kwargs.get("width", Inches(5.0))
+        try:
+            w_inches = width / 914400  # EMU → inches
+        except TypeError:
+            w_inches = 5.0
+        _add_rounded_card(
+            slide, left, top, width, Inches(3.0),
+            title=f"[그림 없음] {fig_name}",
+            body="docs/figures 에서 파일을 찾지 못함. --figures-dir 옵션으로 경로를 넘기거나 "
+                 "저장소 루트에서 스크립트를 실행하세요.",
+            fill_color=BG_SOFT, title_color=ACCENT_RED,
+        )
+        return False
+    slide.shapes.add_picture(str(fpath), left, top, **kwargs)
+    return True
 
 
 def build_s01_title(prs: Presentation) -> None:
@@ -458,12 +512,10 @@ def build_s06_weight_problem(prs: Presentation) -> None:
     )
 
     # Use figure 4-1 for visual
-    if (FIGS / "fig4_1_rdwa_vs_oracle.png").exists():
-        slide.shapes.add_picture(
-            str(FIGS / "fig4_1_rdwa_vs_oracle.png"),
-            Inches(7.2), Inches(1.9),
-            width=Inches(5.8),
-        )
+    _add_picture_safe(
+        slide, "fig4_1_rdwa_vs_oracle.png",
+        Inches(7.2), Inches(1.9), width=Inches(5.8),
+    )
 
     _add_text(
         slide, Inches(0.8), Inches(5.7),
@@ -582,12 +634,10 @@ def build_s09_network(prs: Presentation) -> None:
     _set_bg(slide, WHITE)
     _add_section_header(slide, "신경망 구조 — Actor-Critic", "Network Architecture · 5,636 parameters")
 
-    if (FIGS / "fig5_1_actor_critic.png").exists():
-        slide.shapes.add_picture(
-            str(FIGS / "fig5_1_actor_critic.png"),
-            Inches(0.8), Inches(1.9),
-            width=Inches(7.5),
-        )
+    _add_picture_safe(
+        slide, "fig5_1_actor_critic.png",
+        Inches(0.8), Inches(1.9), width=Inches(7.5),
+    )
 
     _add_text(
         slide, Inches(8.6), Inches(2.0),
@@ -633,12 +683,10 @@ def build_s10_ppo(prs: Presentation) -> None:
         size=14, color=TEXT_DARK,
     )
 
-    if (FIGS / "fig5_2_ppo_convergence.png").exists():
-        slide.shapes.add_picture(
-            str(FIGS / "fig5_2_ppo_convergence.png"),
-            Inches(7.2), Inches(2.0),
-            width=Inches(5.8),
-        )
+    _add_picture_safe(
+        slide, "fig5_2_ppo_convergence.png",
+        Inches(7.2), Inches(2.0), width=Inches(5.8),
+    )
 
     _add_text(
         slide, Inches(0.8), Inches(6.5),
@@ -865,12 +913,10 @@ def build_s15_per_type(prs: Presentation) -> None:
     _set_bg(slide, WHITE)
     _add_section_header(slide, "유형별 F1 — 어디서 개선 폭이 큰가", "Per-Type Breakdown")
 
-    if (FIGS / "fig6_2_per_type.png").exists():
-        slide.shapes.add_picture(
-            str(FIGS / "fig6_2_per_type.png"),
-            Inches(0.8), Inches(1.9),
-            width=Inches(8.0),
-        )
+    _add_picture_safe(
+        slide, "fig6_2_per_type.png",
+        Inches(0.8), Inches(1.9), width=Inches(8.0),
+    )
 
     _add_text(
         slide, Inches(9.0), Inches(2.0),
@@ -1011,12 +1057,10 @@ def build_s18_weight_distribution(prs: Presentation) -> None:
     _add_section_header(slide, "Δ³ 위 정책별 평균 가중치 분포",
                         "Mean Weight Positions on the 3-Simplex")
 
-    if (FIGS / "fig6_3_weight_distribution.png").exists():
-        slide.shapes.add_picture(
-            str(FIGS / "fig6_3_weight_distribution.png"),
-            Inches(0.8), Inches(1.9),
-            width=Inches(7.5),
-        )
+    _add_picture_safe(
+        slide, "fig6_3_weight_distribution.png",
+        Inches(0.8), Inches(1.9), width=Inches(7.5),
+    )
 
     _add_text(
         slide, Inches(8.6), Inches(2.0),
@@ -1053,12 +1097,10 @@ def build_s19_ppo_curves(prs: Presentation) -> None:
     _add_section_header(slide, "PPO 3-seed 학습 곡선",
                         "PPO Convergence across 3 Seeds")
 
-    if (FIGS / "fig5_2_ppo_convergence.png").exists():
-        slide.shapes.add_picture(
-            str(FIGS / "fig5_2_ppo_convergence.png"),
-            Inches(1.3), Inches(1.9),
-            width=Inches(10.7),
-        )
+    _add_picture_safe(
+        slide, "fig5_2_ppo_convergence.png",
+        Inches(1.3), Inches(1.9), width=Inches(10.7),
+    )
 
     _add_text(
         slide, Inches(0.8), Inches(6.2),
@@ -1081,12 +1123,10 @@ def build_s21_cross_domain(prs: Presentation) -> None:
     _add_section_header(slide, "교차 도메인 — naive transfer 의 한계와 원인 분해",
                         "Cross-domain · Failure Decomposed into 3 Axes")
 
-    if (FIGS / "fig6_5_cross_domain_radar.png").exists():
-        slide.shapes.add_picture(
-            str(FIGS / "fig6_5_cross_domain_radar.png"),
-            Inches(0.8), Inches(1.9),
-            width=Inches(6.5),
-        )
+    _add_picture_safe(
+        slide, "fig6_5_cross_domain_radar.png",
+        Inches(0.8), Inches(1.9), width=Inches(6.5),
+    )
 
     _add_text(
         slide, Inches(7.5), Inches(2.0),
@@ -1399,8 +1439,24 @@ def main() -> int:
         "--output",
         default=str(ROOT / "thesis_current" / "박사논문_방어발표_v1.pptx"),
     )
+    p.add_argument(
+        "--figures-dir",
+        default=None,
+        help="Override location of docs/figures/ (if not auto-detected)",
+    )
     args = p.parse_args()
+
+    # Rebind global FIGS after CLI parsing (slide builders reference it)
+    global FIGS
+    FIGS = _resolve_figs_dir(args.figures_dir)
+    print(f"Using FIGS = {FIGS}  (exists={FIGS.exists()})")
+
     build_all(Path(args.output))
+
+    if _MISSING_FIGS:
+        print(f"\n[WARN] {len(_MISSING_FIGS)} figures missing — slides show placeholders.")
+        for m in _MISSING_FIGS:
+            print(f"  · {m}")
     return 0
 
 
