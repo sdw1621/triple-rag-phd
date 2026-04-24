@@ -43,15 +43,15 @@ Actor 네트워크는 Dirichlet 분포의 농도 파라미터 c = (c_α, c_β, c
 R(s, a) = 0.5 · F1 + 0.3 · EM + 0.2 · Faithfulness − 0.1 · max(0, latency − 5.0)
 ```
 
-**중요한 실증 관찰.** 본 벤치마크의 gold 답이 콤마 구분 리스트 형식이라 EM = 0이 구조적으로 고정된다 (Ch.6 §1.3). 따라서 실효 보상은
+한 가지 실측 관찰을 덧붙여 둘 필요가 있다. 이 벤치마크의 gold 답이 콤마 구분 리스트 형식이라 EM 이 구조적으로 0 에 가까워, 실효 보상은 사실상 다음과 같이 동작한다.
 ```
 R ≈ 0.5 · F1 + 0.2 · Faithfulness − penalty
 ```
-이며, F1과 Faithfulness가 학습 신호의 주 원천이다. 본 논문은 이 구조를 Ch.6 §2.3 에서 투명하게 기재한다.
+즉 F1 과 Faithfulness 가 학습 신호의 주 원천이 된다. 이 구조가 학습에 미치는 영향은 Ch.6 §2.3 에서 구체적으로 다룬다.
 
 ### 1.4 단일-단계 축약
 
-에피소드가 단일 (state, action, reward) 쌍으로 종료되므로 GAE의 시간 할인은 실효적으로 1-step Bellman: A = R − V, returns = R. 본 논문의 구현은 GAE machinery를 유지하여 장래 multi-turn dialog 확장을 대비한다.
+에피소드가 (state, action, reward) 한 쌍으로 종료되므로 GAE 의 시간 할인은 실효적으로 1-step Bellman (A = R − V, returns = R) 이 된다. 구현에서는 GAE 기계장치를 그대로 유지해 두었는데, 이는 이후 multi-turn 대화로의 확장 가능성을 닫지 않기 위함이다.
 
 ---
 
@@ -93,7 +93,7 @@ s (18) → Linear(18→64) → Tanh → Linear(64→64) → Tanh → features (6
 
 ### 2.2 파라미터 수
 
-본 연구는 파라미터 효율을 위해 공유 backbone 을 사용한다. 총 **5,636 파라미터**:
+백본을 Actor · Critic 이 공유하게 설계하여 모델 규모를 5,636 파라미터로 유지하였다. 층별 내역은 다음과 같다.
 
 | 층 | in × out + bias | 파라미터 |
 |---|---|---|
@@ -274,19 +274,14 @@ OUTPUT: (α, β, γ) ∈ Δ³
 
 ### 4.1 비용 장벽
 
-3 seed × 10,000 episode × 32 rollout = **960,000 보상 호출** 이 on-policy 학습에 요구된다. gpt-4o-mini 1콜당 평균 $0.0003 기준 **$288**, 실 지연 약 50시간 이상 (단순 직렬 기준) 이 예상된다.
+on-policy 학습에서는 3 seed × 10,000 episode × 32 rollout 으로 총 960,000 회의 보상 호출이 필요하다. gpt-4o-mini 의 호출당 평균 비용 $0.0003 을 기준으로 하면 약 $288, 직렬 기준 시간은 50시간 이상이다. 학위 과정의 개인 예산으로는 부담스러운 규모이며, 하이퍼파라미터 탐색이나 ablation 까지 고려하면 그 배수가 더 커진다.
 
 ### 4.2 캐시 설계
 
-본 연구는 **5,000 질의 × 66 이산 가중치 = 330,000 엔트리** 의 보상을 SQLite에 사전 계산한다.
+이 비용을 없애는 가장 직접적인 방법은 보상을 사전에 계산해 두고 학습 중에는 조회만 하는 것이다. 가중치 공간을 Δ=0.1 간격으로 이산화하면 α + β + γ = 1 을 만족하는 정수 삼각형의 격자점이 C(12, 2) = 66 개가 나온다. 이를 5,000 질의와 곱하면 330,000 엔트리가 되며, 이를 SQLite 에 저장한다.
 
-**이산화.** 가중치 간격 Δ=0.1 격자에서 α+β+γ=1을 만족하는 정수 삼각형 점:
-```
-(a_int, b_int, g_int) ∈ {0,1,...,10}³, a_int + b_int + g_int = 10
-총 |S_Δ| = C(12, 2) = 66
-```
+스키마는 단순하다.
 
-**Schema.**
 ```sql
 CREATE TABLE rewards (
     query_id TEXT, alpha_int INT, beta_int INT, gamma_int INT,
@@ -295,28 +290,24 @@ CREATE TABLE rewards (
 );
 ```
 
-**스냅.** 학습 중 Dirichlet 샘플된 연속 가중치를 정수 격자로 스냅한 후 O(1) 캐시 룩업. 스냅 오차는 Δ/2 = 0.05 이내.
+학습 중에는 Dirichlet 으로 샘플된 연속 가중치를 가장 가까운 격자점으로 스냅한 뒤 O(1) 로 조회한다. 스냅에 의한 오차는 최대 Δ/2 = 0.05 이다.
 
-### 4.3 구축 비용/시간
+### 4.3 구축 비용과 시간
 
-합성 대학 캐시 (330K 엔트리, 10 워커 병렬):
-- 실제 wall-clock: **14시간** (단일 장애 복구 포함)
-- 실제 비용: **$33** (OpenAI invoice 기준)
-- 파일 크기: **16.8 MB**
+합성 대학 캐시 (330K 엔트리) 는 10 워커 병렬로 14시간이 걸렸고, OpenAI 청구액 기준 $33 이 사용되었다. 최종 파일 크기는 16.8 MB 이다.
 
-### 4.4 비용 절감 효과 (핵심 기여)
+### 4.4 비용 절감 효과
 
-| 방식 | 비용 | 시간 (3 seeds) |
+| 방식 | 비용 | 3 seeds 총 시간 |
 |---|---|---|
-| On-policy (캐시 없음) | $288 | ≥ 50시간 |
-| **본 연구 offline cache** | **$33 (일회) + $0 (학습)** | **14h (캐시) + 1h (학습) = 15h** |
-| 절감율 | **−85%** | **−70% (또는 seed 수가 증가할수록 극적 감소)** |
+| On-policy (캐시 없음) | $288 | 50시간 이상 |
+| Offline cache (본 연구) | $33 (일회) + $0 (학습) | 14h (캐시) + 1h (학습) = 15h |
 
-**Amortization.** 캐시는 일회 구축 후 모든 seed, 모든 ablation, 모든 policy 비교에 재사용된다. N seed 학습 시 비용은 여전히 $33 (학습은 $0), on-policy는 $96·N.
+이 캐시는 한 번 구축되면 seed 추가 학습, ablation, 정책 비교에 모두 재사용되기 때문에 seed 수가 늘어날수록 절감 효과가 커진다. N 개의 seed 를 학습해도 캐시 구축 비용은 여전히 $33 이고, on-policy 의 경우 $96·N 까지 선형으로 증가한다.
 
 ### 4.5 구현
 
-`src/utils/offline_cache.py::OfflineCache`. ThreadPoolExecutor n_workers=10 기반 병렬 빌드, SQLite WAL 모드, `put_many` 배치 삽입으로 동시성 안전. `scripts/build_cache.py`는 합성 대학 벤치마크용, `scripts/cross_build_cache.py`는 교차 도메인 (HotpotQA 등) 용.
+캐시 구현은 `src/utils/offline_cache.py::OfflineCache` 에 있다. ThreadPoolExecutor 로 10개의 워커를 병렬 실행하며, SQLite WAL 모드와 `put_many` 배치 삽입으로 동시성 안전성을 확보하였다. 합성 대학용 구축 스크립트는 `scripts/build_cache.py` 이고, HotpotQA 등 교차 도메인용은 `scripts/cross_build_cache.py` 이다.
 
 ## 5절 학습 시스템 통합
 

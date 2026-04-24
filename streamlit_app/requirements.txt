@@ -1,0 +1,9 @@
+# Lean requirements for Streamlit Community Cloud deployment.
+# The dashboard is read-only and never calls the LLM or loads PyTorch,
+# so we explicitly exclude torch / transformers / ragas / faiss here
+# to keep the Cloud build under the 1 GB install limit.
+
+streamlit==1.56.0
+plotly==6.7.0
+pandas>=2.0,<3.0
+numpy>=1.26,<2.0

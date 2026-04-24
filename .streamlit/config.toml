@@ -1,0 +1,17 @@
+[server]
+# Streamlit Community Cloud sets its own port; these are defaults for local dev.
+headless = true
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+# Match the thesis color scheme (R-DWA blue / L-DWA red / Oracle green).
+base = "light"
+primaryColor = "#4F86C6"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5F7FA"
+textColor = "#1E293B"
+font = "sans serif"
