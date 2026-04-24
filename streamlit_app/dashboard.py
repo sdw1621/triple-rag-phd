@@ -1167,11 +1167,36 @@ def tab_overview(agg: pd.DataFrame) -> None:
 
     st.markdown("##### 📋 정책별 지표 표 (list prompt)")
     st.caption(
-        "이제 위 해설을 참고하며 아래 표를 읽어 보세요. 눈에 띄는 숫자는 표 아래에서 해석해 드립니다."
+        "각 점수 셀에는 **0 에서 1 사이의 값이 막대로 시각화** 되어 있습니다. "
+        "막대가 길수록 그 정책이 그 지표에서 좋다는 뜻입니다. 가장 긴 막대 (=최고값) 를 가진 정책이 그 지표에서 앞선 것."
     )
+    # Progress-bar style dataframe
+    table_df = overall.round(4).reset_index()
+    progress_cols = ["F1_strict", "F1_substring", "F1_char", "EM", "Faithfulness"]
+    column_config = {
+        "policy": st.column_config.TextColumn("정책", width="medium"),
+        "scope": st.column_config.TextColumn("범위", width="small"),
+        "n": st.column_config.NumberColumn("질의 수", format="%d"),
+        "Latency": st.column_config.NumberColumn(
+            "응답시간 (초)",
+            format="%.3f s",
+            help="낮을수록 빠름. 0.7~0.9 초 수준.",
+        ),
+    }
+    for col in progress_cols:
+        if col in table_df.columns:
+            column_config[col] = st.column_config.ProgressColumn(
+                col,
+                format="%.4f",
+                min_value=0.0,
+                max_value=1.0,
+                help="0 ~ 1 사이, 높을수록 좋음. 막대가 길수록 그 정책이 그 지표에서 우세.",
+            )
     st.dataframe(
-        overall.round(4),
+        table_df,
         use_container_width=True,
+        hide_index=True,
+        column_config=column_config,
     )
 
     # --- 숫자 해석 ---
@@ -1212,7 +1237,7 @@ def tab_overview(agg: pd.DataFrame) -> None:
 """
     )
 
-    st.subheader("Per-type F1_strict")
+    st.subheader("📊 Per-type F1_strict")
     per_type = agg[agg["scope"].isin(["simple", "multi_hop", "conditional"])]
     if not per_type.empty:
         fig = px.bar(
@@ -1227,6 +1252,82 @@ def tab_overview(agg: pd.DataFrame) -> None:
         )
         fig.update_layout(height=400)
         st.plotly_chart(fig, use_container_width=True)
+
+    # ------------------------------------------------------------------
+    # Fig 6-3 재현: 정책별 평균 가중치의 Δ³ 위 위치
+    # ------------------------------------------------------------------
+    st.subheader("🔺 정책별 평균 가중치의 위치 (Δ³ 삼각형)")
+    st.markdown(
+        "이 그림은 논문의 상징적 그림 **Fig 6-3** 을 그대로 옮겨 온 것입니다. "
+        "삼각형 세 꼭짓점은 Vector / Graph / Ontology 극단이며, 한 점이 삼각형 안에서 "
+        "**어느 꼭짓점에 가까운가** 가 그 정책의 평균 성향을 말해 줍니다. "
+        "세 정책의 점이 얼마나 떨어져 있는지가 이 연구의 핵심 관찰입니다."
+    )
+
+    # Policy mean weights (from thesis Ch.Ⅵ §5.3 + Fig 6-3)
+    policy_means = [
+        # label, α, β, γ, color, size, description
+        ("R-DWA 평균", 0.25, 0.45, 0.30, "#4F86C6", 24,
+         "규칙 표에 묶여 Graph 쪽으로 살짝 치우침"),
+        ("L-DWA 평균 (seed 42)", 0.25, 0.30, 0.45, "#E8756E", 28,
+         "학습이 Ontology 쪽으로 가중치를 이동"),
+        ("Oracle 평균", 0.11, 0.16, 0.73, "#8FB573", 22,
+         "정답을 미리 알면 Ontology 에 훨씬 쏠려 있음"),
+    ]
+
+    fig_delta = go.Figure()
+    # triangle frame
+    fig_delta.add_trace(go.Scatter(
+        x=[0, 1, 0.5, 0], y=[0, 0, np.sqrt(3)/2, 0],
+        mode="lines",
+        line=dict(color="black", width=1.5),
+        showlegend=False, hoverinfo="skip",
+    ))
+    # R-DWA base weights (3 points of the rule table) as reference
+    base_points = [(0.6, 0.2, 0.2, "simple"), (0.2, 0.6, 0.2, "multi_hop"), (0.2, 0.2, 0.6, "conditional")]
+    for a, b, g, t in base_points:
+        x = b + 0.5 * g
+        y = (np.sqrt(3)/2) * g
+        fig_delta.add_trace(go.Scatter(
+            x=[x], y=[y], mode="markers+text",
+            marker=dict(size=10, color="rgba(79,134,198,0.35)", symbol="circle-open", line=dict(width=2)),
+            text=[f"R-DWA base: {t}"],
+            textposition="top center",
+            textfont=dict(size=9, color="rgba(79,134,198,0.7)"),
+            showlegend=False, hoverinfo="skip",
+        ))
+    # policy mean points
+    for label, a, b, g, color, size, desc in policy_means:
+        x = b + 0.5 * g
+        y = (np.sqrt(3)/2) * g
+        fig_delta.add_trace(go.Scatter(
+            x=[x], y=[y], mode="markers",
+            marker=dict(size=size, color=color, line=dict(width=2, color="black")),
+            name=f"{label} (α={a:.2f}, β={b:.2f}, γ={g:.2f})",
+            text=[f"{label}<br>α={a:.2f}, β={b:.2f}, γ={g:.2f}<br>{desc}"],
+            hoverinfo="text",
+        ))
+    for vx, vy, label in [
+        (-0.04, -0.05, "Vector (α=1)"),
+        (1.04, -0.05, "Graph (β=1)"),
+        (0.5, np.sqrt(3)/2 + 0.04, "Ontology (γ=1)"),
+    ]:
+        fig_delta.add_annotation(x=vx, y=vy, text=label, showarrow=False, font=dict(size=12))
+    fig_delta.update_layout(
+        xaxis=dict(visible=False, range=[-0.15, 1.2]),
+        yaxis=dict(visible=False, range=[-0.12, 1.05], scaleanchor="x"),
+        height=460,
+        legend=dict(orientation="h", yanchor="bottom", y=-0.12, xanchor="center", x=0.5),
+        margin=dict(l=0, r=0, t=10, b=60),
+    )
+    st.plotly_chart(fig_delta, use_container_width=True)
+    st.caption(
+        "**읽는 법.** 속이 빈 파란 원 세 개 = R-DWA 의 유형별 기본 점 (simple / multi_hop / conditional). "
+        "색이 칠해진 큰 점 = 각 정책의 5,000 QA 평균 가중치 위치.  \n\n"
+        "• **R-DWA 평균** (파랑) 은 Graph 쪽으로 치우쳐 있음 (규칙 표의 β 지배)  \n"
+        "• **L-DWA 평균** (빨강) 은 Ontology 쪽으로 이동 — 학습이 정답 분포에 더 맞춰짐  \n"
+        "• **Oracle 평균** (초록) 은 Ontology 꼭짓점 근처로 강하게 쏠림 — \"정답을 알고 있다면 여기로 가야 한다\" 는 지형을 보여 줌"
+    )
 
     st.info(
         "**Headline (corrected baseline 위)**: L-DWA 3-seed 평균 F1_strict = **0.562 ± 0.007**, "
@@ -1358,10 +1459,26 @@ def tab_explorer(samples_df: pd.DataFrame) -> None:
 
     st.markdown("##### 📋 매칭된 질의 상위 30개")
     st.caption(
-        "숫자는 각 정책의 **F1_strict** (0~1, 높을수록 좋음). 행을 보고 흥미로운 질의의 **번호** 를 기억한 뒤 "
-        "아래 🔬 **자세히 보기** 에서 해당 번호를 선택하세요."
+        "각 정책 컬럼의 숫자는 **F1_strict** (0~1). 막대가 길수록 그 정책이 그 질의를 잘 맞혔다는 뜻. "
+        "정책 간 막대 길이 차이를 보면 **어떤 정책이 이 질의를 가장 잘 풀었는지** 한눈에 보입니다. "
+        "흥미로운 **번호** 를 기억한 뒤 아래 🔬 자세히 보기에서 선택하세요."
     )
-    st.dataframe(display_df.round(3).head(30), use_container_width=True, hide_index=True)
+    explorer_cfg = {
+        "번호": st.column_config.NumberColumn(width="small"),
+        "유형": st.column_config.TextColumn(width="small"),
+        "정답": st.column_config.TextColumn(width="large"),
+    }
+    for col in display_df.columns:
+        if col in POLICY_FILES:
+            explorer_cfg[col] = st.column_config.ProgressColumn(
+                col, format="%.3f", min_value=0.0, max_value=1.0,
+                help="F1_strict — 0~1, 높을수록 좋음.",
+            )
+    st.dataframe(
+        display_df.round(3).head(30),
+        use_container_width=True, hide_index=True,
+        column_config=explorer_cfg,
+    )
 
     st.divider()
 
@@ -1572,7 +1689,8 @@ def tab_simulator(samples_df: pd.DataFrame) -> None:
         st.markdown("##### 🔺 66-그리드 전체의 보상 지도")
         st.caption(
             "Δ³ 삼각형 위의 각 점은 α·β·γ 한 조합. 색이 진할수록 (밝은 노랑) 보상이 높음. "
-            "점에 마우스를 올리면 해당 가중치와 보상이 표시됩니다."
+            "**⭐ 빨간 별** = 지금 슬라이더로 고른 위치, **👑 초록 왕관** = Oracle 최적점. "
+            "둘 사이 거리가 가까울수록 여러분의 선택이 이 질의의 최적 조합에 가깝다는 뜻입니다."
         )
         fig = go.Figure()
         fig.add_trace(go.Scatter(
@@ -1606,9 +1724,42 @@ def tab_simulator(samples_df: pd.DataFrame) -> None:
             (0.5, np.sqrt(3)/2 + 0.03, "Ontology (γ=1)"),
         ]:
             fig.add_annotation(x=vx, y=vy, text=label, showarrow=False, font=dict(size=11))
+
+        # ⭐ 현재 슬라이더 위치
+        cur_x = beta + 0.5 * gamma
+        cur_y = (np.sqrt(3)/2) * gamma
+        fig.add_trace(go.Scatter(
+            x=[cur_x], y=[cur_y],
+            mode="markers+text",
+            marker=dict(size=26, color="#E8756E", symbol="star",
+                        line=dict(width=2.5, color="black")),
+            text=["⭐ 현재 선택"],
+            textposition="bottom center",
+            textfont=dict(size=11, color="#E8756E"),
+            showlegend=False,
+            hovertext=[f"현재 선택: α={alpha:.1f}, β={beta:.1f}, γ={gamma:.1f}"],
+            hoverinfo="text",
+        ))
+
+        # 👑 Oracle 최적점
+        ox = o_b + 0.5 * o_g
+        oy = (np.sqrt(3)/2) * o_g
+        fig.add_trace(go.Scatter(
+            x=[ox], y=[oy],
+            mode="markers+text",
+            marker=dict(size=22, color="#8FB573", symbol="diamond",
+                        line=dict(width=2.5, color="black")),
+            text=["👑 Oracle"],
+            textposition="top center",
+            textfont=dict(size=11, color="#2d5a2b"),
+            showlegend=False,
+            hovertext=[f"Oracle 최적: α={o_a:.1f}, β={o_b:.1f}, γ={o_g:.1f}, R={oracle_best['reward']:.3f}"],
+            hoverinfo="text",
+        ))
+
         fig.update_layout(
             xaxis=dict(visible=False, range=[-0.15, 1.15]),
-            yaxis=dict(visible=False, range=[-0.12, 1.05], scaleanchor="x"),
+            yaxis=dict(visible=False, range=[-0.18, 1.08], scaleanchor="x"),
             height=500, margin=dict(l=0, r=0, t=10, b=10),
         )
         st.plotly_chart(fig, use_container_width=True)
@@ -1675,7 +1826,24 @@ def tab_stagewise() -> None:
         columns=["Stage", "수정 내용", "F1_strict", "EM", "Faithfulness", "비고"],
     )
 
-    st.dataframe(df, use_container_width=True, hide_index=True)
+    stage_cfg = {
+        "Stage": st.column_config.TextColumn("단계", width="small"),
+        "수정 내용": st.column_config.TextColumn("수정 내용", width="large"),
+        "F1_strict": st.column_config.ProgressColumn(
+            "F1_strict", format="%.3f", min_value=0.0, max_value=1.0,
+            help="엄격 F1. S0 (재현 불가) → S3 로 내려오며 어떻게 변하는지 막대로 비교.",
+        ),
+        "EM": st.column_config.ProgressColumn(
+            "EM", format="%.3f", min_value=0.0, max_value=1.0,
+            help="완전 일치. list prompt 도입으로 S2 에서 0.387 까지 회복.",
+        ),
+        "Faithfulness": st.column_config.ProgressColumn(
+            "Faithfulness", format="%.3f", min_value=0.0, max_value=1.0,
+            help="S3 의 2-branch 도입으로 엄격화되어 하락. 품질 저하가 아닌 측정 정직성의 향상.",
+        ),
+        "비고": st.column_config.TextColumn("비고", width="large"),
+    }
+    st.dataframe(df, use_container_width=True, hide_index=True, column_config=stage_cfg)
 
     st.subheader("F1_strict 궤적 (R-DWA 기준)")
     fig = go.Figure()
@@ -1732,7 +1900,26 @@ def tab_cross_domain() -> None:
     picked = st.selectbox("벤치마크 선택", benches, index=0)
 
     view = df if picked == "(전체)" else df[df["Benchmark"] == picked]
-    st.dataframe(view, use_container_width=True, hide_index=True)
+    cd_cfg = {
+        "Benchmark": st.column_config.TextColumn("벤치마크", width="medium"),
+        "Policy": st.column_config.TextColumn("정책", width="medium"),
+        "F1_strict": st.column_config.ProgressColumn(
+            "F1_strict", format="%.3f", min_value=0.0, max_value=1.0,
+            help="막대가 길수록 좋음.",
+        ),
+        "F1_substring": st.column_config.ProgressColumn(
+            "F1_substring", format="%.3f", min_value=0.0, max_value=1.0,
+        ),
+        "Faithfulness": st.column_config.ProgressColumn(
+            "Faithfulness", format="%.3f", min_value=0.0, max_value=1.0,
+        ),
+        "비고": st.column_config.TextColumn("비고", width="large"),
+    }
+    st.dataframe(view, use_container_width=True, hide_index=True, column_config=cd_cfg)
+    st.caption(
+        "※ 일부 셀이 비어 있는 것은 (영어 intent 추가 실험처럼) 해당 지표가 측정되지 않았거나 "
+        "벤치마크와 어울리지 않아서 (예: PubMedQA 의 F1_substring 은 yes/no 답 형식 때문에 구조적 0)."
+    )
 
     st.subheader("F1_strict 비교")
     plot_df = df.dropna(subset=["F1_strict"]).copy()
