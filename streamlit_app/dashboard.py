@@ -31,6 +31,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RESULTS = ROOT / "results"
 CACHE_DIR = ROOT / "cache"
 PPO_CKPT = CACHE_DIR / "ppo_checkpoints"
+GOLD_QA_PATH = ROOT / "data" / "university" / "gold_qa_5000.json"
 
 st.set_page_config(
     page_title="Triple-Hybrid RAG / L-DWA Explorer",
@@ -205,15 +206,22 @@ def load_policy(path: str) -> dict:
 
 @st.cache_data(show_spinner=False)
 def load_samples_df() -> pd.DataFrame:
-    """Combine 'samples' arrays from all policy files into one dataframe."""
+    """Combine 'samples' arrays from all policy files into one dataframe.
+
+    Also joins the actual question text from the gold QA file so the explorer
+    can show *what the question was* alongside the qid.
+    """
+    query_map = load_query_text_map()
     rows: list[dict] = []
     for policy, path in POLICY_FILES.items():
         if not path.exists():
             continue
         data = load_policy(str(path))
         for s in data.get("samples", []):
+            qid = s["qid"]
             rows.append({
-                "qid": s["qid"],
+                "qid": qid,
+                "question": query_map.get(str(qid), ""),
                 "type": s["type"],
                 "gold": s["gold"],
                 "policy": policy,
@@ -273,6 +281,32 @@ def load_training_history(seed: int) -> list[dict]:
         return []
     with path.open(encoding="utf-8") as f:
         return json.load(f)
+
+
+@st.cache_data(show_spinner=False)
+def load_query_text_map() -> dict[str, str]:
+    """Map from qid (as string) → actual question text.
+
+    Samples in `results/rerun_*_list.json` only store qid/gold. To show the
+    actual question alongside, we load the gold QA file once.
+    """
+    if not GOLD_QA_PATH.exists():
+        return {}
+    try:
+        with GOLD_QA_PATH.open(encoding="utf-8") as f:
+            gold = json.load(f)
+    except Exception:
+        return {}
+    out: dict[str, str] = {}
+    for item in gold:
+        if not isinstance(item, dict):
+            continue
+        qid = item.get("id") or item.get("qid")
+        if qid is None:
+            continue
+        q = item.get("query") or item.get("question") or ""
+        out[str(qid)] = q
+    return out
 
 
 @st.cache_resource(show_spinner=False)
@@ -1406,9 +1440,13 @@ def tab_explorer(samples_df: pd.DataFrame) -> None:
 
     filtered = samples_df[samples_df["type"].isin(type_filter)].copy()
 
-    # Pivot to one row per qid with columns per policy (F1_strict values)
+    # Pivot to one row per qid with columns per policy (F1_strict values).
+    # Include `question` in the index so the actual text travels with each row.
+    index_cols = ["qid", "type", "gold"]
+    if "question" in filtered.columns:
+        index_cols.insert(1, "question")  # qid → question → type → gold
     pivot_metric = filtered.pivot_table(
-        index=["qid", "type", "gold"],
+        index=index_cols,
         columns="policy",
         values="f1_strict",
         aggfunc="first",
@@ -1453,20 +1491,28 @@ def tab_explorer(samples_df: pd.DataFrame) -> None:
     # Friendly column rename for display
     display_df = pivot_metric.rename(columns={
         "qid": "번호",
+        "question": "질의",
         "type": "유형",
         "gold": "정답",
     }).drop(columns=[c for c in ["diff_ldwa_rdwa", "min_f1", "max_f1"] if c in pivot_metric.columns])
 
+    # Reorder so 번호 → 질의 → 유형 → 정답 → 정책 점수...
+    base_cols = [c for c in ["번호", "질의", "유형", "정답"] if c in display_df.columns]
+    other_cols = [c for c in display_df.columns if c not in base_cols]
+    display_df = display_df[base_cols + other_cols]
+
     st.markdown("##### 📋 매칭된 질의 상위 30개")
     st.caption(
-        "각 정책 컬럼의 숫자는 **F1_strict** (0~1). 막대가 길수록 그 정책이 그 질의를 잘 맞혔다는 뜻. "
-        "정책 간 막대 길이 차이를 보면 **어떤 정책이 이 질의를 가장 잘 풀었는지** 한눈에 보입니다. "
-        "흥미로운 **번호** 를 기억한 뒤 아래 🔬 자세히 보기에서 선택하세요."
+        "표에 **질의 내용** 과 **정답** 이 바로 보입니다. 각 정책 컬럼의 숫자는 **F1_strict** (0~1) 이며, "
+        "막대가 길수록 그 정책이 그 질의를 잘 맞혔다는 뜻. 정책 간 막대 길이 차이를 보면 "
+        "**어떤 정책이 이 질의를 가장 잘 풀었는지** 한눈에 보입니다. 흥미로운 **번호** 를 기억한 뒤 "
+        "아래 🔬 자세히 보기에서 선택하세요."
     )
     explorer_cfg = {
-        "번호": st.column_config.NumberColumn(width="small"),
-        "유형": st.column_config.TextColumn(width="small"),
-        "정답": st.column_config.TextColumn(width="large"),
+        "번호": st.column_config.NumberColumn("번호", width="small"),
+        "질의": st.column_config.TextColumn("질의 (질문 내용)", width="large"),
+        "유형": st.column_config.TextColumn("유형", width="small"),
+        "정답": st.column_config.TextColumn("정답 (gold)", width="large"),
     }
     for col in display_df.columns:
         if col in POLICY_FILES:
@@ -1508,12 +1554,17 @@ def tab_explorer(samples_df: pd.DataFrame) -> None:
             st.warning("이 번호에 해당하는 샘플이 없습니다.")
             return
 
-        st.markdown(f"**질의 정답 (gold)**: `{sub.iloc[0]['gold']}`")
-        st.markdown(f"**유형**: {sub.iloc[0]['type']}")
+        question_text = sub.iloc[0].get("question", "")
+        with st.container(border=True):
+            if question_text:
+                st.markdown(f"##### ❓ 질의")
+                st.markdown(f"> {question_text}")
+            st.markdown(f"**✅ 정답 (gold)**: `{sub.iloc[0]['gold']}`")
+            st.markdown(f"**🏷️ 유형**: {sub.iloc[0]['type']}")
 
         st.caption(
-            "각 정책 카드의 F1 / EM / Faith 는 0~1 사이 점수 (높을수록 좋음). "
-            "Weights (α, β, γ) 는 그 정책이 이 질의에 대해 선택한 가중치. 합이 1."
+            "아래 카드는 이 질의에 대한 각 정책의 결과입니다. F1 / EM / Faith 는 0~1 사이 점수 "
+            "(높을수록 좋음). Weights (α, β, γ) 는 그 정책이 이 질의에 대해 선택한 가중치. 합이 1."
         )
 
         for policy in sub.index:
@@ -1528,13 +1579,15 @@ def tab_explorer(samples_df: pd.DataFrame) -> None:
             ):
                 colA, colB = st.columns([3, 2])
                 with colA:
-                    st.markdown(f"**Answer**:\n\n> {row['answer']}")
+                    st.markdown(f"**답변**:\n\n> {row['answer']}")
                 with colB:
                     st.markdown(
-                        f"**Weights**: α={row['alpha']:.1f}, "
-                        f"β={row['beta']:.1f}, γ={row['gamma']:.1f}"
+                        f"**이 정책이 고른 가중치**  \n"
+                        f"α (Vector) = **{row['alpha']:.1f}**  \n"
+                        f"β (Graph) = **{row['beta']:.1f}**  \n"
+                        f"γ (Ontology) = **{row['gamma']:.1f}**"
                     )
-                    st.markdown(f"Latency: {row['latency']:.2f}s")
+                    st.markdown(f"응답 시간: **{row['latency']:.2f}s**")
 
 
 def tab_simulator(samples_df: pd.DataFrame) -> None:
@@ -1589,8 +1642,14 @@ def tab_simulator(samples_df: pd.DataFrame) -> None:
         (samples_df["qid"] == picked) & (samples_df["policy"] == "R-DWA")
     ].head(1)
     if not sample_row.empty:
-        st.markdown(f"**Query (gold)**: `{sample_row.iloc[0]['gold']}` "
-                    f"({sample_row.iloc[0]['type']})")
+        q_text = sample_row.iloc[0].get("question", "")
+        with st.container(border=True):
+            if q_text:
+                st.markdown(f"**❓ 질의**: {q_text}")
+            st.markdown(
+                f"**✅ 정답 (gold)**: `{sample_row.iloc[0]['gold']}` · "
+                f"**🏷️ 유형**: {sample_row.iloc[0]['type']}"
+            )
 
     # ---- preset quick-pick buttons ----
     st.markdown("##### 🎯 프리셋으로 빠르게 가중치 고르기")
