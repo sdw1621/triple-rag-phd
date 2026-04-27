@@ -85,3 +85,7 @@ env/
 *.pid
 # Malgun Gothic is MS proprietary — kept local only, not tracked
 cache/malgun.ttf
+
+# Other-author reference materials (not for public commit)
+thesis_current/template_kim_thesis.txt
+
