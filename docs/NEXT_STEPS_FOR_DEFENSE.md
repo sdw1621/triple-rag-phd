@@ -1,0 +1,106 @@
+# 방어 D-1 (2026-04-30) 아침 작업 우선순위
+
+> 어젯밤(4/29) Claude Code 자율 진행 결과 + 미완 항목 정리.
+> 발표 D-1 아침에 30~60분만 투입하면 통과 안전권 진입.
+
+## ✅ 어젯밤 완료 (text + cache regime 통계)
+
+1. **paired_bootstrap.py 구현** — `scripts/paired_bootstrap.py`. BCa 95% CI + 양측 p-value + Cohen's d_z. cache regime 에서 5,000 QA 전수 검증 완료.
+2. **evaluate_on_cache.py 패치** — `per_query` 필드를 항상 dump 하도록 수정. 기존 6 정책 (rdwa, uniform, oracle, vector-only, graph-only, ontology-only) 재평가 완료.
+3. **본문 보강 (텍스트만)**
+   - `00b_국문초록.md`: scope 한정 ("한국어 합성 대학 도메인 + 한국어 intent 정규식 + 그래프·온톨로지 존재") + reward dichotomy 명시
+   - `06_실험평가.md §3.6`: paired bootstrap 표 6-2c, 6-2d 추가 + 정직한 한계 진술 + Uniform 결과 노출
+   - `06_실험평가.md §3.2`: 헤드라인 표 6-2 에 "Uniform list-prompt 미측정" 주석 추가
+   - `06_실험평가.md §8.2`: Uniform list-prompt 측정을 1순위 향후 과제로 추가
+   - `07_결론.md §1`: scope 한정 + paired bootstrap 인용
+4. **인프라 부수 수정**
+   - `src/intent/__init__.py`, `src/utils/__init__.py`: lazy import 로 PyTorch 미설치 환경에서도 cache 평가가 동작하도록 수정 (PPO 학습/L-DWA inference 에는 영향 없음)
+5. **Docker 풀 실행 스크립트** — `scripts/run_paired_bootstrap.sh` (L-DWA 3 seeds 포함 모든 정책 재평가 + 부트스트랩 일괄 실행)
+
+## 🚨 중요 발견 — Cache regime paired bootstrap 결과
+
+| 비교 | Δ (F1) | 95% CI (BCa) | p | 판정 |
+|---|---|---|---|---|
+| **Uniform vs R-DWA** | +0.0114 | [+0.0091, +0.0138] | < 1e-4 | ✅ Uniform 우위 |
+| Vector-only vs R-DWA | +0.0107 | [+0.0080, +0.0132] | < 1e-4 | ✅ Vector 우위 |
+| Oracle vs R-DWA | +0.0494 | [+0.0464, +0.0524] | < 1e-4 | Oracle 우위 |
+
+**시사점**: cache regime (PPO 학습 환경) 에서 R-DWA 는 Uniform/Vector-only 에 통계적으로 유의하게 진다. 즉 "L-DWA 가 R-DWA 대비 +6.2%" 라는 헤드라인은 **약한 baseline 위의 이득** 이라는 비판이 가능.
+→ §3.6 에 본 결과를 정직하게 노출 + **list-prompt regime 에서 동일 비교를 1순위 향후 과제**로 명시함.
+
+## 🎯 D-1 (4/30) 아침 우선순위 작업
+
+### [P0] 핵심 — 약 30분 (반드시)
+
+**작업 1. L-DWA cache-regime paired bootstrap 완성** (Docker 또는 PyTorch 설치)
+- 사유: 현재 §3.6 의 paired bootstrap 에 L-DWA 결과가 빠져 있다. Uniform 이 R-DWA 를 능가하는 것까지는 보고되었으나, **L-DWA 가 Uniform 을 유의하게 능가하는지** 가 본 논문 주장의 핵심이다.
+- 명령:
+  ```bash
+  # Docker 사용
+  docker-compose up -d
+  docker-compose exec triple_rag bash scripts/run_paired_bootstrap.sh
+  ```
+- 또는 로컬 PyTorch CPU 설치:
+  ```bash
+  /c/Python312/python.exe -m pip install --user torch --index-url https://download.pytorch.org/whl/cpu
+  bash scripts/run_paired_bootstrap.sh   # WSL 또는 Git Bash
+  ```
+- 산출: `results/paired_bootstrap_f1_vs_rdwa.md` (L-DWA 3 seeds 포함), `..._vs_oracle.md`
+- 본문 반영: 06_실험평가.md §3.6 [표 6-2c] 에 L-DWA 행을 한 줄 추가하고 "L-DWA 가 Uniform 을 +Δ 로 유의하게 능가" 또는 그렇지 않으면 그 사실을 솔직히 명시.
+
+**작업 2. 통합본 v20 빌드 + PDF**
+```bash
+python scripts/build_unified_thesis_v19.py   # 또는 v20 변형
+# 산출: thesis_current/v5_rewrite/통합본_v20.md
+# DOCX/PDF 변환은 build 스크립트 안에 포함 (확인 필요)
+```
+
+### [P1] 발표 슬라이드 보강 — 약 20분
+
+**작업 3. 슬라이드 3장 추가**
+1. **Statistical defense slide**: 표 6-2c (paired bootstrap) 1장으로 압축 — 발표 1슬라이드.
+2. **Honest scope slide**: 4개 조건 명시 (KO + 합성 대학 + Graph/Ontology 존재 + 한국어 intent regex 작동).
+3. **Negative result first slide**: §7.7 영어 합성 결과를 **본인이 먼저 꺼낸다** — 영어 L-DWA = R-DWA 동률. 심사위원이 발견하기 전에 노출 → integrity 점수.
+
+빌드: `python scripts/build_defense_pptx.py`
+
+### [P2] 안전판 답변 준비 — 약 10분
+
+**작업 4. 예상 질문 3가지 1줄 답변 카드**
+
+Q1. "Reward 식 0.3·EM 항이 학습에 기여 안 한다는데 왜 제거 안 했나?"
+→ A1. "Sentence prompt 에서 EM=0 인 것은 발견 후이며 명목 식의 자기 일관성을 위해 표기는 유지하되 한계로 명시. List prompt 도입 후 EM 0.39 회복으로 향후 재설계 신호 확보 (§8.2)."
+
+Q2. "Cache regime 에서 Uniform 이 R-DWA 를 능가한다는데 왜 R-DWA 를 baseline 으로?"
+→ A2. "선행 JKSCI 논문 baseline 의 직접 계승이 본 논문의 학술적 출발점이기 때문. Uniform 우위는 §3.6 에 정직하게 노출. List-prompt regime 에서 R-DWA 가 0.529 로 회복되며, 그 위에서 L-DWA +6.2% 를 측정 — Uniform list-prompt 추가 비교는 향후 과제 (§8.2)."
+
+Q3. "3 seeds 만으로 통계적 검정력이 충분한가?"
+→ A3. "5,000 query-level paired bootstrap (BCa 95% CI, §3.6) 으로 정책 간 차이의 유의성을 별도로 검증. 시드 간 분산은 0.7% 로 매우 작으나, 표본 단위 통계 검증은 5,000 QA × 5,000 resamples 로 추가 확보."
+
+## 📁 변경 파일 목록 (어젯밤)
+
+| 파일 | 변경 유형 | 비고 |
+|---|---|---|
+| `scripts/paired_bootstrap.py` | 신규 | BCa CI + p-value + d_z |
+| `scripts/run_paired_bootstrap.sh` | 신규 | Docker 일괄 실행 |
+| `scripts/evaluate_on_cache.py` | 패치 | per_query 항상 dump |
+| `src/intent/__init__.py` | 패치 | lazy BERT import |
+| `src/utils/__init__.py` | 패치 | lazy seed import |
+| `thesis_current/v5_rewrite/00b_국문초록.md` | 보강 | scope + reward dichotomy |
+| `thesis_current/v5_rewrite/06_실험평가.md` | 보강 | §3.6 추가, §3.2/§8.2 보강 |
+| `thesis_current/v5_rewrite/07_결론.md` | 보강 | scope + bootstrap 인용 |
+| `results/eval_*.json` | 재생성 | 6 정책 per_query 포함 |
+| `results/paired_bootstrap_*.md/.json` | 신규 | 3 메트릭 × 2 baseline |
+
+## ⚠️ 미완 / 위험 항목
+
+1. **L-DWA cache-regime paired bootstrap 미실행** — PyTorch 의존. 위 작업 1 으로 처리.
+2. **List-prompt regime paired bootstrap 미실행** — `evaluate_rerun.py` 가 50 sample 만 저장. 5,000 전수 저장 옵션 추가 + 정책별 LLM 재호출 필요 ($5~10).
+3. **헤드라인 표 6-2 의 Uniform 행 부재** — 위 2번이 필요. 미완료 시 §3.6 의 cache 결과만으로 근거 제시.
+4. **통합본 v19/v20 PDF 미빌드** — 위 작업 2 로 처리. v19 PDF 는 4/29 어젯밤 시점 이전 내용.
+
+## 💬 Claude Code 메모
+
+본 자율 진행은 **재현성·통계 정직성** 을 우선시하여 "기존 주장 보강" 보다 "기존 누락 노출" 에 가깝게 작업하였다. 이는 심사위원이 발견하기 전에 본인이 먼저 꺼내는 편이 통과 안전권에 가깝다는 판단에 따른 것이다. 헤드라인 수치 자체 (L-DWA F1 0.562 > Oracle 0.554) 는 변경하지 않았다.
+
+— Generated by Claude Code, 2026-04-29 자정 ~ 새벽

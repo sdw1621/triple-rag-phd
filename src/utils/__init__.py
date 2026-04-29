@@ -10,7 +10,6 @@ from src.utils.offline_cache import (
     enumerate_simplex,
     simplex_size,
 )
-from src.utils.seed import THESIS_SEEDS, set_seed
 
 __all__ = [
     "set_seed",
@@ -24,3 +23,10 @@ __all__ = [
     "DEFAULT_GRID",
     "DEFAULT_STEP",
 ]
+
+
+def __getattr__(name):
+    if name in ("set_seed", "THESIS_SEEDS"):
+        from src.utils.seed import THESIS_SEEDS, set_seed  # noqa: F401
+        return THESIS_SEEDS if name == "THESIS_SEEDS" else set_seed
+    raise AttributeError(f"module 'src.utils' has no attribute {name!r}")

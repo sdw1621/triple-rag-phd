@@ -214,6 +214,7 @@ def evaluate(
     """Apply policy to each query, look up cache, aggregate metrics."""
     per_type: dict[str, dict[str, list[float]]] = {}
     picked_weights: list[tuple[int, int, int]] = []
+    per_query: list[dict[str, Any]] = []
     t0 = time.time()
 
     f1s, ems, faiths, lats, Rs = [], [], [], [], []
@@ -227,6 +228,9 @@ def evaluate(
         rc = qa_rewards.get(qid, {}).get(triple)
         if rc is None:
             misses += 1
+            per_query.append({
+                "qid": qid, "type": qtype, "weight": list(triple), "miss": True,
+            })
             continue
         R = rc.total_reward()
         f1s.append(rc.f1)
@@ -239,6 +243,12 @@ def evaluate(
         bucket["em"].append(rc.em)
         bucket["faith"].append(rc.faithfulness)
         bucket["R"].append(R)
+        per_query.append({
+            "qid": qid, "type": qtype, "weight": list(triple),
+            "f1": float(rc.f1), "em": float(rc.em),
+            "faith": float(rc.faithfulness), "latency": float(rc.latency),
+            "R": float(R),
+        })
         if (i + 1) % 1000 == 0:
             logger.info("  evaluated %d/%d (%.1fs)", i + 1, len(qa), time.time() - t0)
 
@@ -280,6 +290,7 @@ def evaluate(
             "beta": float(np.mean([w[1] / 10 for w in picked_weights])),
             "gamma": float(np.mean([w[2] / 10 for w in picked_weights])),
         },
+        "per_query": per_query,
     }
 
 

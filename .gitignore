@@ -46,6 +46,8 @@ cache/ppo_checkpoints/*
 !results/
 results/*
 !results/rerun_*_list.json
+!results/paired_bootstrap_*.md
+!results/paired_bootstrap_*.json
 
 # Python
 __pycache__/
