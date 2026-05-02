@@ -1003,22 +1003,22 @@ def build_s16_oracle_exceedance(prs: Presentation) -> None:
 def build_s17_conditional(prs: Presentation) -> None:
     slide = _blank_slide(prs)
     _set_bg(slide, WHITE)
-    _add_section_header(slide, "핵심 결과 ② — Conditional +36.7%",
-                        "Key Finding 2 · Largest Per-Type Gain in Conditional")
+    _add_section_header(slide, "핵심 결과 ② — Conditional +27.8%",
+                        "Key Finding 2 · Largest Per-Type Gain in Conditional (3-seed mean)")
 
     _add_text(
         slide, Inches(0.8), Inches(2.0),
         Inches(11.7), Inches(1.2),
         "조건부 질의 (n = 1,250) 에서 가장 큰 상대 개선.\n"
-        "L-DWA 가 Oracle 마저 근소하게 초과.",
+        "L-DWA 3-seed 평균이 Oracle 0.290 과 사실상 동등 (이산 상한 도달).",
         size=18, bold=True, color=ACCENT_RED,
     )
 
-    # 3 metric cards
+    # 3 metric cards (3-seed mean used for L-DWA)
     cards = [
         ("R-DWA\n(기존 규칙 표)", "0.223", TEXT_MUTED, "고정 (0.2, 0.2, 0.6)"),
         ("Oracle\n(이산 상한)", "0.290", ACCENT_GREEN, "66-점 argmax"),
-        ("L-DWA\n(본 연구)", "0.304", ACCENT_RED, "질의별 동적 가중치"),
+        ("L-DWA\n(3-seed 평균)", "0.285", ACCENT_RED, "± 0.029 (s42 0.304 / s123 0.251 / s999 0.301)"),
     ]
     left = Inches(0.8)
     w = Inches(3.9)
@@ -1048,6 +1048,79 @@ def build_s17_conditional(prs: Presentation) -> None:
         "해석 — 같은 conditional 이라도 수치 제약 · 열거형 · 배타 조건이 각기 다른데,\n"
         "R-DWA 는 이들을 하나로 묶어 처리. 학습이 내부 차이를 포착.",
         size=13, color=HOSEO_BLUE,
+    )
+
+
+def build_s17b_paired_bootstrap(prs: Presentation) -> None:
+    """Statistical defense slide — paired bootstrap (BCa 95% CI)."""
+    slide = _blank_slide(prs)
+    _set_bg(slide, WHITE)
+    _add_section_header(
+        slide,
+        "통계적 방어 — Paired Bootstrap (BCa 95% CI)",
+        "Statistical Significance · 5,000 BCa Resamples · Cohen's d_z",
+    )
+
+    _add_text(
+        slide, Inches(0.8), Inches(2.0),
+        Inches(11.7), Inches(0.9),
+        "5,000 query-level paired bootstrap. Cache regime, F1.\n"
+        "L-DWA 3 seeds 모두 R-DWA 를 통계적으로 유의하게 능가 (p < 1e-4).",
+        size=15, bold=True, color=ACCENT_RED,
+    )
+
+    # Bootstrap result table
+    headers = ["비교 (vs R-DWA)", "Δ", "95% CI (BCa)", "p", "Cohen's d_z", "판정"]
+    rows = [
+        ["Uniform (1/3, 1/3, 1/3)", "+0.0114", "[+0.0091, +0.0138]", "< 1e-4", "+0.135", "✅", HOSEO_BLUE],
+        ["Vector-only", "+0.0107", "[+0.0080, +0.0132]", "< 1e-4", "+0.114", "✅", HOSEO_BLUE],
+        ["L-DWA seed 42", "+0.0147", "[+0.0123, +0.0170]", "< 1e-4", "+0.174", "✅", ACCENT_RED],
+        ["L-DWA seed 123", "+0.0143", "[+0.0120, +0.0167]", "< 1e-4", "+0.173", "✅", ACCENT_RED],
+        ["L-DWA seed 999", "+0.0125", "[+0.0101, +0.0149]", "< 1e-4", "+0.146", "✅", ACCENT_RED],
+        ["Oracle (per-q argmax)", "+0.0494", "[+0.0464, +0.0524]", "< 1e-4", "+0.456", "✅", ACCENT_GREEN],
+    ]
+
+    table_left = Inches(0.6)
+    table_top = Inches(3.0)
+    col_w = [Inches(2.5), Inches(1.2), Inches(2.4), Inches(1.0), Inches(1.4), Inches(0.7)]
+    row_h = Inches(0.42)
+
+    x = table_left
+    for i, h in enumerate(headers):
+        _add_rect(slide, x, table_top, col_w[i], row_h, fill_color=HOSEO_BLUE)
+        _add_text(
+            slide, x, table_top + Inches(0.08),
+            col_w[i], Inches(0.3),
+            h, size=11, bold=True, color=WHITE, align=PP_ALIGN.CENTER,
+        )
+        x += col_w[i]
+
+    y = table_top + row_h
+    for row in rows:
+        x = table_left
+        color = row[-1]
+        cells = row[:-1]
+        for i, val in enumerate(cells):
+            _add_rect(slide, x, y, col_w[i], row_h,
+                      fill_color=BG_SOFT, line_color=HOSEO_BLUE_LIGHT)
+            _add_text(
+                slide, x, y + Inches(0.10),
+                col_w[i], Inches(0.3),
+                val,
+                size=11, bold=(i == 0),
+                color=color if i == 0 else TEXT_DARK,
+                align=PP_ALIGN.LEFT if i == 0 else PP_ALIGN.CENTER,
+            )
+            x += col_w[i]
+        y += row_h
+
+    _add_text(
+        slide, Inches(0.6), Inches(6.0),
+        Inches(12.1), Inches(1.1),
+        "정직한 부수 발견: Cache regime 에서 R-DWA 가 Uniform/Vector-only 에 유의하게 진다 (Δ −0.011, p < 1e-4).\n"
+        "→ R-DWA 의 baseline 가치는 단일 소스 회피에 있으나 균등 분배 능가는 아님 (RQ1 부정 답변).\n"
+        "→ List-prompt regime 에서의 Uniform 비교는 §8 나 1순위 향후 연구로 명시.",
+        size=12, color=HOSEO_BLUE,
     )
 
 
@@ -1167,7 +1240,8 @@ def build_s23_contributions(prs: Presentation) -> None:
                 "(구두점 처리 · 프롬프트 형식 · Faithfulness 2-branch)",
          ACCENT_GREEN),
         ("실증", "L-DWA 가 R-DWA 대비 F1_strict +6.2%, 이산 Oracle 상한 0.554 를 0.562 로 초과.\n"
-               "Conditional 유형에서 +36.7% 의 가장 큰 상대 개선.",
+               "Conditional 유형에서 3-seed 평균 +27.8% (R-DWA 0.223 → L-DWA 0.285), Oracle 0.290 과 동등.\n"
+               "Paired bootstrap 으로 L-DWA 3-seed 모두 R-DWA 유의 능가 (Δ ≈ +0.014, p < 1e-4) 검증.",
          ACCENT_RED),
     ]
     top = Inches(2.0)
@@ -1344,7 +1418,7 @@ def build_appendix_cases(prs: Presentation) -> None:
     cases = [
         ("CS-1", "Simple 정책 수렴", "세 정책 모두 F1=1.0 (최재원 교수 소속 학과)"),
         ("CS-2", "Multi-hop 부분 회수", "R-DWA/L-DWA 동일 1/2 엔티티, Oracle 2/2"),
-        ("CS-3", "Conditional 개선과 한계", "개별 실패지만 유형 집계 +36.7% (L-DWA > Oracle)"),
+        ("CS-3", "Conditional 개선과 한계", "개별 실패지만 유형 집계 +27.8% (3-seed mean, Oracle 동등)"),
         ("CS-4", "Faithfulness 2-branch", "Sentence 1.0 (과대) vs List 0.5 (환각 노출)"),
         ("CS-5", "Retrieval 한계", "Oracle 조차 12개 중 2개만 — 컨텍스트 상한"),
         ("CS-6", "교차 도메인 퇴행", "영어 질의 → density 0 → Vector-only 이하"),
@@ -1393,6 +1467,7 @@ SLIDES = [
         ("per_type", build_s15_per_type),
         ("oracle_exceedance", build_s16_oracle_exceedance),
         ("conditional", build_s17_conditional),
+        ("paired_bootstrap", build_s17b_paired_bootstrap),
         ("weight_dist", build_s18_weight_distribution),
         ("ppo_curves", build_s19_ppo_curves),
         ("cross_domain", build_s21_cross_domain),
