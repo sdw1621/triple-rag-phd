@@ -34,7 +34,20 @@ from src.rag.ontology_store import OntologyStore, PersonInstance
 
 logger = logging.getLogger(__name__)
 
-DATASET_GENERATOR_PATH = Path("/workspace/data/university/dataset_generator.py")
+def _resolve_dataset_generator_path() -> Path:
+    """Resolve dataset_generator.py via env var, repo root, or /workspace fallback."""
+    import os
+
+    env = os.environ.get("UNIVERSITY_DATASET_GENERATOR")
+    if env:
+        return Path(env)
+    repo_local = Path(__file__).resolve().parents[2] / "data" / "university" / "dataset_generator.py"
+    if repo_local.exists():
+        return repo_local
+    return Path("/workspace/data/university/dataset_generator.py")
+
+
+DATASET_GENERATOR_PATH = _resolve_dataset_generator_path()
 DEFAULT_SEED: int = 42
 
 
