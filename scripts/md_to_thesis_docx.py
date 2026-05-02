@@ -118,7 +118,10 @@ def _split_table_row(line: str) -> list[str]:
 # ---------- rendering ----------
 
 def _add_heading(doc: Document, text: str, level: int) -> None:
-    p = doc.add_paragraph()
+    style_name = {1: "Heading 1", 2: "Heading 2", 3: "Heading 3", 4: "Heading 4"}.get(
+        level, "Heading 2"
+    )
+    p = doc.add_paragraph(style=style_name)
     run = p.add_run(_strip_md_inline(text))
     size = {1: H1_SIZE, 2: H2_SIZE, 3: H3_SIZE}.get(level, H2_SIZE)
     _set_font(run, size=size, bold=True)
