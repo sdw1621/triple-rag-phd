@@ -1,6 +1,6 @@
 # Ⅴ. 학습형 동적 가중치 알고리즘 (L-DWA)
 
-본 장은 본 논문의 **핵심 기여** 인 Learned Dynamic Weighting Algorithm을 정의한다. §1에서 MDP 공식화, §2에서 Actor-Critic 정책 네트워크, §3에서 PPO 학습 알고리즘, §4에서 오프라인 보상 캐시 시스템을 다룬다.
+본 장은 본 논문의 **핵심 기여** 인 Learned Dynamic Weighting Algorithm을 정의한다. 1절에서 MDP 공식화, 2절에서 Actor-Critic 정책 네트워크, 3절에서 PPO 학습 알고리즘, 4절에서 오프라인 보상 캐시 시스템을 다룬다.
 
 ## 1. MDP 공식화
 
@@ -21,7 +21,7 @@ s = [density (3) | intent_logits (3) | source_stats (9) | query_meta (3)]
 | source_stats | 9 | Retrieval 출력 | 3 소스 × (top, mean, count) |
 | query_meta | 3 | Query string | (log_length_norm, n_entities_norm, has_negation_flag) |
 
-**intent_logits.** 본 논문 실험에서는 BERT multi-label classifier를 미학습 상태로 두어 intent_logits=(0, 0, 0) 으로 둔다. 이 선택의 영향은 Ch.6 §5.2의 소거 논의에서 다룬다. 요컨대 density만으로도 L-DWA가 Oracle의 99%에 도달하므로 BERT는 **향후 추가 개선 여지** 로 남긴다.
+**intent_logits.** 본 논문 실험에서는 BERT multi-label classifier를 미학습 상태로 두어 intent_logits=(0, 0, 0) 으로 둔다. 이 선택의 영향은 Ⅵ장 5.2절의 소거 논의에서 다룬다. 요컨대 density만으로도 L-DWA가 Oracle의 99%에 도달하므로 BERT는 **향후 추가 개선 여지** 로 남긴다.
 
 **source_stats.** 각 소스별 retrieval 결과에서:
 - top = 상위 1순위 유사도 점수 (Vector의 경우 0~1, Graph/Ontology는 발견 여부 기반 0/1 합의치)
@@ -47,7 +47,7 @@ R(s, a) = 0.5 · F1 + 0.3 · EM + 0.2 · Faithfulness − 0.1 · max(0, latency 
 ```
 R ≈ 0.5 · F1 + 0.2 · Faithfulness − penalty
 ```
-즉 F1 과 Faithfulness 가 학습 신호의 주 원천이 된다. 이 구조가 학습에 미치는 영향은 Ch.6 §2.3 에서 구체적으로 다룬다.
+즉 F1 과 Faithfulness 가 학습 신호의 주 원천이 된다. 이 구조가 학습에 미치는 영향은 Ⅵ장 2.3절 에서 구체적으로 다룬다.
 
 ### 라. 단일-단계 축약
 
@@ -154,7 +154,7 @@ L(θ, φ) = L^π + c_V · L^V − c_H · H
 > | 정책이 살짝 나쁜 방향 | 0.9 | −0.3 | 0.9 | −0.27 | 정상 업데이트 |
 > | 정책이 크게 나쁜 방향 | 0.5 | −0.3 | **0.8** | **−0.24** | clip 발동 |
 >
-> **해석.** clip 없는 vanilla PG는 한 step의 큰 업데이트가 이미 배운 것을 **파괴** 할 수 있다. PPO clip은 "한 번에 ±20% 이상 변하지 말 것" 을 강제하여 장기 수렴을 보장. 본 연구 3-seed 학습에서 R<sub>late</sub> = 0.215 ± 0.002 의 극단적 일관성은 clip 덕분이다 (§3.5).
+> **해석.** clip 없는 vanilla PG는 한 step의 큰 업데이트가 이미 배운 것을 **파괴** 할 수 있다. PPO clip은 "한 번에 ±20% 이상 변하지 말 것" 을 강제하여 장기 수렴을 보장. 본 연구 3-seed 학습에서 R<sub>late</sub> = 0.215 ± 0.002 의 극단적 일관성은 clip 덕분이다 (3.5절).
 
 ---
 
@@ -172,7 +172,7 @@ L(θ, φ) = L^π + c_V · L^V − c_H · H
 | rollout 크기 | 32 | 각 episode당 |
 | minibatch 크기 | 8 | rollout 내 |
 | update epochs | 4 | rollout당 |
-| 총 episodes | **10,000** | seed 당 (Ch.6 §5) |
+| 총 episodes | **10,000** | seed 당 (Ⅵ장 5절) |
 
 ### 다. Advantage 표준화
 각 rollout 내에서 advantage를 평균 0, std 1로 표준화하여 서로 다른 reward scale 간의 학습 안정성을 확보한다.
@@ -268,7 +268,7 @@ OUTPUT: (α, β, γ) ∈ Δ³
 ─────────────────────────────────────────────────────────────
 ```
 
-**왜 mean 인가?** 추론 단계에서의 샘플링은 (i) 재현성 저해, (ii) 결정 분산 증가, (iii) Oracle 비교 시 공정성 저해를 초래한다. 본 논문은 **Dirichlet mean 의 deterministic 추론** 을 표준으로 채택 (Ch.6 §3.2 전수 평가 기준).
+**왜 mean 인가?** 추론 단계에서의 샘플링은 (i) 재현성 저해, (ii) 결정 분산 증가, (iii) Oracle 비교 시 공정성 저해를 초래한다. 본 논문은 **Dirichlet mean 의 deterministic 추론** 을 표준으로 채택 (Ⅵ장 3.2절 전수 평가 기준).
 
 ## 4. 오프라인 보상 캐시
 
@@ -323,7 +323,7 @@ CREATE TABLE rewards (
 
 `src/intent/bert_classifier.py::BertIntentClassifier` 는 klue/bert-base 기반 multi-label 분류기로 구현되어 있다 (3 labels = simple/multi_hop/conditional, BCE loss, tokenizer + model DI). 본 논문 실험에서는 **학습 시간 제약으로 미학습 상태** 로 두고 intent_logits=(0, 0, 0) 을 사용하였다.
 
-이 선택에도 L-DWA가 Oracle의 99.4%에 도달함 (Ch.6 §3) 은 density + source_stats + query_meta 의 15차원만으로도 학습 신호가 충분함을 시사한다. **BERT 학습 시 추가 개선 여지** 는 Ch.7 §2의 향후 연구 항목이다.
+이 선택에도 L-DWA가 Oracle의 99.4%에 도달함 (Ⅵ장 3절) 은 density + source_stats + query_meta 의 15차원만으로도 학습 신호가 충분함을 시사한다. **BERT 학습 시 추가 개선 여지** 는 Ⅶ장 2절의 향후 연구 항목이다.
 
 ### 다. 전체 학습 파이프라인
 
@@ -342,4 +342,4 @@ CREATE TABLE rewards (
 
 ## 6. 소결
 
-본 장은 MDP 공식화, 5,636 파라미터의 경량 Actor-Critic, PPO 학습 레시피, 그리고 학습 비용 85% 절감 오프라인 캐시를 통합하여 **L-DWA 프레임워크** 를 정의하였다. 이 프레임워크 위에서 Ch.6의 실험은 R-DWA 대비 F1_strict +21.9% 와 Oracle 99.4% 도달을 실증한다.
+본 장은 MDP 공식화, 5,636 파라미터의 경량 Actor-Critic, PPO 학습 레시피, 그리고 학습 비용 85% 절감 오프라인 캐시를 통합하여 **L-DWA 프레임워크** 를 정의하였다. 이 프레임워크 위에서 Ⅵ장의 실험은 R-DWA 대비 F1_strict +21.9% 와 Oracle 99.4% 도달을 실증한다.
