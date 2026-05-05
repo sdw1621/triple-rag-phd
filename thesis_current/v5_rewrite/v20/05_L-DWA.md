@@ -165,7 +165,7 @@ L(θ, φ) = L^π + c_V · L^V − c_H · H
 | learning rate | 3e-4 | Adam 기본, RL 문헌 표준 |
 | gamma (할인) | 0.99 | 1-step이라 실효 무관 |
 | GAE lambda | 0.95 | 표준 |
-| clip ratio ε | 0.2 | [38] |
+| clip ratio ε | 0.2 | [7] |
 | value coef c_V | 0.5 | 표준 |
 | entropy coef c_H | 0.01 | 탐색 유지 |
 | max grad norm | 0.5 | 안정성 |
