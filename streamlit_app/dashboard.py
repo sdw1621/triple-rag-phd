@@ -442,6 +442,9 @@ JKSCI 2025 논문은 질의 유형에 따라 고정된 표를 쓰는 규칙 기�
         xaxis=dict(title="질의 유형 (괄호 안은 질의 개수)"),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         margin=dict(l=0, r=0, t=40, b=0),
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+        font=dict(color="#1E293B"),
     )
     st.plotly_chart(fig_headline, use_container_width=True)
     st.caption(
@@ -706,12 +709,15 @@ Ontology 의 가중치이며 **합이 1** 이 되도록 제약됩니다 ($\alpha
         (1.02, -0.05, "Graph (β=1)"),
         (0.5, np.sqrt(3)/2 + 0.04, "Ontology (γ=1)"),
     ]:
-        fig.add_annotation(x=vx, y=vy, text=label, showarrow=False, font=dict(size=12))
+        fig.add_annotation(x=vx, y=vy, text=label, showarrow=False, font=dict(size=12, color="#1E293B"))
     fig.update_layout(
         xaxis=dict(visible=False, range=[-0.25, 1.4]),
         yaxis=dict(visible=False, range=[-0.12, 1.05], scaleanchor="x"),
         height=360, margin=dict(l=0, r=0, t=10, b=10),
         title="그림. Δ³ 삼각형 위의 가중치 점 네 개 예시",
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+        font=dict(color="#1E293B"),
     )
     st.plotly_chart(fig, use_container_width=True)
 
@@ -1284,7 +1290,12 @@ def tab_overview(agg: pd.DataFrame) -> None:
             labels={"scope": "Query type", "F1_strict": "F1_strict (mean)"},
             category_orders={"scope": ["simple", "multi_hop", "conditional"]},
         )
-        fig.update_layout(height=400)
+        fig.update_layout(
+            height=400,
+            paper_bgcolor="white",
+            plot_bgcolor="white",
+            font=dict(color="#1E293B"),
+        )
         st.plotly_chart(fig, use_container_width=True)
 
     # ------------------------------------------------------------------
@@ -1327,7 +1338,7 @@ def tab_overview(agg: pd.DataFrame) -> None:
             marker=dict(size=10, color="rgba(79,134,198,0.35)", symbol="circle-open", line=dict(width=2)),
             text=[f"R-DWA base: {t}"],
             textposition="top center",
-            textfont=dict(size=9, color="rgba(79,134,198,0.7)"),
+            textfont=dict(size=9, color="#3a6699"),
             showlegend=False, hoverinfo="skip",
         ))
     # policy mean points
@@ -1346,13 +1357,16 @@ def tab_overview(agg: pd.DataFrame) -> None:
         (1.04, -0.05, "Graph (β=1)"),
         (0.5, np.sqrt(3)/2 + 0.04, "Ontology (γ=1)"),
     ]:
-        fig_delta.add_annotation(x=vx, y=vy, text=label, showarrow=False, font=dict(size=12))
+        fig_delta.add_annotation(x=vx, y=vy, text=label, showarrow=False, font=dict(size=12, color="#1E293B"))
     fig_delta.update_layout(
         xaxis=dict(visible=False, range=[-0.15, 1.2]),
         yaxis=dict(visible=False, range=[-0.12, 1.05], scaleanchor="x"),
         height=460,
         legend=dict(orientation="h", yanchor="bottom", y=-0.12, xanchor="center", x=0.5),
         margin=dict(l=0, r=0, t=10, b=60),
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+        font=dict(color="#1E293B"),
     )
     st.plotly_chart(fig_delta, use_container_width=True)
     st.caption(
@@ -1782,7 +1796,7 @@ def tab_simulator(samples_df: pd.DataFrame) -> None:
             (1.02, -0.05, "Graph (β=1)"),
             (0.5, np.sqrt(3)/2 + 0.03, "Ontology (γ=1)"),
         ]:
-            fig.add_annotation(x=vx, y=vy, text=label, showarrow=False, font=dict(size=11))
+            fig.add_annotation(x=vx, y=vy, text=label, showarrow=False, font=dict(size=11, color="#1E293B"))
 
         # ⭐ 현재 슬라이더 위치
         cur_x = beta + 0.5 * gamma
@@ -1820,6 +1834,9 @@ def tab_simulator(samples_df: pd.DataFrame) -> None:
             xaxis=dict(visible=False, range=[-0.15, 1.15]),
             yaxis=dict(visible=False, range=[-0.18, 1.08], scaleanchor="x"),
             height=500, margin=dict(l=0, r=0, t=10, b=10),
+            paper_bgcolor="white",
+            plot_bgcolor="white",
+            font=dict(color="#1E293B"),
         )
         st.plotly_chart(fig, use_container_width=True)
 
@@ -1921,6 +1938,9 @@ def tab_stagewise() -> None:
         yaxis=dict(title="F1_strict", range=[0.0, 0.95]),
         xaxis=dict(title="Stage"),
         margin=dict(l=0, r=0, t=10, b=10),
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+        font=dict(color="#1E293B"),
     )
     st.plotly_chart(fig, use_container_width=True)
 
@@ -1994,6 +2014,9 @@ def tab_cross_domain() -> None:
     fig.update_layout(
         height=460, xaxis_tickangle=-25,
         margin=dict(l=0, r=0, t=10, b=10),
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+        font=dict(color="#1E293B"),
     )
     st.plotly_chart(fig, use_container_width=True)
 
@@ -2058,6 +2081,9 @@ def tab_training() -> None:
         xaxis_title="PPO update step",
         yaxis_title=metric_choice,
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+        font=dict(color="#1E293B"),
     )
     st.plotly_chart(fig, use_container_width=True)
 
@@ -2067,9 +2093,50 @@ def tab_training() -> None:
     )
 
 
+# ---------- global CSS (light-theme visibility fix) ----------
+
+def inject_global_css() -> None:
+    """Inject CSS that ensures text stays visible on white background."""
+    st.markdown(
+        """
+<style>
+/* Force body text to dark navy on all Streamlit containers */
+html, body, [class*="css"] {
+    color: #1E293B;
+}
+/* Metric cards: value and delta */
+[data-testid="stMetricValue"],
+[data-testid="stMetricLabel"] {
+    color: #1E293B !important;
+}
+/* Dataframe / table text */
+.dataframe td, .dataframe th {
+    color: #1E293B !important;
+}
+/* Caption text */
+[data-testid="stCaptionContainer"] {
+    color: #374151 !important;
+}
+/* Expander headers */
+[data-testid="stExpander"] summary {
+    color: #1E293B !important;
+}
+/* Tab labels */
+button[role="tab"] p {
+    color: #1E293B !important;
+}
+</style>
+""",
+        unsafe_allow_html=True,
+    )
+
+
 # ---------- main ----------
 
 def main() -> None:
+    # Apply global CSS first so all subsequent elements inherit correct colors
+    inject_global_css()
+
     # Landing header — always visible above tabs
     render_landing_header()
 
