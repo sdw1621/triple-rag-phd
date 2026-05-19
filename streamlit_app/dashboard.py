@@ -663,6 +663,22 @@ Generation)** 라고 부릅니다. 일반적인 RAG 는 문서를 벡터로 바�
 """
     )
 
+    # ------------------------------------------------------------------
+    # Fig. III-1 — Triple-Hybrid RAG 4단계 파이프라인 전체도
+    # ------------------------------------------------------------------
+    st.subheader("📐 Fig. III-1 — Triple-Hybrid RAG 파이프라인 전체도")
+    st.caption("아래 그림을 클릭하면 전체 화면으로 확대해서 볼 수 있습니다.")
+    _FIG3_URL = (
+        "https://raw.githubusercontent.com/sdw1621/triple-rag-phd"
+        "/main/docs/figures/fig3_1_pipeline.png"
+    )
+    show_figure_lightbox(
+        img_url=_FIG3_URL,
+        caption="(Fig. III-1)&nbsp; Triple-Hybrid RAG 4단계 파이프라인 — "
+                "Query Analysis → Density Signals → DWA Weighting → Retrieval &amp; Answer",
+        fig_id="fig3_pipeline",
+    )
+
     st.subheader("α · β · γ 가 무엇인가")
     st.markdown(
         r"""
@@ -2091,6 +2107,97 @@ def tab_training() -> None:
         "세 seed 모두 **mean_reward 0.215 ± 0.002** 로 수렴 — "
         "본 논문 §Ⅴ.3.5 의 재현성 주장을 시각화."
     )
+
+
+# ---------- figure lightbox helper ----------
+
+_LIGHTBOX_CSS_INJECTED = False
+
+
+def show_figure_lightbox(img_url: str, caption: str, fig_id: str) -> None:
+    """Display an image thumbnail that opens a full-screen lightbox on click.
+
+    Args:
+        img_url: Absolute URL of the image (e.g. GitHub raw URL).
+        caption:  Caption shown below the thumbnail.
+        fig_id:   Unique HTML id prefix (no spaces / special chars).
+    """
+    global _LIGHTBOX_CSS_INJECTED
+    css_block = ""
+    if not _LIGHTBOX_CSS_INJECTED:
+        css_block = """
+<style>
+.lb-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+.lb-overlay.lb-active { display: flex; }
+.lb-overlay img {
+    max-width: 92vw;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+    cursor: default;
+}
+.lb-close {
+    position: absolute;
+    top: 14px; right: 20px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    z-index: 100000;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+.lb-thumb-wrap {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.lb-thumb-wrap img {
+    cursor: zoom-in;
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    transition: box-shadow 0.15s;
+}
+.lb-thumb-wrap img:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.lb-caption {
+    color: #374151;
+    font-size: 0.83em;
+    font-style: italic;
+    margin-top: 6px;
+    text-align: center;
+}
+</style>
+"""
+        _LIGHTBOX_CSS_INJECTED = True
+
+    html = f"""{css_block}
+<figure class="lb-thumb-wrap">
+  <img src="{img_url}"
+       title="클릭하면 확대됩니다 (Click to zoom)"
+       onclick="document.getElementById('lb_{fig_id}').classList.add('lb-active')" />
+  <figcaption class="lb-caption">{caption}</figcaption>
+</figure>
+
+<div id="lb_{fig_id}" class="lb-overlay"
+     onclick="if(event.target===this||event.target.classList.contains('lb-close'))this.classList.remove('lb-active')">
+  <span class="lb-close" title="닫기 (Close)">&#10005;</span>
+  <img src="{img_url}" onclick="event.stopPropagation()" />
+</div>
+"""
+    st.markdown(html, unsafe_allow_html=True)
 
 
 # ---------- global CSS (light-theme visibility fix) ----------
