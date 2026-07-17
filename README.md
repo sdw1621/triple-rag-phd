@@ -21,6 +21,39 @@ claude-code-handoff.zip
 
 ---
 
+## 📊 그림 재생성 (`scripts/plot_figure*.py`)
+
+### ⚠️ 먼저 한글 폰트를 준비하세요
+
+`plot_figure3_1`, `4_1`, `5_1`, `6_3`, `6_4`, `6_5` 는 한글 라벨을 사용하며
+`cache/malgun.ttf` 를 찾습니다. **`cache/` 는 `.gitignore` 대상이라 clone 직후에는
+없습니다.** 준비하지 않고 실행하면 그림의 한글이 **모두 두부(□)로 깨진 채** 저장됩니다.
+
+```powershell
+# Windows
+copy C:\Windows\Fonts\malgun.ttf cache\malgun.ttf
+```
+
+폰트가 없으면 스크립트가 `RuntimeWarning` 으로 경고합니다. 경고를 보면 위 명령을
+먼저 실행하세요.
+
+### 용어: A-DWA
+
+논문 최종본은 알고리즘 명칭을 **A-DWA**(Adaptive Dynamic Weighting Algorithm)로
+확정했습니다. plot 스크립트와 `docs/figures/` 는 A-DWA 로 통일되어 있습니다.
+단, 결과 파일명(`rerun_ldwa_seed42_*.json`, `ldwa_cache_ppo_*.pt`)은 실제 경로이므로
+`ldwa` 를 그대로 씁니다. `thesis_current/` 원고는 이전 명칭(L-DWA)이며
+이력 자료입니다 — `thesis_current/README.md` 참조.
+
+### `docs/figures/` 가 authoritative
+
+`docs/figures/*.png` 는 **논문에 실제로 수록된 그림**입니다. 일부 스크립트는
+수록본과 라벨 배치가 완전히 일치하지 않으므로(특히 `plot_figure4_1` — 수록본에는
+지시선이 있으나 스크립트에는 없음), 스크립트 출력을 그대로 논문에 쓰지 말고
+수록본과 대조하세요.
+
+---
+
 ## 🚀 Installation (3 minutes)
 
 ### Prerequisites

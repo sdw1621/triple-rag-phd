@@ -33,6 +33,16 @@ _FONT_PATH = ROOT / "cache" / "malgun.ttf"
 if _FONT_PATH.exists():
     font_manager.fontManager.addfont(str(_FONT_PATH))
     plt.rcParams["font.family"] = "Malgun Gothic"
+else:  # 조용히 두부(□)로 깨지는 것을 막는다
+    import warnings
+
+    warnings.warn(
+        f"한글 폰트가 없습니다: {_FONT_PATH} — 그림의 한글이 두부(□)로 깨집니다. "
+        r"Windows: copy C:\Windows\Fonts\malgun.ttf cache\malgun.ttf "
+        "(cache/ 는 .gitignore 대상이라 clone 후 직접 준비해야 합니다. README.md 참조)",
+        RuntimeWarning,
+        stacklevel=2,
+    )
 plt.rcParams["axes.unicode_minus"] = False
 
 

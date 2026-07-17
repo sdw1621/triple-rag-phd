@@ -5,6 +5,16 @@ Ch.4 에서 R-DWA 의 한계 (기본 가중치 테이블이 실제 보상 지형
 를 시각화. 세 개의 기본 가중치 포인트 (simple→α, multi_hop→β,
 conditional→γ) 가 Oracle 의 평균 가중치 (γ-지배적) 와 떨어져 있음을
 삼각형 simplex 위에서 보여준다.
+
+⚠️ 이 스크립트의 출력은 논문 수록본과 라벨 배치가 완전히 같지 않다 (2026-07-17).
+   논문 수록본에는 Oracle / conditional / R-DWA 실제 평균 라벨에 지시선(leader line)이
+   있고 라벨 위치도 다르나, 그 그림을 만든 스크립트 버전이 남아 있지 않다.
+   데이터 포인트와 좌표계는 동일하다.
+   → 논문에 실린 그림은 docs/figures/fig4_1_rdwa_vs_oracle.png 이며 이 PNG 가
+      authoritative 하다. 이 스크립트는 근사 재현용이므로, 출력을 그대로 논문에
+      쓰지 말고 수록본과 대조할 것.
+
+실행 전 준비: 한글 라벨을 쓰므로 cache/malgun.ttf 가 필요하다. README.md 참조.
 """
 from __future__ import annotations
 from pathlib import Path
@@ -21,6 +31,16 @@ _FONT_PATH = ROOT / "cache" / "malgun.ttf"
 if _FONT_PATH.exists():
     font_manager.fontManager.addfont(str(_FONT_PATH))
     plt.rcParams["font.family"] = "Malgun Gothic"
+else:  # 조용히 두부(□)로 깨지는 것을 막는다
+    import warnings
+
+    warnings.warn(
+        f"한글 폰트가 없습니다: {_FONT_PATH} — 그림의 한글이 두부(□)로 깨집니다. "
+        r"Windows: copy C:\Windows\Fonts\malgun.ttf cache\malgun.ttf "
+        "(cache/ 는 .gitignore 대상이라 clone 후 직접 준비해야 합니다. README.md 참조)",
+        RuntimeWarning,
+        stacklevel=2,
+    )
 plt.rcParams["axes.unicode_minus"] = False
 
 
@@ -75,8 +95,9 @@ def main() -> int:
     ax.scatter([x], [y], s=380, color="#C00000", edgecolor="black",
                linewidths=1.8, marker="*", zorder=6,
                label=f"Oracle 평균\n(α={oracle_alpha}, β={oracle_beta}, γ={oracle_gamma})")
+    # 별 왼쪽 위 — (15, -25) 로 두면 conditional 라벨과 겹친다 (논문 수록본 기준)
     ax.annotate(f"Oracle 평균\n(0.11, 0.16, 0.73)",
-                xy=(x, y), xytext=(15, -25), textcoords="offset points",
+                xy=(x, y), xytext=(-60, 13), textcoords="offset points",
                 fontsize=10, fontweight="bold", color="#C00000")
 
     # R-DWA actual weighted mean
