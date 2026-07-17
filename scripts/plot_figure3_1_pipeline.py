@@ -2,7 +2,7 @@
 Figure 3-1: Triple-Hybrid RAG pipeline diagram.
 
 Matplotlib box-and-arrow diagram of the 7-stage pipeline described in
-Ch.3 §1. Labels match the prose: QueryAnalyzer, DWA (R-DWA | L-DWA),
+Ch.3 §1. Labels match the prose: QueryAnalyzer, DWA (R-DWA | A-DWA),
 VectorStore + GraphStore + OntologyStore, merge_contexts, LLM.
 """
 
@@ -70,7 +70,7 @@ def main() -> int:
         facecolor="#FFE9A8", bold=True)
     arrow(ax, (6.2, 7.8), (6.9, 7.8))
     box(ax, (6.9, 5.9), 1.45, 0.8, "R-DWA\n(규칙 기반, Ch.Ⅳ)", facecolor="#F3F3F3", fontsize=9)
-    box(ax, (8.45, 5.9), 1.45, 0.8, "L-DWA\n(PPO 학습, Ch.Ⅴ)", facecolor="#FFD3CF", fontsize=9, bold=True)
+    box(ax, (8.45, 5.9), 1.45, 0.8, "A-DWA\n(PPO 학습, Ch.Ⅴ)", facecolor="#FFD3CF", fontsize=9, bold=True)
     arrow(ax, (8.4, 6.7), (8.4, 7.3), color="#999")
     arrow(ax, (7.6, 6.7), (7.6, 7.3), color="#999")
 
@@ -124,7 +124,7 @@ def main() -> int:
 
     ax.set_title(
         "Figure 3-1. Triple-Hybrid RAG pipeline (query → answer, 7 stages). "
-        "α, β, γ 은 DWA (R-DWA 또는 L-DWA) 가 질의마다 결정한다.",
+        "α, β, γ 은 DWA (R-DWA 또는 A-DWA) 가 질의마다 결정한다.",
         fontsize=11, pad=10,
     )
 

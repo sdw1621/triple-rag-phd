@@ -43,7 +43,7 @@ BENCHMARK_LABELS = {
 POLICIES = [
     ("Vector-only", "vector-only", "#4F86C6"),
     ("R-DWA", "rdwa", "#8FB573"),
-    ("L-DWA (univ-trained)", "ldwa_cache_ppo_checkpoints_seed_42_final.pt", "#E8756E"),
+    ("A-DWA (univ-trained)", "ldwa_cache_ppo_checkpoints_seed_42_final.pt", "#E8756E"),
 ]
 
 
@@ -144,7 +144,7 @@ def main() -> int:
     ax2.legend(loc="upper right", fontsize=9)
 
     fig.suptitle(
-        "Figure 6-5. Cross-domain generalization — univ-trained L-DWA on English benchmarks",
+        "Figure 6-5. Cross-domain generalization — univ-trained A-DWA on English benchmarks",
         fontsize=12,
     )
     FIG_OUT.parent.mkdir(parents=True, exist_ok=True)

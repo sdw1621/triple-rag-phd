@@ -1,5 +1,5 @@
 """
-Figure 6-2: Per-type F1_strict comparison (R-DWA / L-DWA / Oracle).
+Figure 6-2: Per-type F1_strict comparison (R-DWA / A-DWA / Oracle).
 
 Reads results/rerun_rdwa_list.json, rerun_ldwa_seed42_list.json,
 rerun_oracle_list.json, and produces a grouped bar chart grouping by
@@ -25,7 +25,7 @@ FIG_OUT = ROOT / "docs" / "figures" / "fig6_2_per_type.png"
 
 POLICIES = [
     ("R-DWA", "rerun_rdwa_list.json", "#4F86C6"),
-    ("L-DWA (seed 42)", "rerun_ldwa_seed42_list.json", "#E8756E"),
+    ("A-DWA (seed 42)", "rerun_ldwa_seed42_list.json", "#E8756E"),
     ("Oracle", "rerun_oracle_list.json", "#8FB573"),
 ]
 
@@ -65,7 +65,7 @@ def main() -> int:
     ax1.grid(axis="y", linestyle="--", alpha=0.4)
     ax1.legend(loc="upper right", fontsize=9)
 
-    # Right panel — L-DWA Δ over R-DWA (%)
+    # Right panel — A-DWA Δ over R-DWA (%)
     delta_pct = []
     for t in TYPES:
         rdwa = load_per_type(RESULTS / "rerun_rdwa_list.json")[t]["F1_strict"]["mean"]
@@ -78,7 +78,7 @@ def main() -> int:
         ax2.text(bar.get_x() + bar.get_width() / 2, v + 1.0,
                  f"{v:+.1f}%", ha="center", va="bottom",
                  fontsize=11, fontweight="bold")
-    ax2.set_ylabel("L-DWA Δ over R-DWA (%)", fontsize=10)
+    ax2.set_ylabel("A-DWA Δ over R-DWA (%)", fontsize=10)
     ax2.set_title("Relative improvement per type (F1$_{strict}$)", fontsize=11)
     ax2.axhline(0, color="black", linewidth=0.5)
     ax2.set_ylim(0, max(delta_pct) * 1.2 if delta_pct else 50)

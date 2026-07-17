@@ -1,5 +1,5 @@
 """
-Figure 6-3: L-DWA vs R-DWA vs Oracle weight distribution over 5,000 QA.
+Figure 6-3: A-DWA vs R-DWA vs Oracle weight distribution over 5,000 QA.
 
 Reads `top_weights` from the aggregate section of each policy's rerun
 JSON and produces a scatter plot on the 2-simplex (barycentric) showing
@@ -33,7 +33,7 @@ plt.rcParams["axes.unicode_minus"] = False
 
 POLICIES = [
     ("R-DWA", "rerun_rdwa_list.json", "#4F86C6"),
-    ("L-DWA (seed 42)", "rerun_ldwa_seed42_list.json", "#E8756E"),
+    ("A-DWA (seed 42)", "rerun_ldwa_seed42_list.json", "#E8756E"),
     ("Oracle", "rerun_oracle_list.json", "#8FB573"),
 ]
 

@@ -60,7 +60,7 @@ def main() -> int:
     oracle_alpha, oracle_beta, oracle_gamma = 0.11, 0.16, 0.73
     # R-DWA actual mean selected (Ch.6 §5.3)
     rdwa_mean_alpha, rdwa_mean_beta, rdwa_mean_gamma = 0.25, 0.45, 0.30
-    # L-DWA mean (for reference, seed 42)
+    # A-DWA mean (for reference, seed 42)
     ldwa_alpha, ldwa_beta, ldwa_gamma = 0.25, 0.30, 0.45
 
     for label, a, b, g, color in rdwa_points:
@@ -87,11 +87,11 @@ def main() -> int:
                 xy=(x, y), xytext=(-90, 20), textcoords="offset points",
                 fontsize=10, color="#333")
 
-    # L-DWA mean for reference
+    # A-DWA mean for reference
     x, y = bary_to_xy(ldwa_alpha, ldwa_beta, ldwa_gamma)
     ax.scatter([x], [y], s=320, color="#5B9B5E", edgecolor="black", linewidths=1.5,
                marker="D", zorder=6)
-    ax.annotate(f"L-DWA 평균\n(0.25, 0.30, 0.45)",
+    ax.annotate(f"A-DWA 평균\n(0.25, 0.30, 0.45)",
                 xy=(x, y), xytext=(15, 15), textcoords="offset points",
                 fontsize=10, color="#3A6B3D", fontweight="bold")
 

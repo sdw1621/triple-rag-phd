@@ -1,7 +1,7 @@
 """
 Generate Figure 6-1: Sentence vs List prompt delta bar chart.
 
-Reads the six rerun files (sentence+list × R-DWA/Oracle/L-DWA seed 42)
+Reads the six rerun files (sentence+list × R-DWA/Oracle/A-DWA seed 42)
 and produces docs/figures/fig6_1_prompt_delta.png. Matplotlib only —
 no seaborn dependency.
 
@@ -27,7 +27,7 @@ FIG_OUT = ROOT / "docs" / "figures" / "fig6_1_prompt_delta.png"
 POLICIES = [
     ("R-DWA", "rerun_rdwa_fixed.json", "rerun_rdwa_list.json"),
     ("Oracle", "rerun_oracle_fixed.json", "rerun_oracle_list.json"),
-    ("L-DWA (seed 42)", "rerun_ldwa_seed42_fixed.json", "rerun_ldwa_seed42_list.json"),
+    ("A-DWA (seed 42)", "rerun_ldwa_seed42_fixed.json", "rerun_ldwa_seed42_list.json"),
 ]
 
 # Drop F1_char — pre-existing sentence-run JSONs (from dff7dc1) predate the

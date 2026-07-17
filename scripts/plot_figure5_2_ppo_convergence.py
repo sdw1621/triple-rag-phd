@@ -84,7 +84,7 @@ def main() -> int:
     ax2.legend(loc="upper right", fontsize=9)
 
     fig.suptitle(
-        "Figure 5-2. PPO L-DWA training curves — 3 seeds (42, 123, 999)",
+        "Figure 5-2. PPO A-DWA training curves — 3 seeds (42, 123, 999)",
         fontsize=12,
     )
     fig.savefig(FIG_OUT, dpi=160, bbox_inches="tight")
